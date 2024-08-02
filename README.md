@@ -11,6 +11,7 @@ Before you can run and use MkDoc's features in this project, you need to have th
 
 - Python (version 3.11 or higher)
 - Poetry (version 1.8 or higher)
+- `vim` and `vimdiff` (required to run an optional script)
 
 ### Installing Python
 
@@ -47,3 +48,20 @@ To build MkDocs as a static site:
 ```shell
 poetry run mkdocs build
 ```
+
+## Useful scripts:
+
+### Compare specific ranges of lines between two files using `vimdiff`
+
+Run:
+```shell
+./scripts/compare_parts.sh
+```
+#### Some useful `vimdiff` commands to use in `./scripts/compare_parts.sh`:
+
+| Action                                                        | `vimdiff` command                                       |
+|---------------------------------------------------------------|---------------------------------------------------------|
+| Switch between files being compared                           | `ctrl`+`w`+`w` while in vim's `INSERT` mode             |
+| Wrap lines in a window pane                                   | `setlocal wrap linebreak` while in vim's `COMMAND` mode |
+| Copy a the selected window pane's file to the MacOS clipboard | `w !pbcopy` while in vim's `COMMNAND` mode              |
+

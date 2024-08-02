@@ -9,6 +9,10 @@
       
       
       
+        <link rel="prev" href="system_overview.html">
+      
+      
+        <link rel="next" href="system_hardware_specification.html">
       
       
       <link rel="icon" href="assets/images/favicon.png">
@@ -16,7 +20,7 @@
     
     
       
-        <title>RCTab Test Docs</title>
+        <title>Software Design and Specifications - RCTab Test Docs</title>
       
     
     
@@ -70,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#welcome-to-mkdocs" class="md-skip">
+        <a href="#section-02-software-design-and-specifications" class="md-skip">
           Skip to content
         </a>
       
@@ -106,7 +110,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Welcome to MkDocs
+              Software Design and Specifications
             
           </span>
         </div>
@@ -227,10 +231,30 @@
       
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="software_design_and_specifications.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="software_design_and_specifications.html" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -239,6 +263,86 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coding-standards-and-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coding Standards and Style
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding Standards and Style">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java 17
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Source
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabulator-java-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabulator Java classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3rd-party-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      3rd-party Modules
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -958,21 +1062,126 @@
                   
 
 
-<h1 id="welcome-to-mkdocs">Welcome to MkDocs<a class="headerlink" href="#welcome-to-mkdocs" title="Permanent link">&para;</a></h1>
-<p>For full documentation visit <a href="https://www.mkdocs.org">mkdocs.org</a>.</p>
-<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<h1 id="section-02-software-design-and-specifications">Section 02 - Software Design and Specifications<a class="headerlink" href="#section-02-software-design-and-specifications" title="Permanent link">&para;</a></h1>
+<p><strong>⚠️ Warning: Make sure that this text is up-to-date and accurate!</strong></p>
+<p><strong>Section 02 - Software Design and Specifications</strong> document is solely for use in the State of California. This document can be expanded or updated as is necessary or required. Where relevant, this document refers to specific sections and requirements of the California Voting System Standards. Any recommendations listed in this document should not supersede user jurisdiction procedures or other controlling governance entities.</p>
+<h2 id="coding-standards-and-style">Coding Standards and Style<a class="headerlink" href="#coding-standards-and-style" title="Permanent link">&para;</a></h2>
+<p>We use <a href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</a> as our published, reviewed, and industry-accepted code style. For more details see page 93 of the <a href="https://www.eac.gov/sites/default/files/eac_assets/1/28/VVSG.1.0_Volume_1.PDF">VVSG Volume 1.0</a> guide.</p>
+<p>Code development and review processes are described in <a href="quality_assurance_plan.html"><strong>Section 13 - Quality Assurance Plan</strong></a>.</p>
+<h3 id="java-17">Java 17<a class="headerlink" href="#java-17" title="Permanent link">&para;</a></h3>
+<p>The tabulator is written in Java because it meets the VVSG and California requirements for software language selection. It is widely supported and popular in both industry and the open-source community for a wide variety of applications. It offers a mature and robust collection of third-party libraries. The Java Runtime Environment is standard on our target platforms which means a simple installation process. Our specific version of Java is OpenJDK 17.0.2 and it can be downloaded <a href="https://jdk.java.net/archive/">here</a>.</p>
+<h3 id="open-source">Open Source<a class="headerlink" href="#open-source" title="Permanent link">&para;</a></h3>
+<p>We develop the tabulator as an open-source project for three main reasons:</p>
+<ol>
+<li><strong>Transparency</strong>: published source code increases public confidence in the application by giving anyone the opportunity to review our work and the processes and methodology behind it.</li>
+<li><strong>Adoption</strong>: open-source licensing encourages others to use the software to facilitate the spread of ranked choice voting.</li>
+<li><strong>Collaboration</strong>: open-source licensing enables other software developers to contribute enhancements to the project and incorporate it into other related projects (RCV visualizers, policy research, etc.)</li>
+</ol>
+<h3 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h3>
+<p>RCTab consists of one in-house java code module built from 27 source files. These are described in more detail under <a href="#tabulator-java-classes"><strong>Tabulator Java Classes</strong></a> below. The Tabulator relies on basic java platform libraries (file I/O, string processing, logging) and several 3rd-party modules listed below for reading and writing various file formats. These code modules are compiled and packaged with a minimal java runtime environment (17.0.2) which executes compiled object code when installed and run on the target system.</p>
+<h2 id="tabulator-java-classes">Tabulator Java classes<a class="headerlink" href="#tabulator-java-classes" title="Permanent link">&para;</a></h2>
+<p>The following Java classes comprise the entirety of all in-house developed software and implement all core functionality of the Tabulator.</p>
 <ul>
-<li><code>mkdocs new [dir-name]</code> - Create a new project.</li>
-<li><code>mkdocs serve</code> - Start the live-reloading docs server.</li>
-<li><code>mkdocs build</code> - Build the documentation site.</li>
-<li><code>mkdocs -h</code> - Print help message and exit.</li>
+<li><code>AuditableFile</code>: Create a file that, on close, is read-only and has its hash added to the audit log.</li>
+<li><code>CastVoteRecord</code>: The in-memory representation of each cast vote record read from a source file. When source files are first processed at the beginning of a tabulation, each <code>CastVoteRecord</code> object contains the data parsed from the source, including the candidate rankings, the precinct ID, and other relevant metadata. As the tabulation progresses, the object keeps track of the cast vote record’s fate, including which candidate(s) this ballot is counting toward and whether it has been exhausted.</li>
+<li><code>ClearBallotCvrReader</code>: Contains the logic for parsing a CVR source file in Clear Ballot’s comma-separated value format and populating a list of <code>CastVoteRecord</code> objects.</li>
+<li><code>CommonDataFormatReader</code>: Contains the logic for parsing a CVR source file in the Common Data Format and populating a list of <code>CastVoteRecord</code> objects. It supports both XML and JSON.</li>
+<li><code>ContestConfig</code>: A wrapper around <code>RawContestConfig</code>. It performs extensive validation to confirm that a config file contains parameters that are permitted by the software and consistent with one another. It also has logic for reading a config file from disk, preprocessing the candidate data from a config, and normalizing some of the config values for use during tabulation.</li>
+<li><code>ContestConfigMigration</code>: Provides support for identifying whether a config file’s version is compatible with the version of the application that is running. It also contains logic for automatically migrating a config from an older version to make it compatible with the current version.</li>
+<li><code>DominionCvrReader</code>: Contains the logic for parsing a set of CVR source files in Dominion’s JSON format and populating a list of <code>CastVoteRecord</code> objects.</li>
+<li><code>FileUtils</code>: A few simple utility functions for reading from and writing to directories on disk.</li>
+<li><code>GuiApplication</code>: The simple logic for launching the application’s graphical user interface, including loading the main layout markup stored in the <code>GuiConfigLayout.fxml</code> file.</li>
+<li><code>GuiConfigController</code>: Contains most of the logic for the interactive components of the graphical user interface, ensuring that the application responds appropriately when the user clicks a button, menu item, or other interactive element.</li>
+<li><code>GuiContext</code>: A singleton class that supports the graphical user interface in managing file chooser dialogs for opening and saving config files.</li>
+<li><code>GuiTiebreakerController</code>: Supports the interactive logic for selecting a tie-breaker winner or loser in the graphical user interface when the tie-break mode is set to one of the interactive options.</li>
+<li><code>HartCvrReader</code>: Contains the logic for parsing a CVR source file in the Hart XML format and populating a list of CastVoteRecord objects.</li>
+<li><code>JsonParser</code>: Generic logic for reading JSON files from disk and writing them to disk. It’s used by the JSON parsing code for parsing Common Data Format and Dominion CVR files, as well as for reading and writing tabulator config files.</li>
+<li><code>Logger</code>: Handles the formatting and saving to disk of audit and operator log files.</li>
+<li><code>Main</code>: The main entry point for the application. Depending on the arguments supplied, it either launches the graphical user interface or proceeds with a command-line-based tabulation.</li>
+<li><code>RawContestConfig</code>: A <code>RawContestConfig</code> object is a simple in-memory representation of a config file loaded from disk.</li>
+<li><code>ResultsWriter</code>: After a tabulation completes, a ResultsWriter generates all of the appropriate summary results files and saves them to disk. Results files can include a summary CSV spreadsheet file, a summary JSON file, a full Common Data Format JSON file, and corresponding .hash files. When “tabulate by precinct” is enabled, it also produces separate summary files for each precinct.</li>
+<li><code>SecurityConfig</code>: Configuration for the cryptographic signing of a Hart file.</li>
+<li><code>SecuritySignatureValidation</code>: A set of tools to verify signatures of Hart CVRs.</li>
+<li><code>SecurityTests</code>: Test the cryptographic signature validation functionality.</li>
+<li><code>SecurityXmlParsers</code>: In-memory representation of <code>.sig.xml</code> signature files.</li>
+<li><code>StreamingCvrReader</code>: Contains the logic for parsing a CVR source file and populating a list of <code>CastVoteRecord</code> objects. It also extracts a list of precinct IDs if tabulation by precinct is enabled.</li>
+<li><code>Tabulator</code>: The core logic for tabulating a contest given a list of <code>CastVoteRecord</code> objects and a <code>ContestConfig</code>, it runs the round-by-round tabulation, writing to the tabulation log file as it proceeds, and then calls <code>ResultsWriter</code> to generate results files when it completes.</li>
+<li><code>TabulatorSession</code>: Manages the process of running a single tabulation. Given the path to a config file, it loads and validates the config, loads and parses the cast vote record source files, and runs the tabulation, including generating the results files at the end. It also contains logic for converting a CVR file into a Common Data Format CVR file without actually running a tabulation.</li>
+<li><code>TabulatorTests</code>: Runs all of the regression tests. Each test involves loading a config file and, if it’s valid, running the tabulation and then comparing the output summary JSON file to an existing file containing the expected output. If the config file has <code>generateCdfJson</code> enabled, it also compares the generated CDF JSON file to an existing file containing the expected version of this output.</li>
+<li><code>TallyTransfers</code>: The Tabulator class maintains a <code>TallyTransfers</code> object (and one per precinct if tabulating by precinct is enabled) to keep track of the number of votes transferring from each source to each destination in each round as candidates are eliminated or elected. This data is included in the results summary JSON to enable Sankey plot visualizations.</li>
+<li><code>Tiebreak</code>: Contains the logic for breaking a tie when the tabulation needs to select a candidate for elimination or election and multiple candidates are tied with the same current vote total.</li>
+<li><code>Utils</code>: Miscellaneous utility functions for processing strings and identifying the user’s environment.</li>
 </ul>
-<h2 id="project-layout">Project layout<a class="headerlink" href="#project-layout" title="Permanent link">&para;</a></h2>
-<div class="highlight"><pre><span></span><code>mkdocs.yml    # The configuration file.
-docs/
-    index.md  # The documentation homepage.
-    ...       # Other markdown pages, images and other files.
-</code></pre></div>
+<h2 id="3rd-party-modules">3rd-party Modules<a class="headerlink" href="#3rd-party-modules" title="Permanent link">&para;</a></h2>
+<p>RCTab incorporates several 3rd-party modules which are all open-source. These meet the VVSG and California requirements for third-party modules. They are mature and widely accepted and used.  None of them are modified in any way.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Apache Commons CSV</td>
+<td style="text-align: left;">1.9</td>
+<td style="text-align: left;">CSV "Comma Separated Values" reader / writer.</td>
+<td style="text-align: left;"><a href="https://commons.apache.org/proper/commons-csv/user-guide.html">https://commons.apache.org/proper/commons-csv/user-guide.html</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Apache POI OOXML</td>
+<td style="text-align: left;">5.2.2</td>
+<td style="text-align: left;">Excel spreadsheet reader / writer.</td>
+<td style="text-align: left;"><a href="https://poi.apache.org/apidocs/dev/org/apache/poi/ooxml/package-summary.html">https://poi.apache.org/apidocs/dev/org/apache/poi/ooxml/package-summary.html</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jackson Core</td>
+<td style="text-align: left;">2.13.3</td>
+<td style="text-align: left;">XML / JSON streaming reader / writer core</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-core">https://github.com/FasterXML/jackson-core</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jackson Annotations</td>
+<td style="text-align: left;">2.13.3</td>
+<td style="text-align: left;">XML / JSON deserialization annotations</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-annotations">https://github.com/FasterXML/jackson-annotations</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jackson Databind</td>
+<td style="text-align: left;">2.13.3</td>
+<td style="text-align: left;">XML / JSON deserialization</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-databind">https://github.com/FasterXML/jackson-databind</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jackson Dataformat XML</td>
+<td style="text-align: left;">2.13.3</td>
+<td style="text-align: left;">XML reader / writer</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-databind">https://github.com/FasterXML/jackson-dataformat-xml</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jupiter JUnit API</td>
+<td style="text-align: left;">5.9.0</td>
+<td style="text-align: left;">Automated testing (used only during development)</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-databind">https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jupiter JUnit Engine</td>
+<td style="text-align: left;">5.9.0</td>
+<td style="text-align: left;">Automated testing (used only during development)</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-databind">https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">BouncyCastle FIPS API</td>
+<td style="text-align: left;">1.0.2.4</td>
+<td style="text-align: left;">RSA Validation</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-databind">https://mvnrepository.com/artifact/org.bouncycastle/bc-fips/1.0.2.4</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Software Limits:</strong>
+Limitations of the Tabulation software i.e., how many CVRs can be tabulated are detailed in <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a> document. </p>
 
 
 
@@ -1005,6 +1214,44 @@ docs/
       
         <footer class="md-footer">
   
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="system_overview.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: System Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                System Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="system_hardware_specification.html" class="md-footer__link md-footer__link--next" aria-label="Next: System Hardware Specification">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                System Hardware Specification
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
     
   
   <div class="md-footer-meta md-typeset">

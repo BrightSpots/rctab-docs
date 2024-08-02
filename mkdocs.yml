@@ -1,1 +1,84 @@
-site_name: My Docs
+site_name: RCTab Test Docs
+
+plugins:
+  - offline
+  - privacy
+
+markdown_extensions:
+
+  # Python Markdown
+  - toc:
+      permalink: true
+  - tables
+
+  # Python Markdown Extensions
+  - pymdownx.highlight
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+theme:
+  name: material
+  features:
+    - navigation.sections
+    - navigation.top
+    - navigation.footer
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: teal
+      accent: purple
+    - scheme: slate
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: teal
+      accent: lime
+
+nav:
+  - System Overview: 01_system_overview.md
+  - Software Design and Specifications: 02_software_design_and_specifications.md
+  - System Hardware Specification: 03_system_hardware_specification.md
+  - System Functionality Description: 04_system_functionality_description.md
+  - Acceptance Test Procedures: 05_acceptance_test_procedures.md
+  - System Design Specifications: 06_system_design_specifications.md
+  - System Security Specification Requirements: 07_system_security_specification_requirements.md
+  - Design and Interface Specification: 07i_design_and_interface_specification.md
+  - Security Architecture: 07j_security_architecture.md
+  - Development Environment Specification: 07k_development_environment_specification.md
+  - Security Threat Analysis: 07l_security_threat_analysis.md
+  - Security Testing and Vulnerability Analysis: 07m_security_testing_and_vulnerability_analysis.md
+  - System Operations Procedures: 08_system_operations_procedures.md
+  - System Maintenance Manual: 09_system_maintenance_manual.md
+  - Personnel Deployment and Training: 10_personnel_deployment_and_training.md
+  - L&A Testing: 11_l&a_testing.md
+  - Configuration Management Plan: 12_configuration_management_plan.md
+  - Quality Assurance Plan: 13_quality_assurance_plan.md
+  - Tabulator Trusted Build Instructions: 14_tabulator_trusted_build_instructions.md
+  - System Change Notes: 15_system_change_notes.md
+  - System Hardening Procedures - Windows OS: 16_system_hardening_procedures_-_windows_os.md
+  - System Test and Verification Specification: 17_system_test_and_verification_specification.md
+  - User Guide: 18_user_guide.md
+  - Tabulation Options for RCV Tabulation: 19_tabulation_options_for_rcv_tabulation.md
+  - Process Ranked Choice Voting Contest: 20_process_ranked_choice_voting_contest.md
+  - Ballot Limitations & Maximum Testing Range: 21_ballot_limitations_&_maximum_testing_range.md
+  - Installation Instructions for Windows OS: 22_installation_instructions_for_windows_os.md
+  - Trusted Build & Output Hash Verification: 23_trusted_build_&_output_hash_verification.md
+  - Tabulator Command Line Instructions: 24_tabulator_command_line_instructions.md
+  - Configuration File Parameters: 25_configuration_file_parameters.md
+  - RCTab CVR Files: 26_rctab_cvr_files.md
+  - RCTab Config Files: 27_rctab_config_files.md
+  - Post-Election Audit & Clearing RCTab from System: 28_post-election_audit_&_clearing_rctab_from_system.md
+  - RCTab Operator Log Messages: 29_rctab_operator_log_messages.md
+  - RCTab System Tab Hints: 30_rctab_system_tab_hints.md
+  - Coding and Header Comment Standards for RCTab: 31_coding_and_header_comment_standards_for_rctab.md
+  - Secure USB Process: 32_secure_usb_process.md
+  - Secure USB Process Number 2: 32_secure_usb_process.md

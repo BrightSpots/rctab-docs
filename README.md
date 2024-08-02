@@ -1,10 +1,13 @@
 # RCTab Documentations
 
-Welcome to the Poetry Project! This project uses Poetry for dependency management and packaging in Python.
+This project documents RCTab, an open source application for tabulating ranked choice voting elections.
 
 ## Prerequisites
 
-Before you can run and use Poetry in this project, you need to have the following software installed:
+This project uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) to manage and build RCTab's
+documentation.
+
+Before you can run and use MkDoc's features in this project, you need to have the following software installed:
 
 - Python (version 3.11 or higher)
 - Poetry (version 1.8 or higher)
@@ -26,28 +29,21 @@ environment.
 ### Setting Up the Project
 
 First, navigate to the root directory of your project and install the dependencies:
-```
+```shell
 cd path/to/rctab-docs
 poetry install
 ```
 
-### Activating the Virtual Environment
+## Using MkDocs in the Virtual Environment
 
-Poetry automatically creates a virtual environment for your project. To activate this environment, run:
-```
-poetry shell
-```
+Poetry automatically creates a virtual environment for your project.
 
-### Adding Dependencies
-
-To add a new dependency to your project, you can use the `poetry add` command:
-```
-poetry add requests
+To preview and serve MkDocs locally:
+```shell
+poetry run mkdocs serve
 ```
 
-### Running Scripts
-
-Although there is no `main.py` file right now, you can still run individual scripts or modules using Poetry:
-```
-poetry run python path/to/your/script.py
+To build MkDocs as a static site:
+```shell
+poetry run mkdocs build
 ```

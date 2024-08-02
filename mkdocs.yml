@@ -22,6 +22,7 @@ theme:
     - navigation.sections
     - navigation.top
     - navigation.footer
+    - navigation.tabs
     - toc.integrate
     - search.suggest
     - search.highlight
@@ -44,44 +45,48 @@ theme:
       accent: lime
 
 nav:
-  - Documentation Abstract: 00_documentation_abstracts.md
-  - System Overview: system_overview.md
-  - Software Design and Specifications: software_design_and_specifications.md
-  - System Hardware Specification: system_hardware_specification.md
-  - System Functionality Description: system_functionality_description.md
-  - Acceptance Test Procedures: acceptance_test_procedures.md
-  - System Design Specifications: system_design_specifications.md
-  - System Security Specification Requirements: system_security_specification_requirements.md
-  - Design and Interface Specification: design_and_interface_specification.md
-  - Security Architecture: security_architecture.md
-  - Development Environment Specification: development_environment_specification.md
-  - Security Threat Analysis: security_threat_analysis.md
-  - Security Testing and Vulnerability Analysis: security_testing_and_vulnerability_analysis.md
-  - System Maintenance Manual: system_maintenance_manual.md
-  - Personnel Deployment and Training: personnel_deployment_and_training.md
-  - L&A Testing: l_and_a_testing.md
-  - Configuration Management Plan: configuration_management_plan.md
-  - Quality Assurance Plan: quality_assurance_plan.md
-  - Tabulator Trusted Build Instructions: tabulator_trusted_build_instructions.md
-  - System Change Notes: system_change_notes.md
-  - System Hardening Procedures - Windows OS: system_hardening_procedures_-_windows_os.md
-  - System Test and Verification Specification: system_test_and_verification_specification.md
-  - User Guide: user_guide.md
-  - Tabulation Options for RCV Tabulation: tabulation_options_for_rcv_tabulation.md
-  - Process Ranked Choice Voting Contest: process_ranked_choice_voting_contest.md
-  - Ballot Limitations & Maximum Testing Range: ballot_limitations_and_maximum_testing_range.md
-  - Installation Instructions for Windows OS: installation_instructions_for_windows_os.md
-  - Trusted Build & Output Hash Verification: trusted_build_and_output_hash_verification.md
-  - Tabulator Command Line Instructions: tabulator_command_line_instructions.md
-  - Configuration File Parameters: configuration_file_parameters.md
-  - RCTab CVR Files: rctab_cvr_files.md
-  - RCTab Config Files: rctab_config_files.md
-  - Post-Election Audit & Clearing RCTab from System: post-election_audit_and_clearing_rctab_from_system.md
-  - RCTab Operator Log Messages: rctab_operator_log_messages.md
-  - RCTab System Tab Hints: rctab_system_tab_hints.md
-  - Coding and Header Comment Standards for RCTab: coding_and_header_comment_standards_for_rctab.md
-  - Secure USB Process: secure_usb_process.md
-  - Expected Outcome RCV Test Sets Multi-Winner: expected-outcome-rcv-test-sets-multi-winner.md
-  - Expected Outcome RCV Test Sets Single-Winner: expected-outcome-rcv-test-sets-single-winner.md
-  - Ranked Choice Voting Laws: ranked-choice-voting-laws.md
-  - 22-Month Archiving Procedure: 22-month-archiving-procedure.md
+  - Home: index.md
+  - TDP:
+    - Documentation Abstract: 00_documentation_abstracts.md
+    - System Overview: system_overview.md
+    - Software Design and Specifications: software_design_and_specifications.md
+    - System Hardware Specification: system_hardware_specification.md
+    - System Functionality Description: system_functionality_description.md
+    - Acceptance Test Procedures: acceptance_test_procedures.md
+    - System Design Specifications: system_design_specifications.md
+    - System Security Specification Requirements: system_security_specification_requirements.md
+    - Design and Interface Specification: design_and_interface_specification.md
+    - Security Architecture: security_architecture.md
+    - Development Environment Specification: development_environment_specification.md
+    - Security Threat Analysis: security_threat_analysis.md
+    - Security Testing and Vulnerability Analysis: security_testing_and_vulnerability_analysis.md
+    - System Maintenance Manual: system_maintenance_manual.md
+    - Personnel Deployment and Training: personnel_deployment_and_training.md
+    - L&A Testing: l_and_a_testing.md
+    - Configuration Management Plan: configuration_management_plan.md
+    - Quality Assurance Plan: quality_assurance_plan.md
+    - Tabulator Trusted Build Instructions: tabulator_trusted_build_instructions.md
+    - System Change Notes: system_change_notes.md
+    - System Hardening Procedures - Windows OS: system_hardening_procedures_-_windows_os.md
+    - System Test and Verification Specification: system_test_and_verification_specification.md
+    - User Guide: user_guide.md
+    - Tabulation Options for RCV Tabulation: tabulation_options_for_rcv_tabulation.md
+    - Process Ranked Choice Voting Contest: process_ranked_choice_voting_contest.md
+    - Ballot Limitations & Maximum Testing Range: ballot_limitations_and_maximum_testing_range.md
+    - Installation Instructions for Windows OS: installation_instructions_for_windows_os.md
+    - Trusted Build & Output Hash Verification: trusted_build_and_output_hash_verification.md
+    - Tabulator Command Line Instructions: tabulator_command_line_instructions.md
+    - Configuration File Parameters: configuration_file_parameters.md
+    - RCTab CVR Files: rctab_cvr_files.md
+    - RCTab Config Files: rctab_config_files.md
+    - Post-Election Audit & Clearing RCTab from System: post-election_audit_and_clearing_rctab_from_system.md
+    - RCTab Operator Log Messages: rctab_operator_log_messages.md
+    - RCTab System Tab Hints: rctab_system_tab_hints.md
+    - Coding and Header Comment Standards for RCTab: coding_and_header_comment_standards_for_rctab.md
+    - Secure USB Process: secure_usb_process.md
+    - Expected Outcome RCV Test Sets Multi-Winner: expected-outcome-rcv-test-sets-multi-winner.md
+    - Expected Outcome RCV Test Sets Single-Winner: expected-outcome-rcv-test-sets-single-winner.md
+    - Ranked Choice Voting Laws: ranked-choice-voting-laws.md
+    - 22-Month Archiving Procedure: 22-month-archiving-procedure.md
+  - User Guide:
+    - User Guide: user_guide.md

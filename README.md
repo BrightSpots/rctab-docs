@@ -65,3 +65,11 @@ Run:
 | Wrap lines in a window pane                                   | `setlocal wrap linebreak` while in vim's `COMMAND` mode |
 | Copy a the selected window pane's file to the MacOS clipboard | `w !pbcopy` while in vim's `COMMNAND` mode              |
 
+### Copy specific ranges of lines from one file into another file
+
+Run:
+```shell
+./scripts/insert_lines.sh
+```
+
+Recommend testing this out on some small test files to understand how it works before running it on larger files. Alternatively, you can use a version management  tool like `git`.

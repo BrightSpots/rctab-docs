@@ -731,6 +731,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="system_change_notes.html" class="md-nav__link md-nav__link--active">
         
   
@@ -740,6 +751,112 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#912-system-change-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.12 System Change Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rctab-version-132" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Version 1.3.2
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rctab-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rctab-version_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Version
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RCTab Version">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-rcv-tabulator-rctab-version" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal RCV Tabulator (RCTab) Version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-rcv-tabulator-rctab-version_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal RCV Tabulator (RCTab) Version
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-rcv-tabulator-rctab-version_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal RCV Tabulator (RCTab) Version
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1278,7 +1395,323 @@
 
 
 <h1 id="section-15-system-change-notes">Section 15 - System Change Notes<a class="headerlink" href="#section-15-system-change-notes" title="Permanent link">&para;</a></h1>
-<p>Content for System Change Notes.</p>
+<h2 id="912-system-change-notes">9.12 System Change Notes<a class="headerlink" href="#912-system-change-notes" title="Permanent link">&para;</a></h2>
+<p>Manufacturers submitting modifications for a system that has been tested previously and received national certification shall submit system change notes. These will be used by the S-ATA to assist in developing and executing the test plan for the modified system. The system change notes shall include the following information:</p>
+<ol>
+<li>Summary description of the nature and scope of the changes, and reasons for each change</li>
+<li>A listing of the specific changes made, citing the specific system configuration items changed and providing detailed references to the documentation sections changed</li>
+<li>The specific sections of the documentation that are changed (or completely revised documents, if more suitable to address a large number of changes)</li>
+<li>Documentation of the test plan and procedures executed by the manufacturer for testing the individual changes and the system as a whole, and records of test results</li>
+</ol>
+<h2 id="rctab-version-132">RCTab Version 1.3.2<a class="headerlink" href="#rctab-version-132" title="Permanent link">&para;</a></h2>
+<p>RCTab version 1.3.1 was submitted with Hart InterCivic’s Verity Voting 3.2 to SLI  for initial testing to California Voting System Standards.  After an initial round of testing we received SLI’s report. Some of the report results identified recommendations for RCTab mostly related to access control and programmatically verifying RCTab input and output. Ranked Choice Voting Resource Center (RCVRC) submitted a new version, v1.3.2, to address each of the report results. v1.3.2 updates apply to Windows only. <strong>*In 2.0</strong>, Hart Cryptographic Signature verification is not enabled by default as it would only work in the state of California.</p>
+<p><strong>New Features</strong></p>
+<ul>
+<li>Two Windows OS accounts. One Administrator level Windows account for installation and initial configuration. A separate ‘RCTab’ Windows standard account for running the tabulation with only necessary permissions and <strong>will not have access to make administrative changes to the machine</strong> that could be security issues</li>
+<li>Read-Only RCTab output files, each with a corresponding read-only .hash file that contains the hash of file contents to ensure they haven’t been edited</li>
+<li>Automatic, programmatic verification of the cryptographic signature of Hart input CVRs. This verification step ensures both the integrity (CVR contents have not been edited) and provenance (CVRs came from the Hart voting system) of the Hart CVRs. RCTab will throw a halting error and tabulation will not begin if cryptographic validation of Hart’s CVR signature is not successful.</li>
+</ul>
+<p><strong>Hardware Setup Improvements</strong></p>
+<ul>
+<li>Explicit TDP directions for a secure, hardened OS install</li>
+<li>Password secured BIOS</li>
+</ul>
+<p><strong>TDP Updates</strong></p>
+<ul>
+<li><a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a><ul>
+<li>Includes .hash file descriptions in <strong>Reporting Results</strong> header, <strong>RCTab Logging Stream 2: Contest-Specific "Audit" Logging</strong> header, ResultsWriter Java class</li>
+<li>Removes paragraph in <strong>RCTab Logging - Stream 2: Contest-Specific "Audit" Logging</strong> header about config validation missing from audit log. That was fixed in 1.3.1</li>
+<li>9.5.3.c.3 updated with link to <a href="tabulator_trusted_build_instructions.html">Section 14 - Tabulator Trusted Build Instructions</a></li>
+<li>3rd Party Modules section updated with new version numbers and added BouncyCastle FIPS API module</li>
+<li>Include new 1.3.2 Java classes: AuditableFile, SecurityConfig, SecuritySignatureValidation, SecurityXmlParsers, SecurityTests</li>
+</ul>
+</li>
+<li><a href="system_security_specification_requirements.html"><strong>Section 07 - System Security Specification Requirements</strong></a><ul>
+<li>Add RCTab Windows standard user account, read-only outputs, .hash files for RCTab output and Hart CVR signature verification throughout CVSS security &amp; access control requirements<ul>
+<li>9.6.1.a, 9.6.1.b, 9.6.1.c, 9.6.1.d, 9.6.1.e, 9.6.1.1, 9.6.1.1.a, 9.6.2</li>
+</ul>
+</li>
+<li>9.6.1.b updated to include Windows OS Account and BIOS Password access control mechanisms</li>
+<li>9.6.1.2 updated to include full description of two tier Windows OS accounts for access control</li>
+<li>9.6.1.1.e updated to include explicit overview of Operating System protection abilities</li>
+<li>9.6.3.f describes in detail the signature verification interaction with Hart Verity</li>
+<li>9.6.7 Cryptography header updated with explicit cryptographic signature verification details</li>
+</ul>
+</li>
+<li><a href="design_and_interface_specification.html"><strong>Section 07I - Design and Interface Specification</strong></a><ul>
+<li>Includes all security enhancements for 1.3.2 and describes the threat that they protect against as well as the threats that still exist</li>
+<li>Added explicit system security objectives and known vulnerabilities</li>
+</ul>
+</li>
+<li><a href="security_architecture.html"><strong>Section 07J - Security Architecture</strong></a><ul>
+<li>Include 1.3.2 updates in Access Control and Integrity sections</li>
+</ul>
+</li>
+<li><a href="security_threat_analysis.html"><strong>Section 07L - Security Threat Analysis</strong></a><ul>
+<li>Include all 1.3.2 updates and describe the threats that they protect against</li>
+</ul>
+</li>
+<li><a href="security_testing_and_vulnerability_analysis.html"><strong>Section 07M - Security Testing and Vulnerability Analysis</strong></a><ul>
+<li>Include all 1.3.2 updates to describe how initial testing report results have all been addressed</li>
+</ul>
+</li>
+<li><a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a><ul>
+<li>Includes read-only output and .hash file verification in 9.9.1.f</li>
+</ul>
+</li>
+<li><a href="l_and_a_testing.html"><strong>Section 11 - L&amp;A Testing</strong></a><ul>
+<li>Update hash verification of output with .hash files</li>
+</ul>
+</li>
+<li><a href="configuration_management_plan.html"><strong>Section 12 - Configuration Management Plan</strong></a><ul>
+<li>Update RCTab Workstation model, hash value of v1.3.2, required software</li>
+</ul>
+</li>
+<li><a href="quality_assurance_plan.html"><strong>Section 13 - Quality Assurance Plan</strong></a><ul>
+<li>Adds security tests for v1.3.2</li>
+</ul>
+</li>
+<li><a href="tabulator_trusted_build_instructions.html"><strong>Section 14 - Tabulator Trusted Build Instructions</strong></a><ul>
+<li>Clarify Java install check</li>
+<li>Add step to confirm gradle install</li>
+<li>Clarify jlinkZip should be done in the cmd prompt</li>
+<li>v5 - Add steps for offline build<ul>
+<li>Third party dependencies cache</li>
+<li>Gradle</li>
+</ul>
+</li>
+<li>v5 - Fix --branch instead of -branch in git clone command</li>
+<li>v5 - Clarify git instructions to use specific version</li>
+<li>v5 - Clarify instructions for JAVA_HOME variable, hash.bat</li>
+<li>Added explicit instructions for setting JAVA_HOME variable</li>
+<li>Updated Comparing Two Builds section to explain more clearly how we get a single hash, remove ‘Individual Files’ section</li>
+</ul>
+</li>
+<li><a href="system_change_notes.html"><strong>Section 15 - System Change Notes</strong></a><ul>
+<li>Include code updates, TDP updates</li>
+</ul>
+</li>
+<li><a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a><ul>
+<li>Clarify and clean up Windows OS install steps</li>
+<li>Remove UPS step</li>
+<li>Included BIOS password, Windows OS Installation</li>
+<li>Make clear the distinction between online prep and offline updates</li>
+<li>Explicit steps for enabling Bitlocker device encryption</li>
+<li>Edit ‘Operating System Hardening’ header to disable screensaver and correctly disable Remote Desktop</li>
+<li>Remove additional optional antivirus, Windows Update</li>
+<li>Replace Excel with LibreOffice</li>
+<li>Remove manual driver installation</li>
+</ul>
+</li>
+<li><a href="system_test_and_verification_specification.html"><strong>Section 17 - System Test and Verification Specification</strong></a><ul>
+<li>Adds security tests for v1.3.2</li>
+</ul>
+</li>
+<li><a href="user_guide.html"><strong>Section 18 - User Guide</strong></a><ul>
+<li>Include automatic signature verification of Hart signed CVRs, .hash output files and read-only output.</li>
+<li>Output Directory instructions detail explicit steps to ensure read-only permissions are set</li>
+<li>Include directions to configure Verity Count to sign CVR exports</li>
+<li>Remove manual hash steps in ‘Generating Results Files’ header</li>
+<li>Include automatic signature verification of Hart signed CVRs, .hash output files and read-only output.</li>
+<li>Output Directory instructions detail explicit steps to ensure read-only permissions are set</li>
+<li>Include directions to configure Verity Count to sign CVR exports</li>
+<li>Remove manual hash steps in ‘Generating Results Files’ header</li>
+<li>Programmatic CVR signature verification in Hart CVR Files Options header and Prepping CVRs For Use header</li>
+<li>Instructions for Read-Only output in Generating Results Files - Output Tab header</li>
+<li>Running A Tabulation header output files updated to include .hash files</li>
+<li>Remove CVR .csv from list of output files as it doesn’t apply to Hart</li>
+</ul>
+</li>
+<li><a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a><ul>
+<li>Include instructions for creating ‘RCTab’ Windows Standard User</li>
+<li>Explicit instructions for RCTab Windows Standard user vs. Windows Administrator user</li>
+<li>Include directions for enforcing read-only permissions on output folder</li>
+<li>Include directions for creating desktop shortcut</li>
+</ul>
+</li>
+<li><a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a><ul>
+<li>Use .hash files for output summary file verification. Use different example path that doesn’t use user folders</li>
+</ul>
+</li>
+<li><a href="tabulator_command_line_instructions.html"><strong>Section 24 - Tabulator Command Line Instructions</strong></a><ul>
+<li>Use different example path outside of user paths</li>
+</ul>
+</li>
+<li><a href="rctab_cvr_files.html"><strong>Section 26 - RCTab CVR Files</strong></a><ul>
+<li>Include .sig.xml file description for required Hart CVR archive cryptographic signature</li>
+</ul>
+</li>
+<li><a href="post-election_audit_and_clearing_rctab_from_system.html"><strong>Section 28 - Post-Election Audit &amp; Clearing RCTab from System</strong></a><ul>
+<li>Include comparing the text of output file .hash files to the hash text in the audit log as another auditable check</li>
+</ul>
+</li>
+<li><a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a><ul>
+<li>Added additional v1.3.2 Severe messages</li>
+</ul>
+</li>
+</ul>
+<h2 id="rctab-version">RCTab Version<a class="headerlink" href="#rctab-version" title="Permanent link">&para;</a></h2>
+<p><strong>Bug fixes:</strong></p>
+<ul>
+<li>Fixed XML parsing failing when running built version (<a href="https://github.com/BrightSpots/rcv/issues/625">#625</a>)</li>
+</ul>
+<p><strong>Backend updates:</strong></p>
+<ul>
+<li>Releases for all platforms are now automatically built by GitHub when published (<a href="https://github.com/BrightSpots/rcv/issues/282">#282</a>)</li>
+</ul>
+<h2 id="rctab-version_1">RCTab Version<a class="headerlink" href="#rctab-version_1" title="Permanent link">&para;</a></h2>
+<p><strong>New features:</strong></p>
+<ul>
+<li>Added support for multi-file Dominion format (<a href="https://github.com/BrightSpots/rcv/pull/569">#569</a>)</li>
+<li>Allows batch elimination and "continue until two candidates remain" to be enabled in multi-pass IRV mode (<a href="https://github.com/BrightSpots/rcv/pull/611">#611</a>)</li>
+<li>Allows users to specify multiple CVR files at once in the GUI (<a href="https://github.com/BrightSpots/rcv/pull/617">#617</a>)</li>
+<li>
+<p>Adds validation highlighting to the GUI when clicking the "add" buttons for candidates and CVRs (<a href="https://github.com/BrightSpots/rcv/pull/618">#618</a>)</p>
+</li>
+<li>
+<p>Changed audit logs to include validation outcome (<a href="https://github.com/BrightSpots/rcv/pull/616">#616</a>)</p>
+</li>
+</ul>
+<h3 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h3>
+<p><strong>Bug fixes:</strong></p>
+<ul>
+<li>Fixed Hare Quota (<a href="https://github.com/BrightSpots/rcv/pull/562">#562</a>)</li>
+<li>Fixed build for M1 Macbooks (<a href="https://github.com/BrightSpots/rcv/pull/586">#586</a>)</li>
+<li>Fixed crashes when % was in file paths (<a href="https://github.com/BrightSpots/rcv/pull/601">#601</a>)</li>
+<li>Fixed inaccurate overvoteRule error message (<a href="https://github.com/BrightSpots/rcv/pull/609">#609</a>)</li>
+<li>
+<p>Fixed bug in logic for exhaustIfMultipleContinuing overvote rule (<a href="https://github.com/BrightSpots/rcv/pull/610">#610</a>)</p>
+</li>
+<li>
+<p>Fixed bug where treatBlankAsUndeclaredWriteIn validation failure for certain providers wouldn't actually fail validation (<a href="https://github.com/BrightSpots/rcv/pull/618">#618</a>)</p>
+</li>
+</ul>
+<h3 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h3>
+<p><strong>Other improvements</strong></p>
+<ul>
+<li>Rebranded "Universal RCV Tabulator" as "RCTab" (<a href="https://github.com/BrightSpots/rcv/pull/603">#603</a>)</li>
+<li>Updated license from AGPL to MPL 2.0 (<a href="https://github.com/BrightSpots/rcv/pull/604">#604</a>)</li>
+<li>Exits gracefully if all declared candidates fall beneath minimum vote threshold (<a href="https://github.com/BrightSpots/rcv/pull/608">#608</a>)</li>
+<li>Moved validation of provided overvote delimiter and overvote label into performBasicCvrSourceValidation so user is alerted when clicking the "add" button in the CVR tab (<a href="https://github.com/BrightSpots/rcv/pull/618">#618</a>)</li>
+<li>Updated documentation and help text (<a href="https://github.com/BrightSpots/rcv/pull/547">#547</a>, <a href="https://github.com/BrightSpots/rcv/pull/614">#614</a>, <a href="https://github.com/BrightSpots/rcv/pull/617">#617</a>)</li>
+</ul>
+<p><strong>Backend updates:</strong></p>
+<ul>
+<li>Enabled CI, which runs tests, Checkstyle, and Spotbugs (<a href="https://github.com/BrightSpots/rcv/pull/576">#576</a>)</li>
+<li>Addressed all outstanding Checkstyle and Spotbugs warnings (<a href="https://github.com/BrightSpots/rcv/pull/587">#587</a>)</li>
+<li>Internal clean-up to conform to VVSG coding requirements (<a href="https://github.com/BrightSpots/rcv/pull/600">#600</a>, <a href="https://github.com/BrightSpots/rcv/pull/602">#602</a>, <a href="https://github.com/BrightSpots/rcv/pull/606">#606</a>)</li>
+<li>Changed ContestConfig.validate() and associated methods to return a set of validation errors instead of an isValid boolean (<a href="https://github.com/BrightSpots/rcv/pull/618">#618</a>)</li>
+<li>checkstyle-suppressions.xml location is now handled in build.gradle to avoid needing to manually modify google_checks.xml in the future (<a href="https://github.com/BrightSpots/rcv/pull/544">#544</a>)</li>
+<li>Updated dependencies to latest versions:<ul>
+<li>JDK 17.0.2</li>
+<li>JavaFX 18</li>
+<li>Gradle 7.5.1</li>
+<li>Checkstyle google_checks.xml 10.3.2</li>
+<li>Checkstyle plugin 10.3.2</li>
+<li>spotbugs 4.7.1</li>
+<li>spotbugs-gradle-plugin 5.0.9</li>
+<li>org.openjfx.javafxplugin 0.0.11</li>
+<li>org.beryx.jlink 2.25.0</li>
+<li>com.fasterxml.jackson.core:jackson-* 2.13.3</li>
+<li>org.junit.jupiter.junit-jupiter-* 5.9.0</li>
+<li>org.apache.commons:commons-csv 1.9.0</li>
+<li>org.apache.poi:poi-ooxml 5.2.2</li>
+</ul>
+</li>
+</ul>
+<h2 id="universal-rcv-tabulator-rctab-version">Universal RCV Tabulator (RCTab) Version<a class="headerlink" href="#universal-rcv-tabulator-rctab-version" title="Permanent link">&para;</a></h2>
+<p><strong>Certification:</strong>
+Based on the testing performed by Pro V&amp;V, a certified Voting System Testing Laboratory, and  the results obtained, the modified RCV-Tabulator solution identified in this test report  meets the requirements set forth by the VVSG 1.0.</p>
+<p><strong>New features:</strong>
+• Added support for new manufacturer formats:
+    * Clear Ballot (#400)
+    * Dominion (#119, #438, #533)
+    * Hart (#401, #457, #460)
+    * Unisyn (#402)
+• Redesigned GUI to be more user-friendly (#461, #123, #128, #152) (see "GUI redesign"  section below for more details)</p>
+<p>• Added support for "Overvote Delimiter" field (#482)
+• "Minimum Vote Threshold" field is now optional (#483)
+• "Undeclared Write-In Label", "Overvote Label", "Undervote Label", and "Treat Blank as  Undeclared Write-in" fields are now defined on a per-CVR level (#508)</p>
+<p><strong>GUI redesign:</strong>
+• Added hint panels for each tab (#499)
+• Added help menu option for the config documentation (#497, #528)
+• Changed "Continue until Two Candidates Remain" to a boolean config setting (#481)
+• Combo text box / check box input for "How Many Consecutive Skipped Ranks Are  Allowed" and "Maximum Number of Candidates That Can Be Ranked" (#498)
+• Disabled "Decimal Places for Vote Arithmetic" in non-multi-seat modes (#500)
+• Redesigned nonIntegerWinningThreshold and hareQuota as a three-way radio button  and added new validation rules (#501)</p>
+<p>• Disabled editing existing candidates and CVR sources after adding to prevent confusing  UX (#502)</p>
+<p>• Added support for multiple contests via implementation of "Contest ID" field  (#456, #472, #478)</p>
+<p><strong>Additional GUI changes:</strong>
+• Split Output tab into new Contest Info and Output tabs
+• Redesigned GUI CVR Files tab, adding Clear button, and changing Add button so it only
+enter multiple sources that share fields clears the file path to make it easier to manually • Improved visual presentation of Candidate tab; added Clear button and adds checkBoxCandidateExcluded when adding a candidate</p>
+<p>• Reorganized presentation of rules in "Winning Rules" and "Voter Error Rules" tabs</p>
+<p>• Winner Election Mode and Tiebreak Mode now start undefined with all relevant fields  disabled; choosing specific modes enables applicable fields</p>
+<p>• Changed Winner Election Modes and Tiebreak Modes to be more user-friendly,  including necessary migration logic to update older config files</p>
+<p>• Expanded footprint of GUI window to 1200x1000
+• Implemented bordered boxes
+• Converted overvoteRule from a ChoiceBox to an array of RadioButtons;  changed overvoteRule string display in config files and adds migration logic
+• Disabled decimalPlacesForVoteArithmetic and nonIntegerWinningThreshold except  when winnerElectionMode is "Multi-winner allow only one winner per round" or "Multi winner allow multiple winners per round" (fixes #500)</p>
+<p>• Added suggested values for overvoteLabel, undervoteLabel, and ES&amp;S column and row  indices</p>
+<p>• Replaced checkBoxNonIntegerWinningThreshold and checkBoxHareQuota with a radio  button array, and added new validation rules for those settings (fixing #501)</p>
+<p>• GUI now disables numberOfWinners field and sets it to 1 only</p>
+<p>when winnerElectionMode is "Single-winner majority determines winner"
+• GUI now disables numberOfWinners field and sets it to 0 when winnerElectionMode is  "Bottoms-up using percentage threshold"</p>
+<p>• Fixed bugs in validation error messages when numberOfWinners is 0 <strong>Bug fixes:</strong></p>
+<p>• Fixes CDF JSON reading and writing (#505)
+• Fixed being unable to tabulate multiple CDF sources (#536)
+• Fixed user and computer name logging (#521)
+• Fixed config referencing nonexistent CDF source leading to uncaught exception (#347) • Fixed incorrect overvote label in CDF leading to NPE (#453)</p>
+<p>• Fixed config file with bad provider value failing with NPE (#531)
+<strong>Other improvements:</strong>
+• Removed "Convert Dominion to Generic Format..." functionality since direct Dominion  tabulation is now possible (#476)</p>
+<p>• Registers explicit overvote as valid candidate / contest selection in CDF output when  needed (#451)</p>
+<p>• Handles bad path to CDF CVR source gracefully (#452)
+• Handles empty rows at end of CVR (#455)
+• Made sure all providers work with the CLI (#471)
+• Raises error if we encounter an unrecognized candidate while loading Dominion CVRs  during direct tabulation (#473)</p>
+<p>• Reports error if config specifies any column indexes for a CDF source (#276) <strong>Backend updates:</strong></p>
+<p>• Created separate MigrationHelper class (#507)
+• Addressed warnings during Gradle build (#280)
+• Upgrading to a more recent version of Gradle no longer causes test failures (#283) • Addressed all relevant Checkstyle warnings and disabled all invalid ones (#490, #489) • Enum parameters now use camel case for backend and user-friendly strings for frontend  (#494)</p>
+<p>• Fixed noinspection unchecked for excluded CheckBox in GuiConfigController (#304) • Now</p>
+<p>use UnrecognizedCandidatesException in ClearBallotCvrReader and HartCvrReader (#4 91)</p>
+<p>• Updated dependencies to latest version:
+    * JDK 14.0.1
+    * JavaFX 14.0.1
+    * Gradle 6.5.1
+    * Checkstyle google_checks.xml 8.36.2
+    * Checkstyle plugin 8.36.2
+    * org.openjfx.javafxplugin 0.0.9
+    * org.beryx.jlink 2.20.0
+    * com.fasterxml.jackson.core:jackson-* 2.11.1
+    * org.junit.jupiter.junit-jupiter-* 5.6.2</p>
+<h2 id="universal-rcv-tabulator-rctab-version_1">Universal RCV Tabulator (RCTab) Version<a class="headerlink" href="#universal-rcv-tabulator-rctab-version_1" title="Permanent link">&para;</a></h2>
+<p><strong>Certification:</strong>
+Based on the testing performed by Pro V&amp;V, a certified Voting System Testing Laboratory, and  the results obtained, the Universal RCV Tabulator v1.1.0 solution is believed to meet the  applicable requirements set forth by the EAC-approved VVSG 1.0.</p>
+<p><strong>New features:</strong>
+• Added support for converting Dominion JSON CVRs to generic .csv format (including  precinct portions) (#404, #406, #407, #408, #415, #439)</p>
+<p>• Added multiSeatBottomsUpPercentageThreshold option (#403)
+• Added CLI option to convert Dominion CVR to generic .csv (#408)
+• New GUI menu and conversion options (can now convert to CDF and convert Dominion  to generic via the GUI) (#408, #421)</p>
+<p>• Added Dominion Alaska CVR to sample_input folder
+<strong>Bug fixes:</strong>
+• Batch elimination now works properly with
+singleSeatContinueUntilTwoCandidatesRemain (#396)
+• In a multi-seat contest, if someone wins in the first round, we now automatically  eliminate undeclared write-ins before we eliminate any other candidates; previously, we  treated UWIs like a normal candidate, which meant we potentially eliminated other  candidates with lower tallies first (#397)</p>
+<p>• If UWI exceeds the winning threshold in the initial count, we no longer mistakenly elect  this candidate (#398)</p>
+<p><strong>Backend updates:</strong>
+• Updated dependencies to latest version: JDK, JavaFX, Checkstyle google_checks.xml,  Checkstyle plugin, org.openjfx.javafxplugin, org.beryx.jlink,</p>
+<p>org.apache.commons:commons-csv, org.apache.poi:poi-ooxml,
+com.fasterxml.jackson.core:jackson-*
+• Added special code to test configs to obviate the need to update the version with each  increment (#426)</p>
+<p>• Updated tests and improved test coverage
+• Copyright update (#414)
+• Code cleanup</p>
+<h2 id="universal-rcv-tabulator-rctab-version_2">Universal RCV Tabulator (RCTab) Version<a class="headerlink" href="#universal-rcv-tabulator-rctab-version_2" title="Permanent link">&para;</a></h2>
+<p>Based on the testing performed by Pro V&amp;V, a certified Voting System Testing Laboratory, and  the results obtained, the Universal RCV Tabulator solution meets the requirements set forth by  the EAC-approved VVSG 1.0 to be used with the ES&amp;S EVS 5.0.0.0 through 6.0.4.0 software. Changelog:</p>
+<p>• Added Checkstyle plugin to Gradle and set it up for Google format
+• Minor refactoring to address Checkstyle issues</p>
 
 
 

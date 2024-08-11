@@ -1278,7 +1278,13 @@
 
 
 <h1 id="section-07k-development-environment-specification">Section 07K - Development Environment Specification<a class="headerlink" href="#section-07k-development-environment-specification" title="Permanent link">&para;</a></h1>
-<p>Content for Development Environment Specification.</p>
+<p><strong>Objective</strong>: This document shall provide descriptions of the physical, personnel, procedural, and technical security of the development environment, including version control, tools used, coding standards used, software engineering model used, and description of developer and independent testing.</p>
+<p><strong>Version Control</strong>: We use Git version control software (git-scm.com) in conjunction with Github (github.com/BrightSpots/rcv) to coordinate the efforts of our developers and maintain a complete record of all software code changes to RCTab and the reasoning behind them.</p>
+<p><strong>Coding Standards</strong>: We use <em>Google Checkstyle for Java</em> as our published, reviewed, and industry-accepted code style. For details, see <a href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</a> and page 93 of the <a href="https://www.eac.gov/sites/default/files/eac_assets/1/28/VVSG.1.0_Volume_1.PDF">VVSG Volume 1.0</a> guide.</p>
+<p><strong>Software Engineering Model</strong>: RCTab development uses the Waterfall model.</p>
+<p><strong>Description of Developer</strong>: The Ranked Choice Voting Resource Center (RCVRC), a nonprofit organization, and Bright Spots, a software development team, have joined together to develop RCTab as an open-source software package that provides post-election tabulation to determine results in a ranked choice voting election.</p>
+<p><strong>Independent Testing</strong>: We have developed a suite of 68 Tabulation Regression Tests and continue to add more tests as new features and bug fixes are added. These are designed to verify that various aspects of Tabulator functionality behave as expected. They also verify that new code changes do not inadvertently alter Tabulator behavior. The entire test suite must be run, and all tests must pass before any new code changes can be merged into the main Tabulator repository. See <a href="system_test_and_verification_specification.html"><strong>Section 17 - System Test and Verification Specification</strong></a> for additional information.</p>
+<p>The RCTab software is developed with the following tools, policies, and practices to ensure robust software quality and reliability. RCTab testing relates only to the function of the software and performs no parts and materials testing as we produce only software and do not design or manufacture hardware. Testing follows standards laid out in the VVSG Volume 2:2.12.1 with regard to V1:8.5.</p>
 
 
 

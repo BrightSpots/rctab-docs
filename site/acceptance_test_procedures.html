@@ -437,6 +437,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="acceptance_test_procedures.html" class="md-nav__link md-nav__link--active">
         
   
@@ -446,6 +457,52 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Materials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-rctab-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify RCTab Hardware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-correct-operating-system-and-rctab-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Correct Operating System and RCTab Software
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1278,7 +1335,19 @@
 
 
 <h1 id="section-05-acceptance-test-procedures">Section 05 - Acceptance Test Procedures<a class="headerlink" href="#section-05-acceptance-test-procedures" title="Permanent link">&para;</a></h1>
-<p>Content for Acceptance Test Procedures.</p>
+<p><strong>This Acceptance Test is designed to verify that RCTab is correctly configured and operating properly. Acceptance tests should always be conducted on a new install of RCTab prior to its use in an election. Also, acceptance tests should be conducted when there are significant changes or repairs made to the hardware where the software is installed. Example: If the RCTab computer is sent out for repair or if a new version of the operating system or RCTab is installed, an acceptance test should be conducted on RCTab as soon as it is returned.</strong></p>
+<h2 id="required-materials">Required Materials<a class="headerlink" href="#required-materials" title="Permanent link">&para;</a></h2>
+<p>In addition to the following, you must know the correct version of your operating system and RCTab. The manufacturer can provide assistance in determining the correct version. Users can also find that information in <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> documentation. The following components of a voting system are required to complete the acceptance testing procedures:</p>
+<ol>
+<li>One Computer with RCTab installed. Installation instructions can be found in <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> document.</li>
+<li>Recommended battery backup if the user jurisdiction facility does not have generator capabilities in the event of a power failure.</li>
+</ol>
+<p>The RCTab computer system, consisting of items 1 &amp; 2 above, should have been set up and tested for functionality before beginning this test. IT staff may do this part of the setup if properly supervised by election staff who have been trained in accordance with procedures laid out in the personnel documentation. Requirements are included in <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a> and in <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a>.</p>
+<h2 id="verify-rctab-hardware">Verify RCTab Hardware<a class="headerlink" href="#verify-rctab-hardware" title="Permanent link">&para;</a></h2>
+<p>Verify that all hardware components of the RCTab computer are turned on and functioning properly. This includes checks of the printer(s), flash drives, USB port, etc.</p>
+<h2 id="verify-correct-operating-system-and-rctab-software">Verify Correct Operating System and RCTab Software<a class="headerlink" href="#verify-correct-operating-system-and-rctab-software" title="Permanent link">&para;</a></h2>
+<p>Turn on the RCTab computer. As the computer boots up, verify that the correct versions of the operating system and the RCTab software are installed. Compute the hash codes for the RCTab voting system software and compare them with the hash value provided with the trusted build. See <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification.</strong></a> document and <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> document for procedures and more information.</p>
+<p>Manufacturer recommendation: When your election management system successfully passes the acceptance test, affix to the top of the computer case a label with the date of the test and the initials of the person conducting the test. This information should also be recorded on the access log as per the user jurisdiction’s security guidelines and protocols.</p>
 
 
 

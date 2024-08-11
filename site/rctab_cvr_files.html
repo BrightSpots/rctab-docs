@@ -962,6 +962,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="rctab_cvr_files.html" class="md-nav__link md-nav__link--active">
         
   
@@ -971,6 +982,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ess" class="md-nav__link">
+    <span class="md-ellipsis">
+      ES&amp;S
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hart-verity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hart Verity
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dominion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dominion
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clear-ballot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear Ballot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1278,7 +1344,286 @@
 
 
 <h1 id="section-26-rctab-cvr-files">Section 26 - RCTab CVR Files<a class="headerlink" href="#section-26-rctab-cvr-files" title="Permanent link">&para;</a></h1>
-<p>Content for RCTab CVR Files.</p>
+<p>This document describes the different CVR files RCTab is compatible with. It documents how they are laid out and describes relevant file structures that inform how RCTab parses CVR data.</p>
+<h2 id="ess">ES&amp;S<a class="headerlink" href="#ess" title="Permanent link">&para;</a></h2>
+<p>The CVR files from the ES&amp;S EVS export system are in an MS Excel Worksheet format.  The sample below displays the following records:</p>
+<ul>
+<li>First Vote Column Index – the first vote appears in column D under “Cand Choice 1”</li>
+<li>First Vote Row Index – the first cast vote record is in Row 2 in this example</li>
+<li>ID Column Index – in this sample Column A contains all Cast Vote Record IDs, making it the ID Column</li>
+<li>Precinct Column Index – displayed in Column B as the precinct Name/#</li>
+<li>Ballot Style – in Column C is the Name/# of the ballot style</li>
+<li>Cand Choice – in columns D thru H are the candidate choices selected by the voter</li>
+</ul>
+<p>![A close up of text on a white backgroundDescription automatically generated][image50]</p>
+<p><em>Figure 1 - Sample cvr File</em></p>
+<p><strong>Note:</strong> The first three columns in the ES&amp;S’ file are fixed and the number of columns will depend on the number of contest choices. The format will typically follow this format:</p>
+<p><strong>Header Row (column labels)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cast Vote  Record</th>
+<th style="text-align: left;">Precinct</th>
+<th style="text-align: left;">Ballot Style</th>
+<th style="text-align: left;">CONTEST-X  1st Choice</th>
+<th style="text-align: left;">CONTEST-X  2nd Choice</th>
+<th style="text-align: left;">CONTEST-X  3rd Choice</th>
+<th style="text-align: left;">CONTEST-X  4th Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Each CVR Row</strong></p>
+<table>
+<thead>
+<tr>
+<th>Column Number</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Column 1</strong></td>
+<td style="text-align: left;">Cast Vote Record ID number. Unique number, sequentially assigned.</td>
+</tr>
+<tr>
+<td><strong>Column 2</strong></td>
+<td style="text-align: left;">Precinct Name that is associated with the cast vote record.</td>
+</tr>
+<tr>
+<td><strong>Column 3</strong></td>
+<td style="text-align: left;">Ballot Style Name that is associated with the cast vote record. Applies to  both ballots by precinct and ballots by style elections.</td>
+</tr>
+<tr>
+<td><strong>Column 4   thru N + 3</strong></td>
+<td style="text-align: left;">N + 3 where N is the number of choices on the ballot. The content of the  cell in each of the columns will be the name of the candidate selected on  the ballot.   • If there is no selection for the choice, the content of the column will  show “undervote”.  • If there is more than one selection for the choice, the column will show  “overvote”.  • If the choice is a write-in the column will show “write-in”.</td>
+</tr>
+</tbody>
+</table>
+<h2 id="hart-verity">Hart Verity<a class="headerlink" href="#hart-verity" title="Permanent link">&para;</a></h2>
+<p>Hart’s Verity system exports CVRs in a multi-folder format and differs from that of singular file CVRs such as ES&amp;S. The structure of Verity’s CVRs are as follows:</p>
+<p><strong>CVR Archives Naming Convention</strong>
+The format of the archive name is:</p>
+<p>“CVRArchive_C_S_E_T.zip” where:</p>
+<ul>
+<li>‘C’ is the number of CVRs contained in the Archive.</li>
+<li>‘S’ is the number of cast sheet 1s.</li>
+<li>‘E’ is the number of cast electronic ballots.</li>
+<li>‘T’ is a timestamp used to make the archive name unique.</li>
+</ul>
+<p>RCTab requires the Hart CVRs to be cryptographically signed. Signed CVR archives include a corresponding <code>.zip</code>.sig.xml file for the .<code>zip</code> as well as a corresponding <code>.xml.sig.xml</code> for each <code>.xml</code> CVR file inside the <code>.zip</code>. This allows the CSV <code>.zip</code> archive and its contents to be programmatically verified by RCTab during tabulation. Tabulation will not proceed without a  <code>.sig.xml</code> for each CVR <code>.xml</code> file. Use the Preferences menu in Verity Count to digitally sign CVR exports</p>
+<p>![][image51]</p>
+<p><strong>CVR Structure</strong></p>
+<p>CVR data is recorded in XML file format, and can be viewed using a number of applications, such  as Windows Notepad and Microsoft Edge. However, applications designed to work specifically with XML, such as XML Notepad, may simplify the presentation of the XML data.
+XML files must be extracted from the ZIP file before being viewed. Once extracted, the “Open with” command may be used to view the XML in the desired application.</p>
+<p><strong>CVR File Naming Convention</strong></p>
+<p>The .zip contains many CVR files. Each CVR file name uses the convention “S_G.xml”, where:</p>
+<ul>
+<li>‘S’ is the CVR type identifier<ul>
+<li>“1” if paper ballot sheet 1, blank for all other sheets</li>
+<li>“e” for DRE ballot</li>
+<li>“p” for Provisional ballot</li>
+</ul>
+</li>
+<li>‘G’ is the GUID of the CVR</li>
+</ul>
+<p>For example, <em>1_c7db3cf2-c1a2-4773-971c-337ea2d198d7.xml</em>, or <em>50810795-95d4-4c0c-a6dc-0d5333e99c5a.xml</em></p>
+<p>When signed, each <code>.xml</code> CVR file has a corresponding <code>.xml.sig.xml</code> file.</p>
+<p><strong>Viewing CVR Contents</strong></p>
+<p>The following is a general example of a CVR as viewed in Internet Explorer, showing two contests expanded:
+![][image52]</p>
+<p>Here is the same section of the previous CVR as viewed in XML Notepad:
+![][image53]</p>
+<p><strong>Structure</strong>
+Each CVR accounts for all contests available to the voter for that ballot style (precinct-split/party/sheet combination), including a voter’s marked choice(s), any remaining Undervotes, or for unmarked contests in an Open Primary, a “No vote” tag.</p>
+<p>Marked choices are viewable in plain text. For marked write-ins, an ID is provided to cross-reference with a folder containing images of each write-in.</p>
+<p>The following example combines all election types—General, Closed Primary, and Open Primary—into a “master” structure; not all fields will be present for all election types, and will be indicated appropriately.</p>
+<p><strong>CVR Elements</strong></p>
+<ul>
+<li>CVR (top-level folder)<ul>
+<li>Contests (contains all contests for this ballot or sheet)<ul>
+<li>Contest (random order of contests—Verity 1.0)<ul>
+<li>Name (Title of contest; includes Party designation for Closed and Open Primaries)</li>
+<li>ID (Globally Unique ID [GUID] of contest)</li>
+<li>Options (contains each marked Choice for this contest)<ul>
+<li>Option (empty if contest is completely undervoted)<ul>
+<li>Name (Choice name, or blank if Write-in)</li>
+<li>ID (GUID of Choice)</li>
+<li>Value (1 if marked; 100000 or similar, where the position of the 1 indicates a ranking mark in Ranked Choice contests, or to indicate one or more marks in a Cumulative contests)</li>
+<li>WriteInData (only present when Write-in Choice is marked)<ul>
+<li>Text (Central vDrives only; text of Write-in, if resolved)</li>
+<li>ImageID (GUID of Write-in Image, and name of file located in “Write In Images” folder)</li>
+<li>WriteInDataStatus (“Unresolved” for all Scan write-ins; “Unresolved”, “Resolved” or “Rejected” for all Central write-ins)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Undervotes (quantity of undervotes)</li>
+<li>Overvoted (only present if contest is also overvoted)</li>
+<li>NoVote (Open Primaries only; indicates the contest was not voted in)</li>
+<li>InvalidVote (Open Primaries only; only present if contests of different party affiliations are voted in)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>BatchSequence (Central vDrives only; indicates the sheet’s sequence within the batch number, below)</li>
+<li>IsElectronic (True/False; indicates whether the vote was cast with a DRE)</li>
+<li>SheetNumber (sheet indicator of paper ballot)</li>
+<li>PrecinctSplit<ul>
+<li>Name (name of the voted Precinct-Split)</li>
+<li>ID (GUID of Precinct-Split)</li>
+</ul>
+</li>
+<li>Party (Closed Primaries only; indicates party affiliation of ballot)<ul>
+<li>Name (name of Party)</li>
+<li>ID (GUID of Party)</li>
+</ul>
+</li>
+<li>BatchNumber (Central vDrives only; indicates the Batch ID)</li>
+<li>DeviceSerialNumber (Verity 1.0: Central vDrives only; indicates the vDrive ID)</li>
+<li>RetrievalCode (Unique Retrievable Ballot Code for this CVR, if applicable)</li>
+<li>ProvisionalCode (Unique Provisional Ballot Code for this CVR, if applicable)</li>
+<li>CvrGuid (GUID of CVR)</li>
+</ul>
+</li>
+</ul>
+<h2 id="dominion">Dominion<a class="headerlink" href="#dominion" title="Permanent link">&para;</a></h2>
+<p>Dominion’s CVR format consists of several files which are grouped together in the same directory, similar to Hart’s CVR structure. All exported files have a top level attribute which is set to the version of EMS that produced the file.</p>
+<p><strong>Configuration</strong></p>
+<p>This file shows which parameters were selected by the user when performing the export. It contains the following attributes:</p>
+<ul>
+<li>IncludeTabulatorFilter: Boolean value indicating whether the export was performed for a single tabulator.</li>
+<li>TabulatorFilterValue: a numeric identifier of the tabulator that was exported.</li>
+<li>IncludeResultContainerFilter: Boolean value indicating whether the batch filter was used.</li>
+<li>ResultContainerFilterValue: an integer indicating the batch to export CVR data for.</li>
+<li>IncludePrecinctPortionFilter: Boolean value indicating whether the export was performed for a  single precinct portion.</li>
+<li>PrecinctPortionFilterValue: an integer indicating the precinct portion to export CVR data for.</li>
+<li>IncludeBallotTypeFilter: Boolean value indicating whether the export was performed for a single  ballot type.</li>
+<li>BallotTypeFilterValue: an integer indicating the ballot type to export CVR data for.</li>
+<li>IncludeContestFilter: Boolean value indicating whether the export was performed for a single contest.</li>
+<li>ContestFilterValue: an integer indicating the contest to export CVR data for.</li>
+<li>
+<p>SplitFilesPerBatch: a Boolean value indicating whether separate CVR export JSON files should be created per batch.</p>
+</li>
+<li>
+<p>IncludeOnlyPublishedResultContainers: a Boolean value indicating whether only published result  containers where included.</p>
+</li>
+</ul>
+<p><strong>ContestManifest</strong></p>
+<p>This file contains a list of all non-disabled contests ordered by global order that can produce votes. The list is ordered by contest global order and each contest has the following attributes:</p>
+<ul>
+<li>Description: name of the contest.</li>
+<li>Id: identifier of the contest (internal machine id)</li>
+<li>External Id: external identifier (optional)</li>
+<li>VoteFor: the number of votes allowed/number of positions to be elected.</li>
+<li>NumOfRanks: the number of rankings allowed to be made.</li>
+</ul>
+<p><strong>CandidateManifest</strong></p>
+<p>This file contains a list of all non-disabled candidates ordered by global order (first by contest, then by choice) that can produce votes (for example “No Candidate” are not included).</p>
+<ul>
+<li>Description: name of the candidate.</li>
+<li>Id: identifier of the candidate (internal machine id)</li>
+<li>External Id: external identifier (optional)</li>
+<li>ContestId: identifier of the contest this choice belongs to.</li>
+<li>Type: candidate type. Regular, Writein, NoPreference , QualifiedWriteIn.</li>
+</ul>
+<p><strong>PartyManifest</strong></p>
+<p>This file contains a list of political parties ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the political party</li>
+<li>Id: identifier of the party (internal machine id)</li>
+<li>External Id: external identifier (optional)</li>
+</ul>
+<p><strong>PrecinctPortionManifest</strong></p>
+<p>This file contains a list of all precinct portions ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the precinct portion</li>
+<li>Id: identifier of the precinct portion (internal machine id)</li>
+<li>External Id: external identifier (optional)</li>
+</ul>
+<p><strong>BallotTypeManifest</strong></p>
+<p>This file contains a list of all ballot types ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the ballot type</li>
+<li>Id: identifier of the ballot type (internal machine id)</li>
+<li>External Id: external identifier (optional).</li>
+</ul>
+<p><strong>BallotTypeContestManifest</strong></p>
+<p>This file contains information on which contests are used on which ballot types. Each relationship has  the following attributes:</p>
+<ul>
+<li>BallotTypeId: identifier of the ballot type (internal machine id)</li>
+<li>ContestId: identifier of the contest (internal machine id).</li>
+</ul>
+<p><strong>CountingGroupManifest</strong></p>
+<p>This file contains a list of all counting groups ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the counting group</li>
+<li>Id: identifier of the counting group (internal machine id)</li>
+<li>External Id: external identifier (optional).</li>
+</ul>
+<p><strong>TabulatorManifest</strong></p>
+<p>This file contains a list of all tabulators ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the tabulator</li>
+<li>Id: identifier of the tabulator, we will use tabulator number here.</li>
+<li>ExternalId: the external string identifier (optional).</li>
+<li>ThresholdMin: minimum threshold for voting box scanned on this tabulator</li>
+<li>ThresholdMax: maximum threshold for voting box scanned on this tabulator</li>
+<li>WriteinThresholdMin: minimum threshold for write-in area scanned on this tabulator</li>
+<li>WriteinThresholdMax: maximum threshold for write-in area scanned on this tabulator</li>
+</ul>
+<p><strong>CVRExport</strong></p>
+<p>This file contains the actual CVR data. In addition to the top level version field it also has an ElectionId field that contains the description of the election.</p>
+<p>The main content of the file is a list of CVR sessions. Each <strong>Session</strong> object contains the following attributes:</p>
+<ul>
+<li>TabulatorId: the tabulator id, same as the one used in the manifest</li>
+<li>BatchId: the batch id, unique for a given tabulator id.</li>
+<li>RecordId: the CVR id within the batch.</li>
+<li>CountingGroupId: the counting group id, same as the one used in the manifest.</li>
+<li>ImageMask: the file mask for finding the associated images with this session.</li>
+<li>Original element, contains the original state of the CVR data for this session.</li>
+<li>Modified element (optional), contains the modified state of the CVR data for this session.</li>
+</ul>
+<p><strong>Original/Modified element:</strong></p>
+<p>This element contains attributes that can be potentially be modified during adjudication/conditional voting management:</p>
+<ul>
+<li>PrecinctPortionId: the precinct portion id, same as the one used in the manifest.</li>
+<li>BallotTypeId: the ballot type id, same as the one used in the manifest.</li>
+<li>IsCurrent: set to true, if this element represents the current state of the CVR.</li>
+<li>Contest elements. Lists all contests for the current ballot type.</li>
+</ul>
+<p><strong>Contest:</strong></p>
+<p>This element represents a marked contest. Contains the following attributes:</p>
+<ul>
+<li>Id: contest identifier, as used in the manifest file.</li>
+<li>Marks: list of marked (explicitly/implicitly) in this contest. Note: explicit marks mean when the voter filled in the voting box directly. Implicit means when the voting box was implied by a straight party ticket selection.</li>
+</ul>
+<p><strong>Mark element</strong></p>
+<p>Contains the following attributes:</p>
+<ul>
+<li>CandidateId: indicates the candidate the mark is for (if a write-in position is resolved to a qualified write-in the candidate id will point to a qualified write-in).</li>
+<li>PartyId: indicates party affiliation. If not party affiliation then this will be 0.</li>
+<li>Rank: indicates rank; will be 1 by default, will only contain values higher than 1 if ranked choice voting is used.</li>
+<li>WriteinIndex: if mark is for write-in position (or qualified write-in) this attribute indicates which  write-in position in the contest (0 means first, 1 means second position, etc.)</li>
+<li>MarkDensity: percentage that voting box was filled.</li>
+<li>WriteinDensity: percentage that write-in area was filled in. Attribute exists only if it is a write-in position.</li>
+<li>IsAmbiguous: a Boolean value indicating whether mark is ambiguous.</li>
+<li>IsVote: a Boolean value indicating whether the mark produced a vote Note: an implicit selection  because of straight party vote would also be set to true. Any mark above the max threshold will  be true in a ranked choice voting contest.</li>
+</ul>
+<h2 id="clear-ballot">Clear Ballot<a class="headerlink" href="#clear-ballot" title="Permanent link">&para;</a></h2>
+<p>Clear Ballot’s CVR is still currently under development and while RCTab was developed to include Clear Ballot as a vendor, it is considered a beta feature at this time. Once Clear Ballot has finalized a format for their CVR export, the details of said CVR will be included in this document as a reference.</p>
 
 
 

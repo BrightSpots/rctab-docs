@@ -74,7 +74,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#section-23-trusted-build-output-hash-verification" class="md-skip">
+        <a href="#section-23-trusted-build-output-hash-verification-windows-os" class="md-skip">
           Skip to content
         </a>
       
@@ -899,6 +899,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link md-nav__link--active">
         
   
@@ -908,6 +919,43 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#validating-the-hash-of-a-trusted-rctab-build-zip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validating the hash of a trusted RCTab build .zip
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#validating-the-hash-of-rctab-contest-summary-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validating the hash of RCTab contest summary files
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1277,8 +1325,54 @@
                   
 
 
-<h1 id="section-23-trusted-build-output-hash-verification">Section 23 - Trusted Build &amp; Output Hash Verification<a class="headerlink" href="#section-23-trusted-build-output-hash-verification" title="Permanent link">&para;</a></h1>
-<p>Content for Trusted Build &amp; Output Hash Verification.</p>
+<h1 id="section-23-trusted-build-output-hash-verification-windows-os">Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS<a class="headerlink" href="#section-23-trusted-build-output-hash-verification-windows-os" title="Permanent link">&para;</a></h1>
+<h2 id="validating-the-hash-of-a-trusted-rctab-build-zip">Validating the hash of a trusted RCTab build .zip<a class="headerlink" href="#validating-the-hash-of-a-trusted-rctab-build-zip" title="Permanent link">&para;</a></h2>
+<p>To validate that the provided zip folder contains the certified version of RCTab v1.3.2, follow these instructions:</p>
+<ul>
+<li>Open the Start Menu</li>
+<li>Type in Command Prompt</li>
+<li>Press enter to launch the Command Prompt</li>
+<li>Type in C:\Windows\System32\certutil.exe -hashfile [filename]<ul>
+<li>To insert the file name: locate the rctab_v1.3.2_windows.zip in File Explorer</li>
+<li>Left click on the file and while continuing to hold the mouse down, drag the file to the Command Prompt window and place after -hashfile.</li>
+<li>Example: C:\Windows\System32\certutil.exe -hashfile C:\RCTab\rctab_v1.3.2_windows.zip</li>
+</ul>
+</li>
+<li>Add SHA512 to the end of the line<ul>
+<li>Example: C:\Windows\Systems32\certutil.exe -hashfile c:\RCTab\rctab_v1.3.2_windows.zip SHA512</li>
+</ul>
+</li>
+<li>Press enter. The command prompt will show the text of the hash in the following format SHA512 hash of [filePath]: [SHA512 hash text]</li>
+<li>Compare the SHA512 hash code produced on your system to the SHA512 hash code supplied with the trusted build.</li>
+<li>If the SHA512 hash codes match 100%, you are using an approved download and can proceed. Return to the <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> document to complete installation.</li>
+</ul>
+<h2 id="validating-the-hash-of-rctab-contest-summary-files">Validating the hash of RCTab contest summary files<a class="headerlink" href="#validating-the-hash-of-rctab-contest-summary-files" title="Permanent link">&para;</a></h2>
+<p>RCTab automatically creates corresponding <code>.hash</code> files for the <code>summary.csv</code> and <code>summary.json</code> output files. Follow these instructions for using the [fileName].hash files to verify their corresponding summary file. For this example we will verify a <code>summary.csv</code> file and we will assume that it is located in <code>c:\RCTab\output\</code></p>
+<ul>
+<li>Create a new empty text file. We’ll call this the ‘comparison text file’</li>
+<li>Copy the RCTab programmatically generated hash to the comparison text file<ul>
+<li>Open summary.csv.hash in text editor. This file contains the following format: [hash] [hashAlgorithm]<ul>
+<li>[hash] is the text of the hash itself</li>
+<li>[hashAlgorithm] is the algorithm used to get the hash e..g SHA512</li>
+</ul>
+</li>
+<li>Copy the [hash] to the comparison text file on a single line</li>
+</ul>
+</li>
+<li>Use cmd prompt to generate hash of summary.csv<ul>
+<li>Open the Start Menu</li>
+<li>Type in Command Prompt</li>
+<li>Press enter to launch the Command Prompt</li>
+<li>Create the command to hash the summary.csv with the following template C:\Windows\System32\certutil.exe -hashfile <strong>[filePath]</strong> SHA512<ul>
+<li>Replace <strong>[filePath]</strong> with the location of your summary.csv. You can drag the file into the cmd prompt window to have it automatically fill it in for you or you can type it manually if you know the path</li>
+</ul>
+</li>
+<li>Press enter. The command prompt will show the text of the hash in the following format SHA512 hash of [filePath]: [SHA512 hash text]</li>
+</ul>
+</li>
+<li>Copy and paste [SHA512 hash text] to the next line of the comparison text file</li>
+<li>Compare the text of the two SHA512 hashes. Pulling the width of the text editor wide enough so that the hashes each are one line each will help line them up for comparison.</li>
+</ul>
 
 
 

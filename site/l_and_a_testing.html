@@ -647,6 +647,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="l_and_a_testing.html" class="md-nav__link md-nav__link--active">
         
   
@@ -656,6 +667,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#required-materials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Required Materials
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-rctab-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify RCTab Hardware
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-correct-operating-system-and-rctab-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Verify Correct Operating System and RCTab Software
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#logic-accuracy-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Logic &amp; Accuracy Procedures
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1278,7 +1344,340 @@
 
 
 <h1 id="section-11-la-testing">Section 11 - L&amp;A Testing<a class="headerlink" href="#section-11-la-testing" title="Permanent link">&para;</a></h1>
-<p>Content for L&amp;A Testing.</p>
+<p>The Logic &amp; Accuracy Test is designed to verify that RCTab is correctly configured and operating properly. Logic &amp; accuracy tests should always be conducted on RCTab prior to its use in an election as part of the user jurisdiction’s full logic &amp; accuracy tests for each election. Post-election logic &amp; accuracy testing should also be performed where possible and in keeping with the established policies and procedures of the user jurisdiction.</p>
+<h2 id="required-materials">Required Materials<a class="headerlink" href="#required-materials" title="Permanent link">&para;</a></h2>
+<p>In addition to the following, you must know the correct version of your operating system and RCTab. The manufacturer can provide assistance in determining the correct version. Users can also find that information in <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> documentation. The following components of a voting system are required to complete the acceptance testing procedures:</p>
+<ol>
+<li>One Computer with RCTab installed. Installation instructions can be found <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> document.</li>
+<li>A general use and directly connected printer (this includes necessary printer cable and power supply).</li>
+<li>Recommended battery backup if the user jurisdiction facility does not have generator capabilities in the event of a power failure.</li>
+<li>At minimum, one flash drive containing a CVR from your voting system with ranked choice voting results.</li>
+<li>One additional storage device that can be used for saving summary files.</li>
+</ol>
+<p>The RCTab computer system, consisting of items 1 through 3 above, should have been set up and tested before beginning this test. IT staff may do this part of the setup if properly supervised by election staff who have been trained in accordance with procedures laid out in the personnel documentation.</p>
+<h2 id="verify-rctab-hardware">Verify RCTab Hardware<a class="headerlink" href="#verify-rctab-hardware" title="Permanent link">&para;</a></h2>
+<p>Verify that all hardware components of the RCTab computer are turned on and functioning properly. This includes checks of the printer(s), flash drives, USB port, etc.</p>
+<h2 id="verify-correct-operating-system-and-rctab-software">Verify Correct Operating System and RCTab Software<a class="headerlink" href="#verify-correct-operating-system-and-rctab-software" title="Permanent link">&para;</a></h2>
+<p>Turn on the computer with RCTab installed. As the computer boots up, verify that the correct versions of the operating system and the RCTab software are installed. Compute the hash codes for the RCTab voting system software and compare them with the hash value provided with the trusted build. See also <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a> document and <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> document for procedures and more information.</p>
+<h2 id="logic-accuracy-procedures">Logic &amp; Accuracy Procedures<a class="headerlink" href="#logic-accuracy-procedures" title="Permanent link">&para;</a></h2>
+<p><strong>The procedures should be done with all assigned personnel in no less than teams of two who have received the recommended manufacturer-led training. All manufacturer-recommended and jurisdiction-required security procedures should be observed at all times during this process.</strong></p>
+<ol>
+<li><strong>Assemble all required materials.</strong> The next step will cover exporting a CVR from EMS to a flash drive if this step has not already been completed as part of the voting system L&amp;A.</li>
+<li><strong>Export CVR File from EMS System.</strong> This step assumes the user has completed logic &amp; accuracy checks on all parts of their voting system, including EMS, as recommended by the system vendor. This step also requires the users to have a known outcome from the test deck prepared as part of logic and accuracy testing as required by the voting system vendor. Users should also confirm the known outcome from the test deck is, in fact, correct, and the voting system used to tabulate the ballots is also working properly. The text deck should be counted by hand BEFORE the actual L&amp;A testing begins on both the user jurisdiction’s voting system and RCTab. This includes a headcount of the round-by-round RCV outcomes as well.<ol>
+<li>Following L&amp;A testing procedures conducted in EMS, export the L&amp;A CVR file from the jurisdiction’s EMS System and save the file to an empty USB flash drive. Please see the appropriate EMS procedures for the specific steps of this process.</li>
+<li>Take the USB containing the exported CVR to the hardware where the RCTab software is installed.</li>
+</ol>
+</li>
+<li><strong>Transfer the CVR File to the PC</strong><ol>
+<li>Create a folder on the hard drive of the RCTab PC. The manufacturer recommends a name associated with the specific election (sample: “LA - RCV Election 11-5-2019”). The manufacturer recommends the user specifically identify the folder as LA to avoid any confusion with outdated CVRs or other data. See point 14, page 7, for further information.</li>
+<li>Insert USB into the hardware where the RCTab software is installed and open the file with Excel.</li>
+<li>Copy the CVR export file from the USB to the new folder.</li>
+<li>Enter the file path of the CVR file into the Election Data Form.</li>
+<li>Remove the USB from the USB port and attach a label with the election name.</li>
+<li>Place the USB in a secure storage location.</li>
+</ol>
+</li>
+<li><strong>Enter Data into an Election Data Form.</strong> Entering this information will make interacting with RCTab faster and lessen the chances that information will be entered incorrectly. All entries should be carefully reviewed by at least two team members assigned to work with the RCTab software. Using your Election Data Form, record the following information:<ol>
+<li>Contest Name:  Name of the election – sample: LA-General Election, Primary Election, Municipal Election</li>
+<li>Contest Date: Date of the actual election – sample: 11-05-2019</li>
+<li>Contest Jurisdiction: Actual voting jurisdiction – sample: LA-Johnson County, City of Peoria, Town of Salem</li>
+<li>Contest Office: RCV office being tabulated – sample: LA-City Council, County Commissioner</li>
+<li>Decide if you are going to print Precinct Reports and enter Y or N on the Election Data Form.</li>
+<li>Indicate on the Election Data Form if you are generating a CDF JSON file for export totals (Y or N). Generally, this setting will be left unchecked as it is not required in most tabulations.</li>
+<li>Record the file path of the CVR as noted in step 3f, page 2, if you have not already done so.</li>
+<li>Enter the Rules into the Election Data Form. The settings entered here must be in full compliance with the governing guidelines for ranked choice voting elections in the jurisdiction.  (check with City, County, or State for guidance)</li>
+</ol>
+</li>
+<li><strong>Open CVR File and Review</strong><ol>
+<li>Locate the CVR file in the election folder you created in step 3a and right-click, scroll down, and hover over “Open with.” Select LibreOffice to view the file.</li>
+<li>Locate the Column where the First Vote is and enter the Column in the Election Data Form.</li>
+<li>Locate the Row where the First Vote is and enter the Row in the Election Data Form.</li>
+<li>Locate the ID Column (leave blank if not used) and enter the Column in the Election Data Form.</li>
+<li>Locate the Precinct Column and enter the Column in the Election Data Form.</li>
+<li>Exit the CVR file.</li>
+</ol>
+</li>
+</ol>
+<p><strong>Before moving to step 6, your Election Data Form should be completed with the exception of the Configuration File Name and required signatures. Confirm and enter any missing information before proceeding.</strong></p>
+<ol>
+<li><strong>Creating the Configuration File</strong><ol>
+<li>Start RCTab - RCTab will start ready to create a new config file.</li>
+<li>Contest Info Tab<ol>
+<li>On the tab labeled “Contest Info,” enter the Contest Name, Contest Date, Contest Jurisdiction, and Contest Office. For Rules Description, enter a name that is easy to remember, as this can be used as the name for your final configuration file.</li>
+<li>Only the Contest Name is required for this tab; however, we recommend all fields be completed to assist in identifying output files in the future.</li>
+</ol>
+</li>
+<li>CVR Files Tab<ol>
+<li>Select the voting system provider from the drop-down menu.</li>
+<li>Using the “Select” button, locate the CVR file in the election folder and load the CVR file path.</li>
+<li>Enter the remaining required information from the Election Data Form into the remaining fields and click Add.</li>
+<li>The added information should populate in the listing just below the entry fields.</li>
+</ol>
+</li>
+<li>Candidates Tab<ol>
+<li>Click on the “Candidates” tab. Enter the first candidate name and press Add. Enter all candidates.</li>
+<li>If you are using Code, you can return to each name and enter Code, and press enter on the keyboard.</li>
+<li>You will not enter Exclude unless instructed to do so by the Election Administration Team.</li>
+</ol>
+</li>
+<li>Winning Rules Tab<ol>
+<li>Use the completed Election Data Form to enter all applicable rule selections here.</li>
+<li>Depending on the required settings you enter, some options may remain grayed out and unselectable by the user. This is normal and should be expected, as all fields may not require input.</li>
+<li>If there are any questions or concerns about the information needed to complete this tab, STOP and consult your controlling governing body for additional guidance about the jurisdiction’s particular ranked choice voting requirements.</li>
+</ol>
+</li>
+<li>Voter Error Rules<ol>
+<li>Use the completed Election Data Form to enter all applicable rules selections here.</li>
+<li>Depending on the required settings you enter, some options may remain grayed out and unselectable by the user. This is normal and should be expected, as all fields may not require input.</li>
+<li>If there are any questions or concerns about the information needed to complete this tab, STOP and consult your controlling governing body for additional guidance about the jurisdiction’s particular ranked choice voting requirements.</li>
+</ol>
+</li>
+<li>Output Tab<ol>
+<li>In the output directory field, enter the file path to your election folder set up in 3a. This will place all tabulation files in this folder once the tabulation is complete.</li>
+<li>If you are tabulating by precinct, check the box labeled “Tabulate by Precinct.”</li>
+<li>If you are generating a CDF JSON, check the box labeled Generate CDF JSON. Generally, this setting will be left unchecked as it is not required in most tabulations.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><strong>Validating the Configuration File</strong><ol>
+<li>Click on “Tabulation” at the top of the software window.</li>
+<li>Click on “Validate”</li>
+<li>Refer to the log box at the bottom of the application. If the message “Contest config validation successful.” appears, your contest configuration has been successfully completed.</li>
+<li>If any error messages appear in the log box, refer to <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a> and messages in the log box for how to resolve errors. If the error persists, restart the RCTab software.</li>
+</ol>
+</li>
+<li><strong>Saving the Configuration File</strong><ol>
+<li>Click on “File” at the top of the software window.</li>
+<li>Click on “Save…”</li>
+<li>Select a location to save the configuration file. The manufacturer suggests users save the configuration file to the same location set in the Output Directory setting.</li>
+<li>Refer to the log box at the bottom of the application. If the message “Successfully saved file: Filepath” your configuration .json file has been successfully saved.</li>
+<li>If any error messages appear in the log box, refer to <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a> documentation and messages in the log box for how to resolve errors. If the error persists, restart the RCTab software.</li>
+</ol>
+</li>
+<li><strong>Once a configuration is saved, the user is ready to run a tabulation.</strong><ol>
+<li>Click on “Tabulation” at the top of the software window.</li>
+<li>Click on “Tabulate”</li>
+<li>Tabulation will begin.</li>
+<li>If all the above steps were successfully completed, tabulation will run until complete.</li>
+<li>The Tabulator log box will update with messages as Tabulation proceeds.</li>
+<li>Once complete, the Tabulator log box will display a message stating, “Results written to: [filepath from Output Directory]”</li>
+</ol>
+</li>
+<li><strong>Output files will be:</strong><ol>
+<li>.csv contest summary files<ol>
+<li>Whole-contest summary files</li>
+</ol>
+</li>
+<li>.json contest summary files<ol>
+<li>Whole-contest summary files</li>
+</ol>
+</li>
+<li>.log audit files<ol>
+<li>.log audit files are exported in 50MB sections. If a .log file exceeds 50MB, an additional .log file is started by RCTab.</li>
+</ol>
+</li>
+<li>.hash files<ol>
+<li>Cryptographic hashes of the output files above</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Once output files have been generated, users should compare the results to the known test deck outcome prepared for the current election. If the results do not match, the settings entered into RCTab should be confirmed with officials that the configuration settings are in compliance with law and policy set by the user jurisdiction. Users should also confirm the known outcome from the test deck is, in fact, correct, and the voting system used to tabulate the ballots is also working properly. The test deck should be counted by hand BEFORE the actual L&amp;A testing begins on both the user jurisdiction’s voting system and RCTab. This includes a headcount of the round-by-round RCV outcomes as well.</li>
+<li>Users can then navigate to “File” and click “Exit” if all contests are tabulated.</li>
+<li>Users can verify result file hashes by following the instructions in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a></li>
+<li>If any errors arise in the use of RCTab, refer to the relevant documentation for the source of the error. RCTab errors should refer to <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a>. Errors arising out of any hardware or software other than RCTab should refer to the <a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a> and any relevant user and maintenance manual.</li>
+<li>We recommend that the configuration file be set up fully each time the user accesses RCTab. Starting a new configuration file each time will lessen the chances that outdated CVRs or other data is inadvertently introduced into the system.</li>
+</ol>
+<p><strong>Using Preloaded Sample CVRs to perform L&amp;A</strong></p>
+<ul>
+<li>As part of the download, RCTab includes three test CVR files along with configuration files and summary results. To test, the user access RCTab and should do the following:<ul>
+<li>Access the sample_input folder. This folder is part of the installation files created on the computer when RCTab was installed.</li>
+<li>Choose the 2015_Portland_Mayor folder</li>
+<li>Load the file 2015_portland_mayor_config.json</li>
+<li>Load the file 2015_portalnd_mayor_cvr.xlsx</li>
+<li>Validate the configuration file and run the tabulation</li>
+<li>Compare the results to the summary file “2015_portland_mayor_expected_summary.json” contained below. If results do not match, the user should confirm the correct configuration and CVR files were correctly selected and repeat the test. Any irreconcilable issues should be reported to the RCVRC for further examination.</li>
+</ul>
+</li>
+</ul>
+<p>2015_portland_mayor_expected_summary.pdf</p>
+<p>{ 
+ "config" : { 
+ "contest" : "Portland 2015 Mayoral Race",  "date" : "2015-11-03", </p>
+<p>"jurisdiction" : "Portland, ME",  "office" : "Mayor", </p>
+<p>"threshold" : "48" 
+ }, 
+ "results" : [ { 
+ "round" : 1, 
+ "tally" : { 
+ "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
+<p>"Carmona, Ralph C." : "12", 
+ "Dodge, Richard A." : "10", 
+ "Duson, Jill C." : "5", 
+ "Eder, John M." : "3", 
+ "Haadoow, Hamza A." : "8", 
+ "Lapchick, Jodie L." : "7", 
+ "Marshall, David A." : "2", 
+ "Mavodones, Nicholas M. Jr." : "13",  "Miller, Markos S." : "3", </p>
+<p>"Rathband, Jed" : "2", 
+ "Strimling, Ethan K." : "1",  "Undeclared Write-ins" : "0",  "Vail, Christopher L." : "6"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Undeclared Write-ins",  "transfers" : { } </p>
+<p>}, { 
+ "eliminated" : "Strimling, Ethan K.",  "transfers" : { </p>
+<p>"Vail, Christopher L." : "1"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 2, 
+ "tally" : { 
+ "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
+<p>"Carmona, Ralph C." : "12", 
+ "Dodge, Richard A." : "10", 
+ "Duson, Jill C." : "5", 
+ "Eder, John M." : "3", 
+ "Haadoow, Hamza A." : "8", 
+ "Lapchick, Jodie L." : "7", 
+ "Marshall, David A." : "2", 
+ "Mavodones, Nicholas M. Jr." : "13",  "Miller, Markos S." : "3", </p>
+<p>"Rathband, Jed" : "2", 
+ "Vail, Christopher L." : "7"  }, </p>
+<p>"tallyResults" : [ {
+ "eliminated" : "Rathband, Jed",  "transfers" : { </p>
+<p>"Mavodones, Nicholas M. Jr." : "2"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 3, 
+ "tally" : { 
+ "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
+<p>"Carmona, Ralph C." : "12",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "5", </p>
+<p>"Eder, John M." : "3", 
+ "Haadoow, Hamza A." : "8",  "Lapchick, Jodie L." : "7",  "Marshall, David A." : "2",  "Mavodones, Nicholas M. Jr." : "15",  "Miller, Markos S." : "3",  "Vail, Christopher L." : "7"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Marshall, David A.",  "transfers" : { </p>
+<p>"Miller, Markos S." : "2"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 4, 
+ "tally" : { 
+ "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
+<p>"Carmona, Ralph C." : "12",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "5", </p>
+<p>"Eder, John M." : "3", 
+ "Haadoow, Hamza A." : "8",  "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "15",  "Miller, Markos S." : "5",  "Vail, Christopher L." : "7"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Eder, John M.",  "transfers" : { </p>
+<p>"Duson, Jill C." : "3" 
+ } 
+ } ] 
+ }, { 
+ "round" : 5, 
+ "tally" : { 
+ "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
+<p>"Carmona, Ralph C." : "12",
+ "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
+<p>"Haadoow, Hamza A." : "8", 
+ "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "15",  "Miller, Markos S." : "5", </p>
+<p>"Vail, Christopher L." : "7"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Miller, Markos S.",  "transfers" : { </p>
+<p>"Mavodones, Nicholas M. Jr." : "5"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 6, 
+ "tally" : { 
+ "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
+<p>"Carmona, Ralph C." : "12",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
+<p>"Haadoow, Hamza A." : "8", 
+ "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "20",  "Vail, Christopher L." : "7"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Brennan, Michael F.",  "transfers" : { </p>
+<p>"Bragdon, Charles E." : "3",  "Bryant, Peter G." : "2",  "Carmona, Ralph C." : "1"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 7, 
+ "tally" : { 
+ "Bragdon, Charles E." : "14",  "Bryant, Peter G." : "11", </p>
+<p>"Carmona, Ralph C." : "13",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
+<p>"Haadoow, Hamza A." : "8", 
+ "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "20",  "Vail, Christopher L." : "7"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Vail, Christopher L.",  "transfers" : { </p>
+<p>"Mavodones, Nicholas M. Jr." : "6",  "exhausted" : "1" </p>
+<p>} 
+ } ] 
+ }, {
+ "round" : 8, 
+ "tally" : { 
+ "Bragdon, Charles E." : "14",  "Bryant, Peter G." : "11",  "Carmona, Ralph C." : "13",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
+<p>"Haadoow, Hamza A." : "8",  "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "26"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Lapchick, Jodie L.",  "transfers" : { </p>
+<p>"Haadoow, Hamza A." : "1",  "Mavodones, Nicholas M. Jr." : "6"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 9, 
+ "tally" : { 
+ "Bragdon, Charles E." : "14",  "Bryant, Peter G." : "11",  "Carmona, Ralph C." : "13",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
+<p>"Haadoow, Hamza A." : "9",  "Mavodones, Nicholas M. Jr." : "32"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Duson, Jill C.",  "transfers" : { </p>
+<p>"Bryant, Peter G." : "1",  "Dodge, Richard A." : "5",  "Mavodones, Nicholas M. Jr." : "2"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 10, 
+ "tally" : { 
+ "Bragdon, Charles E." : "14",  "Bryant, Peter G." : "12",  "Carmona, Ralph C." : "13",  "Dodge, Richard A." : "15",  "Haadoow, Hamza A." : "9",  "Mavodones, Nicholas M. Jr." : "34"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Haadoow, Hamza A.",  "transfers" : { </p>
+<p>"Carmona, Ralph C." : "2",  "Mavodones, Nicholas M. Jr." : "7"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 11, 
+ "tally" : {
+ "Bragdon, Charles E." : "14", 
+ "Bryant, Peter G." : "12", 
+ "Carmona, Ralph C." : "15", 
+ "Dodge, Richard A." : "15", 
+ "Mavodones, Nicholas M. Jr." : "41"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Bryant, Peter G.",  "transfers" : { </p>
+<p>"Bragdon, Charles E." : "9",  "Carmona, Ralph C." : "2", </p>
+<p>"Mavodones, Nicholas M. Jr." : "1"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 12, 
+ "tally" : { 
+ "Bragdon, Charles E." : "23", 
+ "Carmona, Ralph C." : "17", 
+ "Dodge, Richard A." : "15", 
+ "Mavodones, Nicholas M. Jr." : "42"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Dodge, Richard A.",  "transfers" : { </p>
+<p>"Bragdon, Charles E." : "1",  "Carmona, Ralph C." : "11", </p>
+<p>"Mavodones, Nicholas M. Jr." : "3"  } </p>
+<p>} ] 
+ }, { 
+ "round" : 13, 
+ "tally" : { 
+ "Bragdon, Charles E." : "24", 
+ "Carmona, Ralph C." : "28", 
+ "Mavodones, Nicholas M. Jr." : "45"  }, </p>
+<p>"tallyResults" : [ { 
+ "eliminated" : "Bragdon, Charles E.",  "transfers" : { </p>
+<p>"Carmona, Ralph C." : "12", 
+ "Mavodones, Nicholas M. Jr." : "9",  "exhausted" : "3" </p>
+<p>} 
+ } ] 
+ }, { 
+ "round" : 14, 
+ "tally" : { 
+ "Carmona, Ralph C." : "40", 
+ "Mavodones, Nicholas M. Jr." : "54"  }, </p>
+<p>"tallyResults" : [ { 
+ "elected" : "Mavodones, Nicholas M. Jr.",  "transfers" : { } </p>
+<p>} ] 
+ } ] 
+}</p>
 
 
 

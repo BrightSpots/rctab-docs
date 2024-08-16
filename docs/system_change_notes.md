@@ -88,10 +88,6 @@ RCTab version 1.3.1 was submitted with Hart InterCivic’s Verity Voting 3.2 to 
     * Output Directory instructions detail explicit steps to ensure read-only permissions are set
     * Include directions to configure Verity Count to sign CVR exports
     * Remove manual hash steps in ‘Generating Results Files’ header
-    * Include automatic signature verification of Hart signed CVRs, .hash output files and read-only output.
-    * Output Directory instructions detail explicit steps to ensure read-only permissions are set
-    * Include directions to configure Verity Count to sign CVR exports
-    * Remove manual hash steps in ‘Generating Results Files’ header
     * Programmatic CVR signature verification in Hart CVR Files Options header and Prepping CVRs For Use header
     * Instructions for Read-Only output in Generating Results Files - Output Tab header
     * Running A Tabulation header output files updated to include .hash files

@@ -504,7 +504,7 @@ The programming specifications shall describe individual software modules and th
     2. Conditions under which control is passed to other software modules or units.  
 7. Exception and error handling
 
-    - software modules and their component units are described in the [***Tabulator Java Classes***](#tabulator-java-classes) and [***3rd Party Modules***](#3rd-party-modules) sections of this document.  
+    - The programming specifications that describe individual software modules and their component units are described in the [***Tabulator Java Classes***](#tabulator-java-classes) and [***3rd Party Modules***](#3rd-party-modules) sections of this document.
     - For additional information, see the following documents:
         - [***Section 01 - System Overview***](system_overview.md)  
         - [***Section 18 - User Guide***](user_guide.md)  

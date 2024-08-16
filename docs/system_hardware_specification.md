@@ -31,7 +31,7 @@ Contest with more than 1,000,000 votes
 1. Double click on the rctab_v1.3.0_windows folder
 1. Click and drag the rcv folder over to the command prompt window
 1. Your command prompt will now read something like:
-    1. cd C:Users\user\rctab_v1.3.0_windows\rctab_v1.3.0_windows\rcv
+    1. cd C:\Users\user\rctab_v1.3.0_windows\rctab_v1.3.0_windows\rcv
 1. Press enter
 1. Launch the tabulator by entering the following command:
     1. .\bin\java -mx30G -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main .

@@ -17,7 +17,7 @@ The PC/Laptop is required to be set up according to the hardening procedures det
 - Goal: handle up to 6,000,000 CVRs containing up to 40 columns of rankings data each:
     * 3.0 GHz processor
     * 32GB RAM
-    * 10GB disk space \+ room for whatever log files your tabulations generate
+    * 10GB disk space + room for whatever log files your tabulations generate
 - Produces ~6GB of audit log output per contest  
 - Runtime: less than 40 minutes  
 - Launch steps for a large election:
@@ -53,7 +53,7 @@ Additional smaller configurations are possible for smaller contests ([see below]
     - 3.0 GHz processor
     - 16GB RAM
     - 2GB disk space + room for whatever log files your tabulations generate
-- Produces \~1GB of audit log output per contest
+- Produces ~1GB of audit log output per contest
 - Runtime: less than 5 minutes
 - To Launch: double-click the `rcv.bat` file
 

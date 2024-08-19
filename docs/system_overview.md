@@ -18,4 +18,4 @@ RCTab outputs the tabulation results in comma-separated values (.csv) tabular da
 -   [**Section 02 - Software Design and Specifications**](software_design_and_specifications.md)
 -   [**Section 03 - System Hardware Specification**](system_hardware_specification.md)
 -   [**Section 06 - System Design Specifications**](system_design_specifications.md)
--   [**Section 08 - System Operations Procedures**](system_operations_procedures.md)
+-   [**Section 18 - User Guide**](user_guide.md)

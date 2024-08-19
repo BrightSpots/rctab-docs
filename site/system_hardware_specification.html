@@ -395,6 +395,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="system_hardware_specification.html" class="md-nav__link md-nav__link--active">
         
   
@@ -404,6 +415,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#large-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Large Configuration:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#small-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Small configuration:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#medium-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      Medium Configuration:
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-physical-reliability-maintainability-and-environmental-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Physical, Reliability, Maintainability, and Environmental Characteristics
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1279,60 +1345,84 @@
 
 <h1 id="section-03-system-hardware-specification">Section 03 - System Hardware Specification<a class="headerlink" href="#section-03-system-hardware-specification" title="Permanent link">&para;</a></h1>
 <p>Hardware requirements vary depending on the size (number of CVRs) of the contest you wish to tabulate. In general, the more RAM a system has the larger the elections it can run. The more powerful a computer’s CPU is, the faster it will be able to process election results. Please note when tabulating large contests (more than 1 million CVRs) RCTab must be launched from the command line using the launch steps detailed below. In all cases, after running a tabulation, you must exit the tabulator to clear the memory. Launch RCTab again to tabulate another contest. No other applications should be running at the same time, as they may compete with the tabulator for resources (RAM and CPU) and cause it to run more slowly.</p>
-<p>For a jurisdiction with a large number of registered voters, RCTab will need to configure a desktop computer that meets or exceeds the following specifications:
- 
-Windows 10 operating system or above
-3.0 GHz processor
-32GB RAM
-10GB disk space</p>
+<p>For a jurisdiction with a large number of registered voters, RCTab will need to configure a desktop computer that meets or exceeds the following specifications:</p>
+<ul>
+<li>Windows 10 operating system or above</li>
+<li>3.0 GHz processor</li>
+<li>32GB RAM</li>
+<li>10GB disk space</li>
+</ul>
 <p>The PC/Laptop is required to be set up according to the hardening procedures detailed in <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a></p>
 <p><strong>Please note when tabulating large contests (more than 1 million CVRs) RCTab must be launched from the command line using the launch steps detailed below.</strong></p>
-<p>Large Configuration: up to 6,000,000 CVRs containing up to 40 columns of rankings data each:
-3.0 GHz processor
-32GB RAM
-10GB disk space + room for whatever log files your tabulations generate
-Produces ~6GB of audit log output per contest
-Runtime: less than 40 minutes
-Launch steps for a large election:</p>
-<p>Contest with more than 1,000,000 votes</p>
-<ol>
+<h2 id="large-configuration">Large Configuration:<a class="headerlink" href="#large-configuration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Goal: handle up to 6,000,000 CVRs containing up to 40 columns of rankings data each:<ul>
+<li>3.0 GHz processor</li>
+<li>32GB RAM</li>
+<li>10GB disk space + room for whatever log files your tabulations generate</li>
+</ul>
+</li>
+<li>Produces ~6GB of audit log output per contest  </li>
+<li>Runtime: less than 40 minutes  </li>
+<li>Launch steps for a large election:<ul>
+<li>Contest with more than 1,000,000 votes<ol>
 <li>Open a Command Prompt by navigating to the start menu and typing in Command Prompt.</li>
 <li>Press enter to launch Command Prompt.</li>
 <li>Change the current directory to the rcv folder created when you unzipped the Tabulator.</li>
 <li>First, type in cd (note there should be a space after cd).</li>
 <li>Using File Explorer navigate to the folder where RCTab is installed.</li>
-<li>Double click on the rctab_v1.3.0_windows folder</li>
+<li>Double-click on the <code>rctab_v1.3.0_windows</code> folder</li>
 <li>Click and drag the rcv folder over to the command prompt window</li>
 <li>Your command prompt will now read something like:<ol>
-<li>cd C:\Users\user\rctab_v1.3.0_windows\rctab_v1.3.0_windows\rcv</li>
+<li><code>cd C:\Users\user\rctab_v1.3.0_windows\rctab_v1.3.0_windows\rcv</code></li>
 </ol>
 </li>
 <li>Press enter</li>
 <li>Launch the tabulator by entering the following command:<ol>
-<li>.\bin\java -mx30G -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main .</li>
+<li><code>.\bin\java -mx30G -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main</code>.</li>
 </ol>
 </li>
 </ol>
-<p>This configuration will run a 6,000,000 record contest in about 30 minutes.</p>
-<p>Additional smaller configurations are possible for smaller contests:</p>
-<p>Small configuration: up to 100,000 CVRs, up to 40 columns of rankings data each:
-1 GHz processor
-4GB of RAM
-1GB of disk space + room for whatever log files your tabulations generate
-Produces \~100MB of audit log output per contest
-Runtime: less than 2 minutes
-To Launch: Double-click the rcv.bat file</p>
-<p>Contests will be run in as long as one minute with this configuration. Smaller contests will run faster.</p>
-<p>Medium Configuration: up to 1,000,000 CVRs, up to 40 columns of rankings data each:
-3.0 GHz processor
-16GB RAM
-2GB disk space + room for whatever log files your tabulations generate
-Produces \~1GB of audit log output per contest
-Runtime: less than 5 minutes
-To Launch: Double-click the rcv.bat file</p>
+</li>
+<li>This configuration will run a 6,000,000 record contest in about 30 minutes.</li>
+</ul>
+</li>
+</ul>
+<p>Additional smaller configurations are possible for smaller contests (<a href="#small-configuration">see below</a>)</p>
+<h2 id="small-configuration">Small configuration:<a class="headerlink" href="#small-configuration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Goal: handle up to 100,000 CVRs, up to 40 columns of rankings data each:<ul>
+<li>1 GHz processor</li>
+<li>4GB of RAM</li>
+<li>1GB of disk space + room for whatever log files your tabulations generate</li>
+</ul>
+</li>
+<li>Produces ~100MB of audit log output per contest  </li>
+<li>Runtime: less than 2 minutes  </li>
+<li>To Launch: double-click the <code>rcv.bat</code> file  </li>
+<li>Contests will be run in as long as one minute with this configuration. Smaller contests will run faster.</li>
+</ul>
+<h2 id="medium-configuration">Medium Configuration:<a class="headerlink" href="#medium-configuration" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Goal: handle up to 1,000,000 CVRs, up to 40 columns of rankings data each:<ul>
+<li>3.0 GHz processor</li>
+<li>16GB RAM</li>
+<li>2GB disk space + room for whatever log files your tabulations generate</li>
+</ul>
+</li>
+<li>Produces \~1GB of audit log output per contest</li>
+<li>Runtime: less than 5 minutes</li>
+<li>
+<p>To Launch: double-click the <code>rcv.bat</code> file</p>
+</li>
+<li>
 <p>Contests will run in as long as 5 minutes with this configuration. Smaller contests will run faster.</p>
+</li>
+</ul>
+<blockquote>
 <p>Both small and medium contests can be run by using the same launch steps on the recommended computer. Contests of small and medium size can be run on the hardware defined in this document and in <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> using the launch steps under the small and medium configurations.</p>
-<p><strong>Hardware Physical, Reliability, Maintainability, and Environmental Characteristics</strong></p>
+</blockquote>
+<h2 id="hardware-physical-reliability-maintainability-and-environmental-characteristics">Hardware Physical, Reliability, Maintainability, and Environmental Characteristics<a class="headerlink" href="#hardware-physical-reliability-maintainability-and-environmental-characteristics" title="Permanent link">&para;</a></h2>
 <p>Any machine used to run RCTab does not have any required physical characteristics beyond those expected of commercial off the shelf (COTS) computing equipment.</p>
 <p>The RCTab software itself can be maintained by following <a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a> and following <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a>. These documents are written in a manner to be understood by non-technical election workers with sufficient training in the RCTab software. Any COTS hardware or software used to run RCTab should be maintained with reference to the Maintenance Procedures and to any relevant user guides and maintenance manuals included with that COTS equipment.</p>
 <p>Any machine used to run RCTab should follow basic environmental conditions required of any COTS computing equipment.</p>

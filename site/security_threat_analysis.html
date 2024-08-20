@@ -563,6 +563,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="security_threat_analysis.html" class="md-nav__link md-nav__link--active">
         
   
@@ -572,6 +583,34 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#identified-threats-mitigation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Identified Threats &amp; Mitigation
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1279,41 +1318,67 @@
 
 <h1 id="section-07l-security-threat-analysis">Section 07L - Security Threat Analysis<a class="headerlink" href="#section-07l-security-threat-analysis" title="Permanent link">&para;</a></h1>
 <p><strong>Objective:</strong> This document shall identify the threats the voting system protects against and the implemented security controls on voting system and system components.</p>
-<p><strong>Identified Threats &amp; Mitigation</strong></p>
+<h2 id="identified-threats-mitigation">Identified Threats &amp; Mitigation<a class="headerlink" href="#identified-threats-mitigation" title="Permanent link">&para;</a></h2>
 <ul>
-<li>Equipment Failure - RCTab is used on COTS equipment.  While equipment failure is rare, it should be recognized as a possibility.  Jurisdiction backup and disaster plans should include strategies for handling equipment failures and replacements before they occur.<ul>
-<li>See <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a> for minimum operating specifications and <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a> for procedures to ensure the hardware is adequately protected against unauthorized access, theft of data, and/or malicious attacks.</li>
-<li>Following any maintenance or replacement of equipment used to operate RCTab, users should refer to <a href="acceptance_test_procedures.html"><strong>Section 05 - Acceptance Test Procedures</strong></a>.</li>
-<li>The manufacturer also recommends conducting a post-installation and post-election hashing as outlined in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - HashCode Instructions - Windows OS</strong></a>.</li>
-<li>If the user elects to use USB devices to move installation files and/or data to and from devices, the manufacturer recommends using instructions as outlined in  <a href="secure_usb_process.html"><strong>Section 32 - Secure USB Process</strong></a>.</li>
+<li>
+<p>Equipment Failure - RCTab is used on COTS equipment.  While equipment failure is rare, it should be recognized as a possibility.  Jurisdiction backup and disaster plans should include strategies for handling equipment failures and replacements before they occur.</p>
+<ul>
+<li>
+<p>See <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a> for minimum operating specifications and <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a> for procedures to ensure the hardware is adequately protected against unauthorized access, theft of data, and/or malicious attacks.</p>
+</li>
+<li>
+<p>Following any maintenance or replacement of equipment used to operate RCTab, users should refer to <a href="acceptance_test_procedures.html"><strong>Section 05 - Acceptance Test Procedures</strong></a>.</p>
+</li>
+<li>
+<p>The manufacturer also recommends conducting a post-installation and post-election hashing as outlined in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - HashCode Instructions - Windows OS</strong></a>.</p>
+</li>
+<li>
+<p>If the user elects to use USB devices to move installation files and/or data to and from devices, the manufacturer recommends using instructions as outlined in  <a href="secure_usb_process.html"><strong>Section 32 - Secure USB Process</strong></a>.</p>
+</li>
 </ul>
 </li>
 <li>
 <p>Unauthorized Access - Software itself is vulnerable to attack if someone gains access to the tabulation computer/RCTab workstation without jurisdiction approval or knowledge because of violation of access controls</p>
 <ul>
-<li>Users should only access the software per jurisdiction approved rules and after users have obtained the recommended training as outlined in <a href="personnel_deployment_and_training.html"><strong>Section 10 - Personnel Deployment and Training</strong></a>. See also <a href="system_security_specification_requirements.html"><strong>Section 07 - System Security Specification Requirements</strong></a>.</li>
-<li>When used with Hart Verity, RCTab 1.3.2 includes the following programmatic security mechanisms<ul>
-<li>When tabulation begins, RCTab automatically, programmatically verifies the cryptographic signature of all Hart CVRs used as input for contest tabulation. This verification step ensures both the integrity (CVR contents have not been edited) and provenance (CVRs came from the Hart voting system) of the Hart CVRs. RCTab will throw a halting error and tabulation will not begin if cryptographic validation of Hart’s CVR signature is not successful. This is to protect against tampering of CVRs between Hart Verity export and RCTab import by malicious internal actors.</li>
-<li>After successfully following installation instructions in <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> <em>only</em> the RCTab software is run with administrator privileges, the logged in Windows user does <strong>not</strong> have administrative privileges. All RCTab output files (audit logs, summary .csv and .json, corresponding .hash files) are programmatically set to Read-Only and cannot be edited by the RCTab Windows Standard user.</li>
-</ul>
+<li>
+<p>Users should only access the software per jurisdiction approved rules and after users have obtained the recommended training as outlined in <a href="personnel_deployment_and_training.html"><strong>Section 10 - Personnel Deployment and Training</strong></a>. See also <a href="system_security_specification_requirements.html"><strong>Section 07 - System Security Specification Requirements</strong></a>.</p>
+</li>
+<li>
+<p>When used with Hart Verity, RCTab 1.3.2 includes the following programmatic security mechanisms</p>
+<ul>
+<li>
+<p>When tabulation begins, RCTab automatically, programmatically verifies the cryptographic signature of all Hart CVRs used as input for contest tabulation. This verification step ensures both the integrity (CVR contents have not been edited) and provenance (CVRs came from the Hart voting system) of the Hart CVRs. RCTab will throw a halting error and tabulation will not begin if cryptographic validation of Hart’s CVR signature is not successful. This is to protect against tampering of CVRs between Hart Verity export and RCTab import by malicious internal actors.</p>
+</li>
+<li>
+<p>After successfully following installation instructions in <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> <em>only</em> the RCTab software is run with administrator privileges, the logged in Windows user does <strong>not</strong> have administrative privileges. All RCTab output files (audit logs, summary .csv and .json, corresponding .hash files) are programmatically set to Read-Only and cannot be edited by the RCTab Windows Standard user.</p>
+<p>This is to protect against any tampering with the content of the summary files or audit log by malicious internal actors. This also ensures that the tabulation user does not have admin-level OF privileges to make changes that could be security issues e.g. disabling read-only access or enabling network adaptors.</p>
+</li>
+<li>
+<p>Additionally, RCTab automatically, programmatically creates a cryptographic hash of all output files - audit logs, summary .csv and .json - that can be used to validate that those files have not been edited. This is to protect against any tampering with the content of the summary files and audit log.</p>
 </li>
 </ul>
-<p>This is to protect against any tampering with the content of the summary files or audit log by malicious internal actors. This also ensures that the tabulation user does not have admin-level OF privileges to make changes that could be security issues e.g. disabling read-only access or enabling network adaptors.
-    + Additionally, RCTab automatically, programmatically creates a cryptographic hash of all output files - audit logs, summary .csv and .json - that can be used to validate that those files have not been edited. This is to protect against any tampering with the content of the summary files and audit log.
-* The objective of these programmatic and procedural security improvements is to make the execution of malicious tampering so onerous that it will not be a viable target. The combination of procedural and new programmatic controls require significantly more time and complexity for any malicious actor - this makes RCTab a less appealing target. Additionally, these procedural and programmatic controls make auditing a tabulation to ensure secure, successful execution easier and quicker.
-* Though perfect security is the goal of RCTab, threats still exist. Certain programmatic requirements continue to require procedural steps. Not following the procedural steps could make it easier for a malicious actor to tamper with an election. For example, <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> describes explicitly setting permissions for the RCTab output folder to ensure read only access. If this is not done - either by not setting permissions during installation, or by configuring RCTab during tabulation to use a different folder - RCTab users cannot edit RCTab output but they can delete RCTab output. Someone could</p>
-<div class="highlight"><pre><span></span><code>+ Copy the contents of the output
-+ Create a new file
-+ Edit the contents of that new file
-+ Delete the original file
-+ Then rename the edited file to the original
-</code></pre></div>
+</li>
+<li>
+<p>The objective of these programmatic and procedural security improvements is to make the execution of malicious tampering so onerous that it will not be a viable target. The combination of procedural and new programmatic controls require significantly more time and complexity for any malicious actor - this makes RCTab a less appealing target. Additionally, these procedural and programmatic controls make auditing a tabulation to ensure secure, successful execution easier and quicker.</p>
+</li>
+<li>
+<p>Though perfect security is the goal of RCTab, threats still exist. Certain programmatic requirements continue to require procedural steps. Not following the procedural steps could make it easier for a malicious actor to tamper with an election. For example, <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> describes explicitly setting permissions for the RCTab output folder to ensure read only access. If this is not done - either by not setting permissions during installation, or by configuring RCTab during tabulation to use a different folder - RCTab users cannot edit RCTab output but they can delete RCTab output. Someone could</p>
+<ul>
+<li>Copy the contents of the output</li>
+<li>Create a new file</li>
+<li>Edit the contents of that new file</li>
+<li>Delete the original file</li>
+<li>Then rename the edited file to the original</li>
+</ul>
 <p>But this is mitigated by the other security additions to v1.3.2. To successfully tamper with the <code>summary.csv</code> file for example, a malicious actor must also</p>
-<div class="highlight"><pre><span></span><code>+ Rehash the edited file, delete the corresponding `.hash` file and recreate it with the new hash
-+ Delete the `summary.json` file, recreate it with the same edits to `summary.csv`, hash the `summary.json` file, delete it’s corresponding `.hash` file and recreate it with the edited hash
-+ Find the `audit_X.log`, copy its contents to a new file, search through it to find and edit original hashes of the output files, rehash the `audit_X.log`, delete the corresponding `audit_X.log.hash`, and recreate it with the edited hash, delete the original `audit_X.log` and rename the edited one
-</code></pre></div>
+<ul>
+<li>Rehash the edited file, delete the corresponding <code>.hash</code> file and recreate it with the new hash</li>
+<li>Delete the <code>summary.json</code> file, recreate it with the same edits to <code>summary.csv</code>, hash the <code>summary.json</code> file, delete it’s corresponding <code>.hash</code> file and recreate it with the edited hash</li>
+<li>Find the <code>audit_X.log</code>, copy its contents to a new file, search through it to find and edit original hashes of the output files, rehash the <code>audit_X.log</code>, delete the corresponding <code>audit_X.log.hash</code>, and recreate it with the edited hash, delete the original <code>audit_X.log</code> and rename the edited one</li>
+</ul>
 <p>And all of these steps described above would be moot if installation instruction procedures are properly followed and permissions on the output folder set correctly. In that case, all RCTab output files are read only and cannot be edited, deleted, or recreated by the user running the tabulation.</p>
+</li>
+</ul>
 </li>
 <li>
 <p>Incorrect assignment of RCV rules as set by the jurisdiction - Jurisdictions establish rules for interpreting and counting ranked choice voting results.  Failure to correctly set up the RCTab configuration file according to jurisdiction requirements could lead to incorrect results.</p>

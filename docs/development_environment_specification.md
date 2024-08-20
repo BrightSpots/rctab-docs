@@ -2,7 +2,7 @@
 
 **Objective**: This document shall provide descriptions of the physical, personnel, procedural, and technical security of the development environment, including version control, tools used, coding standards used, software engineering model used, and description of developer and independent testing.
 
-**Version Control**: We use Git version control software (git-scm.com) in conjunction with Github (github.com/BrightSpots/rcv) to coordinate the efforts of our developers and maintain a complete record of all software code changes to RCTab and the reasoning behind them.
+**Version Control**: We use Git version control software (<https://git-scm.com>) in conjunction with Github (<https://github.com/BrightSpots/rcv>) to coordinate the efforts of our developers and maintain a complete record of all software code changes to RCTab and the reasoning behind them.
 
 **Coding Standards**: We use *Google Checkstyle for Java* as our published, reviewed, and industry-accepted code style. For details, see [Google Java Style Guide](https://google.github.io/styleguide/javaguide.html) and page 93 of the [VVSG Volume 1.0](https://www.eac.gov/sites/default/files/eac_assets/1/28/VVSG.1.0_Volume_1.PDF) guide.
 

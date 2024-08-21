@@ -1362,13 +1362,19 @@
 <h2 id="logic-accuracy-procedures">Logic &amp; Accuracy Procedures<a class="headerlink" href="#logic-accuracy-procedures" title="Permanent link">&para;</a></h2>
 <p><strong>The procedures should be done with all assigned personnel in no less than teams of two who have received the recommended manufacturer-led training. All manufacturer-recommended and jurisdiction-required security procedures should be observed at all times during this process.</strong></p>
 <ol>
-<li><strong>Assemble all required materials.</strong> The next step will cover exporting a CVR from EMS to a flash drive if this step has not already been completed as part of the voting system L&amp;A.</li>
-<li><strong>Export CVR File from EMS System.</strong> This step assumes the user has completed logic &amp; accuracy checks on all parts of their voting system, including EMS, as recommended by the system vendor. This step also requires the users to have a known outcome from the test deck prepared as part of logic and accuracy testing as required by the voting system vendor. Users should also confirm the known outcome from the test deck is, in fact, correct, and the voting system used to tabulate the ballots is also working properly. The text deck should be counted by hand BEFORE the actual L&amp;A testing begins on both the user jurisdiction’s voting system and RCTab. This includes a headcount of the round-by-round RCV outcomes as well.<ol>
+<li>
+<p><strong>Assemble all required materials.</strong> The next step will cover exporting a CVR from EMS to a flash drive if this step has not already been completed as part of the voting system L&amp;A.</p>
+</li>
+<li>
+<p><strong>Export CVR File from EMS System.</strong> This step assumes the user has completed logic &amp; accuracy checks on all parts of their voting system, including EMS, as recommended by the system vendor. This step also requires the users to have a known outcome from the test deck prepared as part of logic and accuracy testing as required by the voting system vendor. Users should also confirm the known outcome from the test deck is, in fact, correct, and the voting system used to tabulate the ballots is also working properly. The text deck should be counted by hand BEFORE the actual L&amp;A testing begins on both the user jurisdiction’s voting system and RCTab. This includes a headcount of the round-by-round RCV outcomes as well.</p>
+<ol>
 <li>Following L&amp;A testing procedures conducted in EMS, export the L&amp;A CVR file from the jurisdiction’s EMS System and save the file to an empty USB flash drive. Please see the appropriate EMS procedures for the specific steps of this process.</li>
 <li>Take the USB containing the exported CVR to the hardware where the RCTab software is installed.</li>
 </ol>
 </li>
-<li><strong>Transfer the CVR File to the PC</strong><ol>
+<li>
+<p><strong>Transfer the CVR File to the PC</strong></p>
+<ol>
 <li>Create a folder on the hard drive of the RCTab PC. The manufacturer recommends a name associated with the specific election (sample: “LA - RCV Election 11-5-2019”). The manufacturer recommends the user specifically identify the folder as LA to avoid any confusion with outdated CVRs or other data. See point 14, page 7, for further information.</li>
 <li>Insert USB into the hardware where the RCTab software is installed and open the file with Excel.</li>
 <li>Copy the CVR export file from the USB to the new folder.</li>
@@ -1377,7 +1383,9 @@
 <li>Place the USB in a secure storage location.</li>
 </ol>
 </li>
-<li><strong>Enter Data into an Election Data Form.</strong> Entering this information will make interacting with RCTab faster and lessen the chances that information will be entered incorrectly. All entries should be carefully reviewed by at least two team members assigned to work with the RCTab software. Using your Election Data Form, record the following information:<ol>
+<li>
+<p><strong>Enter Data into an Election Data Form.</strong> Entering this information will make interacting with RCTab faster and lessen the chances that information will be entered incorrectly. All entries should be carefully reviewed by at least two team members assigned to work with the RCTab software. Using your Election Data Form, record the following information:</p>
+<ol>
 <li>Contest Name:  Name of the election – sample: LA-General Election, Primary Election, Municipal Election</li>
 <li>Contest Date: Date of the actual election – sample: 11-05-2019</li>
 <li>Contest Jurisdiction: Actual voting jurisdiction – sample: LA-Johnson County, City of Peoria, Town of Salem</li>
@@ -1388,7 +1396,9 @@
 <li>Enter the Rules into the Election Data Form. The settings entered here must be in full compliance with the governing guidelines for ranked choice voting elections in the jurisdiction.  (check with City, County, or State for guidance)</li>
 </ol>
 </li>
-<li><strong>Open CVR File and Review</strong><ol>
+<li>
+<p><strong>Open CVR File and Review</strong></p>
+<ol>
 <li>Locate the CVR file in the election folder you created in step 3a and right-click, scroll down, and hover over “Open with.” Select LibreOffice to view the file.</li>
 <li>Locate the Column where the First Vote is and enter the Column in the Election Data Form.</li>
 <li>Locate the Row where the First Vote is and enter the Row in the Election Data Form.</li>
@@ -1396,43 +1406,59 @@
 <li>Locate the Precinct Column and enter the Column in the Election Data Form.</li>
 <li>Exit the CVR file.</li>
 </ol>
-</li>
-</ol>
+<blockquote>
 <p><strong>Before moving to step 6, your Election Data Form should be completed with the exception of the Configuration File Name and required signatures. Confirm and enter any missing information before proceeding.</strong></p>
+</blockquote>
+</li>
+<li>
+<p><strong>Creating the Configuration File</strong></p>
 <ol>
-<li><strong>Creating the Configuration File</strong><ol>
-<li>Start RCTab - RCTab will start ready to create a new config file.</li>
-<li>Contest Info Tab<ol>
+<li>
+<p>Start RCTab - RCTab will start ready to create a new config file.</p>
+</li>
+<li>
+<p>Contest Info Tab</p>
+<ol>
 <li>On the tab labeled “Contest Info,” enter the Contest Name, Contest Date, Contest Jurisdiction, and Contest Office. For Rules Description, enter a name that is easy to remember, as this can be used as the name for your final configuration file.</li>
 <li>Only the Contest Name is required for this tab; however, we recommend all fields be completed to assist in identifying output files in the future.</li>
 </ol>
 </li>
-<li>CVR Files Tab<ol>
+<li>
+<p>CVR Files Tab</p>
+<ol>
 <li>Select the voting system provider from the drop-down menu.</li>
 <li>Using the “Select” button, locate the CVR file in the election folder and load the CVR file path.</li>
 <li>Enter the remaining required information from the Election Data Form into the remaining fields and click Add.</li>
 <li>The added information should populate in the listing just below the entry fields.</li>
 </ol>
 </li>
-<li>Candidates Tab<ol>
+<li>
+<p>Candidates Tab</p>
+<ol>
 <li>Click on the “Candidates” tab. Enter the first candidate name and press Add. Enter all candidates.</li>
 <li>If you are using Code, you can return to each name and enter Code, and press enter on the keyboard.</li>
 <li>You will not enter Exclude unless instructed to do so by the Election Administration Team.</li>
 </ol>
 </li>
-<li>Winning Rules Tab<ol>
+<li>
+<p>Winning Rules Tab</p>
+<ol>
 <li>Use the completed Election Data Form to enter all applicable rule selections here.</li>
 <li>Depending on the required settings you enter, some options may remain grayed out and unselectable by the user. This is normal and should be expected, as all fields may not require input.</li>
 <li>If there are any questions or concerns about the information needed to complete this tab, STOP and consult your controlling governing body for additional guidance about the jurisdiction’s particular ranked choice voting requirements.</li>
 </ol>
 </li>
-<li>Voter Error Rules<ol>
+<li>
+<p>Voter Error Rules</p>
+<ol>
 <li>Use the completed Election Data Form to enter all applicable rules selections here.</li>
 <li>Depending on the required settings you enter, some options may remain grayed out and unselectable by the user. This is normal and should be expected, as all fields may not require input.</li>
 <li>If there are any questions or concerns about the information needed to complete this tab, STOP and consult your controlling governing body for additional guidance about the jurisdiction’s particular ranked choice voting requirements.</li>
 </ol>
 </li>
-<li>Output Tab<ol>
+<li>
+<p>Output Tab</p>
+<ol>
 <li>In the output directory field, enter the file path to your election folder set up in 3a. This will place all tabulation files in this folder once the tabulation is complete.</li>
 <li>If you are tabulating by precinct, check the box labeled “Tabulate by Precinct.”</li>
 <li>If you are generating a CDF JSON, check the box labeled Generate CDF JSON. Generally, this setting will be left unchecked as it is not required in most tabulations.</li>
@@ -1440,22 +1466,28 @@
 </li>
 </ol>
 </li>
-<li><strong>Validating the Configuration File</strong><ol>
+<li>
+<p><strong>Validating the Configuration File</strong></p>
+<ol>
 <li>Click on “Tabulation” at the top of the software window.</li>
 <li>Click on “Validate”</li>
 <li>Refer to the log box at the bottom of the application. If the message “Contest config validation successful.” appears, your contest configuration has been successfully completed.</li>
 <li>If any error messages appear in the log box, refer to <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a> and messages in the log box for how to resolve errors. If the error persists, restart the RCTab software.</li>
 </ol>
 </li>
-<li><strong>Saving the Configuration File</strong><ol>
+<li>
+<p><strong>Saving the Configuration File</strong></p>
+<ol>
 <li>Click on “File” at the top of the software window.</li>
 <li>Click on “Save…”</li>
 <li>Select a location to save the configuration file. The manufacturer suggests users save the configuration file to the same location set in the Output Directory setting.</li>
-<li>Refer to the log box at the bottom of the application. If the message “Successfully saved file: Filepath” your configuration .json file has been successfully saved.</li>
+<li>Refer to the log box at the bottom of the application. If the message “Successfully saved file: Filepath” your configuration <code>.json</code> file has been successfully saved.</li>
 <li>If any error messages appear in the log box, refer to <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a> documentation and messages in the log box for how to resolve errors. If the error persists, restart the RCTab software.</li>
 </ol>
 </li>
-<li><strong>Once a configuration is saved, the user is ready to run a tabulation.</strong><ol>
+<li>
+<p><strong>Once a configuration is saved, the user is ready to run a tabulation.</strong></p>
+<ol>
 <li>Click on “Tabulation” at the top of the software window.</li>
 <li>Click on “Tabulate”</li>
 <li>Tabulation will begin.</li>
@@ -1464,220 +1496,233 @@
 <li>Once complete, the Tabulator log box will display a message stating, “Results written to: [filepath from Output Directory]”</li>
 </ol>
 </li>
-<li><strong>Output files will be:</strong><ol>
-<li>.csv contest summary files<ol>
+<li>
+<p><strong>Output files will be:</strong></p>
+<ol>
+<li><code>.csv</code> contest summary files<ol>
 <li>Whole-contest summary files</li>
 </ol>
 </li>
-<li>.json contest summary files<ol>
+<li><code>.json</code> contest summary files<ol>
 <li>Whole-contest summary files</li>
 </ol>
 </li>
-<li>.log audit files<ol>
-<li>.log audit files are exported in 50MB sections. If a .log file exceeds 50MB, an additional .log file is started by RCTab.</li>
+<li><code>.log</code> audit files<ol>
+<li><code>.log</code> audit files are exported in 50MB sections. If a <code>.log</code> file exceeds 50MB, an additional <code>.log</code> file is started by RCTab.</li>
 </ol>
 </li>
-<li>.hash files<ol>
+<li><code>.hash</code> files<ol>
 <li>Cryptographic hashes of the output files above</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>Once output files have been generated, users should compare the results to the known test deck outcome prepared for the current election. If the results do not match, the settings entered into RCTab should be confirmed with officials that the configuration settings are in compliance with law and policy set by the user jurisdiction. Users should also confirm the known outcome from the test deck is, in fact, correct, and the voting system used to tabulate the ballots is also working properly. The test deck should be counted by hand BEFORE the actual L&amp;A testing begins on both the user jurisdiction’s voting system and RCTab. This includes a headcount of the round-by-round RCV outcomes as well.</li>
-<li>Users can then navigate to “File” and click “Exit” if all contests are tabulated.</li>
-<li>Users can verify result file hashes by following the instructions in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a></li>
-<li>If any errors arise in the use of RCTab, refer to the relevant documentation for the source of the error. RCTab errors should refer to <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a>. Errors arising out of any hardware or software other than RCTab should refer to the <a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a> and any relevant user and maintenance manual.</li>
-<li>We recommend that the configuration file be set up fully each time the user accesses RCTab. Starting a new configuration file each time will lessen the chances that outdated CVRs or other data is inadvertently introduced into the system.</li>
+<li>
+<p>Once output files have been generated, users should compare the results to the known test deck outcome prepared for the current election. If the results do not match, the settings entered into RCTab should be confirmed with officials that the configuration settings are in compliance with law and policy set by the user jurisdiction. Users should also confirm the known outcome from the test deck is, in fact, correct, and the voting system used to tabulate the ballots is also working properly. The test deck should be counted by hand BEFORE the actual L&amp;A testing begins on both the user jurisdiction’s voting system and RCTab. This includes a headcount of the round-by-round RCV outcomes as well.</p>
+</li>
+<li>
+<p>Users can then navigate to “File” and click “Exit” if all contests are tabulated.</p>
+</li>
+<li>
+<p>Users can verify result file hashes by following the instructions in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a></p>
+</li>
+<li>
+<p>If any errors arise in the use of RCTab, refer to the relevant documentation for the source of the error. RCTab errors should refer to <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a>. Errors arising out of any hardware or software other than RCTab should refer to the <a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a> and any relevant user and maintenance manual.</p>
+</li>
+<li>
+<p>We recommend that the configuration file be set up fully each time the user accesses RCTab. Starting a new configuration file each time will lessen the chances that outdated CVRs or other data is inadvertently introduced into the system.</p>
+</li>
 </ol>
 <p><strong>Using Preloaded Sample CVRs to perform L&amp;A</strong></p>
 <ul>
 <li>As part of the download, RCTab includes three test CVR files along with configuration files and summary results. To test, the user access RCTab and should do the following:<ul>
 <li>Access the sample_input folder. This folder is part of the installation files created on the computer when RCTab was installed.</li>
 <li>Choose the 2015_Portland_Mayor folder</li>
-<li>Load the file 2015_portland_mayor_config.json</li>
-<li>Load the file 2015_portalnd_mayor_cvr.xlsx</li>
+<li>Load the file <code>2015_portland_mayor_config.json</code></li>
+<li>Load the file <code>2015_portalnd_mayor_cvr.xlsx</code></li>
 <li>Validate the configuration file and run the tabulation</li>
-<li>Compare the results to the summary file “2015_portland_mayor_expected_summary.json” contained below. If results do not match, the user should confirm the correct configuration and CVR files were correctly selected and repeat the test. Any irreconcilable issues should be reported to the RCVRC for further examination.</li>
+<li>Compare the results to the summary file <code>2015_portland_mayor_expected_summary.json</code> contained below. If results do not match, the user should confirm the correct configuration and CVR files were correctly selected and repeat the test. Any irreconcilable issues should be reported to the RCVRC for further examination.</li>
 </ul>
 </li>
 </ul>
-<p>2015_portland_mayor_expected_summary.pdf</p>
-<p>{ 
- "config" : { 
- "contest" : "Portland 2015 Mayoral Race",  "date" : "2015-11-03", </p>
-<p>"jurisdiction" : "Portland, ME",  "office" : "Mayor", </p>
-<p>"threshold" : "48" 
- }, 
- "results" : [ { 
- "round" : 1, 
- "tally" : { 
- "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
-<p>"Carmona, Ralph C." : "12", 
- "Dodge, Richard A." : "10", 
- "Duson, Jill C." : "5", 
- "Eder, John M." : "3", 
- "Haadoow, Hamza A." : "8", 
- "Lapchick, Jodie L." : "7", 
- "Marshall, David A." : "2", 
- "Mavodones, Nicholas M. Jr." : "13",  "Miller, Markos S." : "3", </p>
-<p>"Rathband, Jed" : "2", 
- "Strimling, Ethan K." : "1",  "Undeclared Write-ins" : "0",  "Vail, Christopher L." : "6"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Undeclared Write-ins",  "transfers" : { } </p>
-<p>}, { 
- "eliminated" : "Strimling, Ethan K.",  "transfers" : { </p>
-<p>"Vail, Christopher L." : "1"  } </p>
-<p>} ] 
- }, { 
- "round" : 2, 
- "tally" : { 
- "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
-<p>"Carmona, Ralph C." : "12", 
- "Dodge, Richard A." : "10", 
- "Duson, Jill C." : "5", 
- "Eder, John M." : "3", 
- "Haadoow, Hamza A." : "8", 
- "Lapchick, Jodie L." : "7", 
- "Marshall, David A." : "2", 
- "Mavodones, Nicholas M. Jr." : "13",  "Miller, Markos S." : "3", </p>
-<p>"Rathband, Jed" : "2", 
- "Vail, Christopher L." : "7"  }, </p>
-<p>"tallyResults" : [ {
- "eliminated" : "Rathband, Jed",  "transfers" : { </p>
-<p>"Mavodones, Nicholas M. Jr." : "2"  } </p>
-<p>} ] 
- }, { 
- "round" : 3, 
- "tally" : { 
- "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
-<p>"Carmona, Ralph C." : "12",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "5", </p>
-<p>"Eder, John M." : "3", 
- "Haadoow, Hamza A." : "8",  "Lapchick, Jodie L." : "7",  "Marshall, David A." : "2",  "Mavodones, Nicholas M. Jr." : "15",  "Miller, Markos S." : "3",  "Vail, Christopher L." : "7"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Marshall, David A.",  "transfers" : { </p>
-<p>"Miller, Markos S." : "2"  } </p>
-<p>} ] 
- }, { 
- "round" : 4, 
- "tally" : { 
- "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
-<p>"Carmona, Ralph C." : "12",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "5", </p>
-<p>"Eder, John M." : "3", 
- "Haadoow, Hamza A." : "8",  "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "15",  "Miller, Markos S." : "5",  "Vail, Christopher L." : "7"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Eder, John M.",  "transfers" : { </p>
-<p>"Duson, Jill C." : "3" 
- } 
- } ] 
- }, { 
- "round" : 5, 
- "tally" : { 
- "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
-<p>"Carmona, Ralph C." : "12",
- "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
-<p>"Haadoow, Hamza A." : "8", 
- "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "15",  "Miller, Markos S." : "5", </p>
-<p>"Vail, Christopher L." : "7"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Miller, Markos S.",  "transfers" : { </p>
-<p>"Mavodones, Nicholas M. Jr." : "5"  } </p>
-<p>} ] 
- }, { 
- "round" : 6, 
- "tally" : { 
- "Bragdon, Charles E." : "11",  "Brennan, Michael F." : "6",  "Bryant, Peter G." : "9", </p>
-<p>"Carmona, Ralph C." : "12",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
-<p>"Haadoow, Hamza A." : "8", 
- "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "20",  "Vail, Christopher L." : "7"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Brennan, Michael F.",  "transfers" : { </p>
-<p>"Bragdon, Charles E." : "3",  "Bryant, Peter G." : "2",  "Carmona, Ralph C." : "1"  } </p>
-<p>} ] 
- }, { 
- "round" : 7, 
- "tally" : { 
- "Bragdon, Charles E." : "14",  "Bryant, Peter G." : "11", </p>
-<p>"Carmona, Ralph C." : "13",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
-<p>"Haadoow, Hamza A." : "8", 
- "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "20",  "Vail, Christopher L." : "7"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Vail, Christopher L.",  "transfers" : { </p>
-<p>"Mavodones, Nicholas M. Jr." : "6",  "exhausted" : "1" </p>
-<p>} 
- } ] 
- }, {
- "round" : 8, 
- "tally" : { 
- "Bragdon, Charles E." : "14",  "Bryant, Peter G." : "11",  "Carmona, Ralph C." : "13",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
-<p>"Haadoow, Hamza A." : "8",  "Lapchick, Jodie L." : "7",  "Mavodones, Nicholas M. Jr." : "26"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Lapchick, Jodie L.",  "transfers" : { </p>
-<p>"Haadoow, Hamza A." : "1",  "Mavodones, Nicholas M. Jr." : "6"  } </p>
-<p>} ] 
- }, { 
- "round" : 9, 
- "tally" : { 
- "Bragdon, Charles E." : "14",  "Bryant, Peter G." : "11",  "Carmona, Ralph C." : "13",  "Dodge, Richard A." : "10",  "Duson, Jill C." : "8", </p>
-<p>"Haadoow, Hamza A." : "9",  "Mavodones, Nicholas M. Jr." : "32"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Duson, Jill C.",  "transfers" : { </p>
-<p>"Bryant, Peter G." : "1",  "Dodge, Richard A." : "5",  "Mavodones, Nicholas M. Jr." : "2"  } </p>
-<p>} ] 
- }, { 
- "round" : 10, 
- "tally" : { 
- "Bragdon, Charles E." : "14",  "Bryant, Peter G." : "12",  "Carmona, Ralph C." : "13",  "Dodge, Richard A." : "15",  "Haadoow, Hamza A." : "9",  "Mavodones, Nicholas M. Jr." : "34"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Haadoow, Hamza A.",  "transfers" : { </p>
-<p>"Carmona, Ralph C." : "2",  "Mavodones, Nicholas M. Jr." : "7"  } </p>
-<p>} ] 
- }, { 
- "round" : 11, 
- "tally" : {
- "Bragdon, Charles E." : "14", 
- "Bryant, Peter G." : "12", 
- "Carmona, Ralph C." : "15", 
- "Dodge, Richard A." : "15", 
- "Mavodones, Nicholas M. Jr." : "41"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Bryant, Peter G.",  "transfers" : { </p>
-<p>"Bragdon, Charles E." : "9",  "Carmona, Ralph C." : "2", </p>
-<p>"Mavodones, Nicholas M. Jr." : "1"  } </p>
-<p>} ] 
- }, { 
- "round" : 12, 
- "tally" : { 
- "Bragdon, Charles E." : "23", 
- "Carmona, Ralph C." : "17", 
- "Dodge, Richard A." : "15", 
- "Mavodones, Nicholas M. Jr." : "42"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Dodge, Richard A.",  "transfers" : { </p>
-<p>"Bragdon, Charles E." : "1",  "Carmona, Ralph C." : "11", </p>
-<p>"Mavodones, Nicholas M. Jr." : "3"  } </p>
-<p>} ] 
- }, { 
- "round" : 13, 
- "tally" : { 
- "Bragdon, Charles E." : "24", 
- "Carmona, Ralph C." : "28", 
- "Mavodones, Nicholas M. Jr." : "45"  }, </p>
-<p>"tallyResults" : [ { 
- "eliminated" : "Bragdon, Charles E.",  "transfers" : { </p>
-<p>"Carmona, Ralph C." : "12", 
- "Mavodones, Nicholas M. Jr." : "9",  "exhausted" : "3" </p>
-<p>} 
- } ] 
- }, { 
- "round" : 14, 
- "tally" : { 
- "Carmona, Ralph C." : "40", 
- "Mavodones, Nicholas M. Jr." : "54"  }, </p>
-<p>"tallyResults" : [ { 
- "elected" : "Mavodones, Nicholas M. Jr.",  "transfers" : { } </p>
-<p>} ] 
- } ] 
-}</p>
+<p>2015_portland_mayor_expected_summary.pdf
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;config&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;contest&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Portland 2015 Mayoral Race&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;date&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2015-11-03&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;jurisdiction&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Portland, ME&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;office&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mayor&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;threshold&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;48&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;results&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Brennan, Michael F.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Eder, John M.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Lapchick, Jodie L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Marshall, David A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Miller, Markos S.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Rathband, Jed&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Strimling, Ethan K.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Undeclared Write-ins&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Vail, Christopher L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Undeclared Write-ins&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Strimling, Ethan K.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Vail, Christopher L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Brennan, Michael F.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Eder, John M.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Lapchick, Jodie L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Marshall, David A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Miller, Markos S.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Rathband, Jed&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Vail, Christopher L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Rathband, Jed&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Brennan, Michael F.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Eder, John M.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Lapchick, Jodie L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Marshall, David A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Miller, Markos S.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Vail, Christopher L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Marshall, David A.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Miller, Markos S.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Brennan, Michael F.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Eder, John M.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Lapchick, Jodie L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Miller, Markos S.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Vail, Christopher L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Eder, John M.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Brennan, Michael F.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Lapchick, Jodie L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Miller, Markos S.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Vail, Christopher L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Miller, Markos S.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">6</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Brennan, Michael F.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Lapchick, Jodie L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Vail, Christopher L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Brennan, Michael F.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">7</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;14&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Lapchick, Jodie L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;20&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Vail, Christopher L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Vail, Christopher L.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;exhausted&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">8</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;14&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Lapchick, Jodie L.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;26&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Lapchick, Jodie L.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;6&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;14&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;10&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Duson, Jill C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;8&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;32&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Duson, Jill C.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;14&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;13&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Haadoow, Hamza A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;34&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Haadoow, Hamza A.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;7&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">11</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;14&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Bryant, Peter G.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;41&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bryant, Peter G.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">12</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;23&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;17&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Dodge, Richard A.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;15&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;42&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Dodge, Richard A.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;1&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;11&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">13</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Bragdon, Charles E.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;24&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;28&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;45&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;eliminated&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bragdon, Charles E.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;9&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;exhausted&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;3&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;round&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="mi">14</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;tally&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Carmona, Ralph C.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;40&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;54&quot;</span><span class="w"> </span><span class="p">},</span>
+<span class="w">    </span><span class="nt">&quot;tallyResults&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;elected&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Mavodones, Nicholas M. Jr.&quot;</span><span class="p">,</span><span class="w"> </span><span class="nt">&quot;transfers&quot;</span><span class="w"> </span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="p">}</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></p>
 
 
 

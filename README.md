@@ -35,6 +35,11 @@ cd path/to/rctab-docs
 poetry install
 ```
 
+Then install the git hooks:
+```shell
+cp .githooks/* .git/hooks/
+```
+
 ## Using MkDocs in the Virtual Environment
 
 Poetry automatically creates a virtual environment for your project.

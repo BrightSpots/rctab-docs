@@ -1318,27 +1318,27 @@
 
 <h1 id="section-22-installation-instructions-for-windows-os">Section 22 - Installation Instructions for Windows OS<a class="headerlink" href="#section-22-installation-instructions-for-windows-os" title="Permanent link">&para;</a></h1>
 <h2 id="installing-rctab-v20">Installing RCTab v2.0<a class="headerlink" href="#installing-rctab-v20" title="Permanent link">&para;</a></h2>
+<blockquote>
 <ul>
 <li><strong><em>Never connect the internet to the Workstation RCTab is installed on.</em></strong></li>
-<li>
-<p>Only Election Administrators should complete the following installation steps. It requires logging in with a Windows administrator level account created in <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a>. As described in that section, credentials for the Windows Administrator account should follow secure password practices and should be provided to the least amount of users necessary to complete the following steps. Users who will be running the tabulation shall not have access to the Administrator account.</p>
-</li>
-<li>
-<p>Log in to an administrator-level account on the RCTab machine.</p>
-</li>
+<li>Only Election Administrators should complete the following installation steps. It requires logging in with a Windows administrator level account created in <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a>. As described in that section, credentials for the Windows Administrator account should follow secure password practices and should be provided to the least amount of users necessary to complete the following steps. Users who will be running the tabulation shall not have access to the Administrator account.</li>
+</ul>
+</blockquote>
+<ul>
+<li>Log in to an administrator-level account on the RCTab machine.</li>
 <li>Follow <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a> before installation of RCTab.</li>
-<li><strong>Create RCTab Windows Standard User Account</strong> To ensure that RCTab users have the least OS-level permissions necessary to run a tabulation we will create an ‘RCTab’ Windows standard user account. The standard user account has less permissions than a Windows administrator account. Jurisdictions shall use this standard ‘RCTab’ account when running tabulations with RCTab.<ul>
+<li><strong>Create RCTab Windows Standard User Account</strong> To ensure that RCTab users have the least OS-level permissions necessary to run a tabulation we will create an "RCTab" Windows standard user account. The standard user account has less permissions than a Windows administrator account. Jurisdictions shall use this standard "RCTab" account when running tabulations with RCTab.<ul>
 <li>Open Windows System Settings by clicking the Windows Button -&gt; Settings</li>
-<li>Select ‘Accounts’</li>
-<li>Click ‘Family &amp; other users’ in the left menu list</li>
-<li>Click ‘Add someone else to this PC’</li>
-<li>Click ‘I don’t have this person’s sign in information’</li>
-<li>Click ‘Add a user without a Microsoft Account’</li>
-<li>Enter ‘RCTab’ as the User name</li>
+<li>Select "Accounts"</li>
+<li>Click "Family &amp; other users" in the left menu list</li>
+<li>Click "Add someone else to this PC"</li>
+<li>Click "I don"t have this person"s sign in information"</li>
+<li>Click "Add a user without a Microsoft Account"</li>
+<li>Enter "RCTab" as the User name</li>
 <li>Enter a secure password</li>
 <li>Enter security questions</li>
-<li>Hit Next</li>
-<li>The ‘RCTab’ account has been created. Continue installation instructions as an administrator-level account until installation instructions say to log in as RCTab user</li>
+<li>Hit "Next"</li>
+<li>The "RCTab" account has been created. Continue installation instructions as an administrator-level account until installation instructions say to log in as RCTab user</li>
 </ul>
 </li>
 <li>Contact the relevant authority to request the Trusted Build of the RCTab v1.3.2 software.</li>
@@ -1360,27 +1360,27 @@
 <p><strong>Enforce Read-Only Permissions on Output folder</strong> To enforce read-only permissions for all RCTab output you <strong>must</strong> set the following permissions on the folder your jurisdiction will use for RCTab output.</p>
 <ul>
 <li>Create a folder to be used for RCTab output. In order for RCTab to write output files as read only <strong>do not use paths within the Windows User folders, like Desktop or Documents (</strong>that is anything under the path <code>C:\users\</code>). This requirement is programmed into RCTab - it will not allow the output path to be configured to a Windows user account folder. For these instructions we will create an <code>output</code> folder in the <code>C:\RCTab</code> folder we created earlier</li>
-<li>Right click the <code>C:\RCTab\output</code> folder and select Properties</li>
-<li>Click the ‘Security’ tab</li>
-<li>Click ‘Edit’ to change permissions</li>
-<li>Click ‘Add’</li>
-<li>Type ‘RCTab’ in the “Enter the object names to select” text box</li>
-<li>Click the ‘Check Names’ button. If successful, the user name will be underlined. It might include the computer name in front of it. This is ok as long as it is underlined.</li>
-<li>Click ‘Ok’</li>
-<li>Uncheck ‘Allow’ for ‘Read and Execute’</li>
-<li>Check ‘Deny’ for ‘Write’</li>
-<li>Click ‘Apply’</li>
-<li>Click ‘Ok’</li>
+<li>Right-click the <code>C:\RCTab\output</code> folder and select Properties</li>
+<li>Click the "Security" tab</li>
+<li>Click "Edit" to change permissions</li>
+<li>Click "Add"</li>
+<li>Type "RCTab" in the “Enter the object names to select” text box</li>
+<li>Click the "Check Names" button. If successful, the user name will be underlined. It might include the computer name in front of it. This is ok as long as it is underlined.</li>
+<li>Click "Ok"</li>
+<li>Uncheck "Allow" for "Read and Execute"</li>
+<li>Check "Deny" for "Write"</li>
+<li>Click "Apply"</li>
+<li>Click "Ok"</li>
 </ul>
-<p>![][image44]
-Note: RCTab contest summary output files are programmatically set to be unmodifiable. However, if the folder they are exported to is not set properly with the preceding steps users could <em>delete</em> them.</p>
+<p><img alt="Screenshot of Windows setting menu for managing in-depth user privileges" src="images/image59.png" /></p>
+<p>Note: RCTab contest summary output files are programmatically set to be unmodifiable. However, if the folder they are exported to is not set properly with the preceding steps users could <em>delete</em> them.</p>
 </li>
 <li>
-<p>Now, log in as the ‘RCTab’ Windows standard user. Tabulation should <strong>always be done logged in to the Windows OS as the ‘RCTab’ Windows standard user.</strong></p>
+<p>Now, log in as the "RCTab" Windows standard user. Tabulation should <strong>always be done logged in to the Windows OS as the "RCTab" Windows standard user.</strong></p>
 </li>
-<li>Navigate to the <code>rctab_v2.0_windows</code> folder. Double click on the <code>rcv</code> folder.</li>
-<li>Double click on the <code>bin</code> folder.</li>
-<li>Right-click on the <code>rcv.bat</code> file Click ‘Run as Administrator.’ If a ‘Windows protected your PC’ window pops up click ‘More Info’ then click the ‘Run anyway’ button. Enter the administrator password</li>
+<li>Navigate to the <code>rctab_v2.0_windows</code> folder. Double-click on the <code>rcv</code> folder.</li>
+<li>Double-click on the <code>bin</code> folder.</li>
+<li>Right-click on the <code>rcv.bat</code> file Click "Run as Administrator." If a "Windows protected your PC" window pops up click "More Info" then click the "Run anyway" button. Enter the administrator password</li>
 <li>RCTab will now launch.</li>
 <li>Using your mouse left click and drag the window with the dark top border down until it looks like the pictures below.</li>
 <li>
@@ -1391,14 +1391,16 @@ Note: RCTab contest summary output files are programmatically set to be unmodifi
 <li>
 <p>You have successfully installed the RCTab v2.0!</p>
 </li>
-<li>Optionally, you can create a shortcut on your desktop for a more simpler start process in the future<ul>
-<li>Right click the <code>rcv.bat</code> file -&gt; Create Shortcut</li>
-<li>Right click the shortcut file created -&gt; Properties -&gt; Advanced -&gt; Check the ‘Run as administrator’ checkbox -&gt; Ok -&gt; Ok</li>
+<li>Optionally, you can create a shortcut on your desktop for a simpler start process in the future<ul>
+<li>Right-click the <code>rcv.bat</code> file -&gt; Create Shortcut</li>
+<li>Right-click the shortcut file created -&gt; Properties -&gt; Advanced -&gt; Check the "Run as administrator" checkbox -&gt; Ok -&gt; Ok</li>
 <li>Drag the shortcut file to your desktop</li>
 </ul>
 </li>
-<li>Complete the instructions in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a> under the ‘Validating the hash of a trusted RCTab build’ header to verify your installation.</li>
+<li>Complete the instructions in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a> under the "Validating the hash of a trusted RCTab build" header to verify your installation.</li>
 </ul>
+<p><img alt="Screenshot of Windows Command Prompt running script to start up RCTab 1.3.1 GUI" src="images/image57.png" /></p>
+<p><img alt="Screenshot of bottom RCTab GUI running, including console log on initialization and part of in-app user guidance " src="images/image53.png" /></p>
 
 
 

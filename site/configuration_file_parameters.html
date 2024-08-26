@@ -1283,221 +1283,217 @@
 <p>This document lists the parameters that can be included in a config file suitable for input tabulation. Parameters are categorized by required and optional. If a user fails to fill out a required parameter when building a configuration file, RCTab will alert the user to the missing requirement and provide suggested resolution steps.</p>
 <p>Config file must be valid JSON format. Examples can be found in the test_data folder.</p>
 <ul>
-<li>"tabulatorVersion" required<ul>
+<li>
+<p><code>"tabulatorVersion"</code> required</p>
+<ul>
 <li>version of the application that created this file</li>
 <li>used for migrating config data between different application versions</li>
-<li>example: "1.0.1"</li>
+<li>example: <code>"1.0.1"</code></li>
 <li>value: text string of length [1..1000]</li>
 </ul>
 </li>
-</ul>
-<p><strong>"outputSettings"</strong> required
-A list of output settings and their associated parameters
-The "outputSettings" section contains the following parameters:</p>
+<li>
+<p><code>"outputSettings"</code> required
+    A list of output settings and their associated parameters</p>
+<p>The <code>"outputSettings"</code> section contains the following parameters:</p>
 <ol>
-<li>"contestName" required<ol>
+<li><code>"contestName"</code> required<ol>
 <li>The name of the contest</li>
 <li>Used for naming audit output files</li>
-<li>Example: "Portland Mayoral Race 2017"</li>
+<li>Example: <code>"Portland Mayoral Race 2017"</code></li>
 <li>Value: text string of length [1..255]</li>
 </ol>
 </li>
-<li>The "outputDirectory" optional<ol>
+<li>The <code>"outputDirectory"</code> optional<ol>
 <li>Directory for audit output files (absolute or relative path)</li>
-<li>Example: /Path/To/TabulatorResults</li>
-<li>Example: output data/contest1</li>
+<li>Example: <code>"/Path/To/TabulatorResults"</code></li>
+<li>Example: <code>"output data/contest1"</code></li>
 <li>Value: string of length [1..255]</li>
 <li>If not supplied: files will be saved to the current working directory</li>
 </ol>
 </li>
 <li>The "contestDate" optional<ol>
 <li>Date of the contest</li>
-<li>Example: "2015-11-03"</li>
+<li>Example: <code>"2015-11-03"</code></li>
 <li>Value: text string of length [1..1000]</li>
-<li>If not supplied: none</li>
+<li>If not supplied: <code>none</code></li>
 </ol>
 </li>
-<li>The "contestJurisdiction" optional<ol>
+<li>The <code>"contestJurisdiction"</code> optional<ol>
 <li>Text description of the jurisdiction of this contest</li>
-<li>Example: "Portland, ME"</li>
+<li>Example: <code>"Portland, ME"</code></li>
 <li>Value: text string of length [1..1000]</li>
-<li>If not supplied: none</li>
+<li>If not supplied: <code>none</code></li>
 </ol>
 </li>
-<li>"contestOffice" optional</li>
+<li><code>"contestOffice"</code> optional<ol>
 <li>text description of the office being contested</li>
-<li>Example: "Mayor"</li>
+<li>Example: <code>"Mayor"</code></li>
 <li>Value: text string of length [1..1000]</li>
-<li>If not supplied: none</li>
-</ol>
-<p><strong>"cvrFileSources"</strong> required
-List of input CVR file paths and their associated parameters. Multiple CVRs can be input in a single configuration file.
-Each "cvrFileSources" list item contains the following parameters:</p>
-<ol>
-<li>"provider" required<ol>
-<li>text description of the vendor / machine which generated this file</li>
-<li>value: "cdf" | "clearBallot" | "dominion" | "ess" | "hart"</li>
+<li>If not supplied: <code>none</code></li>
 </ol>
 </li>
-<li>"filePath" required<ol>
-<li>location of the CVR file (in the case of CDF, Clear Ballot, and ES&amp;S), or the CVR folder (in the case of Dominion and Hart)</li>
-<li>example: /Users/test_data/2015-portland-mayor-cvr.xlsx</li>
-<li>value: string of length [1..255]</li>
-</ol>
-</li>
-<li>"contestId" required when CVR source files are from a provider other than ES&S; must be blank for ES&amp;S<ol>
-<li>the ID of the contest to tabulate, as represented in the CVR file(s)</li>
-<li>example: "b651b997-417a-46d9-a676-a43d4df94ddc"</li>
-<li>value: text string of length [1..1000]</li>
-</ol>
-</li>
-<li>"firstVoteColumnIndex" required and used if and only if the provider is ES&amp;S<ol>
-<li>index of the column (starting from 1) that contains the top-ranked candidate for each CVR</li>
-<li>example: 3</li>
-<li>value: [1..1000]</li>
-</ol>
-</li>
-<li>"firstVoteRowIndex" required and used if and only if the provider is ES&amp;S<ol>
-<li>index of the row (starting from 1) that contains the rankings for the first CVR</li>
-<li>example: 2</li>
-<li>value: [1..100000]</li>
-</ol>
-</li>
-<li>"idColumnIndex" optional and can be used only if the provider is ES&amp;S<ol>
-<li>index of the column (starting from 1) that contains the unique ID for each CVR</li>
-<li>example: 1</li>
-<li>value: [1..1000]</li>
-</ol>
-</li>
-<li>"precinctColumnIndex" required and used if and only if "tabulateByPrecinct" is enabled and the provider is ES&amp;S<ol>
-<li>index of the column (starting from 1) that contains the precinct name for each CVR</li>
-<li>example: 2</li>
-<li>value: [1..1000]</li>
-</ol>
-</li>
-<li>"overvoteLabel" optional and can be used only if the provider is ES&amp;S or CDF<ol>
-<li>label used in the CVR to denote an overvote; if this parameter is present overvoteRule must be either "alwaysSkipToNextRank" or "exhaustImmediately" (because the other option, "exhaustIfMultipleContinuing", relies on knowing which specific candidates were involved in each overvote)</li>
-<li>example: "OVERVOTE"</li>
-<li>value: string of length [1..1000]</li>
-</ol>
-</li>
-<li>"undervoteLabel" optional and can be used only if the provider is ES&amp;S<ol>
-<li>the special label used in the cast vote records to denote an undervote</li>
-<li>example: "UNDERVOTE"</li>
-<li>value: string of length [1..1000]</li>
-</ol>
-</li>
-<li>"undeclaredWriteInLabel" optional<ol>
-<li>the special label used in the cast vote records to denote a vote for an undeclared write-in</li>
-<li>example: "UWI"</li>
-<li>value: string of length [1..1000]</li>
 </ol>
 </li>
 <li>
-<p>"treatBlankAsUndeclaredWriteIn" optional and can be used only if the provider is ES&amp;S</p>
+<p><code>"cvrFileSources"</code> required
+    List of input CVR file paths and their associated parameters. Multiple CVRs can be input in a single configuration file.</p>
+<p>Each "cvrFileSources" list item contains the following parameters:</p>
 <ol>
+<li><code>"provider"</code> required<ol>
+<li>text description of the vendor / machine which generated this file</li>
+<li>value: <code>"cdf"</code> | <code>"clearBallot"</code> | <code>"dominion"</code> | <code>"ess"</code> | <code>"hart"</code></li>
+</ol>
+</li>
+<li><code>"filePath"</code> required<ol>
+<li>location of the CVR file (in the case of CDF, Clear Ballot, and ES&amp;S), or the CVR folder (in the case of Dominion and Hart)</li>
+<li>example: <code>"/Users/test_data/2015-portland-mayor-cvr.xlsx"</code></li>
+<li>value: string of length [1..255]</li>
+</ol>
+</li>
+<li><code>"contestId"</code> required when CVR source files are from a provider other than ES&S; must be blank for ES&amp;S<ol>
+<li>the ID of the contest to tabulate, as represented in the CVR file(s)</li>
+<li>example: <code>"b651b997-417a-46d9-a676-a43d4df94ddc"</code></li>
+<li>value: text string of length [1..1000]</li>
+</ol>
+</li>
+<li><code>"firstVoteColumnIndex"</code> required and used if and only if the provider is ES&amp;S<ol>
+<li>index of the column (starting from <code>1</code>) that contains the top-ranked candidate for each CVR</li>
+<li>example: <code>3</code></li>
+<li>value: [1..1000]</li>
+</ol>
+</li>
+<li><code>"firstVoteRowIndex"</code> required and used if and only if the provider is ES&amp;S<ol>
+<li>index of the row (starting from <code>1</code>) that contains the rankings for the first CVR</li>
+<li>example: <code>2</code></li>
+<li>value: [1..100000]</li>
+</ol>
+</li>
+<li><code>"idColumnIndex"</code> optional and can be used only if the provider is ES&amp;S<ol>
+<li>index of the column (starting from <code>1</code>) that contains the unique ID for each CVR</li>
+<li>example: <code>1</code></li>
+<li>value: [1..1000]</li>
+</ol>
+</li>
+<li><code>"precinctColumnIndex"</code> required and used if and only if <code>"tabulateByPrecinct"</code> is enabled and the provider is ES&amp;S<ol>
+<li>index of the column (starting from <code>1</code>) that contains the precinct name for each CVR</li>
+<li>example: <code>2</code></li>
+<li>value: [1..1000]</li>
+</ol>
+</li>
+<li><code>"overvoteLabel"</code> optional and can be used only if the provider is ES&amp;S or CDF<ol>
+<li>label used in the CVR to denote an overvote; if this parameter is present <code>"overvoteRule"</code> must be either <code>"alwaysSkipToNextRank"</code> or <code>"exhaustImmediately"</code> (because the other option, <code>"exhaustIfMultipleContinuing"</code>, relies on knowing which specific candidates were involved in each overvote)</li>
+<li>example: <code>"OVERVOTE"</code></li>
+<li>value: string of length [1..1000]</li>
+</ol>
+</li>
+<li><code>"undervoteLabel"</code> optional and can be used only if the provider is ES&amp;S<ol>
+<li>the special label used in the cast vote records to denote an undervote</li>
+<li>example: <code>"UNDERVOTE"</code></li>
+<li>value: string of length [1..1000]</li>
+</ol>
+</li>
+<li><code>"undeclaredWriteInLabel"</code> optional<ol>
+<li>the special label used in the cast vote records to denote a vote for an undeclared write-in</li>
+<li>example: <code>"UWI"</code></li>
+<li>value: string of length [1..1000]</li>
+</ol>
+</li>
+<li><code>"treatBlankAsUndeclaredWriteIn"</code> optional and can be used only if the provider is ES&amp;S<ol>
 <li>tabulator will interpret a blank cell in a CVR as a vote for an undeclared write-in</li>
-<li>value: true | false</li>
-<li>if not supplied: false</li>
+<li>value: <code>true</code> | <code>false</code></li>
+<li>if not supplied: <code>false</code></li>
 </ol>
 </li>
 </ol>
-<p><strong>"candidates"</strong> required
-List of registered candidate names and associated candidate code (note: leave empty when CVR is in Common Data Format)
-Each "candidates" list item has the following parameters:</p>
+</li>
+<li>
+<p><code>"candidates"</code> required
+    List of registered candidate names and associated candidate code (note: leave empty when CVR is in Common Data Format)</p>
+<p>Each <code>"candidates"</code> list item has the following parameters:</p>
 <ol>
-<li>"name" required<ol>
-<li>Full name of the registered candidate<ol>
-<li>Example: "Duson, Jill C."<ol>
+<li><code>"name"</code> required<ol>
+<li>Full name of the registered candidate</li>
+<li>Example: <code>"Duson, Jill C."</code></li>
 <li>Value: string of length [1..1000]</li>
 </ol>
 </li>
-</ol>
-</li>
-</ol>
-</li>
-<li>"code" optional<ol>
-<li>Candidate code which may appear in CVRs in lieu of full candidate name<ol>
-<li>Example: "JCD"<ol>
+<li><code>"code"</code> optional<ol>
+<li>Candidate code which may appear in CVRs in lieu of full candidate name</li>
+<li>Example: <code>"JCD"</code></li>
 <li>Value: string of length [1..1000]</li>
-<li>If not supplied: none</li>
+<li>If not supplied: <code>none</code></li>
+</ol>
+</li>
+<li><code>"excluded"</code> optional<ol>
+<li>Candidate should be ignored during tabulation</li>
+<li>Value: <code>true</code> | <code>false</code></li>
+<li>If not supplied: <code>false</code></li>
 </ol>
 </li>
 </ol>
 </li>
-</ol>
-</li>
-<li>"excluded" optional<ol>
-<li>Candidate should be ignored during tabulation<ol>
-<li>Value: true | false<ol>
-<li>If not supplied: false</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-</ol>
-<p><strong>"rules"</strong> required
-Set of configuration parameters that specify the tabulation rules
-The "rules" section contains the following parameters:</p>
+<li>
+<p><code>"rules"</code> required
+    Set of configuration parameters that specify the tabulation rules
+    The <code>"rules"</code> section contains the following parameters:</p>
 <ol>
-<li>"tiebreakMode" required<ol>
+<li><code>"tiebreakMode"</code> required<ol>
 <li>how the program should decide which candidate to eliminate when multiple candidates are tied for last place</li>
 <li>or which candidate to elect first when:<ol>
-<li>electionWinnerMode is set to multiWinnerAllowOnlyOneWinnerPerRound, and</li>
+<li><code>"electionWinnerMode"</code> is set to <code>"multiWinnerAllowOnlyOneWinnerPerRound"</code>, and</li>
 <li>multiple candidates exceed the winning threshold in the same round, and</li>
 <li>at least two of those candidates are tied for the highest vote total in that round</li>
 </ol>
 </li>
-<li>value: "random" | "stopCountingAndAsk" | "previousRoundCountsThenRandom" | "previousRoundCountsThenAsk" | "useCandidateOrder" | "generatePermutation"<ol>
-<li>we use java.util.random for randomness in our tiebreak implementations<ol>
+<li>value: <code>"random"</code> | <code>"stopCountingAndAsk"</code> | <code>"previousRoundCountsThenRandom"</code> | <code>"previousRoundCountsThenAsk"</code> | <code>"useCandidateOrder"</code> | <code>"generatePermutation"</code><ol>
+<li>we use <code>java.util.random</code> for randomness in our tiebreak implementations<ol>
 <li>see: <a href="https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Random.html">https://docs.oracle.com/en/java/javase/12/docs/api/java.base/java/util/Random.html</a></li>
 <li>compatible methods exist for other languages, e.g. <a href="https://pypi.org/project/java-random/">https://pypi.org/project/java-random/</a></li>
 </ol>
 </li>
-<li>on tabulation start a java.util.Random object is created if required using the randomSeed value specified in the input config file:<ol>
-<li>Random random = new Random(config.getRandomSeed());</li>
+<li>on tabulation start a <code>java.util.Random</code> object is created if required using the randomSeed value specified in the input config file:<ol>
+<li><code>Random random = new Random(config.getRandomSeed());</code></li>
 </ol>
 </li>
 </ol>
 </li>
-<li>"Random"<ol>
+<li><code>"Random"</code><ol>
 <li>during tabulation, in the event of a tie at the end of a round:<ol>
 <li>the list of tied candidates is sorted alphabetically</li>
-<li>a randomDouble is generated using the random object:</li>
-<li>double randomDouble = random.nextDouble();</li>
-<li>the randomDouble is mapped to one of the tied candidates in the list:</li>
-<li>int randomCandidateIndex = (int) Math.floor(randomDouble * (double) tiedCandidates.size());</li>
+<li>a <code>randomDouble</code> is generated using the random object:</li>
+<li><code>double randomDouble = random.nextDouble();</code></li>
+<li>the <code>randomDouble</code> is mapped to one of the tied candidates in the list:</li>
+<li><code>int randomCandidateIndex = (int) Math.floor(randomDouble * (double) tiedCandidates.size());</code></li>
 <li>the selected candidate will be the winner or loser for that round</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>"stopCountingAndAsk":<ol>
+<li><code>"stopCountingAndAsk"</code>:<ol>
 <li>the user is presented with a list of tied candidates</li>
 <li>the user will input their selection manually</li>
 </ol>
 </li>
-<li>"previousRoundCountsThenRandom"<ol>
+<li><code>"previousRoundCountsThenRandom"</code><ol>
 <li>the tied candidate with the highest vote total in the previous round is selected</li>
-<li>if there is a tie for the vote count in the previous round as well, a candidate is selected from the still tying candidates as described under tiebreakMode "Random"</li>
+<li>if there is a tie for the vote count in the previous round as well, a candidate is selected from the still tying candidates as described under <code>"tiebreakMode": "Random"</code></li>
 </ol>
 </li>
-<li>"previousRoundCountsThenAsk"<ol>
+<li><code>"previousRoundCountsThenAsk"</code><ol>
 <li>the tied candidate with the highest vote total in the previous round is selected</li>
-<li>if there is a tie for the vote count in the previous round as well, a candidate is selected from the still tying candidates as described under tiebreakMode "Stop counting and ask"</li>
+<li>if there is a tie for the vote count in the previous round as well, a candidate is selected from the still tying candidates as described under <code>"tiebreakMode": "Stop counting and ask"</code></li>
 </ol>
 </li>
-<li>"useCandidateOrder"<ol>
+<li><code>"useCandidateOrder"</code><ol>
 <li>during tabulation, in the event of a tie at the end of a round the list of candidates from the config file is consulted</li>
 <li>if selecting a winner the tied candidate in this round who appears earliest is selected as a winner</li>
 <li>if selecting a loser the tied candidate who appears latest is selected as the loser.</li>
 </ol>
 </li>
-<li>"generatePermutation"<ol>
+<li><code>"generatePermutation"</code><ol>
 <li>on config load candidate names are sorted alphabetically by candidate code, or if code is not present, candidate name</li>
-<li>a randomly ordered candidate permutation is created using Collections.shuffle() with the randomSeed specified in the input config file</li>
+<li>a randomly ordered candidate permutation is created using <code>Collections.shuffle()</code> with the <code>randomSeed</code> specified in the input config file</li>
 <li>during tabulation, in the event of a tie at the end of a round, this permutation is consulted</li>
 <li>if selecting a winner: the tied candidate in this round who appears earliest is selected</li>
 <li>if selecting a loser: the tied candidate who appears latest is selected</li>
@@ -1505,150 +1501,174 @@ The "rules" section contains the following parameters:</p>
 </li>
 </ol>
 </li>
-<li>"overvoteRule" required<ol>
+<li><code>"overvoteRule"</code> required<ol>
 <li>how the program should handle an overvote when it encounters one</li>
-<li>value: "alwaysSkipToNextRank" | "exhaustImmediately" | "exhaustIfMultipleContinuing"</li>
-<li>“exhaustImmediately”<ol>
-<li>"exhaustImmediately": exhaust a ballot as soon as we encounter an overvote</li>
+<li>value: <code>"alwaysSkipToNextRank"</code> | <code>"exhaustImmediately"</code> | <code>"exhaustIfMultipleContinuing"</code></li>
+<li><code>"exhaustImmediately"</code><ol>
+<li><code>"exhaustImmediately"</code>: exhaust a ballot as soon as we encounter an overvote</li>
 </ol>
 </li>
 </ol>
 </li>
-<li>"winnerElectionMode" required<ol>
+<li><code>"winnerElectionMode"</code> required<ol>
 <li>which process the program should apply for selecting the winner(s)</li>
-<li>value: "singleWinnerMajority" | "multiWinnerAllowOnlyOneWinnerPerRound" | "multiWinnerAllowMultipleWinnersPerRound" | "bottomsUp" | "bottomsUpUsingPercentageThreshold" | "multiPassIrv"</li>
-<li>If only “singleWinnerMajority” is in use.<ol>
-<li>"singleWinnerMajority": no special process (only valid when numberOfWinners = 1).<ol>
+<li>value: <code>"singleWinnerMajority"</code> | <code>"multiWinnerAllowOnlyOneWinnerPerRound"</code> | <code>"multiWinnerAllowMultipleWinnersPerRound"</code> | <code>"bottomsUp"</code> | <code>"bottomsUpUsingPercentageThreshold"</code> | <code>"multiPassIrv"</code></li>
+<li>If only <code>singleWinnerMajority</code> is in use.<ol>
+<li><code>"singleWinnerMajority"</code>: no special process (only valid when <code>numberOfWinners = 1</code>).<ol>
 <li>Election threshold = floor(V/(S+1)) + 1</li>
-<li>where V = total number of votes (in the current round); and S = numberOfWinners</li>
+<li>where <code>V</code> = total number of votes (in the current round); and <code>S</code> = numberOfWinners</li>
 </ol>
 </li>
 </ol>
 </li>
 </ol>
 </li>
-<li>
-<p>"numberOfWinners" required</p>
-<ol>
-<li>
-<p>the number of seats to be won in this contest</p>
-</li>
-<li>
-<p>Uneditable if using “single-winner majority determines winner,” automatically set to 1. Uneditable if using “Bottoms-up using percentage threshold,” automatically set to 0.</p>
-</li>
-<li>note: we use fractional vote transfer to redistribute votes in “multiWinnerAllowOnlyOneWinnerPerRound” and “multiWinnerAllowMultipleWinnersPerRound” contests.</li>
-<li>note: 0 is valid only when winnerElectionMode is set to "bottomsUpUsingPercentageThreshold"</li>
+<li><code>"numberOfWinners"</code> required<ol>
+<li>the number of seats to be won in this contest</li>
+<li>Uneditable if using <code>"single-winner majority determines winner"</code>, automatically set to <code>1</code>. Uneditable if using <code>"Bottoms-up using percentage threshold"</code>, automatically set to <code>0</code>.</li>
+<li>note: we use fractional vote transfer to redistribute votes in <code>"multiWinnerAllowOnlyOneWinnerPerRound"</code> and <code>"multiWinnerAllowMultipleWinnersPerRound"</code> contests.</li>
+<li>note: <code>0</code> is valid only when <code>"winnerElectionMode"</code> is set to <code>"bottomsUpUsingPercentageThreshold"</code></li>
 <li>value: [0..number of declared candidates]</li>
-<li>"minimumVoteThreshold" optional</li>
-<li>if a candidate receives fewer than this number of votes in the first round, they are automatically eliminated</li>
-<li>example: 150</li>
-<li>value: [0..1000000]</li>
-<li>if not supplied: no automatic elimination occurs (equivalent to setting it to 0)</li>
-<li>Note: If no candidate exceeds the minimum vote threshold, tabulation silently fails. If you are using the minimum vote threshold setting and are having issues getting results, check that you have not set the minimum vote threshold too high.</li>
-<li>"maxSkippedRanksAllowed" required</li>
-<li>maximum number of skipped ranks (undervotes) on a ballot before the ballot should be considered exhausted; if "unlimited" is entered, a ballot will never be considered exhausted due to skipped ranks</li>
-<li>example: 1</li>
-<li>value: [unlimited, 0..1000000]</li>
-<li>"maxRankingsAllowed" required</li>
-<li>maximum number of candidates that a ballot is allowed to rank; if "max" is entered, this will default to the total number of declared candidates as entered on the candidates tab</li>
-<li>example: 15</li>
-<li>values: [max, 1..1000000]</li>
-<li>"rulesDescription" optional</li>
-<li>text description of this rules configuration for organizing your config files -- not used by the tabulator</li>
-<li>Example "Maine Rules"</li>
-<li>value: string of length [1..1000]</li>
-<li>"batchElimination" optional</li>
-<li>Tabulator will use batch elimination (only valid for single-winner contests)</li>
-<li>Value: true | false</li>
-<li>If not supplied: false</li>
-<li>"continueUntilTwoCandidatesRemain" optional</li>
-<li>tabulator will keep tabulating (beyond winning round) until only two candidates remain (only valid for single-winner contests)</li>
-<li>Value: true | false</li>
-<li>If not supplied: false</li>
-<li>"overvoteDelimiter" optional and can be used only if provider is ES&S; must be blank when overvoteLabel is provided</li>
-<li>string that will be used to split a cell into multiple candidate strings in the case of an overvote</li>
-<li>example: //</li>
-<li>value: any string that contains no backslashes and at least one character that is not a letter, number, hyphen, period, comma, apostrophe, quote, or space</li>
-<li>"tabulateByPrecinct" optional</li>
-<li>Tabulator will generate a results spreadsheet for each precinct</li>
-<li>Value: true | false</li>
-<li>If not supplied: false</li>
-<li>"generateCdfJson" optional</li>
-<li>Tabulator will generate a JSON of cast vote records in the Common Data Format</li>
-<li>Value: true | false</li>
-<li>If not supplied: false</li>
-<li>"exhaustOnDuplicateCandidate" optional<ol>
-<li>Tabulator will exhaust a ballot when it encounters a duplicate candidate (instead of just skipping the duplicate)</li>
-<li>Value: true | false</li>
-<li>If not supplied: false</li>
 </ol>
 </li>
-<li>
-<p>"nonIntegerWinningThreshold" optional</p>
+<li><code>"minimumVoteThreshold"</code> optional<ol>
+<li>if a candidate receives fewer than this number of votes in the first round, they are automatically eliminated</li>
+<li>example: <code>150</code></li>
+<li>value: [0..1000000]</li>
+<li>if not supplied: no automatic elimination occurs (equivalent to setting it to <code>0</code>)</li>
+<li>Note: If no candidate exceeds the minimum vote threshold, tabulation silently fails. If you are using the minimum vote threshold setting and are having issues getting results, check that you have not set the minimum vote threshold too high.</li>
+</ol>
 </li>
-<li>
-<p>the vote threshold used to determine winners can be a non-integer</p>
+<li><code>"maxSkippedRanksAllowed"</code> required<ol>
+<li>maximum number of skipped ranks (undervotes) on a ballot before the ballot should be considered exhausted; if <code>"unlimited"</code> is entered, a ballot will never be considered exhausted due to skipped ranks</li>
+<li>example: <code>1</code></li>
+<li>value: [unlimited, 0..1000000]</li>
+</ol>
 </li>
-<li>if true, threshold = V/(S+1) + 10^-d</li>
-<li>if false, threshold = floor(V/(S+1)) + 1</li>
-<li>where V = total number of votes (in the current round or in the first round, depending on the winnerElectionMode); S = numberOfWinners; and d = decimalPlacesForVoteArithmetic</li>
-<li>(note that S+1 in the formulas above becomes just S if hareQuota is set to true.)</li>
-<li>Only valid for “multiWinnerAllowOnlyOneWinnerPerRound” and “multiWinnerAllowMultipleWinnersPerRound” contests</li>
-<li>value: true | false</li>
-<li>if not supplied: false</li>
-<li>"hareQuota<strong>*</strong>" optional</li>
+<li><code>"maxRankingsAllowed"</code> required<ol>
+<li>maximum number of candidates that a ballot is allowed to rank; if <code>"max"</code> is entered, this will default to the total number of declared candidates as entered on the candidates tab</li>
+<li>example: <code>15</code></li>
+<li>values: [max, 1..1000000]</li>
+</ol>
+</li>
+<li><code>"rulesDescription"</code> optional<ol>
+<li>text description of this rules configuration for organizing your config files -- not used by the tabulator</li>
+<li>Example <code>"Maine Rules"</code></li>
+<li>value: string of length [1..1000]</li>
+</ol>
+</li>
+<li><code>"batchElimination"</code> optional<ol>
+<li>Tabulator will use batch elimination (only valid for single-winner contests)</li>
+<li>Value: <code>true</code> | <code>false</code></li>
+<li>If not supplied: <code>false</code></li>
+</ol>
+</li>
+<li><code>"continueUntilTwoCandidatesRemain"</code> optional<ol>
+<li>tabulator will keep tabulating (beyond winning round) until only two candidates remain (only valid for single-winner contests)</li>
+<li>Value: <code>true</code> | <code>false</code></li>
+<li>If not supplied: <code>false</code></li>
+</ol>
+</li>
+<li><code>"overvoteDelimiter"</code> optional and can be used only if provider is ES&S; must be blank when <code>"overvoteLabel"</code> is provided<ol>
+<li>string that will be used to split a cell into multiple candidate strings in the case of an overvote</li>
+<li>example: <code>//</code></li>
+<li>value: any string that contains no backslashes and at least one character that is not a letter, number, hyphen, period, comma, apostrophe, quote, or space</li>
+</ol>
+</li>
+<li><code>"tabulateByPrecinct"</code> optional<ol>
+<li>Tabulator will generate a results spreadsheet for each precinct</li>
+<li>Value: <code>true</code> | <code>false</code></li>
+<li>If not supplied: <code>false</code></li>
+</ol>
+</li>
+<li><code>"generateCdfJson"</code> optional<ol>
+<li>Tabulator will generate a JSON of cast vote records in the Common Data Format</li>
+<li>Value: <code>true</code> | <code>false</code></li>
+<li>If not supplied: <code>false</code></li>
+<li><code>"exhaustOnDuplicateCandidate"</code> optional<ol>
+<li>Tabulator will exhaust a ballot when it encounters a duplicate candidate (instead of just skipping the duplicate)</li>
+<li>Value: <code>true</code> | <code>false</code></li>
+<li>If not supplied: <code>false</code></li>
+</ol>
+</li>
+</ol>
+</li>
+<li><code>"nonIntegerWinningThreshold"</code> optional<ol>
+<li>the vote threshold used to determine winners can be a non-integer</li>
+<li>if <code>true</code>, threshold = V/(S+1) + 10^-d</li>
+<li>if <code>false</code>, threshold = floor(V/(S+1)) + 1</li>
+<li>where <code>V</code> = total number of votes (in the current round or in the first round, depending on the winnerElectionMode); <code>S</code> = numberOfWinners; and d = decimalPlacesForVoteArithmetic</li>
+<li>(note that <code>S+1</code> in the formulas above becomes just <code>S</code> if <code>"hareQuota"</code> is set to <code>true</code>.)</li>
+<li>Only valid for <code>"multiWinnerAllowOnlyOneWinnerPerRound"</code> and <code>"multiWinnerAllowMultipleWinnersPerRound"</code> contests</li>
+<li>value: <code>true</code> | <code>false</code></li>
+<li>if not supplied: <code>false</code></li>
+</ol>
+</li>
+<li><code>"hareQuota"</code><strong>*</strong> optional<ol>
 <li>the winning threshold should be computed using the Hare quota<strong>*</strong> (floor(votes divided by seats)) instead of the preferred Droop quota (votes divided by (seats+1))</li>
-<li>Only valid for “multiWinnerAllowOnlyOneWinnerPerRound” and “multiWinnerAllowMultipleWinnersPerRound” contests</li>
-<li>Value: true | false</li>
-<li>If not supplied: false</li>
-<li>"randomSeed" required if tiebreakMode is "random", "previousRoundCountsThenRandom", or "generatePermutation"</li>
+<li>Only valid for <code>"multiWinnerAllowOnlyOneWinnerPerRound"</code> and <code>"multiWinnerAllowMultipleWinnersPerRound"</code> contests</li>
+<li>Value: <code>true</code> | <code>false</code></li>
+<li>If not supplied: <code>false</code></li>
+</ol>
+</li>
+<li><code>"randomSeed"</code> required if <code>"tiebreakMode"</code> is <code>"random"</code>, <code>"previousRoundCountsThenRandom"</code>, or <code>"generatePermutation"</code><ol>
 <li>the integer seed for the application's pseudorandom number generator</li>
 <li>value: [-140737488355328..140737488355327]</li>
-<li>"multiSeatBottomsUpPercentageThreshold" required if winnerElectionMode is "bottomsUpUsingPercentageThreshold" and numberOfWinners is 0</li>
+</ol>
+</li>
+<li><code>"multiSeatBottomsUpPercentageThreshold"</code> required if <code>"winnerElectionMode"</code> is <code>"bottomsUpUsingPercentageThreshold"</code> and <code>"numberOfWinners"</code> is <code>0</code><ol>
 <li>the percentage threshold used to determine when to stop the tabulation and declare winners</li>
-<li>note: only valid when winnerElectionMode is "bottomsUpUsingPercentageThreshold" and numberOfWinners is 0</li>
+<li>note: only valid when <code>"winnerElectionMode"</code> is <code>bottomsUpUsingPercentageThreshold</code> and <code>"numberOfWinners"</code> is <code>0</code></li>
 <li>value: [1..100]</li>
-<li>"decimalPlacesForVoteArithmetic" required</li>
+</ol>
+</li>
+<li><code>"decimalPlacesForVoteArithmetic"</code> required<ol>
 <li>number of rounding decimal places when computing winning thresholds and fractional vote transfers</li>
-<li>note: only editable when winnerElectionMode is "multiWinnerAllowOnlyOneWinnerPerRound" or "multiWinnerAllowMultipleWinnersPerRound"</li>
+<li>note: only editable when <code>"winnerElectionMode"</code> is <code>"multiWinnerAllowOnlyOneWinnerPerRound"</code> or <code>"multiWinnerAllowMultipleWinnersPerRound"</code></li>
 <li>value: [1..20]</li>
-<li>"winnerElectionMode" required</li>
+</ol>
+</li>
+<li><code>"winnerElectionMode"</code> required<ol>
 <li>which process the program should apply for selecting the winner(s)</li>
-<li>value: "singleWinnerMajority" | "multiWinnerAllowOnlyOneWinnerPerRound" | "multiWinnerAllowMultipleWinnersPerRound" | "bottomsUp" | "bottomsUpUsingPercentageThreshold" | "multiPassIrv"</li>
-<li>"multiWinnerAllowOnlyOneWinnerPerRound": elect no more than one winner per round, even when there are multiple candidates exceeding the winning threshold (only valid when numberOfWinners is &gt; 1)<ol>
+<li>value: <code>"singleWinnerMajority"</code> | <code>"multiWinnerAllowOnlyOneWinnerPerRound"</code> | <code>"multiWinnerAllowMultipleWinnersPerRound"</code> | <code>"bottomsUp"</code> | <code>"bottomsUpUsingPercentageThreshold"</code> | <code>"multiPassIrv"</code></li>
+<li><code>"multiWinnerAllowOnlyOneWinnerPerRound"</code>: elect no more than one winner per round, even when there are multiple candidates exceeding the winning threshold (only valid when <code>"numberOfWinners"</code> is <code>&gt; 1</code>)<ol>
 <li>Election threshold = floor(V/(S+1)) + 1</li>
 <li>where V = total number of votes (in the first round); and S = numberOfWinners</li>
 </ol>
 </li>
-<li>"multiWinnerAllowMultipleWinnersPerRound": may elect more than one winner per round when there are multiple candidates exceeding the winning threshold (only valid when numberOfWinners is &gt; 1)<ol>
+<li><code>"multiWinnerAllowMultipleWinnersPerRound"</code>: may elect more than one winner per round when there are multiple candidates exceeding the winning threshold (only valid when <code>"numberOfWinners"</code> is <code>&gt; 1</code>)<ol>
 <li>Election threshold = floor(V/(S+1)) + 1</li>
-<li>where V = total number of votes (in the first round); and S = numberOfWinners</li>
+<li>where <code>V</code> = total number of votes (in the first round); and <code>S</code> = numberOfWinners</li>
 </ol>
 </li>
-<li>"bottomsUp": instead of running a standard multi-seat contest with single transferable votes, just eliminate candidates until there are numberOfWinners remaining (only valid when numberOfWinners is &gt; 1)<ol>
+<li><code>"bottomsUp"</code>: instead of running a standard multi-seat contest with single transferable votes, just eliminate candidates until there are numberOfWinners remaining (only valid when <code>"numberOfWinners"</code> is <code>&gt; 1</code>)<ol>
 <li>Election threshold = floor(V/(S+1)) + 1</li>
-<li>where V = total number of votes (in the first round); and S = numberOfWinners</li>
-<li>bottomsUp does not rely on election threshold for any vote processing</li>
+<li>where <code>V</code> = total number of votes (in the first round); and <code>S</code> = <code>"numberOfWinners"</code></li>
+<li><code>"bottomsUp"</code> does not rely on election threshold for any vote processing</li>
 </ol>
 </li>
-<li>"bottomsUpUsingPercentageThreshold": instead of running a standard multi-seat contest with single transferable votes, just eliminate candidates until all remaining candidates have vote shares that meet or exceed multiSeatBottomsUpPercentageThreshold (only valid when numberOfWinners is 0)<ol>
+<li><code>"bottomsUpUsingPercentageThreshold"</code>: instead of running a standard multi-seat contest with single transferable votes, just eliminate candidates until all remaining candidates have vote shares that meet or exceed <code>"multiSeatBottomsUpPercentageThreshold"</code> (only valid when <code>"numberOfWinners"</code> is <code>0</code>)<ol>
 <li>Election threshold = V•T</li>
-<li>where V = total number of votes (in the current round); and T = multiSeatBottomsUpPercentageThreshold</li>
+<li>where <code>V</code> = total number of votes (in the current round); and <code>T</code> = <code>"multiSeatBottomsUpPercentageThreshold"</code></li>
 </ol>
 </li>
-<li>"multiPassIrv": instead of running a true multi-seat contest, run a series of single-seat contests and progressively exclude candidates as they win seats (only valid when numberOfWinners is &gt; 1).<ol>
+<li><code>"multiPassIrv"</code>: instead of running a true multi-seat contest, run a series of single-seat contests and progressively exclude candidates as they win seats (only valid when <code>"numberOfWinners"</code> is <code>&gt; 1</code>).<ol>
 <li>Election threshold = floor(V/(2)) + 1</li>
-<li>where V = total number of votes (in the current round)</li>
+<li>where <code>V</code> = total number of votes (in the current round)</li>
 </ol>
 </li>
-<li>“overvoteRule" required</li>
+</ol>
+</li>
+<li><code>"overvoteRule"</code> required<ol>
 <li>how the program should handle an overvote when it encounters one</li>
-<li>value: "alwaysSkipToNextRank" | "exhaustImmediately" | "exhaustIfMultipleContinuing"</li>
-<li>"alwaysSkipToNextRank": when we encounter an overvote, ignore this rank and look at the next rank in the cast vote record</li>
-<li>"exhaustIfMultipleContinuing": if more than one candidate in an overvote are continuing, exhaust the ballot; if only one, assign the vote to them; if none, continue to the next rank (not valid with an ES&amp;S source unless overvoteDelimiter is supplied)</li>
+<li>value: <code>"alwaysSkipToNextRank"</code> | <code>"exhaustImmediately"</code> | <code>"exhaustIfMultipleContinuing"</code></li>
+<li><code>"alwaysSkipToNextRank"</code>: when we encounter an overvote, ignore this rank and look at the next rank in the cast vote record</li>
+<li><code>"exhaustIfMultipleContinuing"</code>: if more than one candidate in an overvote are continuing, exhaust the ballot; if only one, assign the vote to them; if none, continue to the next rank (not valid with an ES&amp;S source unless <code>"overvoteDelimiter"</code> is supplied)</li>
 </ol>
 </li>
 </ol>
+</li>
+</ul>
 
 
 

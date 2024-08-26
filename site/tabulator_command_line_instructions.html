@@ -1283,38 +1283,44 @@
 <ol>
 <li>Open Start Menu</li>
 <li>Type Command Prompt. Hit enter.</li>
-<li>Command Prompt will launch. The screenshot below displays an example of Command Prompt.</li>
-</ol>
-<p>![][image45]</p>
-<ol>
-<li>The user needs to direct Command Prompt to the folder where RCTab is installed. Type cd. Insert the folder name: locate the folder rcv under the folder rctab_v1.3.1_windows in File Explorer.</li>
+<li>
+<p>Command Prompt will launch. The screenshot below displays an example of Command Prompt.</p>
+<p><img alt="Screenshot of example Windows Command Prompt" src="images/image28.png" /></p>
+</li>
+<li>
+<p>The user needs to direct Command Prompt to the folder where RCTab is installed. Type cd. Insert the folder name: locate the folder rcv under the folder <code>rctab_v1.3.1_windows</code> in File Explorer.</p>
+</li>
 <li>Click on the rcv folder and while continuing to hold the button down, drag the file to the Command Prompt window and place after cd.<ol>
-<li>Example: cd C:\RCTab\rctab_v1.3.1_windows\rcv</li>
+<li>Example: <code>cd C:\RCTab\rctab_v1.3.1_windows\rcv</code></li>
 </ol>
 </li>
-<li>Hit enter. The screenshot displays the result of a successful execution of previous steps.</li>
-</ol>
-<p>![][image46]</p>
+<li>
+<p>Hit enter. The screenshot displays the result of a successful execution of previous steps.</p>
+<p><img alt="Screenshot of Windows Command Prompt in the rcv folder" src="images/image29.png" /></p>
+</li>
+<li>
+<p>Type in <code>bin\java -m network.brightspots.rcv/network.brightspots.rcv.Main -cli [filename]</code></p>
 <ol>
-<li>Type in bin\java -m network.brightspots.rcv/network.brightspots.rcv.Main -cli [filename]<ol>
-<li>Filename should be the name of the configuration file for the RCTab to use to process the contest. Example: "C:\RCTab\rctab_v1.3.1_windows\rcv\sample_input\sample_interactive_tiebreak"</li>
+<li>Filename should be the name of the configuration file for the RCTab to use to process the contest. Example: <code>C:\RCTab\rctab_v1.3.1_windows\rcv\sample_input\sample_interactive_tiebreak</code></li>
 <li>Screenshot shows an example of correct command prompt entry for this example.</li>
 </ol>
+<p><img alt="Screenshot of Windows Command Prompt with RCV config file entered" src="images/image30.png" /></p>
 </li>
-</ol>
-<p>![][image47]</p>
-<ol>
-<li>Filename can be copied over into the Command Prompt by finding the configuration file in File Explorer, clicking on the file, and dragging the file over to the Command Prompt window.</li>
+<li>
+<p>Filename can be copied over into the Command Prompt by finding the configuration file in File Explorer, clicking on the file, and dragging the file over to the Command Prompt window.</p>
+</li>
 <li>Press enter.</li>
-<li>Tabulation will run. Messages explaining the process of tabulation will appear in the Command Prompt window. Screenshot shows an example of messages sent during tabulation.</li>
-</ol>
-<p>![][image48]</p>
-<ol>
-<li>When tabulation is complete, Command Prompt will display the message: “INFO: Tabulation Session Completed.” Followed by a line stating, “Results written to: [filepath]”. The file path will be based on the information included in the Output Directory setting in the configuration file. See <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> and <a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a> for more information. See below for an example of messages sent at the end of successful tabulation.</li>
-</ol>
-<p>![][image49]</p>
-<ol>
-<li>If any of the above commands do not work, double check that you have copied them all over correctly, that you are pointing the command prompt to the correct directory, and that all filenames are correctly entered.</li>
+<li>
+<p>Tabulation will run. Messages explaining the process of tabulation will appear in the Command Prompt window. Screenshot shows an example of messages sent during tabulation.</p>
+<p><img alt="Screenshot of RCTab CLI tabulation running in Windows Command Prompt" src="images/image31.png" /></p>
+</li>
+<li>
+<p>When tabulation is complete, Command Prompt will display the message: "INFO: Tabulation Session Completed." Followed by a line stating, "Results written to: [filepath]". The file path will be based on the information included in the Output Directory setting in the configuration file. See <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> and <a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a> for more information. See below for an example of messages sent at the end of successful tabulation.</p>
+<p><img alt="Screenshot of RCTab CLI tabulation completed and results written to files in Windows Command Prompt" src="images/image32.png" /></p>
+</li>
+<li>
+<p>If any of the above commands do not work, double check that you have copied them all over correctly, that you are pointing the command prompt to the correct directory, and that all filenames are correctly entered.</p>
+</li>
 </ol>
 
 

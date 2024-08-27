@@ -1158,27 +1158,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#_1" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#warning-messages" class="md-nav__link">
     <span class="md-ellipsis">
       WARNING MESSAGES
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#_2" class="md-nav__link">
-    <span class="md-ellipsis">
-      
     </span>
   </a>
   
@@ -1440,283 +1422,523 @@
 
 
 <h1 id="section-29-rctab-operator-log-messages">Section 29 - RCTab Operator Log Messages<a class="headerlink" href="#section-29-rctab-operator-log-messages" title="Permanent link">&para;</a></h1>
-<p>RCTab generates messages and displays them in the Operator Log at the bottom of the user interface window.  The log will list SEVERE messages, WARNING messages, and INFO messages for the operator to review and take appropriate action.</p>
-<p>![][image58]
-<em>Operator log screenshot</em></p>
-<p>On the following pages are all the SEVERE, WARNING, and INFO messages that RCTab may log during the setup and tabulation of an RCV election. Each SEVERE error includes a suggested resolution step or steps directly below the relevant error. Some SEVERE errors can all be resolved with the same resolution step and are grouped together before the suggested resolution.</p>
-<p>Errors in the operator log will include detailed information about errors encountered. Users should rely on that information, as well as information provided in this guide, to resolve errors encountered in tabulation. If following those steps still does not resolve your problem, contact the manufacturer for support. WARNING and INFO messages do not interrupt the ability of RCTab to
+<p>RCTab generates messages and displays them in the Operator Log at the bottom of the user interface window.  The log will list "SEVERE" messages, "WARNING" messages, and "INFO" messages for the operator to review and take appropriate action.</p>
+<p><img alt="Screenshot of operator log" src="images/image50.png" /></p>
+<p>On the following pages are all the "SEVERE", "WARNING", and "INFO" messages that RCTab may log during the setup and tabulation of an RCV election. Each "SEVERE" error includes a suggested resolution step or steps directly below the relevant error. Some "SEVERE" errors can all be resolved with the same resolution step and are grouped together before the suggested resolution.</p>
+<p>Errors in the operator log will include detailed information about errors encountered. Users should rely on that information, as well as information provided in this guide, to resolve errors encountered in tabulation. If following those steps still does not resolve your problem, contact the manufacturer for support. "WARNING" and "INFO" messages do not interrupt the ability of RCTab to
 complete tabulation and so do not have resolution steps suggested.</p>
 <h2 id="severe-messages">SEVERE MESSAGES<a class="headerlink" href="#severe-messages" title="Permanent link">&para;</a></h2>
 <h3 id="configuration-file-errors">Configuration File Errors<a class="headerlink" href="#configuration-file-errors" title="Permanent link">&para;</a></h3>
 <p>Errors on this tab are correctable through the Tabulation drop-down menu on RCTab, by creating a new configuration file from scratch, or may require reference to other sections of this document.</p>
-<p>SEVERE, "No contest config path specified!"
-SEVERE, "Failed to load contest config: %s"</p>
-<p>Suggested resolution: Load a configuration file using the “File” menu or create a new configuration file using the user interface and following <a href="user_guide.html"><strong><em>Section 18 - User Guide</em></strong></a> document.</p>
-<p>SEVERE, "Failed to load config."</p>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;No contest config path specified!&quot;
+SEVERE, &quot;Failed to load contest config: %s&quot;
+</code></pre></div>
+<blockquote>
+<p>Suggested resolution: Load a configuration file using the "File" menu or create a new configuration file using the user interface and following <a href="user_guide.html"><strong><em>Section 18 - User Guide</em></strong></a> document.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Failed to load config.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Create new configuration using the user interface.</p>
-<p>SEVERE, "Error logging config file: %s\n"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error logging config file: %s\n&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Create new configuration using the user interface.</p>
-<p>SEVERE, "Invalid winnerElectionMode!"
-SEVERE, "maxRankingsAllowed must either be \"%s\" or an integer from %d to %d!"
-SEVERE, "maxSkippedRanksAllowed must either be \"%s\" or an integer from %d to %d!"
-SEVERE, "tabulatorVersion %s not supported”
-SEVERE, "tabulatorVersion must be set to %s”
-SEVERE, "tabulatorVersion is required”
-SEVERE, "Invalid tiebreakMode!"
-SEVERE, "Invalid overvoteRule!"
-SEVERE, "Invalid contestDate: %s!"
-SEVERE, "Error parsing JSON file: %s\n%s\n" + "Check file formatting and values and make sure they are correct!\n"
-                + "It might help to try surrounding values causing problems with quotes (e.g. \"value\").\n"
-                + "See config_file_documentation.txt for more details."
-SEVERE: "continueUntilTwoCandidatesRemain can't be true in a multi-seat contest unless the winner election mode is multi-pass IRV!"
-SEVERE: "batchElimination can't be true in a multi-seat contest unless the winner election mode is multi-pass IRV!"
-SEVERE, "winnerElectionMode can't be multiSeatSequentialWinnerTakesAll in a single-seat " + "contest!"
-SEVERE, "winnerElectionMode can't be multiSeatBottomsUp in a single-seat contest!"
-SEVERE, "winnerElectionMode can't be multiSeatAllowOnlyOneWinnerPerRound in a single-seat " + "contest!"
-SEVERE, "batchElimination can't be true when winnerElectionMode is multiSeatBottomsUp!"
-SEVERE, "%s should not be defined for CVR source with provider \"%s\" for file source %s", fieldName, provider, inputLocation
-SEVERE, "treatBlankAsUndeclaredWriteIn should not be true for CVR source with provider \"%s\"for file source %s", fieldName, provider, inputLocation
-SEVERE, "hareQuota can't be true when winnerElectionMode is \"%s\"!", winnerMode
-SEVERE, "nonIntegerWinningThreshold and hareQuota can't both be true at the same time!"
-SEVERE, "Failed to get tiebreaker!\n%s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Invalid winnerElectionMode!&quot;
+SEVERE, &quot;maxRankingsAllowed must either be \&quot;%s\&quot; or an integer from %d to %d!&quot;
+SEVERE, &quot;maxSkippedRanksAllowed must either be \&quot;%s\&quot; or an integer from %d to %d!&quot;
+SEVERE, &quot;tabulatorVersion %s not supported&quot;
+SEVERE, &quot;tabulatorVersion must be set to %s&quot;
+SEVERE, &quot;tabulatorVersion is required&quot;
+SEVERE, &quot;Invalid tiebreakMode!&quot;
+SEVERE, &quot;Invalid overvoteRule!&quot;
+SEVERE, &quot;Invalid contestDate: %s!&quot;
+SEVERE, &quot;Error parsing JSON file: %s\n%s\n&quot; + &quot;Check file formatting and values and make sure they are correct!\n&quot;
+                + &quot;It might help to try surrounding values causing problems with quotes (e.g. \&quot;value\&quot;).\n&quot;
+                + &quot;See config_file_documentation.txt for more details.&quot;
+SEVERE: &quot;continueUntilTwoCandidatesRemain can&#39;t be true in a multi-seat contest unless the winner election mode is multi-pass IRV!&quot;
+SEVERE: &quot;batchElimination can&#39;t be true in a multi-seat contest unless the winner election mode is multi-pass IRV!&quot;
+SEVERE, &quot;winnerElectionMode can&#39;t be multiSeatSequentialWinnerTakesAll in a single-seat &quot; + &quot;contest!&quot;
+SEVERE, &quot;winnerElectionMode can&#39;t be multiSeatBottomsUp in a single-seat contest!&quot;
+SEVERE, &quot;winnerElectionMode can&#39;t be multiSeatAllowOnlyOneWinnerPerRound in a single-seat &quot; + &quot;contest!&quot;
+SEVERE, &quot;batchElimination can&#39;t be true when winnerElectionMode is multiSeatBottomsUp!&quot;
+SEVERE, &quot;%s should not be defined for CVR source with provider \&quot;%s\&quot; for file source %s&quot;, fieldName, provider, inputLocation
+SEVERE, &quot;treatBlankAsUndeclaredWriteIn should not be true for CVR source with provider \&quot;%s\&quot;for file source %s&quot;, fieldName, provider, inputLocation
+SEVERE, &quot;hareQuota can&#39;t be true when winnerElectionMode is \&quot;%s\&quot;!&quot;, winnerMode
+SEVERE, &quot;nonIntegerWinningThreshold and hareQuota can&#39;t both be true at the same time!&quot;
+SEVERE, &quot;Failed to get tiebreaker!\n%s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Create a configuration file using RCTab user interface. It should not be possible to select inconsistent sets of rules (which these errors are responding to) if a configuration is created using the UI. Confirm that the configuration file follows requirements set out in <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> document.</p>
-<p>SEVERE, "\"%s\" can't be used as %s if it's also being used as %s!" (%s \= string, field, otherField)</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;\&quot;%s\&quot; can&#39;t be used as %s if it&#39;s also being used as %s!&quot; (%s = string, field, otherField)
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Change one of these values so that different values are used for different options.</p>
-<p>SEVERE, "%s must be an integer equal to %d for file source %s", fieldName, lowerBoundary, inputLocation
-SEVERE, "%s must be an integer from %d to %d for file source %s", fieldName, lowerBoundary, upperBoundary, inputLocation
-SEVERE, "%s must be an integer equal to %d if supplied for file source %s", fieldName, lowerBoundary, inputLocation
-SEVERE, "%s must be an integer from %d to %d if supplied for file source %s", fieldName, lowerBoundary, upperBoundary, inputLocation</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;%s must be an integer equal to %d for file source %s&quot;, fieldName, lowerBoundary, inputLocation
+SEVERE, &quot;%s must be an integer from %d to %d for file source %s&quot;, fieldName, lowerBoundary, upperBoundary, inputLocation
+SEVERE, &quot;%s must be an integer equal to %d if supplied for file source %s&quot;, fieldName, lowerBoundary, inputLocation
+SEVERE, &quot;%s must be an integer from %d to %d if supplied for file source %s&quot;, fieldName, lowerBoundary, upperBoundary, inputLocation
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: These errors appear when a number the user input into a number-based field (such as random seed or allowable number of consecutive skipped rankings) is outside the bounds usable by RCTab. Refer to the specific error message in the tabulator log, which will provide a range of numbers RCTab is compatible with for that specific field.</p>
-<p>SEVERE, "Contest config validation failed! Please modify the contest config file and try again.\nSee config_file_documentation.txt for more details.”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Contest config validation failed! Please modify the contest config file and try again.\nSee config_file_documentation.txt for more details.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: This error message will be preceded by specific error messages about information that RCTab finds missing in the configuration file.</p>
-<p>SEVERE, "\"%s\" is a reserved term and can't be used for %s!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;\&quot;%s\&quot; is a reserved term and can&#39;t be used for %s!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Change the term used in the option setting identified in the error code. Re-save configuration file.</p>
-<p>SEVERE, "Error during validation:\n%s\nValidation failed!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error during validation:\n%s\nValidation failed!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check operator error log for other error messages. Other error messages will appear explaining why validation could not be completed.</p>
-<p>SEVERE, “Unable to process a config file with version %s using older version %s of the app!”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Unable to process a config file with version %s using older version %s of the app!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Create new configuration file using the user interface.</p>
+</blockquote>
 <h3 id="contest-info-error">Contest Info Error<a class="headerlink" href="#contest-info-error" title="Permanent link">&para;</a></h3>
 <p>The error in this section is correctable on the Contest Info tab.</p>
-<p>SEVERE, "contestName is required!"</p>
-<p>Suggested resolution: Enter the contest name in the “Contest Info/Contest Name” field.</p>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;contestName is required!&quot;
+</code></pre></div>
+<blockquote>
+<p>Suggested resolution: Enter the contest name in the "Contest Info/Contest Name" field.</p>
+</blockquote>
 <h3 id="cvr-errors">CVR Errors<a class="headerlink" href="#cvr-errors" title="Permanent link">&para;</a></h3>
 <p>Errors in this section are correctable on the CVR Files tab. They may also require detailed examination of CVR Files themselves and consultation with voting system vendor documentation to identify the source of any issues with CVR Files.</p>
-<p>SEVERE, "filePath is required for each cast vote record file!"</p>
-<p>Suggested resolution: Verify that a valid file location is entered in the “CVR Files/Path” field for each CVR included in the tabulation.</p>
-<p>SEVERE, "No cast vote records found!"</p>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;filePath is required for each cast vote record file!&quot;
+</code></pre></div>
+<blockquote>
+<p>Suggested resolution: Verify that a valid file location is entered in the "CVR Files/Path" field for each CVR included in the tabulation.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;No cast vote records found!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check that the folder or file RCTab is directed to has CVR files compatible with the RCTab software.</p>
-<p>SEVERE, "Contest config must contain at least 1 cast vote record file!"</p>
-<p>Suggested resolution: Select, in the “CVR Files” tab, at least one cast vote record file to tabulate.</p>
-<p>SEVERE, "Cast vote record file not found: %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Contest config must contain at least 1 cast vote record file!&quot;
+</code></pre></div>
+<blockquote>
+<p>Suggested resolution: Select, in the "CVR Files" tab, at least one cast vote record file to tabulate.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Cast vote record file not found: %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Confirm that the file path supplied for the CVR file listed in the error goes to a file accessible by RCTab.</p>
-<p>SEVERE, "Duplicate cast vote record filePaths are not allowed: %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Duplicate cast vote record filePaths are not allowed: %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Delete all but one listing of each CVR File in the CVR list. CVR files should only be listed once in the CVR list.</p>
-<p>SEVERE, "Error opening cast vote record file: %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error opening cast vote record file: %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Ensure that you have added a cast vote record file in a format recognized by RCTab.</p>
-<p>SEVERE, "Aborting tabulation due to cast vote record errors!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Aborting tabulation due to cast vote record errors!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Review the log for other errors that will alert you to specific errors with your CVR files. Review your cast vote record files. Ensure that all candidate codes and other vote data are properly represented in configuration files.</p>
-<p>SEVERE, "Parsing cast vote records failed!"
-SEVERE, "Error parsing source file %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Parsing cast vote records failed!&quot;
+SEVERE, &quot;Error parsing source file %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check for other error messages in the operator log box. Parsing files fails when data appears in those files that the configuration file does not include. If information appears in the CVR files that is not in a configuration file, RCTab will abort tabulation. Ensure that CVR files are in a format RCTab can read.</p>
-<p>SEVERE, "Data format error while parsing source file: %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Data format error while parsing source file: %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check that your CVR file is in the correct format. User may need to retrieve new CVR files.</p>
-<p>SEVERE, "undeclaredWriteInLabel must be supplied if treatBlankAsUndeclaredWriteIn is true!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;undeclaredWriteInLabel must be supplied if treatBlankAsUndeclaredWriteIn is true!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Confirm that Undeclared Write-In Label is supplied on CVR tab.</p>
-<p>SEVERE, "Invalid cell address: %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Invalid cell address: %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check CVR files tab. Confirm that correct information explaining where information is included in CVRs is included for each CVR file.</p>
-<p>SEVERE, "precinctColumnIndex is required when tabulateByPrecinct is enabled: %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;precinctColumnIndex is required when tabulateByPrecinct is enabled: %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Update configuration to include Precinct Column Index information for the CVR being processed. Or uncheck Tabulate by Precinct in the configuration.</p>
-<p>SEVERE, "Error reading file!\n%s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error reading file!\n%s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: This error only applies to Clear Ballot files. Ensure that all CVR Files in CVR Files tab are labeled as the correct vendor.</p>
-<p>SEVERE, “If a cell contains multiple candidates split by the overvote delimiter, it's not valid for any of them to be blank or an explicit undervote.”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;If a cell contains multiple candidates split by the overvote delimiter, it&#39;s not valid for any of them to be blank or an explicit undervote.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check your CVR file against the data in your election management system and ensure that CVR files are exporting with accurate information.</p>
-<p>SEVERE, “Error parsing cast vote record:\n%s”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error parsing cast vote record:\n%s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Confirm that all CVR Files are set to the correct vendor. Check for other error messages in the operator log to see more detailed information about errors. Compare CVR file to expected CVR files available from your vendor to confirm that files are in the correct format.</p>
-<p>SEVERE, "overvoteDelimiter and overvoteLabel can't both be supplied."</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;overvoteDelimiter and overvoteLabel can&#39;t both be supplied.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Review configuration file settings. Ensure that only one of these two fields is filled out on the CVR Files tab.</p>
-<p>SEVERE, "overvoteDelimiter is required for an ES&amp;S CVR source when overvoteRule is set to “Exhaust if Multiple Continuing”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;overvoteDelimiter is required for an ES&amp;S CVR source when overvoteRule is set to &quot;Exhaust if Multiple Continuing&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Review configuration file settings. Ensure that the overvote delimiter field on the CVR files tab is filled in with the character used in your CVR File to differentiate between candidates ranked at an overvote.</p>
-<p>SEVERE, "If a cell contains multiple candidates split by the overvote delimiter, it's not valid for any of them to be blank or an explicit undervote."</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;If a cell contains multiple candidates split by the overvote delimiter, it&#39;s not valid for any of them to be blank or an explicit undervote.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Review your CVR. Make sure that it correctly includes data for any overvoted ranking. Check with the CVR vendor to make sure the CVR is exporting correctly from their system.</p>
-<p>SEVERE, "overvoteDelimiter is invalid."</p>
-<p>Suggested resolution: Check the information input into the overvote delimiter setting on the CVR Files tab. That setting can't contain any backslashes (\) and it must contain at least one character that's not a letter, number, dot, apostrophe, comma, hyphen, quotation mark, or space. For example, an overvote delimiter could be  the character |. It could never be the character \.</p>
-<p>SEVERE, "Cast vote record identifier missing on row %d in file %s. This may be due to an incorrectly formatted xlsx file. Try copying your cvr data into a new xlsx file to fix this.",cvrIndex + firstVoteRowIndex, excelFileName</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;overvoteDelimiter is invalid.&quot;
+</code></pre></div>
+<blockquote>
+<p>Suggested resolution: Check the information input into the overvote delimiter setting on the CVR Files tab. That setting can't contain any backslashes (<code>\</code>) and it must contain at least one character that's not a letter, number, dot, apostrophe, comma, hyphen, quotation mark, or space. For example, an overvote delimiter could be  the character <code>|</code>. It could never be the character <code>\</code>.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Cast vote record identifier missing on row %d in file %s. This may be due to an incorrectly formatted xlsx file. Try copying your cvr data into a new xlsx file to fix this.&quot;,cvrIndex + firstVoteRowIndex, excelFileName
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: In addition to the resolution suggested in the message, check your cast vote record and compare it to any expected CVR data from your voting system vendor. Check with the CVR vendor to make sure the CVR is exporting correctly from their system. Users can also remove any CVR ID labels on the CVR Files tab, which should resolve this issue.</p>
-<p>SEVERE, "No header row found in cast vote record file: %s", this.cvrPath
-SEVERE, "No choice columns found in cast vote record file: %s", this.cvrPath
-SEVERE: "Wrong number of choice header fields in cast vote record file: %s", this.cvrPath
-SEVERE: "Current snapshot has no CVRContests."
-SEVERE, "Error parsing contest manifest:\n%s", exception
-SEVERE, "Error parsing precinct manifest:\n%s", exception
-SEVERE, "Error parsing candidate manifest:\n%s", exception
-SEVERE, "No precinct data found!"
-SEVERE, "No precinct portion data found!"
-SEVERE, "No contest data found!"
-SEVERE, "No candidate data found!"
-SEVERE, "Precinct ID \"%d\" from CVR not found in manifest data!",precinctId
-SEVERE, "Precinct portion ID \"%d\" from CVR not found in manifest data!",precinctPortionId
-SEVERE: "GpUnit \"%s\" for CVR \"%s\" not found!", cvr.BallotStyleUnitId, cvr.UniqueId
-SEVERE: "GpUnit \"%s\" not found!", unitId
-SEVERE: "No Rank found on CVR \"%s\" Contest \"%s\"!", cvr.UniqueId,contest.ContestId</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;No header row found in cast vote record file: %s&quot;, this.cvrPath
+SEVERE, &quot;No choice columns found in cast vote record file: %s&quot;, this.cvrPath
+SEVERE: &quot;Wrong number of choice header fields in cast vote record file: %s&quot;, this.cvrPath
+SEVERE: &quot;Current snapshot has no CVRContests.&quot;
+SEVERE, &quot;Error parsing contest manifest:\n%s&quot;, exception
+SEVERE, &quot;Error parsing precinct manifest:\n%s&quot;, exception
+SEVERE, &quot;Error parsing candidate manifest:\n%s&quot;, exception
+SEVERE, &quot;No precinct data found!&quot;
+SEVERE, &quot;No precinct portion data found!&quot;
+SEVERE, &quot;No contest data found!&quot;
+SEVERE, &quot;No candidate data found!&quot;
+SEVERE, &quot;Precinct ID \&quot;%d\&quot; from CVR not found in manifest data!&quot;,precinctId
+SEVERE, &quot;Precinct portion ID \&quot;%d\&quot; from CVR not found in manifest data!&quot;,precinctPortionId
+SEVERE: &quot;GpUnit \&quot;%s\&quot; for CVR \&quot;%s\&quot; not found!&quot;, cvr.BallotStyleUnitId, cvr.UniqueId
+SEVERE: &quot;GpUnit \&quot;%s\&quot; not found!&quot;, unitId
+SEVERE: &quot;No Rank found on CVR \&quot;%s\&quot; Contest \&quot;%s\&quot;!&quot;, cvr.UniqueId,contest.ContestId
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: These are all errors that appear when a CVR file is incompatible with RCTab. Check your cast vote record and compare it to any expected CVR data from your voting system vendor. Check with the CVR vendor to make sure the CVR is exporting correctly from their system. Make sure your voting system version is compatible with RCTab by reviewing the CVR documentation provided with RCTab and by checking with your voting system vendor. If you are unable to resolve the issue this way, file an issue on the RCTab GitHub and we will investigate the problem.</p>
-<p>SEVERE, "No cast vote record data found!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;No cast vote record data found!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check your cast vote record and compare it to any expected CVR data from your voting system vendor. Check with the CVR vendor to make sure the CVR is exporting correctly from their system.</p>
-<p>SEVERE, "Unknown contest ID '%d' found while parsing CVR!", contestId
-SEVERE: "Contest \"%s\" from config file not found!", this.contestId</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Unknown contest ID &#39;%d&#39; found while parsing CVR!&quot;, contestId
+SEVERE: &quot;Contest \&quot;%s\&quot; from config file not found!&quot;, this.contestId
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Double-check the Contest ID for the contest you’re trying to tabulate. Make sure the correct contest ID is included in the config.</p>
-<p>SEVERE, "Aborting conversion due to cast vote record errors!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Aborting conversion due to cast vote record errors!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check the Operator Log for other messages. Those messages will indicate specific errors with the cast vote record file.</p>
-<p>SEVERE: "ContestSelection \"%s\" from CVR not found!", contestSelectionId
-SEVERE: "CandidateSelection \"%s\" has no CandidateIds!", contestSelection.ObjectId
-SEVERE: "CandidateId \"%s\" from ContestSelectionId \"%s\" not found!",contestSelection.CandidateIds[0], contestSelection.ObjectId</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE: &quot;ContestSelection \&quot;%s\&quot; from CVR not found!&quot;, contestSelectionId
+SEVERE: &quot;CandidateSelection \&quot;%s\&quot; has no CandidateIds!&quot;, contestSelection.ObjectId
+SEVERE: &quot;CandidateId \&quot;%s\&quot; from ContestSelectionId \&quot;%s\&quot; not found!&quot;,contestSelection.CandidateIds[0], contestSelection.ObjectId
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: These errors appear if a CDF CVR indicates that a vote ranked a candidate (a contest selection) that the CDF file does not otherwise identify. Check with your vendor to make sure their CDF CVR export matches up with the CDF CVR requirements.</p>
-<p>SEVERE, "Unexpected error parsing source file: %s\n%s", cvrPath, exception</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Unexpected error parsing source file: %s\n%s&quot;, cvrPath, exception
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: RCTab is unable to read the CVR file used. Make sure your voting system version is compatible with RCTab by reviewing the CVR documentation provided with RCTab and by checking with your voting system vendor. If you are unable to resolve the issue this way, file an issue on the RCTab GitHub and we will investigate the problem.</p>
+</blockquote>
 <h3 id="candidate-errors">Candidate Errors<a class="headerlink" href="#candidate-errors" title="Permanent link">&para;</a></h3>
 <p>Errors in this section are correctable on the Candidates tab. They may also require detailed examination of CVR Files themselves.</p>
-<p>SEVERE, "Unrecognized candidate found in CVR: %s", candidateId
-SEVERE, "Source file contains unrecognized candidate(s): %s"
-SEVERE, "Error processing candidate data:\n%s"
-SEVERE, "Unrecognized candidate \"%s\" appears %d time(s)!"
-SEVERE, "A name is required for each candidate!"</p>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Unrecognized candidate found in CVR: %s&quot;, candidateId
+SEVERE, &quot;Source file contains unrecognized candidate(s): %s&quot;
+SEVERE, &quot;Error processing candidate data:\n%s&quot;
+SEVERE, &quot;Unrecognized candidate \&quot;%s\&quot; appears %d time(s)!&quot;
+SEVERE, &quot;A name is required for each candidate!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Add unrecognized candidate names to the Candidates list in the configuration. Error log will list candidate names that do not appear in the CVR files.</p>
-<p>SEVERE, "Duplicate candidate %ss are not allowed: %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Duplicate candidate %ss are not allowed: %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Delete all but one listing of each candidate name in the Candidates list. Candidates only need to be listed once in the Candidate list. Ensure that candidates with similar names are labeled distinctly in the CVR data.</p>
-<p>SEVERE, "Contest config must contain at least 1 declared candidate!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Contest config must contain at least 1 declared candidate!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Confirm that candidate names have been added to the candidate list in the Candidates tab.</p>
-<p>SEVERE, "Error parsing candidate data: %s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error parsing candidate data: %s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Re-enter candidate data on the Candidates tab. Confirm that correct CVR files are directed to on CVR files tab.</p>
-<p>SEVERE, "Contest config must contain at least 1 non-excluded candidate!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Contest config must contain at least 1 non-excluded candidate!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Confirm that at least one candidate is not excluded on the Candidates tab. If all candidates are excluded, remove excluded candidates. Re-enter candidate names and do not exclude every candidate.</p>
-<p>SEVERE, "If candidate codes are used, a unique code is required for each candidate!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;If candidate codes are used, a unique code is required for each candidate!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Double-check on the candidates tab that no candidate code values repeat. If code values do repeat, delete that candidate information and re-enter candidate information with a different candidate code.</p>
-<p>SEVERE, "Candidate code '%s' is not valid for contest '%d'!", candidateCode,contestId</p>
-<p>Suggested resolution: Check the candidate codes on the “Candidates” tab and cross-reference them with the candidate codes in the contest you’re trying to tabulate. Make sure that all candidate codes are accurate.</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Candidate code &#39;%s&#39; is not valid for contest &#39;%d&#39;!&quot;, candidateCode,contestId
+</code></pre></div>
+<blockquote>
+<p>Suggested resolution: Check the candidate codes on the "Candidates" tab and cross-reference them with the candidate codes in the contest you’re trying to tabulate. Make sure that all candidate codes are accurate.</p>
+</blockquote>
 <h3 id="winning-rules-errors">Winning Rules Errors<a class="headerlink" href="#winning-rules-errors" title="Permanent link">&para;</a></h3>
 <p>Errors in this section can be corrected on the Winning Rules tab.</p>
-<p>SEVERE, "If numberOfWinners is zero, winnerElectionMode must be multiSeatBottomsUpPercentageThreshold”!
-SEVERE, "numberOfWinners must be zero if winnerElectionMode is multiSeatBottomsUpPercentageThreshold "!"
-SEVERE, "If numberOfWinners is zero, multiSeatBottomsUpPercentageThreshold must be specified!"
-SEVERE, "nonIntegerWinningThreshold can't be true when winnerElectionMode is \"%s\"!",winnerMode</p>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;If numberOfWinners is zero, winnerElectionMode must be multiSeatBottomsUpPercentageThreshold&quot;!
+SEVERE, &quot;numberOfWinners must be zero if winnerElectionMode is multiSeatBottomsUpPercentageThreshold &quot;!&quot;
+SEVERE, &quot;If numberOfWinners is zero, multiSeatBottomsUpPercentageThreshold must be specified!&quot;
+SEVERE, &quot;nonIntegerWinningThreshold can&#39;t be true when winnerElectionMode is \&quot;%s\&quot;!&quot;,winnerMode
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Ensure that the correct winner election mode is selected, according to your local RCV laws. After confirming the correct winner election mode, rebuild the configuration file from scratch using the RCTab UI. The settings indicated by these errors cannot be changed or set to incorrect values if a configuration file is created using the UI.</p>
-<p>SEVERE, "Tabulation can't proceed because all declared candidates are below the minimum vote threshold."</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Tabulation can&#39;t proceed because all declared candidates are below the minimum vote threshold.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: There are multiple potential solutions here. Check the minimum vote threshold setting for the contest - is it set according to your local tabulation rules? If it is, then no candidate has sufficient votes to win in this contest. Refer to your local law for what to do next. If the minimum vote threshold setting is out of sync with your local tabulation rules, reset it to the correct setting and run tabulation again.</p>
-<p>SEVERE, "When tiebreakMode involves a random element, randomSeed must be supplied.”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;When tiebreakMode involves a random element, randomSeed must be supplied.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Input a positive or negative number into the random seed box on the Winning Rules tab.</p>
+</blockquote>
 <h3 id="voter-error-tab-errors">Voter Error Tab Errors<a class="headerlink" href="#voter-error-tab-errors" title="Permanent link">&para;</a></h3>
 <p>Errors in this section can be corrected on the Voter Error tab.</p>
-<p>SEVERE, "When overvoteLabel is supplied, overvoteRule must be either “exhaustImmediately " + "or alwaysSkipToNextRank!"
-SEVERE, When overvoteLabel is supplied, overvoteRule must be either "Always skip to next rank" or "Exhaust immediately"!</p>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;When overvoteLabel is supplied, overvoteRule must be either &quot;exhaustImmediately &quot; + &quot;or alwaysSkipToNextRank!&quot;
+SEVERE, When overvoteLabel is supplied, overvoteRule must be either &quot;Always skip to next rank&quot; or &quot;Exhaust immediately&quot;!
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check what overvote rule is selected on the Voter Error tab. Ensure that it is the correct rule based on your local RCV laws. If either of the two rules mentioned in this error are required by your local laws, select the correct one.</p>
+</blockquote>
 <h3 id="results-writing-errors">Results Writing Errors<a class="headerlink" href="#results-writing-errors" title="Permanent link">&para;</a></h3>
 <p>Errors in this section relate to RCTab’s ability to save results data after a tabulation. They can be corrected by ensuring that RCTab has the ability to read/write to disk, that there is sufficient disk space to create files, and by checking that valid filepaths are indicated in the configuration file.</p>
-<p>SEVERE, "Error writing summary files:\n%s"</p>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error writing summary files:\n%s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Ensure that your computer has sufficient space to store summary files and check that RCTab has write permission for the location selected for file storage on the Output tab.</p>
-<p>SEVERE, "Error saving file: %s\n%s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error saving file: %s\n%s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Confirm that the location you have set files to save is a correct filepath.</p>
-<p>SEVERE, "Failed to create output directory: %s\n" + “Check the directory name and permissions”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Failed to create output directory: %s\n&quot; + &quot;Check the directory name and permissions&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Confirm that the location you have set files to save to is a correct filepath and that RCTab has permissions in that location.</p>
-<p>SEVERE, "Error writing to JSON file: %s\n%s\nPlease check the file path and permissions!"
-SEVERE, "Error creating CSV file: %s\n%s\nPlease check the file path and permissions!"
-SEVERE, "Error saving file: %s\n%s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error writing to JSON file: %s\n%s\nPlease check the file path and permissions!&quot;
+SEVERE, &quot;Error creating CSV file: %s\n%s\nPlease check the file path and permissions!&quot;
+SEVERE, &quot;Error saving file: %s\n%s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check file path on output file settings. Confirm file path is correct. Also confirm that RCTab has permission to write to the filepath selected.</p>
-<p>SEVERE, "CDF JSON generation failed."</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;CDF JSON generation failed.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Uncheck CDF JSON in your configuration.</p>
-<p>SEVERE, “"Error writing cast vote records in generic format from input file: %s\n%s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error writing cast vote records in generic format from input file: %s\n%s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: This error only applies to certain CVR files. Ensure that all CVR files in the CVR Files tab are labeled as the correct vendor and that RCTab has read/write permissions for the location on the drive where you are attempting to save files.</p>
+</blockquote>
 <h3 id="system-errors">System Errors<a class="headerlink" href="#system-errors" title="Permanent link">&para;</a></h3>
 <p>Errors in this section relate to RCTab’s ability to actually run tabulations and potential errors in booting the software.</p>
-<p>SEVERE, "Failed to configure tabulation logger!\n%s”
-SEVERE, "Failed to configure logger!"</p>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Failed to configure tabulation logger!\n%s&quot;
+SEVERE, &quot;Failed to configure logger!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Close and reboot RCTab.</p>
-<p>SEVERE, "Error opening file: %s\n%s\n" + "Check file path and permissions and make sure they are correct!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error opening file: %s\n%s\n&quot; + &quot;Check file path and permissions and make sure they are correct!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Confirm that the location you have set files to save is a correct filepath.</p>
-<p>SEVERE, “RCTab security error. Could not meet FIPS compliance.”
-SEVERE, “Error checking if output directory was in Users directory”</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;RCTab security error. Could not meet FIPS compliance.&quot;
+SEVERE, &quot;Error checking if output directory was in Users directory&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Restart RCTab and confirm that you are running with local administrator permissions.</p>
-<p>SEVERE, "Failed to open: %s:\n%s."</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Failed to open: %s:\n%s.&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Close RCTab and re-launch according to the relevant launch instructions in <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> document.</p>
-<p>SEVERE, "User exited tabulator before it was finished!"
-SEVERE, "Tabulation was cancelled by the user!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;User exited tabulator before it was finished!&quot;
+SEVERE, &quot;Tabulation was cancelled by the user!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Re-launch tabulator. Run Tabulation again and do not close RCTab.</p>
-<p>SEVERE, "Error loading text file: %s\n%s",configFileDocumentationFilename,exception</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error loading text file: %s\n%s&quot;,configFileDocumentationFilename,exception
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Close RCTab and re-launch according to the relevant launch instructions in <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> document.</p>
-<p>SEVERE, "Error during tabulation:\n%s\nTabulation failed!"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Error during tabulation:\n%s\nTabulation failed!&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Check operator error log for other error messages. Other error messages will appear explaining why Tabulation could not be completed.</p>
-<p>SEVERE, "Failed to open: %s:\n%s. "</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Failed to open: %s:\n%s. &quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: Close RCTab and re-launch according to the relevant launch instructions in <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> document.</p>
-<p>SEVERE, "Files are unequal lengths!"
-SEVERE, "Files are not equal (line %d):\n%s\n%s"
-SEVERE, "File not found!\n%s"
-SEVERE, "Error reading file!\n%s"
-SEVERE, “Error closing file!\n%s"
-SEVERE, "Error deleting file: %s\n%s"</p>
+</blockquote>
+<div class="highlight"><pre><span></span><code>SEVERE, &quot;Files are unequal lengths!&quot;
+SEVERE, &quot;Files are not equal (line %d):\n%s\n%s&quot;
+SEVERE, &quot;File not found!\n%s&quot;
+SEVERE, &quot;Error reading file!\n%s&quot;
+SEVERE, &quot;Error closing file!\n%s&quot;
+SEVERE, &quot;Error deleting file: %s\n%s&quot;
+</code></pre></div>
+<blockquote>
 <p>Suggested resolution: These are errors presented by code when an automated test fails. If a user is seeing these errors, restart RCTab and build a new configuration file for the contest you are trying to tabulate.</p>
+</blockquote>
 <h3 id="other-errors">Other errors<a class="headerlink" href="#other-errors" title="Permanent link">&para;</a></h3>
 <p>Errors in this section do not fit neatly into any other sections in this document.</p>
-<p>SEVERE: "No config file path provided on command line!Please provide a path to the config file!See README.md for more details."</p>
-<p>Suggested resolution: Use the user interface to interact with RCTab, or check that you have followed <a href="tabulator_command_line_instructions.html"><strong><em>Section 24 - Command Line Instructions</em></strong></a> properly.</p>
-<h2 id="_1"><a class="headerlink" href="#_1" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>SEVERE: &quot;No config file path provided on command line!Please provide a path to the config file!See README.md for more details.&quot;
+</code></pre></div>
+<blockquote>
+<p>Suggested resolution: Use the user interface to interact with RCTab, or check that you have followed <a href="tabulator_command_line_instructions.html"><strong>Section 24 - Command Line Instructions</strong></a> properly.</p>
+</blockquote>
 <h2 id="warning-messages">WARNING MESSAGES<a class="headerlink" href="#warning-messages" title="Permanent link">&para;</a></h2>
-<p>WARNING: "winnerElectionMode \"%s\" is unrecognized! Please supply a valid winnerElectionMode.", oldWinnerElectionMode</p>
-<p>WARNING: "tiebreakMode \"%s\" is unrecognized! Please supply a valid tiebreakMode.",oldTiebreakMode</p>
-<p>WARNING: "CVR has no adjudicated rankings, skipping: Tabulator ID: %s Batch ID: %s Record ID: %d",tabulatorId, batchId, recordId</p>
-<p>WARNING: "Precinct identifier not found for cast vote record: %s", computedCastVoteRecordId</p>
-<p>WARNING: "Unexpected XML data: %s %b %s", s, b, s1</p>
-<p>WARNING: "Invalid selection! Please try again."</p>
-<p>WARNING: "Please load a contest config file before attempting to tabulate!"</p>
-<p>WARNING: "Please load a contest config file before attempting to convert to CDF!"</p>
-<p>WARNING: "Unable tell if saving is necessary, but everything should work fine anyway! Prompting for save just in case...\n%s",exception</p>
-<p>WARNING: "Unable to set emptyConfigString, but everything should work fine anyway!\n%s",exception</p>
-<p>WARNING: "CandidateSelection \"%s\" has multiple CandidateIds. Only the first one will be processed.",contestSelection.ObjectId</p>
-<p>WARNING: "CandidateSelection \"%s\" has multiple CandidateIds. Only the first one will be processed.",contestSelectionId</p>
-<p>kip</p>
-<h2 id="_2"><a class="headerlink" href="#_2" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>WARNING: &quot;winnerElectionMode \&quot;%s\&quot; is unrecognized! Please supply a valid winnerElectionMode.&quot;, oldWinnerElectionMode
+
+WARNING: &quot;tiebreakMode \&quot;%s\&quot; is unrecognized! Please supply a valid tiebreakMode.&quot;,oldTiebreakMode
+
+WARNING: &quot;CVR has no adjudicated rankings, skipping: Tabulator ID: %s Batch ID: %s Record ID: %d&quot;,tabulatorId, batchId, recordId
+
+WARNING: &quot;Precinct identifier not found for cast vote record: %s&quot;, computedCastVoteRecordId
+
+WARNING: &quot;Unexpected XML data: %s %b %s&quot;, s, b, s1
+
+WARNING: &quot;Invalid selection! Please try again.&quot;
+
+WARNING: &quot;Please load a contest config file before attempting to tabulate!&quot;
+
+WARNING: &quot;Please load a contest config file before attempting to convert to CDF!&quot;
+
+WARNING: &quot;Unable tell if saving is necessary, but everything should work fine anyway! Prompting for save just in case...\n%s&quot;,exception
+
+WARNING: &quot;Unable to set emptyConfigString, but everything should work fine anyway!\n%s&quot;,exception
+
+WARNING: &quot;CandidateSelection \&quot;%s\&quot; has multiple CandidateIds. Only the first one will be processed.&quot;,contestSelection.ObjectId
+
+WARNING: &quot;CandidateSelection \&quot;%s\&quot; has multiple CandidateIds. Only the first one will be processed.&quot;,contestSelectionId
+</code></pre></div>
 <h2 id="info-messages">INFO MESSAGES<a class="headerlink" href="#info-messages" title="Permanent link">&para;</a></h2>
-<p>INFO: "Tabulator is being used via the CLI."</p>
-<p>INFO: "Launching %s version %s...", APP_NAME, APP_VERSION</p>
-<p>INFO: "Round: %d", currentRound</p>
-<p>INFO: "Candidate \"%s\" was elected with a surplus fraction of %s.",winner, surplusFraction</p>
-<p>INFO: "Randomly generated candidate permutation for tie-breaking:"</p>
-<p>INFO: "%s", candidateId</p>
-<p>INFO: "%s had residual surplus of %s.", winner, winnerResidual</p>
-<p>INFO: "Winning threshold set to %s.", winningThreshold</p>
-<p>INFO: "Parsed %d records from %d files", recordsParsed, cvrSequence</p>
-<p>INFO: "Parsed %d cast vote records.", recordsParsed</p>
-<p>INFO: "Successfully loaded contest config: %s", configPath</p>
-<p>INFO: "Validating contest config..."</p>
-<p>INFO: "Contest config validation successful."</p>
-<p>INFO: "Creating new contest config..."</p>
-<p>INFO: "Exiting tabulator GUI..."</p>
-<p>INFO: "Exiting tabulator GUI..."</p>
-<p>INFO: "Opening tabulator GUI..."</p>
-<p>INFO: "Welcome to %s version %s!", Main.APP_NAME, Main.APP_VERSION</p>
-<p>INFO: "Contest Selection needs adjudication. Skipping."</p>
-<p>INFO: "Starting tabulation session..."</p>
-<p>INFO: "Config file: %s", configPath</p>
-<p>INFO: "This is a multi-pass IRV contest."</p>
-<p>INFO: "Excluding %s from the remaining tabulations.", newWinner</p>
-<p>INFO: "Tabulation session completed."</p>
-<p>INFO: "Results written to: %s", outputPath</p>
-<p>INFO: "Parsing cast vote records..."
-INFO: "Reading CDF cast vote record file: %s...", cvrPath</p>
-<p>INFO: "Reading Clear Ballot cast vote records from file: %s...", cvrPath</p>
-<p>INFO: "Reading Dominion cast vote records from folder: %s...", cvrPath</p>
-<p>INFO: "Reading ES&amp;S cast vote record file: %s...", cvrPath</p>
-<p>INFO: "Reading Hart cast vote records from folder: %s...", cvrPath</p>
-<p>INFO: "Check config settings for candidate names, firstVoteRowIndex, firstVoteColumnIndex, and precinctColumnIndex to make sure they are correct!"</p>
-<p>INFO: "See config_file_documentation.txt for more details."</p>
-<p>INFO: "Check file path and permissions and make sure they are correct!"</p>
-<p>INFO: "ES&amp;S cast vote record files must be Microsoft Excel Workbook format.\nStrict Open XML and Open Office are not supported."</p>
-<p>INFO: "See the log for details."</p>
-<p>INFO: "JSON file generated successfully."</p>
-<p>INFO: "Generating summary spreadsheet: %s...", csvPath</p>
-<p>INFO: "Summary spreadsheet generated successfully."</p>
-<p>INFO: "Writing cast vote records in generic format to file: %s...",
-outputPath</p>
-<p>INFO: "Generating cast vote record CDF JSON file: %s...", outputPath</p>
-<p>INFO: "Generating summary JSON file: %s...", jsonPath</p>
-<p>INFO: "Migrated tabulator config version from %s to %s.",config.rawConfig.tabulatorVersion != null ? config.rawConfig.tabulatorVersion : "unknown",Main.APP_VERSION</p>
+<div class="highlight"><pre><span></span><code>INFO: &quot;Tabulator is being used via the CLI.&quot;
+
+INFO: &quot;Launching %s version %s...&quot;, APP_NAME, APP_VERSION
+
+INFO: &quot;Round: %d&quot;, currentRound
+
+INFO: &quot;Candidate \&quot;%s\&quot; was elected with a surplus fraction of %s.&quot;,winner, surplusFraction
+
+INFO: &quot;Randomly generated candidate permutation for tie-breaking:&quot;
+
+INFO: &quot;%s&quot;, candidateId
+
+INFO: &quot;%s had residual surplus of %s.&quot;, winner, winnerResidual
+
+INFO: &quot;Winning threshold set to %s.&quot;, winningThreshold
+
+INFO: &quot;Parsed %d records from %d files&quot;, recordsParsed, cvrSequence
+
+INFO: &quot;Parsed %d cast vote records.&quot;, recordsParsed
+
+INFO: &quot;Successfully loaded contest config: %s&quot;, configPath
+
+INFO: &quot;Validating contest config...&quot;
+
+INFO: &quot;Contest config validation successful.&quot;
+
+INFO: &quot;Creating new contest config...&quot;
+
+INFO: &quot;Exiting tabulator GUI...&quot;
+
+INFO: &quot;Opening tabulator GUI...&quot;
+
+INFO: &quot;Welcome to %s version %s!&quot;, Main.APP_NAME, Main.APP_VERSION
+
+INFO: &quot;Contest Selection needs adjudication. Skipping.&quot;
+
+INFO: &quot;Starting tabulation session...&quot;
+
+INFO: &quot;Config file: %s&quot;, configPath
+
+INFO: &quot;This is a multi-pass IRV contest.&quot;
+
+INFO: &quot;Excluding %s from the remaining tabulations.&quot;, newWinner
+
+INFO: &quot;Tabulation session completed.&quot;
+
+INFO: &quot;Results written to: %s&quot;, outputPath
+
+INFO: &quot;Parsing cast vote records...&quot;
+INFO: &quot;Reading CDF cast vote record file: %s...&quot;, cvrPath
+
+INFO: &quot;Reading Clear Ballot cast vote records from file: %s...&quot;, cvrPath
+
+INFO: &quot;Reading Dominion cast vote records from folder: %s...&quot;, cvrPath
+
+INFO: &quot;Reading ES&amp;S cast vote record file: %s...&quot;, cvrPath
+
+INFO: &quot;Reading Hart cast vote records from folder: %s...&quot;, cvrPath
+
+INFO: &quot;Check config settings for candidate names, firstVoteRowIndex, firstVoteColumnIndex, and precinctColumnIndex to make sure they are correct!&quot;
+
+INFO: &quot;See config_file_documentation.txt for more details.&quot;
+
+INFO: &quot;Check file path and permissions and make sure they are correct!&quot;
+
+INFO: &quot;ES&amp;S cast vote record files must be Microsoft Excel Workbook format.\nStrict Open XML and Open Office are not supported.&quot;
+
+INFO: &quot;See the log for details.&quot;
+
+INFO: &quot;JSON file generated successfully.&quot;
+
+INFO: &quot;Generating summary spreadsheet: %s...&quot;, csvPath
+
+INFO: &quot;Summary spreadsheet generated successfully.&quot;
+
+INFO: &quot;Writing cast vote records in generic format to file: %s...&quot;,
+outputPath
+
+INFO: &quot;Generating cast vote record CDF JSON file: %s...&quot;, outputPath
+
+INFO: &quot;Generating summary JSON file: %s...&quot;, jsonPath
+
+INFO: &quot;Migrated tabulator config version from %s to %s.&quot;,config.rawConfig.tabulatorVersion != null ? config.rawConfig.tabulatorVersion : &quot;unknown&quot;,Main.APP_VERSION
+</code></pre></div>
 
 
 

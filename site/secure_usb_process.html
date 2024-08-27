@@ -1088,6 +1088,17 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="secure_usb_process.html" class="md-nav__link md-nav__link--active">
         
   
@@ -1097,6 +1108,61 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#usb-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      USB Details
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#usb-formatting" class="md-nav__link">
+    <span class="md-ellipsis">
+      USB Formatting
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#setting-a-pin-on-datashur-pro-memory-stick" class="md-nav__link">
+    <span class="md-ellipsis">
+      Setting a PIN on datAshur PRO Memory Stick
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preparing-datashur-pro-memory-stick-for-a-jurisdiction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preparing datAshur PRO Memory Stick for a jurisdiction
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1280,8 +1346,8 @@
 <h1 id="section-32-secure-usb-process">Section 32 - Secure USB Process<a class="headerlink" href="#section-32-secure-usb-process" title="Permanent link">&para;</a></h1>
 <p>RCTab is available as a download from the RCVRC website or directly from GitHub, where each build of the software is hosted. However, jurisdictions are free to request a copy of the software on a secure USB.</p>
 <p>The steps below outline the details of how the RCVRC selects and secures a USB for use and transport to the requestee.</p>
-<p><strong>USB Details</strong>
-Security begins with the USB storage device selected. Currently, the RCVRC uses iStorage datAshur PRO encrypted USB Memory Sticks. iStorage’s datAshur PROs were selected because they include the following features and attributes:</p>
+<h2 id="usb-details">USB Details<a class="headerlink" href="#usb-details" title="Permanent link">&para;</a></h2>
+<p>Security begins with the USB storage device selected. Currently, the RCVRC uses iStorage datAshur PRO encrypted USB Memory Sticks. iStorage’s datAshur PROs were selected because they include the following features and attributes:</p>
 <ul>
 <li>PIN authenticated hardware encryption</li>
 <li>AES-XTS 256-bit hardware encryption</li>
@@ -1289,8 +1355,8 @@ Security begins with the USB storage device selected. Currently, the RCVRC uses 
 <li>Compatible with MS Windows, macOS, and Linux</li>
 </ul>
 <p>For more information on iStorage’s datAshur PROs functionality please see the <a href="22-month-archiving-procedure.html">appendix at the end of this guide</a>.</p>
-<p><strong>USB Formatting</strong>
-Each datAshur PRO memory stick arrives formatted by the factory. However, the RCVRC formats each USB memory stick in-house to ensure security. Formatting is done using Windows 11’s disk formatting tool.</p>
+<h2 id="usb-formatting">USB Formatting<a class="headerlink" href="#usb-formatting" title="Permanent link">&para;</a></h2>
+<p>Each datAshur PRO memory stick arrives formatted by the factory. However, the RCVRC formats each USB memory stick in-house to ensure security. Formatting is done using Windows 11’s disk formatting tool.</p>
 <p>To format a datAshur PRO memory stick, the RCVRC follows the following steps:</p>
 <ol>
 <li>Unlock the datAshur PRO memory stick by pressing the key icon button on the memory stick and entering the default admin password, 1-1-2-2-3-3-4-4. Press the key icon button again, and the LED above the keypad will turn green.</li>
@@ -1302,19 +1368,19 @@ Each datAshur PRO memory stick arrives formatted by the factory. However, the RC
 <li>A warning prompt will pop up. Click “Ok”</li>
 <li>Formatting complete.</li>
 </ol>
-<p><strong>Setting a PIN on datAshur PRO Memory Stick</strong>
-Once the datAshur PRO Memory Stick has been formatted, the manufacturer will program a user PIN into the device. This PIN will be shared with the organization or jurisdiction requesting the USB version of RCTab. User PIN requirements are as follows:</p>
+<h2 id="setting-a-pin-on-datashur-pro-memory-stick">Setting a PIN on datAshur PRO Memory Stick<a class="headerlink" href="#setting-a-pin-on-datashur-pro-memory-stick" title="Permanent link">&para;</a></h2>
+<p>Once the datAshur PRO Memory Stick has been formatted, the manufacturer will program a user PIN into the device. This PIN will be shared with the organization or jurisdiction requesting the USB version of RCTab. User PIN requirements are as follows:</p>
 <ul>
 <li>Must be between 7-15 digits in length</li>
-<li>Must not contain only repetitive numbers, e.g. (3-3-3-3-3-3-3)</li>
-<li>Must not contain only consecutive numbers, e.g. (1-2-3-4-5-6-7)</li>
+<li>Must not contain only repetitive numbers, e.g. (<code>3-3-3-3-3-3-3</code>)</li>
+<li>Must not contain only consecutive numbers, e.g. (<code>1-2-3-4-5-6-7</code>)</li>
 <li>Must not be plugged in a USB port at the time of updating</li>
 </ul>
 <p>To update a pin on the datAshur PRO Memory Stick follow these steps:</p>
 <ol>
 <li>Press the key button and wait for the red LED to blink.</li>
 <li>Enter the user PIN and press the key button. The red LED will be solid for two seconds and then change to a solid green LED light.<ol>
-<li>The factory default PIN is 1 1 2 2 3 3 4 4</li>
+<li>The factory default PIN is (<code>1-1-2-2-3-3-4-4</code>)</li>
 </ol>
 </li>
 <li>Press the key button twice and the blue LED will blink.</li>
@@ -1325,44 +1391,22 @@ Once the datAshur PRO Memory Stick has been formatted, the manufacturer will pro
 </li>
 <li>Re-enter the new user PIN and press the key button twice. The red LED will illuminate and then change to a solid green LED if PIN entries match.</li>
 <li>Once the datAshur PRO Memory Stick locks, enter the new PIN and verify it unlocks the memory stick.<ol>
-<li>After the PIN has been changed, the default PIN 1 1 2 2 3 3 4 4 will no longer work.</li>
+<li>After the PIN has been changed, the default PIN (<code>1-1-2-2-3-3-4-4</code>) will no longer work.</li>
 </ol>
 </li>
 </ol>
-<p><strong>Preparing datAshur PRO Memory Stick for a jurisdiction</strong>
-After a datAshur PRO Memory Stick has been formatted and the PIN has been reset, the requested version of RCTab and any relevant documentation will be loaded onto the memory stick. The details of what is stored on the memory stick, as well as the PIN, will be shared with the organization or jurisdiction.</p>
+<h2 id="preparing-datashur-pro-memory-stick-for-a-jurisdiction">Preparing datAshur PRO Memory Stick for a jurisdiction<a class="headerlink" href="#preparing-datashur-pro-memory-stick-for-a-jurisdiction" title="Permanent link">&para;</a></h2>
+<p>After a datAshur PRO Memory Stick has been formatted and the PIN has been reset, the requested version of RCTab and any relevant documentation will be loaded onto the memory stick. The details of what is stored on the memory stick, as well as the PIN, will be shared with the organization or jurisdiction.</p>
 <ol>
-<li><strong>datAshure PRO Layout</strong></li>
-</ol>
+<li>
+<p><strong>datAshure PRO Layout</strong></p>
 <p><img alt="datAshure PRO Layout" src="images/image51.png" /></p>
-<ol>
-<li><strong>LED Indicators and their actions</strong></li>
-</ol>
+</li>
+<li>
+<p><strong>LED Indicators and their actions</strong></p>
 <p><img alt="datAshure PRO LED Indicators" src="images/image52.png" /></p>
-<table>
-<thead>
-<tr>
-<th>Document Revision History</th>
-<th></th>
-<th></th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><strong>Date</strong></td>
-<td><strong>Version</strong></td>
-<td><strong>Description</strong></td>
-<td><strong>Author</strong></td>
-</tr>
-<tr>
-<td>08/16/2024</td>
-<td>1.0.1</td>
-<td>v2.0 initial</td>
-<td>Mathew Ruberg</td>
-</tr>
-</tbody>
-</table>
+</li>
+</ol>
 
 
 

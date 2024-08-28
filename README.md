@@ -27,17 +27,14 @@ To install Poetry, you can follow the instructions from the
 Once you have Python and Poetry installed, you can start using Poetry to manage your project's dependencies and
 environment.
 
-### Setting Up the Project
+### Cloning the Repo and Setting Up the Project
 
-First, navigate to the root directory of your project and install the dependencies:
+Run these shell commands:
 ```shell
-cd path/to/rctab-docs
-poetry install
-```
-
-Then install the git hooks:
-```shell
-cp .githooks/* .git/hooks/
+git clone https://github.com/BrightSpots/rctab-docs.git # clones the repo
+cd ./rctab-docs # navigates to the local repo
+poetry install # installs the dependencies
+cp .githooks/* .git/hooks/ # installs the git hooks
 ```
 
 ## Using MkDocs in the Virtual Environment

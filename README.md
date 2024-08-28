@@ -22,17 +22,22 @@ You can download and install Python from the [official Python website](https://w
 To install Poetry, you can follow the instructions from the
 [official Poetry documentation](https://python-poetry.org/docs/#installation).
 
-## Running and Using Poetry
 
-Once you have Python and Poetry installed, you can start using Poetry to manage your project's dependencies and
-environment.
+## Setting Up the Project
 
-### Cloning the Repo and Setting Up the Project
+### Cloning the Repo
 
-Run these shell commands:
+To clone the repo:
 ```shell
-git clone https://github.com/BrightSpots/rctab-docs.git # clones the repo
-cd ./rctab-docs # navigates to the local repo
+git clone https://github.com/BrightSpots/rctab-docs.git
+```
+
+### Installing Dependencies and Git Hooks
+
+First, navigate to the directory where the repository has been cloned (e.g. `cd ./rctab-docs`).
+
+Then, run these commands:
+```shell
 poetry install # installs the dependencies
 cp .githooks/* .git/hooks/ # installs the git hooks
 ```

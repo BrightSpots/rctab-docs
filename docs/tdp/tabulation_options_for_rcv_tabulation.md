@@ -504,7 +504,7 @@ The number of rankings on an RCV ballot varies across the United States. The mos
             </td>
         </tr>
         <tr>
-            <td><strong>stripped ranking, RCV</strong></td>
+            <td><strong>skipped ranking, RCV</strong></td>
             <td>When a voter omits a ranking and ranks a contest option at a subsequent ranking.</td>
         </tr>
         <tr>

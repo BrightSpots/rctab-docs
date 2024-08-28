@@ -1,0 +1,2197 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="l_and_a_testing.html">
+      
+      
+        <link rel="next" href="quality_assurance_plan.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Configuration Management Plan - RCTab Test Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-12-configuration-management-plan" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="RCTab Test Docs" class="md-header__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCTab Test Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration Management Plan
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="00_documentation_abstracts.html" class="md-tabs__link">
+          
+  
+  TDP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/user_guide.html" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="RCTab Test Docs" class="md-nav__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RCTab Test Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TDP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TDP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_documentation_abstracts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software_design_and_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardware_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_functionality_description.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acceptance_test_procedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_design_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Design Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_security_specification_requirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Security Specification Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design_and_interface_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design and Interface Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_architecture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development_environment_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Environment Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_threat_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_testing_and_vulnerability_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Testing and Vulnerability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_maintenance_manual.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Maintenance Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personnel_deployment_and_training.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnel Deployment and Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="l_and_a_testing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="configuration_management_plan.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#91-configuration-management-plan" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.1 Configuration management plan
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#92-configuration-management-policy" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.2 Configuration management policy
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#93-configuration-identification" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3 Configuration identification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3 Configuration identification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#931-and-932-software-versioning-and-naming-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.3.1 and 9.3.2: Software Versioning and Naming conventions
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.3.1 and 9.3.2: Software Versioning and Naming conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#documentation-naming-and-versioning" class="md-nav__link">
+    <span class="md-ellipsis">
+      Documentation Naming and Versioning
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#94-baseline-and-promotion-activities" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.4 Baseline and promotion activities
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.4 Baseline and promotion activities">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#establishing-a-baseline-for-rctab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Establishing a baseline for RCTab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#promoting-a-subsequent-version-to-baseline-status-maintenance-until-retirement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Promoting a subsequent version to baseline status &amp; Maintenance Until Retirement
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#95-configuration-control-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5 Configuration control procedures
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5 Configuration control procedures">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#95a-developing-and-maintaining-internally-developed-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5(a) Developing and Maintaining Internally Developed Items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95b-acquiring-and-maintaining-third-party-items" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5(b) Acquiring and maintaining third party items
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#additional-cots-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional COTS Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#95c-d-resolving-internally-and-externally-identified-defects" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5(c) &amp; (d) Resolving internally and externally identified defects
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#96-release-process" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.6 Release process
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.6 Release process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#961-first-release-to-an-accredited-test-lab" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.6.1 First release to an accredited test lab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#962-upgrade-release-scenario" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.6.2 Upgrade Release Scenario
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#963-965-delivery-and-installation-of-system-to-jurisdiction" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.6.3 &amp; 9.6.5 Delivery and Installation of System to Jurisdiction
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#964-maintenance-or-upgrade-release-of-system-to-jurisdiction" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.6.4 Maintenance or Upgrade Release of System to Jurisdiction
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#98-configuration-management-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.8 Configuration management resources
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#911-configuration-audits" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11 Configuration audits
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.11 Configuration audits">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9111-physical-configuration-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1 Physical Configuration Audit
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.11.1 Physical Configuration Audit">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9111a-identification-of-all-items-that-are-to-be-a-part-of-the-software-release" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1(a) Identification of all items that are to be a part of the software release
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.11.1(a) Identification of all items that are to be a part of the software release">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rctab-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cots-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      COTS Software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rctab-documentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Documentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#acceptance-test-procedures-and-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      Acceptance test procedures and criteria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#software_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Software
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9111b-specification-of-compiler-or-choice-of-compilers-to-be-used-to-generate-executable-programs" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1(b) Specification of compiler (or choice of compilers) to be used to generate executable programs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9111c-identification-of-all-hardware-that-interfaces-with-the-software" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1(c) Identification of all hardware that interfaces with the software
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9111d-configuration-baseline-data-for-all-hardware-that-is-unique-to-the-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1(d) Configuration baseline data for all hardware that is unique to the system
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.11.1(d) Configuration baseline data for all hardware that is unique to the system">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rctab-hardware" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#peripherals" class="md-nav__link">
+    <span class="md-ellipsis">
+      Peripherals
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#test-support-equipmentmaterials" class="md-nav__link">
+    <span class="md-ellipsis">
+      Test Support Equipment/Materials
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9111e-copies-of-all-software-documentation-intended-for-distribution-to-users-including-program-listings-specifications-operations-manual-voter-manual-and-maintenance-manual" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1(e) Copies of all software documentation intended for distribution to users, including program listings, specifications, operations manual, voter manual, and maintenance manual
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9111f-user-acceptance-test-procedures-and-acceptance-criteria" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1(f) User acceptance test procedures and acceptance criteria
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9111g-identification-of-any-changes-between-the-physical-configuration-of-the-system-submitted-for-the-pca-and-that-submitted-for-the-fca-with-a-certification-that-any-differences-do-not-degrade-the-functional-characteristics" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1(g) Identification of any changes between the physical configuration of the system submitted for the PCA and that submitted for the FCA, with a certification that any differences do not degrade the functional characteristics
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9111h-complete-descriptions-of-its-procedures-and-related-conventions-used-to-support-this-audit-by" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.1(h) Complete descriptions of its procedures and related conventions used to support this audit by:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9112-functional-configuration-audit" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.11.2 Functional Configuration Audit
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quality_assurance_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Assurance Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_trusted_build_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_change_notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardening_procedures_-_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardening Procedures - Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_test_and_verification_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Test and Verification Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulation_options_for_rcv_tabulation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="process_ranked_choice_voting_contest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ballot_limitations_and_maximum_testing_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ballot Limitations & Maximum Testing Range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_instructions_for_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Instructions for Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_command_line_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Command Line Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_file_parameters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_cvr_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_config_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Config Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-election_audit_and_clearing_rctab_from_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-Election Audit & Clearing RCTab from System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_operator_log_messages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Operator Log Messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_system_tab_hints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab System Tab Hints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coding_and_header_comment_standards_for_rctab.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding and Header Comment Standards for RCTab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secure_usb_process.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-multi-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Multi-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-single-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Single-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranked-choice-voting-laws.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ranked Choice Voting Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="22-month-archiving-procedure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22-Month Archiving Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="section-12-configuration-management-plan">Section 12 - Configuration Management Plan<a class="headerlink" href="#section-12-configuration-management-plan" title="Permanent link">&para;</a></h1>
+<h2 id="91-configuration-management-plan">9.1 Configuration management plan<a class="headerlink" href="#91-configuration-management-plan" title="Permanent link">&para;</a></h2>
+<p>This document describes the Configuration Management Plan for the RCTab software.</p>
+<h2 id="92-configuration-management-policy">9.2 Configuration management policy<a class="headerlink" href="#92-configuration-management-policy" title="Permanent link">&para;</a></h2>
+<p>RCTab v1.3.2 is a software-only utility. Tools and practices used to track development of RCTab are described below. In brief, we rely on the below practices to track and manage development of RCTab:</p>
+<ul>
+<li>Software tools for version control and update and issue tracking</li>
+<li>Configuration management policies, as outlined in this document</li>
+<li>Quality Assurance practices, as described in the QA Document and reflected in the GitHub issues tracking software</li>
+</ul>
+<h2 id="93-configuration-identification">9.3 Configuration identification<a class="headerlink" href="#93-configuration-identification" title="Permanent link">&para;</a></h2>
+<p>RCTab consists of one non-COTS component: The RCTab software itself. A release of the RCTab software consists of the correctly identified version of the RCTab software, as identified following <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a>.</p>
+<p>Any RCTab workstation should include the correct version of the RCTab software. For this version, that is:</p>
+<ul>
+<li>RCTab v1.3.2</li>
+</ul>
+<p>Any hardware used should conform to the requirements described in <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a>. Any additional software should conform to the requirements described in this document and in <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a>.</p>
+<h3 id="931-and-932-software-versioning-and-naming-conventions">9.3.1 and 9.3.2: Software Versioning and Naming conventions<a class="headerlink" href="#931-and-932-software-versioning-and-naming-conventions" title="Permanent link">&para;</a></h3>
+<p>Our versioning conventions follow the conventions for semantic versioning as described at <a href="https://semver.org/">https://semver.org/</a> and <a href="https://datasift.github.io/gitflow/Versioning.html">https://datasift.github.io/gitflow/Versioning.html</a>. In brief:</p>
+<p>Given a version number MAJOR.MINOR.PATCH-buildNo, we increment:</p>
+<ul>
+<li><strong>PATCH</strong> when we fix something</li>
+<li><strong>MINOR</strong> when we add a new feature</li>
+<li><strong>MAJOR</strong> when we break backwards-compatibility or add major features</li>
+<li>We use the <strong>buildNo</strong> to differentiate different builds off the same branch, and to differentiate between development, test and production builds.</li>
+</ul>
+<p>A major release significantly alters the functionality of RCTab and changes how the user interacts with RCTab.</p>
+<p>A minor release makes small improvements, contains a collection of bug fixes, or otherwise adds functionality to RCTab without changing the user experience.</p>
+<p>Patch releases fix any critical bugs that must be fixed before a user can use the RCTab software.</p>
+<p>File naming conventions for files produced by RCTab are described in <a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a>.</p>
+<h4 id="documentation-naming-and-versioning">Documentation Naming and Versioning<a class="headerlink" href="#documentation-naming-and-versioning" title="Permanent link">&para;</a></h4>
+<p>All documentation in this submission is named according to the formula:</p>
+<blockquote>
+<p>[Software version] [Document Number-] [Document Name] [Document version]<br />
+Software Version: RCTab v1.3.2<br />
+Document version: 1.0.1<br />
+Example:<br />
+Section 11 - Quality Assurance Plan  </p>
+</blockquote>
+<p>Document names either reference the set of VVSG standards the document is responsive to or provide a brief description of the purpose or function of the information included in the document.</p>
+<h2 id="94-baseline-and-promotion-activities">9.4 Baseline and promotion activities<a class="headerlink" href="#94-baseline-and-promotion-activities" title="Permanent link">&para;</a></h2>
+<p>The below sections describe how baseline software versions of RCTab are defined and how documentation baseline versions are defined.</p>
+<h3 id="establishing-a-baseline-for-rctab">Establishing a baseline for RCTab<a class="headerlink" href="#establishing-a-baseline-for-rctab" title="Permanent link">&para;</a></h3>
+<p>RCVRC &amp; Bright Spots define a baseline for the RCTab software when a software release version of RCTab is merged and tested following the configuration control procedures described below.</p>
+<h3 id="promoting-a-subsequent-version-to-baseline-status-maintenance-until-retirement">Promoting a subsequent version to baseline status &amp; Maintenance Until Retirement<a class="headerlink" href="#promoting-a-subsequent-version-to-baseline-status-maintenance-until-retirement" title="Permanent link">&para;</a></h3>
+<p>RCVRC &amp; Bright Spots use an internal versioning scheme based upon the semantic versioning described above. Upon release of a version to the Voting System Test Lab, Bright Spots gives that version a three-part version number. If any bug fixes are needed in response to test findings, the third part of the version number (the PATCH label) is incremented to reflect the change.</p>
+<p>The official version number is updated after a certification process completes.</p>
+<p>Once a baseline is established, Bright Spots configures and incorporates all code changes according to the configuration control procedures described below. After code changes are regression tested and all tests pass, that version of the software is promoted to being the new baseline version of the software.</p>
+<p>We use tags to track issues while they are being worked on, when any code updates are merged, and after issues are closed. Release notes for each release of RCTab note any changes made to the software and link out to the relevant issue for each change in the release. See <a href="https://github.com/BrightSpots/rcv/releases/">https://github.com/BrightSpots/rcv/releases/</a> for examples of how these issues are tracked in release notes.</p>
+<p>RCTab will be updated as necessary in the future, following the version control and source control procedures described in this document, until such time as the RCTab software itself is retired.</p>
+<h2 id="95-configuration-control-procedures">9.5 Configuration control procedures<a class="headerlink" href="#95-configuration-control-procedures" title="Permanent link">&para;</a></h2>
+<h3 id="95a-developing-and-maintaining-internally-developed-items">9.5(a) Developing and Maintaining Internally Developed Items<a class="headerlink" href="#95a-developing-and-maintaining-internally-developed-items" title="Permanent link">&para;</a></h3>
+<p>We use Git version control software (git-scm.com) in conjunction with Github (github.com/BrightSpots/rcv) to coordinate the efforts of our developers and maintain a complete record of ALL software code changes to RCTab and the reasoning behind them.</p>
+<p>All code changes submitted for incorporation into the RCTab software must undergo a manual code review from at least one developer other than the original drafter/developer.  Other stakeholders and experts are involved with code reviews as needed.  Code reviews offer an additional opportunity to identify potential issues, improve code structure, clarity, performance, and robustness.  Code merges are blocked until at least one developer explicitly approves the code submission, at which point the code is merged, and regression tests will be run.  For code review examples, see:  github.com/BrightSpots/rcv/pulls.</p>
+<p>Documentation was all drafted in Google Docs, which tracks changes to all documents through its built-in document history. However, our TDP documentation was written to address compliance issues and not as a proactive feature of development. We plan to conduct an audit of all documentation after certification and plan to create a system for tracking and updating documentation into the future to ensure compliance with all requirements. Documents also include a Document Revision History box at the bottom of each document which notes dates of revision, describes any revisions made, tracks authors, and provides document version numbers. Document versioning will follow the versioning described above.</p>
+<h3 id="95b-acquiring-and-maintaining-third-party-items">9.5(b) Acquiring and maintaining third party items<a class="headerlink" href="#95b-acquiring-and-maintaining-third-party-items" title="Permanent link">&para;</a></h3>
+<p>Third-party items included in the RCTab submission can be divided into two categories:</p>
+<ul>
+<li>COTS hardware that runs the RCTab software</li>
+<li>Open-source software artifacts included in the RCTab software</li>
+</ul>
+<h3 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link">&para;</a></h3>
+<p>RCTab software runs on COTS computers. Jurisdictions purchase this COTS hardware directly, based on requirements provided by RCVRC and Bright Spots. The hardware used for RCTab software is discussed in <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a>.</p>
+<h3 id="software">Software<a class="headerlink" href="#software" title="Permanent link">&para;</a></h3>
+<p>All open-source software libraries and other tools included with RCTab software can be obtained and updated using the internet and are maintained by their respective authors unless stated otherwise in that product’s documentation.</p>
+<p>Bright Spots downloads the versions it requires and tracks the software versions needed for the operation of RCTab.</p>
+<p>All third-party software included in RCTab software is unmodified.</p>
+<p>Trusted Build instructions and verification steps are available in <a href="tabulator_trusted_build_instructions.html"><strong>Section 14 - Tabulator Trusted Build Instructions</strong></a>.</p>
+<p>The document <a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a> maintains a record of the software libraries and artifacts used in the RCTab software. For details on the software tools used to create RCTab, see <a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a>.</p>
+<h3 id="additional-cots-software">Additional COTS Software<a class="headerlink" href="#additional-cots-software" title="Permanent link">&para;</a></h3>
+<p>Any RCTab workstation should also include the following COTS software:</p>
+<ul>
+<li>Windows 10 Pro, or above</li>
+<li>LibreOffice</li>
+<li>XML Notepad</li>
+<li>Users must also retain access to:<ul>
+<li>Command Prompt</li>
+<li>Notepad</li>
+</ul>
+</li>
+<li>UPS</li>
+</ul>
+<p>All COTS software should be obtained from the original provider, as described in <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a>.</p>
+<h3 id="95c-d-resolving-internally-and-externally-identified-defects">9.5(c) &amp; (d) Resolving internally and externally identified defects<a class="headerlink" href="#95c-d-resolving-internally-and-externally-identified-defects" title="Permanent link">&para;</a></h3>
+<p>Any defects discovered through testing or reported by users are recorded and tracked using Github issue tracking tools.  We confirm the existence of the defect, evaluate its severity, and mark it accordingly.  Depending on user impact, development resources, and release timelines, we schedule developers to address the defects in order of priority and then do the actual work.  Typically, this involves:</p>
+<ol>
+<li>reproducing the defect;</li>
+<li>making necessary code changes to fix the defect on an isolated git branch;</li>
+<li>requesting a code review and implementing any changes arising from the code review</li>
+<li>verifying that regression tests pass;</li>
+<li>pushing the code change to the main branch and linking the issue in the commit message; and</li>
+<li>closing the issue and linking to the commit in Github issue tracker.</li>
+</ol>
+<p>In this way, we are able to ensure that all known issues are tracked, and the most important ones are mitigated according to criticality.  For more details, see: <a href="https://github.com/BrightSpots/rcv/issues">https://github.com/BrightSpots/rcv/issues</a>.</p>
+<h2 id="96-release-process">9.6 Release process<a class="headerlink" href="#96-release-process" title="Permanent link">&para;</a></h2>
+<p>This section describes how RCTab is released to test labs and end users.</p>
+<h3 id="961-first-release-to-an-accredited-test-lab">9.6.1 First release to an accredited test lab<a class="headerlink" href="#961-first-release-to-an-accredited-test-lab" title="Permanent link">&para;</a></h3>
+<p>RCVRC submits all RCTab artifacts necessary for testing to state election officials, or the relevant election officials. Those officials then submit materials to the test lab.</p>
+<p>When RCTab is ready to download, RCVRC &amp; Bright Spots sends an email to state election officials or test lab representatives. That email will contain a link to a downloadable version of the most recent build of RCTab and a SHA-512 hash code for the RCTab build shared. Downloads will either be provided through a Google Drive link or via the RCTab releases page on GitHub (https://github.com/brightspots/rcv). This SHA-512 hash code can be used to validate the version of the RCTab downloaded using the download link by following the instructions in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a>.</p>
+<p>After downloading and verifying files, the test lab will install the software as described in <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a>.</p>
+<h3 id="962-upgrade-release-scenario">9.6.2 Upgrade Release Scenario<a class="headerlink" href="#962-upgrade-release-scenario" title="Permanent link">&para;</a></h3>
+<p>In the event that any upgrades or changes are made to the RCTab system, the RCVRC &amp; Bright Spots will send a new download link as described above to download a new version of RCTab. Any previous versions of RCTab on hardware being used by the test lab will need to be uninstalled, which can be done by deleting RCTab folder and any files created or used by RCTab (such as configuration .json files, summary result .csv and .json files, audit .log files, and any CVRs used with RCTab).</p>
+<h3 id="963-965-delivery-and-installation-of-system-to-jurisdiction">9.6.3 &amp; 9.6.5 Delivery and Installation of System to Jurisdiction<a class="headerlink" href="#963-965-delivery-and-installation-of-system-to-jurisdiction" title="Permanent link">&para;</a></h3>
+<p>Jurisdictions will obtain the Trusted Build version of RCTab from the relevant State Election Officials on a flash drive or some other form of digital media. <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> explains how to install and verify RCTab. The RCTab version installed is also included in the operator log box at the bottom of the RCTab user interface.</p>
+<h3 id="964-maintenance-or-upgrade-release-of-system-to-jurisdiction">9.6.4 Maintenance or Upgrade Release of System to Jurisdiction<a class="headerlink" href="#964-maintenance-or-upgrade-release-of-system-to-jurisdiction" title="Permanent link">&para;</a></h3>
+<p>RCTab upgrades will be released to jurisdictions after they have gone through necessary testing by state officials and test labs. Releases will be provided to jurisdictions as described in 9.6.3.</p>
+<h2 id="98-configuration-management-resources">9.8 Configuration management resources<a class="headerlink" href="#98-configuration-management-resources" title="Permanent link">&para;</a></h2>
+<p>RCTab v1.3.2 is a software-only utility. The manufacturer uses Git as its distributed version-control system to track changes in the source code during software development. It is designed for coordinating work among programmers and is used to track changes in any set of files. Its goals include speed, data integrity, and support for distributed, non-linear workflows. Here is a link to additional Git information: <a href="https://git-scm.com/doc/ext">Git External Documentation</a> (https://git-scm.com/doc/ext).</p>
+<p>Git may be downloaded free via this link: <a href="https://git-scm.com/">Git Download</a> (https://git-scm.com/).
+The Bright Spots developers use GitVersion as the tool to achieve <em>Semantic Versioning</em> on the RCTab software development and upgrades.  Additional information is available in <a href="quality_assurance_plan.html"><strong>Section 13 - Quality Assurance Plan</strong></a> and here:  <a href="https://datasift.github.io/gitflow/Versioning.html">GitVersion Information</a> (https://datasift.github.io/gitflow/Versioning.html).</p>
+<h2 id="911-configuration-audits">9.11 Configuration audits<a class="headerlink" href="#911-configuration-audits" title="Permanent link">&para;</a></h2>
+<p>The guidelines require two kinds of configuration audits:</p>
+<ul>
+<li>Physical Configuration Audits (PCA)</li>
+<li>Functional Configuration Audits (FCA)</li>
+</ul>
+<h3 id="9111-physical-configuration-audit">9.11.1 Physical Configuration Audit<a class="headerlink" href="#9111-physical-configuration-audit" title="Permanent link">&para;</a></h3>
+<p>The Physical Configuration Audit is conducted by the S-ATA to compare the voting system components submitted for certification to the manufacturer’s technical documentation.</p>
+<p>For the PCA, a manufacturer shall provide:</p>
+<h4 id="9111a-identification-of-all-items-that-are-to-be-a-part-of-the-software-release">9.11.1(a) Identification of all items that are to be a part of the software release<a class="headerlink" href="#9111a-identification-of-all-items-that-are-to-be-a-part-of-the-software-release" title="Permanent link">&para;</a></h4>
+<h5 id="rctab-software">RCTab Software<a class="headerlink" href="#rctab-software" title="Permanent link">&para;</a></h5>
+<p>Any RCTab workstation should include the correct version of the RCTab software. For this version, that is:</p>
+<ul>
+<li>RCTab v1.3.2</li>
+</ul>
+<h5 id="cots-software">COTS Software<a class="headerlink" href="#cots-software" title="Permanent link">&para;</a></h5>
+<p>Any RCTab workstation should also include the following COTS software:</p>
+<ul>
+<li>Windows 10 Pro, or above</li>
+<li>LibreOffice</li>
+<li>XML Notepad</li>
+<li>Users must also retain access to:<ul>
+<li>Command Prompt</li>
+<li>Notepad</li>
+</ul>
+</li>
+<li>UPS</li>
+</ul>
+<p>All COTS software should be obtained from the original provider, as described in <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a>.</p>
+<h5 id="rctab-documentation">RCTab Documentation<a class="headerlink" href="#rctab-documentation" title="Permanent link">&para;</a></h5>
+<p>For a list of documentation, see <a href="00_documentation_abstracts.html"><strong>Section 00 - Table of Contents</strong></a>. Documentation is also provided on a flash drive along with the installation .zip for RCTab.</p>
+<h5 id="acceptance-test-procedures-and-criteria">Acceptance test procedures and criteria<a class="headerlink" href="#acceptance-test-procedures-and-criteria" title="Permanent link">&para;</a></h5>
+<p>Acceptance test procedures and criteria are included in the following section:</p>
+<ul>
+<li><a href="acceptance_test_procedures.html"><strong>Section 05 - Acceptance Test Procedures</strong></a></li>
+<li><a href="l_and_a_testing.html"><strong>Section 11 - L&amp;A Testing</strong></a></li>
+<li><a href="system_test_and_verification_specification.html"><strong>Section 17 - System Test &amp; Verification Specification</strong></a></li>
+<li><a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a></li>
+</ul>
+<p>There are no changes between the system used for the PCA and the system used for the FCA.</p>
+<p>Materials needed for a configuration audit:</p>
+<h5 id="software_1">Software<a class="headerlink" href="#software_1" title="Permanent link">&para;</a></h5>
+<table xmlns="http://www.w3.org/1999/html">
+    <tr>
+        <td colspan="1" rowspan="1">
+            <p><strong>Software</strong></p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p><strong>Description</strong></p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p><strong>SHA 512 Hash Value</strong></p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="1" rowspan="1">
+            <p>RCTab v1.3.2</p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p>RCTab Software</p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p>See <a href="tabulator_trusted_build_instructions.html"><strong>Section 14 - Tabulator Trusted Build Instructions</strong></a>&nbsp;for instructions on generating a SHA512 to validate RCTab</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3" rowspan="1">
+            <p>Any RCTab workstation should also include the following COTS
+                    software:</p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="1" rowspan="1">
+            <p>LibreOffice 7.5.7</p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p>For viewing formatted .csv output</p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p>
+                <code>30dd3e7f158d3a6289d474d8d8a90eb8995ff5847aab0b23dd4dcc6455e36374</code>
+            </p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="1" rowspan="1">
+            <p>UPS </p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p></p>
+        </td>
+        <td colspan="1" rowspan="3" style="text-align: center; vertical-align: middle;">
+            <p>All COTS software should be obtained from the original provider, as described in <a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a></p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" rowspan="1">
+            <p>Users must also retain access to or be granted access to built-in Windows
+                    10, or above, components: </p>
+            <p></p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="1" rowspan="1">
+            <ul>
+                <li>Notepad</li>
+                <li>Command Prompt</li>
+            </ul>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p></p>
+        </td>
+    </tr>
+</table>
+
+<h4 id="9111b-specification-of-compiler-or-choice-of-compilers-to-be-used-to-generate-executable-programs">9.11.1(b) Specification of compiler (or choice of compilers) to be used to generate executable programs<a class="headerlink" href="#9111b-specification-of-compiler-or-choice-of-compilers-to-be-used-to-generate-executable-programs" title="Permanent link">&para;</a></h4>
+<ol>
+<li>See <a href="system_hardware_specification.html"><strong>Section 03- System Hardware Specification</strong></a> for additional hardware requirements.</li>
+</ol>
+<h4 id="9111c-identification-of-all-hardware-that-interfaces-with-the-software">9.11.1(c) Identification of all hardware that interfaces with the software<a class="headerlink" href="#9111c-identification-of-all-hardware-that-interfaces-with-the-software" title="Permanent link">&para;</a></h4>
+<ol>
+<li>See <a href="system_hardware_specification.html"><strong>Section 03- System Hardware Specification</strong></a> for additional hardware requirements.</li>
+</ol>
+<h4 id="9111d-configuration-baseline-data-for-all-hardware-that-is-unique-to-the-system">9.11.1(d) Configuration baseline data for all hardware that is unique to the system<a class="headerlink" href="#9111d-configuration-baseline-data-for-all-hardware-that-is-unique-to-the-system" title="Permanent link">&para;</a></h4>
+<h5 id="rctab-hardware">RCTab Hardware<a class="headerlink" href="#rctab-hardware" title="Permanent link">&para;</a></h5>
+<p>RCTab relies on COTS hardware. See also <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a> for a complete list.</p>
+<h5 id="hardware_1"><strong>Hardware</strong><a class="headerlink" href="#hardware_1" title="Permanent link">&para;</a></h5>
+<table>
+    <tr>
+        <td colspan="1" rowspan="1">
+            <p><strong>Component Name</strong>.</p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p><strong>Version Number</strong></p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p><strong>Operating System</strong></p>
+        </td>
+        <td colspan="1" rowspan="2" style="text-align: center; vertical-align: middle; width: 25%;">
+            <p><strong>See <strong><a href="system_hardware_specification.html">RCTab Section 03 - System Hardware Specification</a></strong>&nbsp;for additional hardware requirements.</strong></p>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="1" rowspan="1">
+            <p>RCTab Workstation</p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p>HP Z4 G4 workstation</p>
+        </td>
+        <td colspan="1" rowspan="1">
+            <p>Windows 10 Pro or above</p>
+        </td>
+    </tr>
+</table>
+
+<h5 id="peripherals">Peripherals<a class="headerlink" href="#peripherals" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Part Name</th>
+<th style="text-align: left;">Model Number</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Printer</td>
+<td style="text-align: left;">Samsung Xpress M2020W Printer (or similar)</td>
+<td style="text-align: left;">RCV Printer</td>
+</tr>
+<tr>
+<td style="text-align: left;">Uninterruptible Power Supply</td>
+<td style="text-align: left;">APC Backup UPS 600 (or similar)</td>
+<td style="text-align: left;">RCV External Power Supply</td>
+</tr>
+</tbody>
+</table>
+<h5 id="test-support-equipmentmaterials">Test Support Equipment/Materials<a class="headerlink" href="#test-support-equipmentmaterials" title="Permanent link">&para;</a></h5>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Component Name</th>
+<th style="text-align: left;">Quantity</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">8.5 x 11 Printer Paper</td>
+<td style="text-align: left;">As needed</td>
+<td style="text-align: left;">HP 200350</td>
+</tr>
+<tr>
+<td style="text-align: left;">Flash drive</td>
+<td style="text-align: left;">2+</td>
+<td style="text-align: left;">For transporting cast-vote records and files produced by RCTab</td>
+</tr>
+</tbody>
+</table>
+<h4 id="9111e-copies-of-all-software-documentation-intended-for-distribution-to-users-including-program-listings-specifications-operations-manual-voter-manual-and-maintenance-manual">9.11.1(e) Copies of all software documentation intended for distribution to users, including program listings, specifications, operations manual, voter manual, and maintenance manual<a class="headerlink" href="#9111e-copies-of-all-software-documentation-intended-for-distribution-to-users-including-program-listings-specifications-operations-manual-voter-manual-and-maintenance-manual" title="Permanent link">&para;</a></h4>
+<ol>
+<li>See <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a>,</li>
+</ol>
+<h4 id="9111f-user-acceptance-test-procedures-and-acceptance-criteria">9.11.1(f) User acceptance test procedures and acceptance criteria<a class="headerlink" href="#9111f-user-acceptance-test-procedures-and-acceptance-criteria" title="Permanent link">&para;</a></h4>
+<ol>
+<li>See <a href="acceptance_test_procedures.html"><strong>Section 05 - Acceptance Test Procedures</strong></a></li>
+</ol>
+<h4 id="9111g-identification-of-any-changes-between-the-physical-configuration-of-the-system-submitted-for-the-pca-and-that-submitted-for-the-fca-with-a-certification-that-any-differences-do-not-degrade-the-functional-characteristics">9.11.1(g) Identification of any changes between the physical configuration of the system submitted for the PCA and that submitted for the FCA, with a certification that any differences do not degrade the functional characteristics<a class="headerlink" href="#9111g-identification-of-any-changes-between-the-physical-configuration-of-the-system-submitted-for-the-pca-and-that-submitted-for-the-fca-with-a-certification-that-any-differences-do-not-degrade-the-functional-characteristics" title="Permanent link">&para;</a></h4>
+<ol>
+<li>See also:<ul>
+<li><a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a></li>
+<li><a href="system_change_notes.html"><strong>Section 15 - System Change Notes</strong></a></li>
+<li><a href="user_guide.html"><strong>Section 18 - User Guide</strong></a></li>
+</ul>
+</li>
+</ol>
+<h4 id="9111h-complete-descriptions-of-its-procedures-and-related-conventions-used-to-support-this-audit-by">9.11.1(h) Complete descriptions of its procedures and related conventions used to support this audit by:<a class="headerlink" href="#9111h-complete-descriptions-of-its-procedures-and-related-conventions-used-to-support-this-audit-by" title="Permanent link">&para;</a></h4>
+<ol>
+<li>
+<p>Establishing a configuration baseline of the software and hardware to be tested</p>
+<ol>
+<li>One Computer with RCTab installed. Installation instructions can be found in <a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a> document.</li>
+<li>Recommended battery backup if the user jurisdiction facility does not have generator capabilities in the event of a power failure.</li>
+<li>Verify that all hardware components of the RCTab computer are turned on and functioning properly. This includes checks of the printer(s), flash drives, USB port, etc.</li>
+<li>Turn on the RCTab computer. As the computer boots up, verify that the correct versions of the operating system and the RCTab software are installed. Compute the hash codes for the RCTab voting system software and compare them with the hash value provided with the trusted build.</li>
+</ol>
+</li>
+<li>
+<p>Confirming whether the system documentation matches the corresponding system components</p>
+<ol>
+<li>Documentation is broken down into different sections to make identification of a specific procedure easier for the user. Documentation uses language directly from the RCTab software that the user would see as well as including images where applicable. Additionally, the <a href="user_guide.html"><strong>RCTab Section 18 - User Guide</strong></a> provides step-by-step instructions for the user with reference to other sections for additional details as needed.</li>
+</ol>
+</li>
+</ol>
+<h3 id="9112-functional-configuration-audit">9.11.2 Functional Configuration Audit<a class="headerlink" href="#9112-functional-configuration-audit" title="Permanent link">&para;</a></h3>
+<p>The Functional Configuration Audit is conducted by the S-ATA to verify that the system performs all the functions described in the system documentation. The manufacturer shall:</p>
+<ol>
+<li>Completely describe its procedures and related conventions used to support this audit for all system components</li>
+<li>Provide the following information to support this audit:<ol>
+<li>Copies of all procedures used for module or unit testing, integration testing, and system testing</li>
+<li>Copies of all test cases generated for each module and integration test, and sample ballot formats or other test cases used for system tests</li>
+<li>Records of all tests performed by the procedures listed above, including error corrections and retests</li>
+</ol>
+</li>
+</ol>
+<p>All test cases for RCTab are available at <a href="https://github.com/BrightSpots/rcv/tree/master/src/test/resources/network/brightspots/rcv/test_data">https://github.com/BrightSpots/rcv/tree/master/src/test/resources/network/brightspots/rcv/test_data</a>. Test and Verification requirements are also described in:</p>
+<ul>
+<li><a href="acceptance_test_procedures.html"><strong>Section 05 - Acceptance Test Procedures</strong></a></li>
+<li><a href="l_and_a_testing.html"><strong>Section 11 - L&amp;A Testing</strong></a></li>
+<li><a href="system_test_and_verification_specification.html"><strong>Section 17 - Test &amp; Verification Specifications</strong></a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="l_and_a_testing.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: L&amp;A Testing">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                L&A Testing
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="quality_assurance_plan.html" class="md-footer__link md-footer__link--next" aria-label="Next: Quality Assurance Plan">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Quality Assurance Plan
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tabs", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

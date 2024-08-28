@@ -1,0 +1,2056 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="tabulator_trusted_build_instructions.html">
+      
+      
+        <link rel="next" href="system_hardening_procedures_-_windows_os.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>System Change Notes - RCTab Test Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-15-system-change-notes" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="RCTab Test Docs" class="md-header__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCTab Test Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Change Notes
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="00_documentation_abstracts.html" class="md-tabs__link">
+          
+  
+  TDP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/user_guide.html" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="RCTab Test Docs" class="md-nav__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RCTab Test Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TDP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TDP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_documentation_abstracts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software_design_and_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardware_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_functionality_description.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acceptance_test_procedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_design_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Design Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_security_specification_requirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Security Specification Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design_and_interface_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design and Interface Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_architecture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development_environment_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Environment Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_threat_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_testing_and_vulnerability_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Testing and Vulnerability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_maintenance_manual.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Maintenance Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personnel_deployment_and_training.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnel Deployment and Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="l_and_a_testing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_management_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quality_assurance_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Assurance Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_trusted_build_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="system_change_notes.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#912-system-change-notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.12 System Change Notes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rctab-version-132" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Version 1.3.2
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RCTab Version 1.3.2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features" class="md-nav__link">
+    <span class="md-ellipsis">
+      New Features
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#hardware-setup-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Setup Improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tdp-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      TDP Updates
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rctab-version-v131" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Version v.1.3.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RCTab Version v.1.3.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug fixes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-updates" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend updates:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rctab-version-v130" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Version v.1.3.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RCTab Version v.1.3.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#new-features_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      New features:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug fixes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-improvements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other improvements
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-updates_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend updates:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-rcv-tabulator-rctab-version-v120" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal RCV Tabulator (RCTab) Version v.1.2.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Universal RCV Tabulator (RCTab) Version v.1.2.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certification" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certification:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      New features:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gui-redesign" class="md-nav__link">
+    <span class="md-ellipsis">
+      GUI redesign:
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="GUI redesign:">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#additional-gui-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Additional GUI changes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug fixes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-improvements_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Other improvements:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-updates_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend updates:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-rcv-tabulator-rctab-version-v110" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal RCV Tabulator (RCTab) Version v.1.1.0
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Universal RCV Tabulator (RCTab) Version v.1.1.0">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#certification_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Certification:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#new-features_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      New features:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bug-fixes_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Bug fixes:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#backend-updates_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Backend updates:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#universal-rcv-tabulator-rctab-version-v101" class="md-nav__link">
+    <span class="md-ellipsis">
+      Universal RCV Tabulator (RCTab) Version v.1.0.1
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Universal RCV Tabulator (RCTab) Version v.1.0.1">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#changelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changelog:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardening_procedures_-_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardening Procedures - Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_test_and_verification_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Test and Verification Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulation_options_for_rcv_tabulation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="process_ranked_choice_voting_contest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ballot_limitations_and_maximum_testing_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ballot Limitations & Maximum Testing Range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_instructions_for_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Instructions for Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_command_line_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Command Line Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_file_parameters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_cvr_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_config_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Config Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-election_audit_and_clearing_rctab_from_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-Election Audit & Clearing RCTab from System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_operator_log_messages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Operator Log Messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_system_tab_hints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab System Tab Hints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coding_and_header_comment_standards_for_rctab.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding and Header Comment Standards for RCTab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secure_usb_process.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-multi-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Multi-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-single-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Single-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranked-choice-voting-laws.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ranked Choice Voting Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="22-month-archiving-procedure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22-Month Archiving Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="section-15-system-change-notes">Section 15 - System Change Notes<a class="headerlink" href="#section-15-system-change-notes" title="Permanent link">&para;</a></h1>
+<h2 id="912-system-change-notes">9.12 System Change Notes<a class="headerlink" href="#912-system-change-notes" title="Permanent link">&para;</a></h2>
+<p>Manufacturers submitting modifications for a system that has been tested previously and received national certification shall submit system change notes. These will be used by the S-ATA to assist in developing and executing the test plan for the modified system. The system change notes shall include the following information:</p>
+<ol>
+<li>Summary description of the nature and scope of the changes, and reasons for each change</li>
+<li>A listing of the specific changes made, citing the specific system configuration items changed and providing detailed references to the documentation sections changed</li>
+<li>The specific sections of the documentation that are changed (or completely revised documents, if more suitable to address a large number of changes)</li>
+<li>Documentation of the test plan and procedures executed by the manufacturer for testing the individual changes and the system as a whole, and records of test results</li>
+</ol>
+<h2 id="rctab-version-132">RCTab Version 1.3.2<a class="headerlink" href="#rctab-version-132" title="Permanent link">&para;</a></h2>
+<p>RCTab version 1.3.1 was submitted with Hart InterCivic’s Verity Voting 3.2 to SLI  for initial testing to California Voting System Standards.  After an initial round of testing we received SLI’s report. Some of the report results identified recommendations for RCTab mostly related to access control and programmatically verifying RCTab input and output. Ranked Choice Voting Resource Center (RCVRC) submitted a new version, v1.3.2, to address each of the report results. v1.3.2 updates apply to Windows only. <strong>In 2.0</strong>, Hart Cryptographic Signature verification is not enabled by default as it would only work in the state of California.</p>
+<h3 id="new-features">New Features<a class="headerlink" href="#new-features" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Two Windows OS accounts. One Administrator level Windows account for installation and initial configuration. A separate ‘RCTab’ Windows standard account for running the tabulation with only necessary permissions and <strong>will not have access to make administrative changes to the machine</strong> that could be security issues</li>
+<li>Read-Only RCTab output files, each with a corresponding read-only <code>.hash</code> file that contains the hash of file contents to ensure they haven’t been edited</li>
+<li>Automatic, programmatic verification of the cryptographic signature of Hart input CVRs. This verification step ensures both the integrity (CVR contents have not been edited) and provenance (CVRs came from the Hart voting system) of the Hart CVRs. RCTab will throw a halting error and tabulation will not begin if cryptographic validation of Hart’s CVR signature is not successful.</li>
+</ul>
+<h3 id="hardware-setup-improvements">Hardware Setup Improvements<a class="headerlink" href="#hardware-setup-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Explicit TDP directions for a secure, hardened OS install</li>
+<li>Password secured BIOS</li>
+</ul>
+<h3 id="tdp-updates">TDP Updates<a class="headerlink" href="#tdp-updates" title="Permanent link">&para;</a></h3>
+<ul>
+<li><a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a><ul>
+<li>Includes <code>.hash</code> file descriptions in <strong>Reporting Results</strong> header, <strong>RCTab Logging Stream 2: Contest-Specific "Audit" Logging</strong> header, <code>ResultsWriter</code> Java class</li>
+<li>Removes paragraph in <strong>RCTab Logging - Stream 2: Contest-Specific "Audit" Logging</strong> header about config validation missing from audit log. That was fixed in 1.3.1</li>
+<li>9.5.3.c.3 updated with link to <a href="tabulator_trusted_build_instructions.html"><strong>Section 14 - Tabulator Trusted Build Instructions</strong></a></li>
+<li>3rd Party Modules section updated with new version numbers and added <code>BouncyCastle</code> FIPS API module</li>
+<li>Include new 1.3.2 Java classes: <code>AuditableFile</code>, <code>SecurityConfig</code>, <code>SecuritySignatureValidation</code>, <code>SecurityXmlParsers</code>, <code>SecurityTests</code></li>
+</ul>
+</li>
+<li><a href="system_security_specification_requirements.html"><strong>Section 07 - System Security Specification Requirements</strong></a><ul>
+<li>Add RCTab Windows standard user account, read-only outputs, <code>.hash</code> files for RCTab output and Hart CVR signature verification throughout CVSS security &amp; access control requirements<ul>
+<li>9.6.1.a, 9.6.1.b, 9.6.1.c, 9.6.1.d, 9.6.1.e, 9.6.1.1, 9.6.1.1.a, 9.6.2</li>
+</ul>
+</li>
+<li>9.6.1.b updated to include Windows OS Account and BIOS Password access control mechanisms</li>
+<li>9.6.1.2 updated to include full description of two tier Windows OS accounts for access control</li>
+<li>9.6.1.1.e updated to include explicit overview of Operating System protection abilities</li>
+<li>9.6.3.f describes in detail the signature verification interaction with Hart Verity</li>
+<li>9.6.7 Cryptography header updated with explicit cryptographic signature verification details</li>
+</ul>
+</li>
+<li><a href="design_and_interface_specification.html"><strong>Section 07I - Design and Interface Specification</strong></a><ul>
+<li>Includes all security enhancements for 1.3.2 and describes the threat that they protect against as well as the threats that still exist</li>
+<li>Added explicit system security objectives and known vulnerabilities</li>
+</ul>
+</li>
+<li><a href="security_architecture.html"><strong>Section 07J - Security Architecture</strong></a><ul>
+<li>Include 1.3.2 updates in Access Control and Integrity sections</li>
+</ul>
+</li>
+<li><a href="security_threat_analysis.html"><strong>Section 07L - Security Threat Analysis</strong></a><ul>
+<li>Include all 1.3.2 updates and describe the threats that they protect against</li>
+</ul>
+</li>
+<li><a href="security_testing_and_vulnerability_analysis.html"><strong>Section 07M - Security Testing and Vulnerability Analysis</strong></a><ul>
+<li>Include all 1.3.2 updates to describe how initial testing report results have all been addressed</li>
+</ul>
+</li>
+<li><a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a><ul>
+<li>Includes read-only output and <code>.hash</code> file verification in 9.9.1.f</li>
+</ul>
+</li>
+<li><a href="l_and_a_testing.html"><strong>Section 11 - L&amp;A Testing</strong></a><ul>
+<li>Update hash verification of output with <code>.hash</code> files</li>
+</ul>
+</li>
+<li><a href="configuration_management_plan.html"><strong>Section 12 - Configuration Management Plan</strong></a><ul>
+<li>Update RCTab Workstation model, hash value of v1.3.2, required software</li>
+</ul>
+</li>
+<li><a href="quality_assurance_plan.html"><strong>Section 13 - Quality Assurance Plan</strong></a><ul>
+<li>Adds security tests for v1.3.2</li>
+</ul>
+</li>
+<li><a href="tabulator_trusted_build_instructions.html"><strong>Section 14 - Tabulator Trusted Build Instructions</strong></a><ul>
+<li>Clarify Java install check</li>
+<li>Add step to confirm gradle install</li>
+<li>Clarify <code>jlinkZip</code> should be done in the cmd prompt</li>
+<li>v5 - Add steps for offline build<ul>
+<li>Third party dependencies cache</li>
+<li>Gradle</li>
+</ul>
+</li>
+<li>v5 - Fix <code>--branch</code> instead of <code>-branch</code> in git clone command</li>
+<li>v5 - Clarify git instructions to use specific version</li>
+<li>v5 - Clarify instructions for <code>JAVA_HOME</code> variable, <code>hash.bat</code></li>
+<li>Added explicit instructions for setting <code>JAVA_HOME</code> variable</li>
+<li>Updated Comparing Two Builds section to explain more clearly how we get a single hash, remove ‘Individual Files’ section</li>
+</ul>
+</li>
+<li><a href="system_change_notes.html"><strong>Section 15 - System Change Notes</strong></a><ul>
+<li>Include code updates, TDP updates</li>
+</ul>
+</li>
+<li><a href="system_hardening_procedures_-_windows_os.html"><strong>Section 16 - System Hardening Procedures - Windows OS</strong></a><ul>
+<li>Clarify and clean up Windows OS install steps</li>
+<li>Remove UPS step</li>
+<li>Included BIOS password, Windows OS Installation</li>
+<li>Make clear the distinction between online prep and offline updates</li>
+<li>Explicit steps for enabling Bitlocker device encryption</li>
+<li>Edit ‘Operating System Hardening’ header to disable screensaver and correctly disable Remote Desktop</li>
+<li>Remove additional optional antivirus, Windows Update</li>
+<li>Replace Excel with LibreOffice</li>
+<li>Remove manual driver installation</li>
+</ul>
+</li>
+<li><a href="system_test_and_verification_specification.html"><strong>Section 17 - System Test and Verification Specification</strong></a><ul>
+<li>Adds security tests for v1.3.2</li>
+</ul>
+</li>
+<li><a href="user_guide.html"><strong>Section 18 - User Guide</strong></a><ul>
+<li>Include automatic signature verification of Hart signed CVRs, <code>.hash</code> output files and read-only output.</li>
+<li>Output Directory instructions detail explicit steps to ensure read-only permissions are set</li>
+<li>Include directions to configure Verity Count to sign CVR exports</li>
+<li>Remove manual hash steps in ‘Generating Results Files’ header</li>
+<li>Programmatic CVR signature verification in Hart CVR Files Options header and Prepping CVRs For Use header</li>
+<li>Instructions for Read-Only output in Generating Results Files - Output Tab header</li>
+<li>Running A Tabulation header output files updated to include <code>.hash</code> files</li>
+<li>Remove CVR <code>.csv</code> from list of output files as it doesn’t apply to Hart</li>
+</ul>
+</li>
+<li><a href="installation_instructions_for_windows_os.html"><strong>Section 22 - Installation Instructions for Windows OS</strong></a><ul>
+<li>Include instructions for creating ‘RCTab’ Windows Standard User</li>
+<li>Explicit instructions for RCTab Windows Standard user vs. Windows Administrator user</li>
+<li>Include directions for enforcing read-only permissions on output folder</li>
+<li>Include directions for creating desktop shortcut</li>
+</ul>
+</li>
+<li><a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a><ul>
+<li>Use <code>.hash</code> files for output summary file verification. Use different example path that doesn’t use user folders</li>
+</ul>
+</li>
+<li><a href="tabulator_command_line_instructions.html"><strong>Section 24 - Tabulator Command Line Instructions</strong></a><ul>
+<li>Use different example path outside of user paths</li>
+</ul>
+</li>
+<li><a href="rctab_cvr_files.html"><strong>Section 26 - RCTab CVR Files</strong></a><ul>
+<li>Include .sig.xml file description for required Hart CVR archive cryptographic signature</li>
+</ul>
+</li>
+<li><a href="post-election_audit_and_clearing_rctab_from_system.html"><strong>Section 28 - Post-Election Audit &amp; Clearing RCTab from System</strong></a><ul>
+<li>Include comparing the text of output file <code>.hash</code> files to the hash text in the audit log as another auditable check</li>
+</ul>
+</li>
+<li><a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a><ul>
+<li>Added additional v1.3.2 Severe messages</li>
+</ul>
+</li>
+</ul>
+<h2 id="rctab-version-v131">RCTab Version v.1.3.1<a class="headerlink" href="#rctab-version-v131" title="Permanent link">&para;</a></h2>
+<h3 id="bug-fixes">Bug fixes:<a class="headerlink" href="#bug-fixes" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fixed XML parsing failing when running built version (<a href="https://github.com/BrightSpots/rcv/issues/625">#625</a>)</li>
+</ul>
+<h3 id="backend-updates">Backend updates:<a class="headerlink" href="#backend-updates" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Releases for all platforms are now automatically built by GitHub when published (<a href="https://github.com/BrightSpots/rcv/issues/282">#282</a>)</li>
+</ul>
+<h2 id="rctab-version-v130">RCTab Version v.1.3.0<a class="headerlink" href="#rctab-version-v130" title="Permanent link">&para;</a></h2>
+<h3 id="new-features_1">New features:<a class="headerlink" href="#new-features_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added support for multi-file Dominion format (<a href="https://github.com/BrightSpots/rcv/pull/569">#569</a>)</li>
+<li>Allows batch elimination and "continue until two candidates remain" to be enabled in multi-pass IRV mode (<a href="https://github.com/BrightSpots/rcv/pull/611">#611</a>)</li>
+<li>Allows users to specify multiple CVR files at once in the GUI (<a href="https://github.com/BrightSpots/rcv/pull/617">#617</a>)</li>
+<li>Adds validation highlighting to the GUI when clicking the "add" buttons for candidates and CVRs (<a href="https://github.com/BrightSpots/rcv/pull/618">#618</a>)</li>
+<li>Changed audit logs to include validation outcome (<a href="https://github.com/BrightSpots/rcv/pull/616">#616</a>)</li>
+</ul>
+<h3 id="bug-fixes_1">Bug fixes:<a class="headerlink" href="#bug-fixes_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fixed Hare Quota (<a href="https://github.com/BrightSpots/rcv/pull/562">#562</a>)</li>
+<li>Fixed build for M1 Macbooks (<a href="https://github.com/BrightSpots/rcv/pull/586">#586</a>)</li>
+<li>Fixed crashes when % was in file paths (<a href="https://github.com/BrightSpots/rcv/pull/601">#601</a>)</li>
+<li>Fixed inaccurate <code>overvoteRule</code> error message (<a href="https://github.com/BrightSpots/rcv/pull/609">#609</a>)</li>
+<li>Fixed bug in logic for exhaustIfMultipleContinuing overvote rule (<a href="https://github.com/BrightSpots/rcv/pull/610">#610</a>)</li>
+<li>Fixed bug where <code>treatBlankAsUndeclaredWriteIn</code> validation failure for certain providers wouldn't actually fail validation (<a href="https://github.com/BrightSpots/rcv/pull/618">#618</a>)</li>
+</ul>
+<h3 id="other-improvements">Other improvements<a class="headerlink" href="#other-improvements" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Rebranded "Universal RCV Tabulator" as "RCTab" (<a href="https://github.com/BrightSpots/rcv/pull/603">#603</a>)</li>
+<li>Updated license from AGPL to MPL 2.0 (<a href="https://github.com/BrightSpots/rcv/pull/604">#604</a>)</li>
+<li>Exits gracefully if all declared candidates fall beneath minimum vote threshold (<a href="https://github.com/BrightSpots/rcv/pull/608">#608</a>)</li>
+<li>Moved validation of provided overvote delimiter and overvote label into <code>performBasicCvrSourceValidation</code> so user is alerted when clicking the "add" button in the CVR tab (<a href="https://github.com/BrightSpots/rcv/pull/618">#618</a>)</li>
+<li>Updated documentation and help text (<a href="https://github.com/BrightSpots/rcv/pull/547">#547</a>, <a href="https://github.com/BrightSpots/rcv/pull/614">#614</a>, <a href="https://github.com/BrightSpots/rcv/pull/617">#617</a>)</li>
+</ul>
+<h3 id="backend-updates_1">Backend updates:<a class="headerlink" href="#backend-updates_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Enabled CI, which runs tests, Checkstyle, and Spotbugs (<a href="https://github.com/BrightSpots/rcv/pull/576">#576</a>)</li>
+<li>Addressed all outstanding Checkstyle and Spotbugs warnings (<a href="https://github.com/BrightSpots/rcv/pull/587">#587</a>)</li>
+<li>Internal clean-up to conform to VVSG coding requirements (<a href="https://github.com/BrightSpots/rcv/pull/600">#600</a>, <a href="https://github.com/BrightSpots/rcv/pull/602">#602</a>, <a href="https://github.com/BrightSpots/rcv/pull/606">#606</a>)</li>
+<li>Changed <code>ContestConfig.validate()</code> and associated methods to return a set of validation errors instead of an <code>isValid</code> boolean (<a href="https://github.com/BrightSpots/rcv/pull/618">#618</a>)</li>
+<li><code>checkstyle-suppressions.xml</code> location is now handled in <code>build.gradle</code> to avoid needing to manually modify <code>google_checks.xml</code> in the future (<a href="https://github.com/BrightSpots/rcv/pull/544">#544</a>)</li>
+<li>Updated dependencies to latest versions:<ul>
+<li>JDK 17.0.2</li>
+<li>JavaFX 18</li>
+<li>Gradle 7.5.1</li>
+<li>Checkstyle <code>google_checks.xml</code> 10.3.2</li>
+<li>Checkstyle plugin 10.3.2</li>
+<li>spotbugs 4.7.1</li>
+<li><code>spotbugs-gradle-plugin</code> 5.0.9</li>
+<li><code>org.openjfx.javafxplugin</code> 0.0.11</li>
+<li><code>org.beryx.jlink</code> 2.25.0</li>
+<li><code>com.fasterxml.jackson.core:jackson-*</code> 2.13.3</li>
+<li><code>org.junit.jupiter.junit-jupiter-*</code> 5.9.0</li>
+<li><code>org.apache.commons:commons-csv</code> 1.9.0</li>
+<li><code>org.apache.poi:poi-ooxml</code> 5.2.2</li>
+</ul>
+</li>
+</ul>
+<h2 id="universal-rcv-tabulator-rctab-version-v120">Universal RCV Tabulator (RCTab) Version v.1.2.0<a class="headerlink" href="#universal-rcv-tabulator-rctab-version-v120" title="Permanent link">&para;</a></h2>
+<h3 id="certification">Certification:<a class="headerlink" href="#certification" title="Permanent link">&para;</a></h3>
+<p>Based on the testing performed by Pro V&amp;V, a certified Voting System Testing Laboratory, and  the results obtained, the modified RCV-Tabulator solution identified in this test report  meets the requirements set forth by the VVSG 1.0.</p>
+<h3 id="new-features_2">New features:<a class="headerlink" href="#new-features_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added support for new manufacturer formats:<ul>
+<li>Clear Ballot (<a href="https://github.com/BrightSpots/rcv/issues/400">#400</a>)</li>
+<li>Dominion (<a href="https://github.com/BrightSpots/rcv/issues/119">#119</a>, <a href="https://github.com/BrightSpots/rcv/issues/438">#438</a>, <a href="https://github.com/BrightSpots/rcv/issues/533">#533</a>)</li>
+<li>Hart (<a href="https://github.com/BrightSpots/rcv/issues/401">#401</a>, <a href="https://github.com/BrightSpots/rcv/issues/457">#457</a>, <a href="https://github.com/BrightSpots/rcv/issues/460">#460</a>)</li>
+<li>Unisyn (<a href="https://github.com/BrightSpots/rcv/issues/402">#402</a>)</li>
+</ul>
+</li>
+<li>Redesigned GUI to be more user-friendly (<a href="https://github.com/BrightSpots/rcv/issues/461">#461</a>, <a href="https://github.com/BrightSpots/rcv/issues/123">#123</a>, <a href="https://github.com/BrightSpots/rcv/issues/128">#128</a>, <a href="https://github.com/BrightSpots/rcv/issues/152">#152</a>) (see "GUI redesign"  section below for more details)</li>
+<li>Added support for "Overvote Delimiter" field (<a href="https://github.com/BrightSpots/rcv/issues/482">#482</a>)</li>
+<li>"Minimum Vote Threshold" field is now optional (<a href="https://github.com/BrightSpots/rcv/issues/483">#483</a>)</li>
+<li>"Undeclared Write-In Label", "Overvote Label", "Undervote Label", and "Treat Blank as  Undeclared Write-in" fields are now defined on a per-CVR level (<a href="https://github.com/BrightSpots/rcv/issues/508">#508</a>)</li>
+</ul>
+<h3 id="gui-redesign">GUI redesign:<a class="headerlink" href="#gui-redesign" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added hint panels for each tab (<a href="https://github.com/BrightSpots/rcv/issues/499">#499</a>)</li>
+<li>Added help menu option for the config documentation (<a href="https://github.com/BrightSpots/rcv/issues/497">#497</a>, <a href="https://github.com/BrightSpots/rcv/issues/528">#528</a>)</li>
+<li>Changed "Continue until Two Candidates Remain" to a boolean config setting (<a href="https://github.com/BrightSpots/rcv/issues/481">#481</a>)</li>
+<li>Combo text box / check box input for "How Many Consecutive Skipped Ranks Are Allowed" and "Maximum Number of Candidates That Can Be Ranked" (<a href="https://github.com/BrightSpots/rcv/issues/498">#498</a>)</li>
+<li>Disabled "Decimal Places for Vote Arithmetic" in non-multi-seat modes (<a href="https://github.com/BrightSpots/rcv/issues/500">#500</a>)</li>
+<li>Redesigned <code>nonIntegerWinningThreshold</code> and <code>hareQuota</code> as a three-way radio button and added new validation rules (<a href="https://github.com/BrightSpots/rcv/issues/501">#501</a>)</li>
+<li>Disabled editing existing candidates and CVR sources after adding to prevent confusing UX (<a href="https://github.com/BrightSpots/rcv/issues/502">#502</a>)</li>
+<li>Added support for multiple contests via implementation of "Contest ID" field  (<a href="https://github.com/BrightSpots/rcv/issues/456">#456</a>, <a href="https://github.com/BrightSpots/rcv/issues/472">#472</a>, <a href="https://github.com/BrightSpots/rcv/issues/478">#478</a>)</li>
+</ul>
+<h4 id="additional-gui-changes">Additional GUI changes:<a class="headerlink" href="#additional-gui-changes" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Split Output tab into new Contest Info and Output tabs</li>
+<li>Redesigned GUI CVR Files tab, adding Clear button, and changing Add button, so it only enter multiple sources that share fields clears the file path to make it easier to manually</li>
+<li>Improved visual presentation of Candidate tab; added Clear button and adds <code>checkBoxCandidateExcluded</code> when adding a candidate</li>
+<li>Reorganized presentation of rules in "Winning Rules" and "Voter Error Rules" tabs</li>
+<li>Winner Election Mode and Tiebreak Mode now start undefined with all relevant fields  disabled; choosing specific modes enables applicable fields</li>
+<li>Changed Winner Election Modes and Tiebreak Modes to be more user-friendly,  including necessary migration logic to update older config files</li>
+<li>Expanded footprint of GUI window to 1200x1000</li>
+<li>Implemented bordered boxes</li>
+<li>Converted <code>overvoteRule</code> from a ChoiceBox to an array of <code>RadioButtons</code>;  changed <code>overvoteRule</code> string display in config files and adds migration logic</li>
+<li>Disabled <code>decimalPlacesForVoteArithmetic</code> and <code>nonIntegerWinningThreshold</code> except  when <code>winnerElectionMode</code> is "Multi-winner allow only one winner per round" or "Multi winner allow multiple winners per round" (fixes <a href="https://github.com/BrightSpots/rcv/issues/500">#500</a>)</li>
+<li>Added suggested values for <code>overvoteLabel</code>, <code>undervoteLabel</code>, and ES&amp;S column and row  indices</li>
+<li>Replaced <code>checkBoxNonIntegerWinningThreshold</code> and <code>checkBoxHareQuota</code> with a radio button array, and added new validation rules for those settings (fixing <a href="https://github.com/BrightSpots/rcv/issues/501">#501</a>)</li>
+<li>GUI now disables <code>numberOfWinners</code> field and sets it to <code>1</code> only when <code>winnerElectionMode</code> is "Single-winner majority determines winner"</li>
+<li>GUI now disables <code>numberOfWinners</code> field and sets it to <code>0</code> when <code>winnerElectionMode</code> is "Bottoms-up using percentage threshold"</li>
+<li>Fixed bugs in validation error messages when <code>numberOfWinners</code> is <code>0</code></li>
+</ul>
+<h3 id="bug-fixes_2">Bug fixes:<a class="headerlink" href="#bug-fixes_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Fixes CDF JSON reading and writing (<a href="https://github.com/BrightSpots/rcv/issues/505">#505</a>)</li>
+<li>Fixed being unable to tabulate multiple CDF sources (<a href="https://github.com/BrightSpots/rcv/issues/536">#536</a>)</li>
+<li>Fixed user and computer name logging (<a href="https://github.com/BrightSpots/rcv/issues/521">#521</a>)</li>
+<li>Fixed config referencing nonexistent CDF source leading to uncaught exception (<a href="https://github.com/BrightSpots/rcv/issues/347">#347</a>) </li>
+<li>Fixed incorrect overvote label in CDF leading to NPE (<a href="https://github.com/BrightSpots/rcv/issues/453">#453</a>)</li>
+<li>Fixed config file with bad provider value failing with NPE (<a href="https://github.com/BrightSpots/rcv/issues/531">#531</a>)</li>
+</ul>
+<h3 id="other-improvements_1">Other improvements:<a class="headerlink" href="#other-improvements_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Removed "Convert Dominion to Generic Format..." functionality since direct Dominion tabulation is now possible (<a href="https://github.com/BrightSpots/rcv/issues/476">#476</a>)</li>
+<li>Registers explicit overvote as valid candidate / contest selection in CDF output when needed (<a href="https://github.com/BrightSpots/rcv/issues/451">#451</a>)</li>
+<li>Handles bad path to CDF CVR source gracefully (<a href="https://github.com/BrightSpots/rcv/issues/452">#452</a>)</li>
+<li>Handles empty rows at end of CVR (<a href="https://github.com/BrightSpots/rcv/issues/455">#455</a>)</li>
+<li>Made sure all providers work with the CLI (<a href="https://github.com/BrightSpots/rcv/issues/471">#471</a>)</li>
+<li>Raises error if we encounter an unrecognized candidate while loading Dominion CVRs during direct tabulation (<a href="https://github.com/BrightSpots/rcv/issues/473">#473</a>)</li>
+<li>Reports error if config specifies any column indexes for a CDF source (<a href="https://github.com/BrightSpots/rcv/issues/276">#276</a>)</li>
+</ul>
+<h3 id="backend-updates_2">Backend updates:<a class="headerlink" href="#backend-updates_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Created separate <code>MigrationHelper</code> class (<a href="https://github.com/BrightSpots/rcv/issues/507">#507</a>)</li>
+<li>Addressed warnings during Gradle build (<a href="https://github.com/BrightSpots/rcv/issues/280">#280</a>)</li>
+<li>Upgrading to a more recent version of Gradle no longer causes test failures (<a href="https://github.com/BrightSpots/rcv/issues/283">#283</a>)</li>
+<li>Addressed all relevant Checkstyle warnings and disabled all invalid ones (<a href="https://github.com/BrightSpots/rcv/issues/490">#490</a>, <a href="https://github.com/BrightSpots/rcv/issues/489">#489</a>)</li>
+<li>Enum parameters now use camel case for backend and user-friendly strings for frontend (<a href="https://github.com/BrightSpots/rcv/issues/494">#494</a>)</li>
+<li>Fixed noinspection unchecked for excluded <code>CheckBox</code> in <code>GuiConfigController</code> (<a href="https://github.com/BrightSpots/rcv/issues/304">#304</a>)</li>
+<li>
+<p>Now use <code>UnrecognizedCandidatesException</code> in <code>ClearBallotCvrReader</code> and <code>HartCvrReader</code> (<a href="https://github.com/BrightSpots/rcv/issues/491">#491</a>)</p>
+</li>
+<li>
+<p>Updated dependencies to latest version:</p>
+<ul>
+<li>JDK 14.0.1</li>
+<li>JavaFX 14.0.1</li>
+<li>Gradle 6.5.1</li>
+<li>Checkstyle <code>google_checks.xml</code> 8.36.2</li>
+<li>Checkstyle plugin 8.36.2</li>
+<li><code>org.openjfx.javafxplugin</code> 0.0.9</li>
+<li><code>org.beryx.jlink 2.20.0</code></li>
+<li><code>com.fasterxml.jackson.core:jackson-*</code> 2.11.1</li>
+<li><code>org.junit.jupiter.junit-jupiter-*</code> 5.6.2</li>
+</ul>
+</li>
+</ul>
+<h2 id="universal-rcv-tabulator-rctab-version-v110">Universal RCV Tabulator (RCTab) Version v.1.1.0<a class="headerlink" href="#universal-rcv-tabulator-rctab-version-v110" title="Permanent link">&para;</a></h2>
+<h3 id="certification_1">Certification:<a class="headerlink" href="#certification_1" title="Permanent link">&para;</a></h3>
+<p>Based on the testing performed by Pro V&amp;V, a certified Voting System Testing Laboratory, and  the results obtained, the Universal RCV Tabulator v1.1.0 solution is believed to meet the  applicable requirements set forth by the EAC-approved VVSG 1.0.</p>
+<h3 id="new-features_3">New features:<a class="headerlink" href="#new-features_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added support for converting Dominion JSON CVRs to generic <code>.csv</code> format (including  precinct portions) (<a href="https://github.com/BrightSpots/rcv/issues/404">#404</a>, <a href="https://github.com/BrightSpots/rcv/issues/406">#406</a>, <a href="https://github.com/BrightSpots/rcv/issues/407">#407</a>, <a href="https://github.com/BrightSpots/rcv/issues/408">#408</a>, <a href="https://github.com/BrightSpots/rcv/issues/415">#415</a>, <a href="https://github.com/BrightSpots/rcv/issues/439">#439</a>)</li>
+<li>Added <code>multiSeatBottomsUpPercentageThreshold</code> option (<a href="https://github.com/BrightSpots/rcv/issues/403">#403</a>)</li>
+<li>Added CLI option to convert Dominion CVR to generic <code>.csv</code> (<a href="https://github.com/BrightSpots/rcv/issues/408">#408</a>)</li>
+<li>New GUI menu and conversion options (can now convert to CDF and convert Dominion  to generic via the GUI) (<a href="https://github.com/BrightSpots/rcv/issues/408">#408</a>, <a href="https://github.com/BrightSpots/rcv/issues/421">#421</a>)</li>
+<li>Added Dominion Alaska CVR to <code>sample_input</code> folder</li>
+</ul>
+<h3 id="bug-fixes_3">Bug fixes:<a class="headerlink" href="#bug-fixes_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Batch elimination now works properly with <code>singleSeatContinueUntilTwoCandidatesRemain</code> (<a href="https://github.com/BrightSpots/rcv/issues/396">#396</a>)</li>
+<li>In a multi-seat contest, if someone wins in the first round, we now automatically  eliminate undeclared write-ins before we eliminate any other candidates; previously, we treated UWIs like a normal candidate, which meant we potentially eliminated other candidates with lower tallies first (<a href="https://github.com/BrightSpots/rcv/issues/397">#397</a>)</li>
+<li>If UWI exceeds the winning threshold in the initial count, we no longer mistakenly elect  this candidate (<a href="https://github.com/BrightSpots/rcv/issues/398">#398</a>)</li>
+</ul>
+<h3 id="backend-updates_3">Backend updates:<a class="headerlink" href="#backend-updates_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>Updated dependencies to latest version:</p>
+<ul>
+<li>JDK</li>
+<li>JavaFX</li>
+<li>Checkstyle <code>google_checks.xml</code></li>
+<li>Checkstyle plugin</li>
+<li><code>org.openjfx.javafxplugin</code></li>
+<li><code>org.beryx.jlink</code></li>
+<li><code>org.apache.commons:commons-csv</code></li>
+<li><code>org.apache.poi:poi-ooxml</code></li>
+<li><code>com.fasterxml.jackson.core:jackson-*</code></li>
+</ul>
+</li>
+<li>
+<p>Added special code to test configs to obviate the need to update the version with each increment (<a href="https://github.com/BrightSpots/rcv/issues/426">#426</a>)</p>
+</li>
+<li>Updated tests and improved test coverage</li>
+<li>Copyright update (<a href="https://github.com/BrightSpots/rcv/issues/414">#414</a>)</li>
+<li>Code cleanup</li>
+</ul>
+<h2 id="universal-rcv-tabulator-rctab-version-v101">Universal RCV Tabulator (RCTab) Version v.1.0.1<a class="headerlink" href="#universal-rcv-tabulator-rctab-version-v101" title="Permanent link">&para;</a></h2>
+<p>Based on the testing performed by Pro V&amp;V, a certified Voting System Testing Laboratory, and  the results obtained, the Universal RCV Tabulator solution meets the requirements set forth by  the EAC-approved VVSG 1.0 to be used with the ES&amp;S EVS <code>5.0.0.0</code> through <code>6.0.4.0</code> software.</p>
+<h3 id="changelog">Changelog:<a class="headerlink" href="#changelog" title="Permanent link">&para;</a></h3>
+<ul>
+<li>Added Checkstyle plugin to Gradle and set it up for Google format</li>
+<li>Minor refactoring to address Checkstyle issues</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="tabulator_trusted_build_instructions.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tabulator Trusted Build Instructions">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Tabulator Trusted Build Instructions
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="system_hardening_procedures_-_windows_os.html" class="md-footer__link md-footer__link--next" aria-label="Next: System Hardening Procedures - Windows OS">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                System Hardening Procedures - Windows OS
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tabs", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

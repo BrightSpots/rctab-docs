@@ -1,0 +1,2298 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="system_overview.html">
+      
+      
+        <link rel="next" href="system_hardware_specification.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Software Design and Specifications - RCTab Test Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-02-software-design-and-specifications" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="RCTab Test Docs" class="md-header__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCTab Test Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Software Design and Specifications
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="00_documentation_abstracts.html" class="md-tabs__link">
+          
+  
+  TDP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/user_guide.html" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="RCTab Test Docs" class="md-nav__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RCTab Test Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TDP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TDP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_documentation_abstracts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="software_design_and_specifications.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#coding-standards-and-style" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coding Standards and Style
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Coding Standards and Style">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-17" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java 17
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#open-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open Source
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#architecture" class="md-nav__link">
+    <span class="md-ellipsis">
+      Architecture
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tabulator-java-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabulator Java classes
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3rd-party-modules" class="md-nav__link">
+    <span class="md-ellipsis">
+      3rd-party Modules
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#contest-tabulation-logic" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contest Tabulation Logic
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Contest Tabulation Logic">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#reading-a-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading a config file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#writing-the-config-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Writing the config file
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#validation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Validation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reading-cvr-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reading CVR Files
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabulation-of-cvrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Tabulation of CVRs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#reporting-results" class="md-nav__link">
+    <span class="md-ellipsis">
+      Reporting results
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rctab-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Logging
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="RCTab Logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#stream-1-tabulator-operator-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream 1: Tabulator "Operator" Logging
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stream-2-contest-specific-audit-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      Stream 2: Contest-Specific "Audit" Logging
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#user-interface" class="md-nav__link">
+    <span class="md-ellipsis">
+      User Interface
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#supported-file-types" class="md-nav__link">
+    <span class="md-ellipsis">
+      Supported File types
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#744-software-distribution" class="md-nav__link">
+    <span class="md-ellipsis">
+      7.4.4 Software Distribution
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#952-applicable-documents" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.2 Applicable Documents
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#953-software-overview-953-software-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.3 Software Overview {#9.5.3-software-overview}
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#954-software-standards-and-conventions" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.4 Software Standards and Conventions
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#955-software-operating-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.5 Software Operating Environment
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5.5 Software Operating Environment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9551-hardware-environment-and-constraints" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.5.1 Hardware Environment and Constraints
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9552-software-environment" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.5.2 Software Environment
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#956-software-functional-specification" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.6 Software Functional Specification
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5.6 Software Functional Specification">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9561-configurations-and-operating-modes" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.6.1 Configurations and Operating Modes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9562-software-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.6.2 Software Functions
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#957-programming-specifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.7 Programming Specifications
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9.5.7 Programming Specifications">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#9571-programming-specifications-overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.7.1 Programming Specifications Overview
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#9572-programming-specifications-details" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.7.2 Programming Specifications Details
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#958-databases" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.8 Databases
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#959-interfaces" class="md-nav__link">
+    <span class="md-ellipsis">
+      9.5.9 Interfaces
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardware_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_functionality_description.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acceptance_test_procedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_design_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Design Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_security_specification_requirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Security Specification Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design_and_interface_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design and Interface Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_architecture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development_environment_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Environment Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_threat_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_testing_and_vulnerability_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Testing and Vulnerability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_maintenance_manual.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Maintenance Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personnel_deployment_and_training.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnel Deployment and Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="l_and_a_testing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_management_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quality_assurance_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Assurance Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_trusted_build_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_change_notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardening_procedures_-_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardening Procedures - Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_test_and_verification_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Test and Verification Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulation_options_for_rcv_tabulation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="process_ranked_choice_voting_contest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ballot_limitations_and_maximum_testing_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ballot Limitations & Maximum Testing Range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_instructions_for_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Instructions for Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_command_line_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Command Line Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_file_parameters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_cvr_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_config_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Config Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-election_audit_and_clearing_rctab_from_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-Election Audit & Clearing RCTab from System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_operator_log_messages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Operator Log Messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_system_tab_hints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab System Tab Hints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coding_and_header_comment_standards_for_rctab.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding and Header Comment Standards for RCTab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secure_usb_process.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-multi-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Multi-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-single-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Single-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranked-choice-voting-laws.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ranked Choice Voting Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="22-month-archiving-procedure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22-Month Archiving Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="section-02-software-design-and-specifications">Section 02 - Software Design and Specifications<a class="headerlink" href="#section-02-software-design-and-specifications" title="Permanent link">&para;</a></h1>
+<h2 id="coding-standards-and-style">Coding Standards and Style<a class="headerlink" href="#coding-standards-and-style" title="Permanent link">&para;</a></h2>
+<p>We use <a href="https://google.github.io/styleguide/javaguide.html">Google Java Style Guide</a> as our published, reviewed, and industry-accepted code style. For more details see page 93 of the <a href="https://www.eac.gov/sites/default/files/eac_assets/1/28/VVSG.1.0_Volume_1.PDF">VVSG Volume 1.0</a> guide.</p>
+<p>Code development and review processes are described in <a href="quality_assurance_plan.html"><strong>Section 13 - Quality Assurance Plan</strong></a>.</p>
+<h3 id="java-17">Java 17<a class="headerlink" href="#java-17" title="Permanent link">&para;</a></h3>
+<p>The tabulator is written in Java because it meets the VVSG and California requirements for software language selection. It is widely supported and popular in both industry and the open-source community for a wide variety of applications. It offers a mature and robust collection of third-party libraries. The Java Runtime Environment is standard on our target platforms which means a simple installation process. Our specific version of Java is OpenJDK 17.0.2 and it can be downloaded <a href="https://jdk.java.net/archive/">here</a>.</p>
+<h3 id="open-source">Open Source<a class="headerlink" href="#open-source" title="Permanent link">&para;</a></h3>
+<p>We develop the tabulator as an open-source project for three main reasons:</p>
+<ol>
+<li><strong>Transparency</strong>: published source code increases public confidence in the application by giving anyone the opportunity to review our work and the processes and methodology behind it.</li>
+<li><strong>Adoption</strong>: open-source licensing encourages others to use the software to facilitate the spread of ranked choice voting.</li>
+<li><strong>Collaboration</strong>: open-source licensing enables other software developers to contribute enhancements to the project and incorporate it into other related projects (RCV visualizers, policy research, etc.)</li>
+</ol>
+<h3 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h3>
+<p>RCTab consists of one in-house java code module built from 27 source files. These are described in more detail under <a href="#tabulator-java-classes"><strong>Tabulator Java Classes</strong></a> below. The Tabulator relies on basic java platform libraries (file I/O, string processing, logging) and several 3rd-party modules listed below for reading and writing various file formats. These code modules are compiled and packaged with a minimal java runtime environment (17.0.2) which executes compiled object code when installed and run on the target system.</p>
+<h2 id="tabulator-java-classes">Tabulator Java classes<a class="headerlink" href="#tabulator-java-classes" title="Permanent link">&para;</a></h2>
+<p>The following Java classes comprise the entirety of all in-house developed software and implement all core functionality of the Tabulator.</p>
+<ul>
+<li><code>AuditableFile</code>: Create a file that, on close, is read-only and has its hash added to the audit log.</li>
+<li><code>CastVoteRecord</code>: The in-memory representation of each cast vote record read from a source file. When source files are first processed at the beginning of a tabulation, each <code>CastVoteRecord</code> object contains the data parsed from the source, including the candidate rankings, the precinct ID, and other relevant metadata. As the tabulation progresses, the object keeps track of the cast vote record’s fate, including which candidate(s) this ballot is counting toward and whether it has been exhausted.</li>
+<li><code>ClearBallotCvrReader</code>: Contains the logic for parsing a CVR source file in Clear Ballot’s comma-separated value format and populating a list of <code>CastVoteRecord</code> objects.</li>
+<li><code>CommonDataFormatReader</code>: Contains the logic for parsing a CVR source file in the Common Data Format and populating a list of <code>CastVoteRecord</code> objects. It supports both XML and JSON.</li>
+<li><code>ContestConfig</code>: A wrapper around <code>RawContestConfig</code>. It performs extensive validation to confirm that a config file contains parameters that are permitted by the software and consistent with one another. It also has logic for reading a config file from disk, preprocessing the candidate data from a config, and normalizing some of the config values for use during tabulation.</li>
+<li><code>ContestConfigMigration</code>: Provides support for identifying whether a config file’s version is compatible with the version of the application that is running. It also contains logic for automatically migrating a config from an older version to make it compatible with the current version.</li>
+<li><code>DominionCvrReader</code>: Contains the logic for parsing a set of CVR source files in Dominion’s JSON format and populating a list of <code>CastVoteRecord</code> objects.</li>
+<li><code>FileUtils</code>: A few simple utility functions for reading from and writing to directories on disk.</li>
+<li><code>GuiApplication</code>: The simple logic for launching the application’s graphical user interface, including loading the main layout markup stored in the <code>GuiConfigLayout.fxml</code> file.</li>
+<li><code>GuiConfigController</code>: Contains most of the logic for the interactive components of the graphical user interface, ensuring that the application responds appropriately when the user clicks a button, menu item, or other interactive element.</li>
+<li><code>GuiContext</code>: A singleton class that supports the graphical user interface in managing file chooser dialogs for opening and saving config files.</li>
+<li><code>GuiTiebreakerController</code>: Supports the interactive logic for selecting a tie-breaker winner or loser in the graphical user interface when the tie-break mode is set to one of the interactive options.</li>
+<li><code>HartCvrReader</code>: Contains the logic for parsing a CVR source file in the Hart XML format and populating a list of <code>CastVoteRecord</code> objects.</li>
+<li><code>JsonParser</code>: Generic logic for reading JSON files from disk and writing them to disk. It’s used by the JSON parsing code for parsing Common Data Format and Dominion CVR files, as well as for reading and writing tabulator config files.</li>
+<li><code>Logger</code>: Handles the formatting and saving to disk of audit and operator log files.</li>
+<li><code>Main</code>: The main entry point for the application. Depending on the arguments supplied, it either launches the graphical user interface or proceeds with a command-line-based tabulation.</li>
+<li><code>RawContestConfig</code>: A <code>RawContestConfig</code> object is a simple in-memory representation of a config file loaded from disk.</li>
+<li><code>ResultsWriter</code>: After a tabulation completes, a <code>ResultsWriter</code> generates all of the appropriate summary results files and saves them to disk. Results files can include a summary CSV spreadsheet file, a summary JSON file, a full Common Data Format JSON file, and corresponding .hash files. When “tabulate by precinct” is enabled, it also produces separate summary files for each precinct.</li>
+<li><code>SecurityConfig</code>: Configuration for the cryptographic signing of a Hart file.</li>
+<li><code>SecuritySignatureValidation</code>: A set of tools to verify signatures of Hart CVRs.</li>
+<li><code>SecurityTests</code>: Test the cryptographic signature validation functionality.</li>
+<li><code>SecurityXmlParsers</code>: In-memory representation of <code>.sig.xml</code> signature files.</li>
+<li><code>StreamingCvrReader</code>: Contains the logic for parsing a CVR source file and populating a list of <code>CastVoteRecord</code> objects. It also extracts a list of precinct IDs if tabulation by precinct is enabled.</li>
+<li><code>Tabulator</code>: The core logic for tabulating a contest given a list of <code>CastVoteRecord</code> objects and a <code>ContestConfig</code>, it runs the round-by-round tabulation, writing to the tabulation log file as it proceeds, and then calls <code>ResultsWriter</code> to generate results files when it completes.</li>
+<li><code>TabulatorSession</code>: Manages the process of running a single tabulation. Given the path to a config file, it loads and validates the config, loads and parses the cast vote record source files, and runs the tabulation, including generating the results files at the end. It also contains logic for converting a CVR file into a Common Data Format CVR file without actually running a tabulation.</li>
+<li><code>TabulatorTests</code>: Runs all of the regression tests. Each test involves loading a config file and, if it’s valid, running the tabulation and then comparing the output summary JSON file to an existing file containing the expected output. If the config file has <code>generateCdfJson</code> enabled, it also compares the generated CDF JSON file to an existing file containing the expected version of this output.</li>
+<li><code>TallyTransfers</code>: The <code>Tabulator</code> class maintains a <code>TallyTransfers</code> object (and one per precinct if tabulating by precinct is enabled) to keep track of the number of votes transferring from each source to each destination in each round as candidates are eliminated or elected. This data is included in the results summary JSON to enable Sankey plot visualizations.</li>
+<li><code>Tiebreak</code>: Contains the logic for breaking a tie when the tabulation needs to select a candidate for elimination or election and multiple candidates are tied with the same current vote total.</li>
+<li><code>Utils</code>: Miscellaneous utility functions for processing strings and identifying the user’s environment.</li>
+</ul>
+<h2 id="3rd-party-modules">3rd-party Modules<a class="headerlink" href="#3rd-party-modules" title="Permanent link">&para;</a></h2>
+<p>RCTab incorporates several 3rd-party modules which are all open-source. These meet the VVSG and California requirements for third-party modules. They are mature and widely accepted and used.  None of them are modified in any way.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Module Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Purpose</th>
+<th style="text-align: left;">Link</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Apache Commons CSV</td>
+<td style="text-align: left;">1.9</td>
+<td style="text-align: left;">CSV "Comma Separated Values" reader / writer.</td>
+<td style="text-align: left;"><a href="https://commons.apache.org/proper/commons-csv/user-guide.html">https://commons.apache.org/proper/commons-csv/user-guide.html</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Apache POI OOXML</td>
+<td style="text-align: left;">5.2.2</td>
+<td style="text-align: left;">Excel spreadsheet reader / writer.</td>
+<td style="text-align: left;"><a href="https://poi.apache.org/apidocs/dev/org/apache/poi/ooxml/package-summary.html">https://poi.apache.org/apidocs/dev/org/apache/poi/ooxml/package-summary.html</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jackson Core</td>
+<td style="text-align: left;">2.13.3</td>
+<td style="text-align: left;">XML / JSON streaming reader / writer core</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-core">https://github.com/FasterXML/jackson-core</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jackson Annotations</td>
+<td style="text-align: left;">2.13.3</td>
+<td style="text-align: left;">XML / JSON deserialization annotations</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-annotations">https://github.com/FasterXML/jackson-annotations</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jackson Databind</td>
+<td style="text-align: left;">2.13.3</td>
+<td style="text-align: left;">XML / JSON deserialization</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-databind">https://github.com/FasterXML/jackson-databind</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jackson Dataformat XML</td>
+<td style="text-align: left;">2.13.3</td>
+<td style="text-align: left;">XML reader / writer</td>
+<td style="text-align: left;"><a href="https://github.com/FasterXML/jackson-dataformat-xml">https://github.com/FasterXML/jackson-dataformat-xml</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jupiter JUnit API</td>
+<td style="text-align: left;">5.9.0</td>
+<td style="text-align: left;">Automated testing (used only during development)</td>
+<td style="text-align: left;"><a href="https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api">https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Jupiter JUnit Engine</td>
+<td style="text-align: left;">5.9.0</td>
+<td style="text-align: left;">Automated testing (used only during development)</td>
+<td style="text-align: left;"><a href="https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine">https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-engine</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">BouncyCastle FIPS API</td>
+<td style="text-align: left;">1.0.2.4</td>
+<td style="text-align: left;">RSA Validation</td>
+<td style="text-align: left;"><a href="https://mvnrepository.com/artifact/org.bouncycastle/bc-fips/1.0.2.4">https://mvnrepository.com/artifact/org.bouncycastle/bc-fips/1.0.2.4</a></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Software Limits:</strong>
+Limitations of the Tabulation software i.e., how many CVRs can be tabulated are detailed in <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a> document. </p>
+<h2 id="contest-tabulation-logic">Contest Tabulation Logic<a class="headerlink" href="#contest-tabulation-logic" title="Permanent link">&para;</a></h2>
+<h3 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h3>
+<p>When the user triggers a contest tabulation, the application creates a new <code>TabulatorSession</code> object to manage the process flow. The <code>TabulatorSession</code> loads, parses, and validates the contest config file. If those steps succeed, it reads the cast vote records into memory, runs the tabulation, and generates the results summary files. Throughout these processes logging output is written to two locations as detailed below under <a href="#rctab-logging"><strong>RCTab Logging</strong></a></p>
+<ol>
+<li>Read the config file  </li>
+<li>Validate the config file  </li>
+<li>Read cvr files  </li>
+<li>Round by round tabulation of votes according to configuration  </li>
+<li>Generate reports</li>
+</ol>
+<p>For detailed user guides, see <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> and <a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a>. Note that this document covers all tabulation logic in RCTab in order to fully describe the software design. All tabulation logic is described in the ‘Tabulation of CVRs’ section below, in conjunction with the draft VVSG 2.0 1500-107 Voting Methods and Tabulation Models document (for which RCTab acts as a reference implementation), as well as with reference to all RCV laws currently in use in the United States. Contact the manufacturer for a folder with all such RCV laws and/or a copy of that unpublished draft standard. </p>
+<h4 id="reading-a-config-file">Reading a config file<a class="headerlink" href="#reading-a-config-file" title="Permanent link">&para;</a></h4>
+<p>When a user selects an existing config file to open, the tabulator parses the JSON file and stores the information in a <code>RawContestConfig</code> object. This object is wrapped inside a <code>ContestConfig</code> object. The <code>ContestConfig</code> object serves as an interface between the config file and the rest of the application, providing extensive validation logic and a number of convenience methods for accessing normalized versions of the config settings.</p>
+<p>A config file includes a <code>tabulatorVersion</code> string and a collection of parameters organized into four sections.</p>
+<p>The <code>tabulatorVersion</code> is used to confirm that the version of the application that’s loading the config file is compatible (specifically: not older than) the version of the application that created the file.</p>
+<p>The <code>outputSettings</code> section contains settings related to what forms of output should be generated and where it should be saved on disk.</p>
+<p>The <code>cvrFileSources</code> section is a list of one or more source file paths containing cast vote records, along with the parameters necessary for the tabulator to parse the records successfully.</p>
+<p>The candidates section lists all of the candidate names/codes that appear in any of the CVR source files.</p>
+<p>The rules section contains all of the parameters that determine exactly how the application should tabulate the cast vote records and produce results.</p>
+<h4 id="writing-the-config-file">Writing the config file<a class="headerlink" href="#writing-the-config-file" title="Permanent link">&para;</a></h4>
+<p>A user can create a new config file or open an existing one and edit it. The GUI allows the user to modify all of the parameters that populate a config file (except for <code>tabulatorVersion</code>, which is determined by the app), run a validation to confirm that all of the settings in the file are valid, and save the file. </p>
+<h4 id="validation">Validation<a class="headerlink" href="#validation" title="Permanent link">&para;</a></h4>
+<p>Config file validation checks each aspect of the file and attempts to verify that all of the individual settings are compatible with one another and should result in a successful tabulation. This includes confirming that the tabulation rules are consistent, that the candidate names are valid and don’t contain duplicates, and that each source cvr file exists on disk, and has the proper parameters set for that cvr provider. The GUI prevents the user from creating a config file that would fail many of these checks, but the validation assumes nothing and provides an additional layer of protection against user error.  Because a user can create or modify a config file simply using a text editor the tabulator can’t assume that a config file has only been modified by its own GUI.</p>
+<h4 id="reading-cvr-files">Reading CVR Files<a class="headerlink" href="#reading-cvr-files" title="Permanent link">&para;</a></h4>
+<p>Reading the cast vote records into memory consists of parsing the source files and creating a <code>CastVoteRecord</code> object to represent each record. This object contains the candidate rankings for the CVR along with additional information parsed from the source file such as an ID and a precinct name. As the tabulation progresses, the <code>CastVoteRecord</code> object also stores information about the CVR’s fate in each round (which candidate(s) its vote is counting toward and what fraction of the vote belongs to each). The details of parsing each source file depend on that file’s provider.</p>
+<h4 id="tabulation-of-cvrs">Tabulation of CVRs<a class="headerlink" href="#tabulation-of-cvrs" title="Permanent link">&para;</a></h4>
+<p>Note: for all winning modes other than <code>MULTI_SEAT_SEQUENTIAL_WINNER_TAKES_ALL</code> (a.k.a. multi-pass IRV), the application performs a single tabulation when it processes a config file. For multi-pass IRV, it instead performs a sequence of single-seat tabulations in which each tabulation excludes the candidates who have won on prior iterations, continuing until it has run numWinners tabulations and identified numWinners winners.</p>
+<p>For the tabulation itself, the application creates a <code>Tabulator</code> object. This object’s tabulation method runs a loop that iterates until it determines that the tabulation is complete. Each iteration of the loop is a new round. Each round starts by calling computeTalliesForRound, which iterates over all of the cast vote records and sums up the total number of current votes for each candidate. This involves a number of steps:</p>
+<ol>
+<li>If the CVR has already been marked as exhausted, it is skipped.  </li>
+<li>If the CVR was counted toward a candidate in the previous round and that candidate is still active, it’s counted toward that candidate again in this round.  </li>
+<li>If the CVR has no rankings at all, it is marked as exhausted.  </li>
+<li>The tabulator then begins iterating through the rankings in the CVR, starting with the most preferred rank found (i.e., the lowest rank number, which is typically 1) and proceeding in order. At each rank, it checks for a number of possible cases:  <ol>
+<li>If the number of rankings skipped between the last ranking seen and this one exceeds the maxSkippedRanksAllowed value in the config, the CVR is marked as exhausted.  </li>
+<li>If one or more of the candidates at this rank already appeared at another rank and the config has enabled exhaustOnDuplicateCandidate, the CVR is marked as exhausted.  </li>
+<li>If the rankings at this rank constitute an overvote, the CVR is handled according to the overvote rule set in the config.  </li>
+<li>If a continuing candidate is found at this rank, the CVR is marked as counting toward the candidate.  </li>
+<li>Otherwise, the CVR is marked as exhausted.  </li>
+</ol>
+</li>
+<li>If the config has enabled tabulation by precinct, the method also updates the per-precinct tallies for this round.</li>
+</ol>
+<p>Next, if the tabulation is in the first round and/or the contest is for a single seat or the mode is <code>MULTI_SEAT_SEQUENTIAL_WINNER_TAKES_ALL</code> (multi-pass IRV), the software sets/updates the winning threshold (the number of votes that a candidate must meet or exceed in order to be named a winner) based on the winning rules set in the config. </p>
+<ol>
+<li>
+<p>The threshold in single-seat and <code>MULTI_SEAT_SEQUENTIAL_WINNER_TAKES_ALL</code> is calculated in each round as: </p>
+<p><code>winningThreshold</code> = floor(<code>V</code>/2) + 1</p>
+<p>Where <code>V</code> = the total number of votes counting for continuing candidates in the current round (and continuing refers to non-excluded candidates who have not yet been eliminated -- and, in the case of multi-pass IRV, who have not been elected in a previous pass).</p>
+</li>
+<li>
+<p>The threshold in <code>MULTI_SEAT_ALLOW_ONLY_ONE_WINNER_PER_ROUND</code> and <code>MULTI_SEAT_ALLOW_MULTIPLE_WINNERS_PER_ROUND</code> is calculated as: </p>
+<p><code>winningThreshold</code> = (<code>V</code>/(<code>N</code>+<code>1</code>) + 10^(-1 * <code>decimalPlacesForVoteArithmetic</code>) if <code>nonIntegerWinningThreshold</code> is set to <code>true</code></p>
+<p><code>winningThreshold</code> = floor(<code>V</code>/(<code>N</code>+1)) + 1 if <code>nonIntegerWinningThreshold</code> is set to <code>false</code></p>
+<p><code>winningThreshold</code> = floor(<code>V</code>/<code>N</code>) if <code>hareQuota</code> is set to <code>true</code></p>
+<p>Where <code>V</code> = the sum of the values in <code>currentRoundCandidateToTally</code> in the first round and <code>n</code> = <code>numWinners</code></p>
+</li>
+<li>
+<p>The election threshold in <code>MULTI_SEAT_BOTTOMS_UP_USING_PERCENTAGE_THRESHOLD</code> is calculated as:</p>
+<p><code>winningThreshold</code> = <code>V</code>*<code>T</code></p>
+<p>Where <code>V</code> = total number of votes counting for continuing candidates (candidates not eliminated) in the current round and <code>T</code> = <code>bottomsUpPercentageThreshold</code></p>
+</li>
+</ol>
+<p>No threshold is calculated in <code>MULTI_SEAT_BOTTOMS_UP_UNTIL_N_WINNER</code>S mode because the tabulation simply eliminates candidates until exactly numWinners remain, then selects those candidates as the winners. </p>
+<p>The software then checks whether there are any continuing candidates with vote tallies in the current round that meet or exceed the winning threshold. Each of these candidates is marked as a winner and, if the winning rules in the config indicate that surplus votes should be redistributed (which is the case when the winning mode is either <code>MULTI_SEAT_ALLOW_ONLY_ONE_WINNER_PER_ROUND</code> and <code>MULTI_SEAT_ALLOW_MULTIPLE_WINNERS_PER_ROUND</code>), then the software calculates a surplus fraction. The surplus fraction for a winning candidate is calculated as: </p>
+<div class="highlight"><pre><span></span><code>`surplusFraction` = (`C` - `T`) / `C`
+
+Where `C` = the candidate’s vote tally in the current round and `T` = the winning threshold
+</code></pre></div>
+<p>Each <code>CastVoteRecord</code> object counting towards a winning candidate redistributes an amount equal to its current value multiplied by the surplusFraction according to step 4 in “Tabulation of CVRs” above, based on that <code>CastVoteRecord</code>’s rankings. Each of these <code>CastVoteRecord</code>s is also updated to record the portion of that vote that should remain allocated to the candidate in future rounds, which is its current value multiplied by (1 - <code>surplusFraction</code>).</p>
+<p>Note that if a <code>CastVoteRecord</code> is involved in multiple surplus redistributions, the fraction of the vote allocated to earlier winners is not affected by subsequent redistributions; only the surplus portion is eligible for further redistribution.</p>
+<p>Any decimal values in the above calculations are governed by the <code>decimalPlacesForVoteArithmetic</code> setting. </p>
+<p>More information about how surplus vote values are calculated is included in the fractional transfers discussion in <a href="tabulation_options_for_rcv_tabulation.html"><strong>Section 19 - Tabulation Options for RCV Tabulation</strong></a>.</p>
+<p>If the mode is <code>MULTI_SEAT_ALLOW_ONLY_ONE_WINNER_PER_ROUND</code> and more than one continuing candidate meets or exceeds the winning threshold in a round, only the candidate with the top tally is selected as the winner (and any other continuing candidates meeting the threshold will be selected in subsequent rounds). If multiple candidates are tied for this top tally value, the tie is broken according to the selected tiebreakMode. </p>
+<p>In <code>MULTI_SEAT_BOTTOMS_UP_USING_PERCENTAGE_THRESHOLD</code>, winners are selected in a given round only if every continuing candidate meets or exceeds the winning threshold.</p>
+<p>Finally, if no winners have been identified in the current round, the software determines whether it should identify one or more candidates to eliminate. (<em>This is true if a) the number of identified winners is fewer than the number of seats for the contest, b) there are more than two candidates remaining and the winning rules specify a single-seat contest that should continue until only two candidates remain, or c) the winning mode is </em><code>MULTI_SEAT_BOTTOMS_UP_USING_PERCENTAGE_THRESHOLD</code><em>.</em>) In this case, the candidate(s) to be eliminated are identified by trying the following methods in order until one of them returns one or more candidates:</p>
+<ol>
+<li>If the cast vote records include undeclared write-ins and this set of candidates have not been eliminated yet, select them.  </li>
+<li>If the config specifies a minimum vote threshold for a viable candidate and one or more continuing candidates has a tally below that threshold, select them.  </li>
+<li>If the config enables batch elimination, attempt to identify two or more candidates who can be eliminated via this process.  </li>
+<li>Otherwise, select the remaining candidate with the lowest tally. (If multiple candidates are tied for the lowest tally, select one according to the tie-breaking rule specified in the config.)</li>
+</ol>
+<p>The tabulator then determines whether it should continue to the next round and repeat the process. It continues if one of the following conditions is true:</p>
+<ol>
+<li>For a single-seat contest, one of these is true:  <ol>
+<li>A winner has not been identified yet.  </li>
+<li>“Continue until two candidates remain” is enabled and one of these is true:  <ol>
+<li>There are more than two candidates remaining.  </li>
+<li>The eliminations that reduced the number of remaining candidates to two happened in the current round. (This condition is included to ensure that the tabulator will generate an additional round showing the final vote tallies when only the last two candidates remain.)  </li>
+</ol>
+</li>
+</ol>
+</li>
+<li>For a multi-seat contest, one of these is true:  <ol>
+<li>The winning mode is <code>MULTI_SEAT_BOTTOMS_UP_USING_PERCENTAGE_THRESHOLD</code> and no winners have been identified yet.  </li>
+<li>The winning mode is not <code>MULTI_SEAT_BOTTOMS_UP_USING_PERCENTAGE_THRESHOLD</code> and the number of winners identified is fewer than the number of seats.  </li>
+<li>The winning mode is neither <code>MULTI_SEAT_BOTTOMS_UP_USING_PERCENTAGE_THRESHOLD</code> nor <code>MULTI_SEAT_BOTTOMS_UP_UNTIL_N_WINNER</code>S and the number of winners equals the number of seats, but the final winners were identified in the current round. (Similar to above, this condition ensures that the tabulator will generate an additional round showing the final surplus redistribution in <code>MULTI_SEAT_ALLOW_ONLY_ONE_WINNER_PER_ROUND</code> and <code>MULTI_SEAT_ALLOW_MULTIPLE_WINNERS_PER_ROUND</code>.)</li>
+</ol>
+</li>
+</ol>
+<p>When the tabulator determines that it should not continue tabulating, the tabulation is complete.</p>
+<h4 id="reporting-results">Reporting results<a class="headerlink" href="#reporting-results" title="Permanent link">&para;</a></h4>
+<p>After the tabulation completes, the software generates results files and saves them to disk. These results are based on the following data that the tabulation process has produced and stored in memory:</p>
+<ul>
+<li>Which round each eliminated candidate was eliminated  </li>
+<li>Which round each winning candidate was identified as a winner  </li>
+<li>The winning threshold that was used to select the winner(s)  </li>
+<li>Each candidate’s vote tally in each round  </li>
+<li>If the config has enabled tabulating by precinct, each candidate’s vote tally in each precinct in each round  </li>
+<li>A record of the number of votes in each round that were transferred from each candidate to each other candidate (or were exhausted)  </li>
+<li>In a multi-seat contest involving surplus redistribution, the cumulative amount of residual surplus in each round  </li>
+<li>The number of exhausted ballots in each round, which are the number of ballots that cannot be counted for any continuing candidates - those candidates who are still active in the contest. This ranked choice voting specific category of ballots includes undervoted ballots and overvoted ballots. Exhausted ballots are referred to as inactive ballots in summary results files. </li>
+</ul>
+<p>Using this data, the tabulator creates a <code>ResultsWriter</code> object that writes the following files with corresponding hashes to disk:</p>
+<ol>
+<li>A CSV spreadsheet that includes the round-by-round tally for each candidate, when each candidate won or was eliminated, and related information  </li>
+<li>A JSON file that includes the same information found in the CSV spreadsheet, plus the number of votes transferred from each candidate to each other candidate (or exhaustion) in each round</li>
+</ol>
+<p>Each of these files contains a corresponding <code>fileName.hash</code> file. These files can be used to verify the content of their corresponding result files.</p>
+<p>If tabulating by precinct is enabled, the <code>ResultsWriter</code> also generates a CSV spreadsheet with round-by-round tallies for each precinct found in the cast vote records.</p>
+<p>Finally, if the config file specifies that the tabulator should generate CDF (Common Data Format) output, it saves a CDF file in JSON format.</p>
+<p>Note: if the winning mode is <code>MULTI_SEAT_SEQUENTIAL_WINNER_TAKES_ALL</code> (multi-pass IRV), the output files described in this section are generated after each pass, i.e., after each single-seat tabulation. The pass number is appended to each filename to allow the user to distinguish among them.</p>
+<h3 id="rctab-logging">RCTab Logging<a class="headerlink" href="#rctab-logging" title="Permanent link">&para;</a></h3>
+<p>In addition to results files, RCTab generates various log outputs which describe:<br />
+- Program status<br />
+- Operations in progress<br />
+- Critical errors and warnings<br />
+- Tabulation-specific data: e.g., config file contents and how each vote counted in each round<br />
+- Additional system information</p>
+<p>Log output is logically divided into two data streams:</p>
+<h4 id="stream-1-tabulator-operator-logging">Stream 1: Tabulator "Operator" Logging<a class="headerlink" href="#stream-1-tabulator-operator-logging" title="Permanent link">&para;</a></h4>
+<p>This data stream captures the overall operation of the Tabulator which may include loading, editing, validating, and saving multiple config files, running cvr conversion functions, and tabulating multiple contests.</p>
+<p>File Name: <code>rcv_0.log</code><br />
+File Rotation:<br />
+ When <code>rcv_0.log</code> reaches 50MB size it will be renamed along with any other preceding log files.  For example:<br />
+<code>rcv_0.log</code> -&gt; <code>rcv_1.log</code><br />
+ rcv_1.log -&gt; <code>rcv_2.log</code><br />
+Then a new <code>rcv_0.log</code> file will be created, and logging will continue.<br />
+This is a standard log rotation strategy that limits log file sizes for easier management.</p>
+<p>File location: The Tabulator Operator Log will be created in the current working directory.  When launched using the rcv.bat file this is next to the rcv.bat file.  For example:   <code>C:\Users\MyUser\rcv\bin\rcv\_0.log</code></p>
+<p>Operator logging is duplicated in the black GUI console box at the bottom of the application window.  The console is provided as a convenience primarily for showing validation errors and providing feedback to the user. See screenshot below for example of this console box.</p>
+<p><div
+    style="
+        /* leave border in comment for debugging */
+        /*border: 1px dotted deeppink;*/
+        width: 100%;
+        aspect-ratio: 6.27/2.09;
+        overflow: hidden;
+    "
+>
+    <img 
+        src="../images/image62.png"
+        alt="example of console box screenshot"
+        style="
+            /* leave border in comment for debugging */
+            /*border: 1px solid red;*/
+            display: block;
+            width: 100%;
+            height: auto;
+            /* transform: translateX(X%) translateY(Y%) scale(S); */
+            /* translateX(X%): Adjusts horizontal position. Negative moves left, positive moves right. */
+            /* translateY(Y%): Adjusts vertical position. Negative moves up, positive moves down. */
+            /* scale(S): Scales the image. Values >1 enlarge, <1 shrink. */
+            /* tip: use binary search to find ideal values */
+            transform: translateX(1.5%) translateY(-58%) scale(1.15);
+        "
+    >
+</div>
+</p>
+<h4 id="stream-2-contest-specific-audit-logging">Stream 2: Contest-Specific "Audit" Logging<a class="headerlink" href="#stream-2-contest-specific-audit-logging" title="Permanent link">&para;</a></h4>
+<p>This data stream captures information about a specific contest tabulation.  It includes all the same information written to the Execution Log (within the context of a single contest tabulation) and includes a listing of the config file being tabulated, and a record of how each cvr was counted in each round.</p>
+<p>File Name: <code>[time_stamp]_audit_0.log</code> where timestamp is created when the tabulation is triggered and used on all output files for a given tabulation.  For example: <code>2021-04-24_22-49-49_audit_0.log</code><br />
+File Rotation uses the same strategy as the Execution Logging.  When an audit log reaches 50MB size it will be renamed along with any other preceding log files.  For example:<br />
+<code>2021-04-24_22-49-49_audit_0.log</code> -&gt; <code>2021-04-24_22-49-49_audit_1.log</code><br />
+<code>2021-04-24_22-49-49_audit_1.log</code> -&gt; <code>2021-04-24_22-49-49_audit_2.log</code><br />
+Then a new <code>2021-04-24_22-49-49_audit_0.log</code> file will be created, and logging will continue.<br />
+Each audit_<em>N</em>.log is created with a corresponding audit_<em>N</em>.log.hash file. This hash file can be used to validate the contents of its corresponding audit_N.log file with the directions in <a href="trusted_build_and_output_hash_verification.html"><strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong></a></p>
+<h3 id="user-interface">User Interface<a class="headerlink" href="#user-interface" title="Permanent link">&para;</a></h3>
+<p>The tabulator was originally developed for a command-line interface. The GUI (graphical user interface) was introduced both to make the process of configuring and running a tabulation faster and more intuitive and to enable users with a less technical background to use the software. The command-line interface still exists as a way to support execution via script, e.g., for batch processing and test automation. The GUI prevents the user from creating a config file that would fail many of these checks. A brief user guide to the Command Line Interface is available in <a href="tabulator_command_line_instructions.html"><strong>Section 24 - Tabulator Command Line Instructions</strong></a>. More information about error messages can be found in <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a>.</p>
+<h3 id="supported-file-types">Supported File types<a class="headerlink" href="#supported-file-types" title="Permanent link">&para;</a></h3>
+<p>The Tabulator uses the JSON format for contest configuration files and one style of results summary output. JSON is simple, popular, and easy for humans and software to read and write.  The Tabulator uses CSV (comma-separated values) for the tabular version of its results summary output.  CSV is a non-proprietary format that all modern spreadsheet applications can recognize. Tabulation output log files are produced in plain-text with a .log extension for clarity.  RCTab reads <code>.xlsx</code> (Microsoft Excel) and <code>.xml</code> (Extensible Markup Language) cvr and elections metadata files supplied by various manufacturers (ES&amp;S, Hart, CDF, Unisyn).</p>
+<p>Additionally, the following documents were used to design the RCTab software:</p>
+<p><a href="system_security_specification_requirements.html"><strong>Section 07 - System Security Specification Requirements</strong></a><br />
+<a href="tabulation_options_for_rcv_tabulation.html"><strong>Section 19 - Tabulation Options for RCV Tabulation</strong></a><br />
+<a href="process_ranked_choice_voting_contest.html"><strong>Section 20 - Process Ranked Choice Voting Contest</strong></a><br />
+<a href="ballot_limitations_and_maximum_testing_range.html"><strong>Section 21 - Ballot Limitations &amp; Maximum Testing Range</strong></a><br />
+<a href="ranked-choice-voting-laws.html"><strong>Appendix III - Ranked Choice Voting Laws Appendix</strong></a> <br />
+<a href="expected-outcome-rcv-test-sets-single-winner.html"><strong>Appendix II - Expected Outcome RCV Test Sets Single-Winner</strong></a><br />
+<a href="expected-outcome-rcv-test-sets-multi-winner.html"><strong>Appendix I- Expected Outcome RCV Test Sets Multi-Winner</strong></a></p>
+<h2 id="744-software-distribution">7.4.4 Software Distribution<a class="headerlink" href="#744-software-distribution" title="Permanent link">&para;</a></h2>
+<p>b. The documentation shall designate all software files as static, semi-static or dynamic.</p>
+<p>The <code>.json</code> config files used to configure RCTab are semi-static. These files are modified for contest-specific configuration options such as the candidate list, winning rules and output locations.</p>
+<p>RCTab output files, if considered part of the “software files,” are also semi-static. The <code>summary.json</code>, <code>summary.csv</code>, <code>audit.log</code> and corresponding <code>.hash</code> files output for each tabulation are different depending on the configured contest. </p>
+<p>All other RCTab files, excluding the <code>.json</code> config files and output files, are static. All remaining files’ contents (specifically the source code files and 3rd party dependencies) are not modified based on the election being conducted or the equipment upon which it is installed. All executable code files are the same no matter what hardware it is installed on and no matter what voting equipment it is being used with.</p>
+<h2 id="952-applicable-documents">9.5.2 Applicable Documents<a class="headerlink" href="#952-applicable-documents" title="Permanent link">&para;</a></h2>
+<p>The manufacturer shall list all documents controlling the development of the software and its specifications. Documents shall be listed in order of precedence.</p>
+<ul>
+<li>This is described in the <a href="#coding-standards-and-style"><strong>Coding Standards and Style</strong></a> paragraph of <a href="#"><strong>Section 02 - Software Design and Specifications</strong></a>.</li>
+</ul>
+<h2 id="953-software-overview-953-software-overview">9.5.3 Software Overview {#9.5.3-software-overview}<a class="headerlink" href="#953-software-overview-953-software-overview" title="Permanent link">&para;</a></h2>
+<p>The manufacturer shall provide an overview of the software that includes the following items:  </p>
+<ol>
+<li>
+<p>A description of the software system concept, including specific software design objectives, and the logic structure and algorithms used to accomplish these objectives. </p>
+<ul>
+<li>This is described in the <a href="#contest-tabulation-logic"><strong>Contest Tabulation Logic</strong></a> section of <a href="#"><strong>Section 02 - Software Design and Specifications</strong></a> and informed by the following documents:   </li>
+<li><a href="system_security_specification_requirements.html"><strong>Section 07 - System Security Specification Requirements</strong></a>  </li>
+<li><a href="tabulation_options_for_rcv_tabulation.html"><strong>Section 19 - Tabulation Options for RCV Tabulation</strong></a>  </li>
+<li><a href="process_ranked_choice_voting_contest.html"><strong>Section 20 - Process Ranked Choice Voting Contest</strong></a>  </li>
+<li><a href="ballot_limitations_and_maximum_testing_range.html"><strong>Section 21 - Ballot Limitations &amp; Maximum Testing Range</strong></a>  </li>
+<li><a href="ranked-choice-voting-laws.html"><strong>Appendix III - - Ranked Choice Voting Laws Appendix</strong></a>   </li>
+<li><a href="expected-outcome-rcv-test-sets-single-winner.html"><strong>Appendix II - Expected Outcome RCV Test Sets Single-Winner</strong></a>  </li>
+<li><a href="expected-outcome-rcv-test-sets-multi-winner.html"><strong>Appendix I - Expected Outcome RCV Test Sets Multi-Winner</strong></a></li>
+</ul>
+</li>
+<li>
+<p>The general design, operational considerations, and constraints influencing the design of the software.</p>
+<ul>
+<li>This is described in the <a href="#contest-tabulation-logic"><strong>Contest Tabulation Logic</strong></a> section of <a href="#"><strong>Section 02 - Software Design and Specifications</strong></a> and informed by the following documents:   </li>
+<li><a href="system_security_specification_requirements.html"><strong>Section 07 - System Security Specification Requirements</strong></a>  </li>
+<li><a href="tabulation_options_for_rcv_tabulation.html"><strong>Section 19 - Tabulation Options for RCV Tabulation</strong></a>  </li>
+<li><a href="process_ranked_choice_voting_contest.html"><strong>Section 20 - Process Ranked Choice Voting Contest</strong></a>  </li>
+<li><a href="ballot_limitations_and_maximum_testing_range.html"><strong>Section 21 - Ballot Limitations &amp; Maximum Testing Range</strong></a>  </li>
+<li><a href="ranked-choice-voting-laws.html"><strong>Appendix III - Ranked Choice Voting Laws Appendix</strong></a>   </li>
+<li><a href="expected-outcome-rcv-test-sets-single-winner.html"><strong>Appendix II - Expected Outcome RCV Test Sets Single-Winner</strong></a>  </li>
+<li><a href="expected-outcome-rcv-test-sets-multi-winner.html"><strong>Appendix I - Expected Outcome RCV Test Sets Multi-Winner</strong></a></li>
+</ul>
+</li>
+<li>
+<p>Identification of all software items, indicating items that were:</p>
+<ol>
+<li>
+<p>Written in-house.</p>
+<ul>
+<li>All in-house items written in-house are described in this doc under <a href="#tabulator-java-classes"><strong>Tabulator Java Classes</strong></a> located in <a href="#"><strong>Section 02 - Software Design and Specifications.</strong></a></li>
+</ul>
+</li>
+<li>
+<p>Procured and not modified; and</p>
+<ul>
+<li>All third-party modules are not modified. They are described in <a href="#"><strong>Section 02 - Software Design and Specifications</strong></a> under <a href="#3rd-party-modules"><strong>Java 17, Architecture, 3rd-party Modules</strong></a></li>
+</ul>
+</li>
+<li>
+<p>Procured and modified including descriptions of the modifications to the software and to the default configuration options. The manufacturer shall also include a certification that procured software items were obtained directly from the manufacturer or a licensed dealer or distributor.</p>
+<ul>
+<li>No third-party modules have been modified. </li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<p>We affirm that all third-party modules were obtained from the manufacturer.  All of the third-party modules can be freely obtained and updated via the internet.  They are maintained by their respective authors and hosted in the Maven Central Repository. More information on verifying dependencies can be found in <a href="tabulator_trusted_build_instructions.html"><strong>Section 14 - Tabulator Trusted Build Instructions</strong></a></p>
+<h2 id="954-software-standards-and-conventions">9.5.4 Software Standards and Conventions<a class="headerlink" href="#954-software-standards-and-conventions" title="Permanent link">&para;</a></h2>
+<p>The manufacturer shall provide information that can be used by the SOS and S-ATA to support software analysis and test design. The information shall address standards and conventions developed internally by the manufacturer as well as published industry standards that have been applied by the manufacturer. The manufacturer shall provide information that addresses the following standards and conventions:</p>
+<ol>
+<li>
+<p>Software System development methodology.</p>
+<p>Our software development methodology is feature-driven:</p>
+<ul>
+<li>New customer needs are identified and specified  </li>
+<li>Features are designated for a particular release or deferred  </li>
+<li>Design new or updated software to meet those needs  </li>
+<li>Software is created or updated, reviewed and tested (see <a href="quality_assurance_plan.html"><strong>Section 13 - Quality Assurance Plan</strong></a>)  </li>
+<li>Software is submitted for VSTL testing  </li>
+<li>Iterate with test lab  </li>
+<li>Release</li>
+</ul>
+</li>
+<li>
+<p>Software design standards, including internal manufacturer procedures.  </p>
+</li>
+<li>Software specification standards, including internal manufacturer procedures.  </li>
+<li>Software coding standards, including internal manufacturer procedures.  </li>
+<li>Testing and verification standards, including internal manufacturer procedures, that can assist in determining the program's correctness and ACCEPT/REJECT criteria; and  </li>
+<li>
+<p>Quality assurance standards or other documents that can be used by the ITA to examine and test the software. These documents include standards for program flow and control charts, program documentation, test planning, and for test data acquisition and reporting.</p>
+<ul>
+<li>Our software design and coding standards are based on the VVSG 1.0 VOL 1: 5.2 Software Design and Coding Standards. Additionally, we use Google Checkstyle as described in this document under <a href="#coding-standards-and-style"><strong>Coding Standards and Style.</strong></a>  </li>
+<li>Software specifications are described in our Github repo under the related issues. Our software specification standard is ad-hoc.    </li>
+<li>Testing and verification standards are described in <a href="quality_assurance_plan.html"><strong>Section 13 - Quality Assurance Plan</strong></a> and <a href="system_test_and_verification_specification.html"><strong>Section 17 - System Test &amp; Verification</strong></a>.</li>
+</ul>
+</li>
+</ol>
+<h2 id="955-software-operating-environment">9.5.5 Software Operating Environment<a class="headerlink" href="#955-software-operating-environment" title="Permanent link">&para;</a></h2>
+<p>This section shall describe or make reference to all operating environment factors that influence the software design.</p>
+<ul>
+<li>RCTab is designed to run on unmodified COTS Windows, Mac, and Linux operating systems as they are very popular, robust, mature, trusted, and they all support Java 17.  For more information see the above section titled <a href="#java-17"><strong>Java 17</strong></a>.    </li>
+<li>RCTab core processing and tabulation logic is entirely platform (i.e., operating system) agnostic.   </li>
+<li>All platform-specific functionality is encapsulated in the Java language implementation and Java platform libraries, including:  <ul>
+<li>Basic OS services for disk IO  </li>
+<li>File path resolution  </li>
+<li>Memory management  </li>
+<li>System interrupt handling.</li>
+</ul>
+</li>
+</ul>
+<h3 id="9551-hardware-environment-and-constraints">9.5.5.1 Hardware Environment and Constraints<a class="headerlink" href="#9551-hardware-environment-and-constraints" title="Permanent link">&para;</a></h3>
+<p>The manufacturer shall identify and describe the hardware characteristics that<br />
+influence the design of the software, such as:</p>
+<ol>
+<li>The logic and arithmetic capability of the processor.  </li>
+<li>Memory read-write characteristics.  </li>
+<li>External memory device characteristics.  </li>
+<li>Peripheral device interface hardware.  </li>
+<li>Data input/output device protocols; and  </li>
+<li>
+<p>Operator controls, indicators, and displays.</p>
+<ul>
+<li>RCTab is designed to be as efficient as possible with RAM and CPU usage in order to lower the hardware requirements needed to process an election and decrease costs for our users.  </li>
+<li>Because the Tabulator creates an in-memory record for each CVR it processes, the maximum number of CVRs that can be processed in a single contest is limited by the amount of available RAM on the host system. See <a href="system_hardware_specification.html"><strong>Section 03 - System Hardware Specification</strong></a> for more details.</li>
+</ul>
+</li>
+</ol>
+<h3 id="9552-software-environment">9.5.5.2 Software Environment<a class="headerlink" href="#9552-software-environment" title="Permanent link">&para;</a></h3>
+<p>The manufacturer shall identify the compilers or assemblers used in the generation of executable code and describe the operating system or system monitor.</p>
+<ul>
+<li>We use the javac compiler javac 17.0.2 included with OpenJDK 17.0.2 (build 17.0.2+8).  </li>
+<li>See also <a href="tabulator_trusted_build_instructions.html"><strong>Section 14 - Tabulator Trusted Build Instructions</strong></a></li>
+</ul>
+<h2 id="956-software-functional-specification">9.5.6 Software Functional Specification<a class="headerlink" href="#956-software-functional-specification" title="Permanent link">&para;</a></h2>
+<p>The manufacturer shall provide a description of the operating modes of the system and of software capabilities to perform specific functions.</p>
+<p>For more information about operating modes of the system and of system capabilities to perform specific functions, please see:</p>
+<ul>
+<li><a href="system_overview.html"><strong>Section 01 - System Overview</strong></a></li>
+<li><a href="user_guide.html"><strong>Section 18 - User Guide</strong></a>  </li>
+<li><a href="tabulation_options_for_rcv_tabulation.html"><strong>Section 19 - Tabulation Options for RCV Tabulation</strong></a>  </li>
+<li><a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a></li>
+</ul>
+<h3 id="9561-configurations-and-operating-modes">9.5.6.1 Configurations and Operating Modes<a class="headerlink" href="#9561-configurations-and-operating-modes" title="Permanent link">&para;</a></h3>
+<p>The manufacturer shall describe all software configurations and operating modes of the system, such as ballot preparation, election programming, preparation for opening the polling place, recording votes and/or counting ballots, closing the polling place, and generating reports. For each software function or operating mode, the manufacturer shall provide:<br />
+1. A definition of the inputs to the function or mode (with characteristics, tolerances or acceptable ranges, as applicable);<br />
+2. An explanation of how the inputs are processed; and<br />
+3. A definition of the outputs produced (again, with characteristics, tolerances, or acceptable ranges as applicable).</p>
+<p>RCTab only processes ballot data once it has been exported from an election management system. It then produces a final report. For more information about the components of RCTab with regard to data input/counting and generating final count that are relevant here, please see:</p>
+<ul>
+<li><a href="system_overview.html"><strong>Section 01 - System Overview</strong></a>  </li>
+<li><a href="user_guide.html"><strong>Section 18 - User Guide</strong></a>  </li>
+<li><a href="tabulation_options_for_rcv_tabulation.html"><strong>Section 19 - Tabulation Options for RCV Tabulation</strong></a>  </li>
+<li><a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a></li>
+</ul>
+<h3 id="9562-software-functions">9.5.6.2 Software Functions<a class="headerlink" href="#9562-software-functions" title="Permanent link">&para;</a></h3>
+<p>The manufacturer shall describe the software's capabilities or methods for detecting<br />
+or handling:<br />
+1. Exception conditions.<br />
+2. System failures.<br />
+3. Data input/output errors.<br />
+4. Error logging for audit record generation.</p>
+<ul>
+<li>Exceptions are handled using Java language built-in exception handling.  </li>
+<li>Exceptions are logged to the <strong>Operator Log</strong> and, if a contest is being tabulated, the <strong>Audit Log</strong>.   </li>
+<li>Tabulator Exceptions are detailed in <a href="rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a>.  </li>
+<li>
+<p>System failures such as out of memory, disk input/output errors, etc. will be logged in these locations as well.</p>
+</li>
+<li>
+<p>Production of statistical ballot data.</p>
+</li>
+<li>
+<p>Tabulator results are described in <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> under <a href="user_guide.html#running-a-tabulation"><strong>Running A Tabulation</strong></a>.</p>
+</li>
+<li>
+<p>Data quality assessment; and</p>
+</li>
+<li>
+<p>For data quality assessment, we only operate upon CVR data formatted according to the standards the manufacturers have defined for their CVRs. See election system manufacturer documentation for more information regarding CVR formatting.   </p>
+</li>
+<li>
+<p>Additionally, audit logs describe how all ballot data and configuration data in a contest tabulation was read/interpreted by RCTab. </p>
+</li>
+<li>
+<p>Security monitoring and control.</p>
+</li>
+<li>
+<p>Jurisdiction practices and policies govern the security monitoring control when using the tabulator.  We recommend a minimum of 2 trained employees operate the system together at all times.   </p>
+</li>
+<li>For detailed information about security monitoring and control issues, please see <a href="system_security_specification_requirements.html"><strong>Section 07 - System Security Specification Requirements</strong></a>.</li>
+<li>If there are additional questions outside the scope of the jurisdiction practices and policies or the documentation provided with the software regarding security issues, we recommend consulting with an information technology security specialist. </li>
+</ul>
+<h2 id="957-programming-specifications">9.5.7 Programming Specifications<a class="headerlink" href="#957-programming-specifications" title="Permanent link">&para;</a></h2>
+<p>The manufacturer shall provide in this section an overview of the software design, its structure, and implementation algorithms and detailed specifications for individual software modules.</p>
+<p>This is described in this document under <a href="#contest-tabulation-logic"><strong>Contest Tabulation Logic.</strong></a> Also see the below diagram located in <a href="#9571-programming-specifications-overview">9.5.7.1</a>.</p>
+<h3 id="9571-programming-specifications-overview">9.5.7.1 Programming Specifications Overview<a class="headerlink" href="#9571-programming-specifications-overview" title="Permanent link">&para;</a></h3>
+<p>This overview shall include such items as flowcharts, HIPOs, data flow diagrams, and other graphical techniques that facilitate understanding of the programming specifications. This section shall be prepared to facilitate understanding of the internal functioning of the individual software modules. Implementation of the functions shall be described in terms of the software architecture, algorithms, and data structures.</p>
+<p>This is described in the <a href="#contest-tabulation-logic"><strong>Contest Tabulation Logic</strong></a> section of <a href="#"><strong>Section 02 - Software Design and Specifications.</strong></a> Also see the below diagram: </p>
+<p><img alt="Tabulator Session Processing Overview diagram" src="../images/image63.png" /></p>
+<h3 id="9572-programming-specifications-details">9.5.7.2 Programming Specifications Details<a class="headerlink" href="#9572-programming-specifications-details" title="Permanent link">&para;</a></h3>
+<p>The programming specifications shall describe individual software modules and their component units, if applicable. For each module and unit, the manufacturer shall provide the following information:  </p>
+<ol>
+<li>Module and unit design decisions, if any, such as algorithms used.  </li>
+<li>Any constraints, limitations, or unusual features in the design of the software module or unit.  </li>
+<li>The programming language used and rationale for its use, if other than the specified module or unit language  </li>
+<li>If the software module or unit consists of, or contains, procedural commands (such as menu selections in a database management system for defining forms and reports, on-line queries for database access and manipulation, input to a graphical user interface builder for automated code generation, commands to the operating system, or shell scripts), a list of the procedural commands and reference to user manuals or other documents that explain them  </li>
+<li>If the software module or unit contains, receives, or outputs data, a description of its inputs, outputs, and other data elements as applicable.  </li>
+<li>If the software module or unit contains logic, the logic to be used by the software unit, including, as applicable:  <ol>
+<li>Conditions in effect within the software module or unit when its execution is initiated.  </li>
+<li>Conditions under which control is passed to other software modules or units.  </li>
+</ol>
+</li>
+<li>
+<p>Exception and error handling</p>
+<ul>
+<li>The programming specifications that describe individual software modules and their component units are described in the <a href="#tabulator-java-classes"><strong><em>Tabulator Java Classes</em></strong></a> and <a href="#3rd-party-modules"><strong><em>3rd Party Modules</em></strong></a> sections of this document.</li>
+<li>For additional information, see the following documents:<ul>
+<li><a href="system_overview.html"><strong><em>Section 01 - System Overview</em></strong></a>  </li>
+<li><a href="user_guide.html"><strong><em>Section 18 - User Guide</em></strong></a>  </li>
+<li><a href="tabulation_options_for_rcv_tabulation.html"><strong><em>Section 19 - Tabulation Options for RCV Tabulation</em></strong></a>  </li>
+<li><a href="configuration_file_parameters.html"><strong><em>Section 25 - Configuration File Parameters</em></strong></a> </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>If the software module is a database, provide the information described below in <a href="#958-databases">Subsection 9.5.8</a>.</p>
+</li>
+</ol>
+<h2 id="958-databases">9.5.8 Databases<a class="headerlink" href="#958-databases" title="Permanent link">&para;</a></h2>
+<p>The RCTab software does not use any databases for its operation. This requirement does not apply to RCTab.</p>
+<h2 id="959-interfaces">9.5.9 Interfaces<a class="headerlink" href="#959-interfaces" title="Permanent link">&para;</a></h2>
+<p>RCTab does not rely on any interfaces for its operation. This requirement does not apply to RCTab. </p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="system_overview.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: System Overview">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                System Overview
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="system_hardware_specification.html" class="md-footer__link md-footer__link--next" aria-label="Next: System Hardware Specification">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                System Hardware Specification
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tabs", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

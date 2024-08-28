@@ -1,0 +1,1924 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="configuration_file_parameters.html">
+      
+      
+        <link rel="next" href="rctab_config_files.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>RCTab CVR Files - RCTab Test Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-26-rctab-cvr-files" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="RCTab Test Docs" class="md-header__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCTab Test Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              RCTab CVR Files
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="00_documentation_abstracts.html" class="md-tabs__link">
+          
+  
+  TDP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/user_guide.html" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="RCTab Test Docs" class="md-nav__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RCTab Test Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TDP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TDP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_documentation_abstracts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software_design_and_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardware_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_functionality_description.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acceptance_test_procedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_design_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Design Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_security_specification_requirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Security Specification Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design_and_interface_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design and Interface Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_architecture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development_environment_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Environment Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_threat_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_testing_and_vulnerability_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Testing and Vulnerability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_maintenance_manual.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Maintenance Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personnel_deployment_and_training.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnel Deployment and Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="l_and_a_testing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_management_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quality_assurance_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Assurance Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_trusted_build_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_change_notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardening_procedures_-_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardening Procedures - Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_test_and_verification_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Test and Verification Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulation_options_for_rcv_tabulation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="process_ranked_choice_voting_contest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ballot_limitations_and_maximum_testing_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ballot Limitations & Maximum Testing Range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_instructions_for_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Instructions for Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_command_line_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Command Line Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_file_parameters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="rctab_cvr_files.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#ess" class="md-nav__link">
+    <span class="md-ellipsis">
+      ES&amp;S
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hart-verity" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hart Verity
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Hart Verity">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cvr-archives-naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVR Archives Naming Convention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cryptographically-signing-hart-cvrs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cryptographically signing Hart CVRs
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvr-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVR Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvr-file-naming-convention" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVR File Naming Convention
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-cvr-contents" class="md-nav__link">
+    <span class="md-ellipsis">
+      Viewing CVR Contents
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Structure
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvr-elements" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVR Elements
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#dominion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Dominion
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Dominion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#contestmanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      ContestManifest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#candidatemanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      CandidateManifest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#partymanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      PartyManifest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#precinctportionmanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      PrecinctPortionManifest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ballottypemanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      BallotTypeManifest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ballottypecontestmanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      BallotTypeContestManifest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#countinggroupmanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      CountingGroupManifest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tabulatormanifest" class="md-nav__link">
+    <span class="md-ellipsis">
+      TabulatorManifest
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cvrexport" class="md-nav__link">
+    <span class="md-ellipsis">
+      CVRExport
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#originalmodified-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      Original/Modified element:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#contest" class="md-nav__link">
+    <span class="md-ellipsis">
+      Contest:
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mark-element" class="md-nav__link">
+    <span class="md-ellipsis">
+      Mark element
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#clear-ballot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Clear Ballot
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_config_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Config Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-election_audit_and_clearing_rctab_from_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-Election Audit & Clearing RCTab from System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_operator_log_messages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Operator Log Messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_system_tab_hints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab System Tab Hints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coding_and_header_comment_standards_for_rctab.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding and Header Comment Standards for RCTab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secure_usb_process.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-multi-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Multi-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-single-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Single-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranked-choice-voting-laws.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ranked Choice Voting Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="22-month-archiving-procedure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22-Month Archiving Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="section-26-rctab-cvr-files">Section 26 - RCTab CVR Files<a class="headerlink" href="#section-26-rctab-cvr-files" title="Permanent link">&para;</a></h1>
+<p>This document describes the different CVR files RCTab is compatible with. It documents how they are laid out and describes relevant file structures that inform how RCTab parses CVR data.</p>
+<h2 id="ess">ES&amp;S<a class="headerlink" href="#ess" title="Permanent link">&para;</a></h2>
+<p>The CVR files from the ES&amp;S EVS export system are in an MS Excel Worksheet format.  The sample below displays the following records:</p>
+<ul>
+<li><strong>First Vote Column Index</strong> – the first vote appears in column D under "Cand Choice 1"</li>
+<li><strong>First Vote Row Index</strong> – the first cast vote record is in Row 2 in this example</li>
+<li><strong>ID Column Index</strong> – in this sample Column A contains all Cast Vote Record IDs, making it the ID Column</li>
+<li><strong>Precinct Column Index</strong> – displayed in Column B as the precinct Name/#</li>
+<li><strong>Ballot Style</strong> – in Column C is the Name/# of the ballot style</li>
+<li><strong>Cand Choice</strong> – in columns D through H are the candidate choices selected by the voter</li>
+</ul>
+<figure>
+  <img src="../images/image33.jpg" alt="Elephant at sunset" />
+  <figcaption>Figure 1 - Sample cvr File</figcaption>
+</figure>
+
+<p><strong>Note:</strong> The first three columns in the ES&amp;S’ file are fixed and the number of columns will depend on the number of contest choices. The format will typically follow this format:</p>
+<p><strong>Header Row (column labels)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cast Vote  Record</th>
+<th style="text-align: left;">Precinct</th>
+<th style="text-align: left;">Ballot Style</th>
+<th style="text-align: left;">CONTEST-X  1st Choice</th>
+<th style="text-align: left;">CONTEST-X  2nd Choice</th>
+<th style="text-align: left;">CONTEST-X  3rd Choice</th>
+<th style="text-align: left;">CONTEST-X  4th Choice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Each CVR Row</strong></p>
+<table>
+  <thead>
+    <tr>
+      <th>Column Number</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Column 1</strong></td>
+      <td><p>Cast Vote Record ID number. Unique number, sequentially assigned.</p></td>
+    </tr>
+    <tr>
+      <td><strong>Column 2</strong></td>
+      <td><p>Precinct Name that is associated with the cast vote record.</p></td>
+    </tr>
+    <tr>
+      <td><strong>Column 3</strong></td>
+      <td><p>Ballot Style Name that is associated with the cast vote record. Applies to both ballots by precinct and ballots by style elections.</p></td>
+    </tr>
+    <tr>
+      <td><strong>Column 4 thru N + 3</strong></td>
+      <td>
+        <p><code>N + 3</code> where <code>N</code> is the number of choices on the ballot. The content of the cell in each of the columns will be the name of the candidate selected on the ballot.</p>
+        <ul>
+          <li>If there is no selection for the choice, the content of the column will show "undervote".</li>
+          <li>If there is more than one selection for the choice, the column will show "overvote".</li>
+          <li>If the choice is a write-in, the column will show "write-in".</li>
+        </ul>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="hart-verity">Hart Verity<a class="headerlink" href="#hart-verity" title="Permanent link">&para;</a></h2>
+<p>Hart’s Verity system exports CVRs in a multi-folder format and differs from that of singular file CVRs such as ES&amp;S. The structure of Verity’s CVRs are as follows:</p>
+<h3 id="cvr-archives-naming-convention">CVR Archives Naming Convention<a class="headerlink" href="#cvr-archives-naming-convention" title="Permanent link">&para;</a></h3>
+<p>The format of the archive name is:</p>
+<p><code>CVRArchive_&lt;C&gt;_&lt;S&gt;_&lt;E&gt;_&lt;T&gt;.zip</code> where:</p>
+<ul>
+<li><code>&lt;C&gt;</code> is the number of CVRs contained in the Archive.</li>
+<li><code>&lt;S&gt;</code> is the number of cast sheet 1s.</li>
+<li><code>&lt;E&gt;</code> is the number of cast electronic ballots.</li>
+<li><code>&lt;T&gt;</code> is a timestamp used to make the archive name unique.</li>
+</ul>
+<h3 id="cryptographically-signing-hart-cvrs">Cryptographically signing Hart CVRs<a class="headerlink" href="#cryptographically-signing-hart-cvrs" title="Permanent link">&para;</a></h3>
+<p>RCTab requires the Hart CVRs to be cryptographically signed. Signed CVR archives include a corresponding <code>.zip</code>.sig.xml file for the .<code>zip</code> as well as a corresponding <code>.xml.sig.xml</code> for each <code>.xml</code> CVR file inside the <code>.zip</code>. This allows the CSV <code>.zip</code> archive and its contents to be programmatically verified by RCTab during tabulation. Tabulation will not proceed without a  <code>.sig.xml</code> for each CVR <code>.xml</code> file.</p>
+<p>Use the Preferences menu in Verity Count to digitally sign CVR exports:</p>
+<p><img alt="An explainer page on how to use the HART system's preferences menu" src="../images/image60.png" /></p>
+<h3 id="cvr-structure">CVR Structure<a class="headerlink" href="#cvr-structure" title="Permanent link">&para;</a></h3>
+<p>CVR data is recorded in XML file format, and can be viewed using a number of applications, such  as Windows Notepad and Microsoft Edge. However, applications designed to work specifically with XML, such as XML Notepad, may simplify the presentation of the XML data.</p>
+<p>XML files must be extracted from the ZIP file before being viewed. Once extracted, the "Open with" command may be used to view the XML in the desired application.</p>
+<h3 id="cvr-file-naming-convention">CVR File Naming Convention<a class="headerlink" href="#cvr-file-naming-convention" title="Permanent link">&para;</a></h3>
+<p>The .zip contains many CVR files. Each CVR file name uses the convention <code>&lt;S&gt;_&lt;G&gt;.xml</code>, where:</p>
+<ul>
+<li><code>&lt;S&gt;</code> is the CVR type identifier<ul>
+<li><code>1</code> if paper ballot sheet 1, blank for all other sheets</li>
+<li><code>e</code> for DRE ballot</li>
+<li><code>p</code> for Provisional ballot</li>
+</ul>
+</li>
+<li><code>&lt;G&gt;</code> is the GUID of the CVR</li>
+</ul>
+<blockquote>
+<p>Examples: <code>1_c7db3cf2-c1a2-4773-971c-337ea2d198d7.xml</code>, or <code>50810795-95d4-4c0c-a6dc-0d5333e99c5a.xml</code></p>
+</blockquote>
+<p>When signed, each <code>.xml</code> CVR file has a corresponding <code>.xml.sig.xml</code> file.</p>
+<h3 id="viewing-cvr-contents">Viewing CVR Contents<a class="headerlink" href="#viewing-cvr-contents" title="Permanent link">&para;</a></h3>
+<p>The following is a general example of a CVR as viewed in Internet Explorer, showing two contests expanded:</p>
+<p><img alt="Screenshot of example XML HART CVR viewed in text editor with syntax highlighting" src="../images/image34.png" /></p>
+<p>Here is the same section of the previous CVR as viewed in XML Notepad:</p>
+<p><img alt="Screenshot of XML HART CVR viewed in XML Notepad" src="../images/image35.png" /></p>
+<h3 id="structure">Structure<a class="headerlink" href="#structure" title="Permanent link">&para;</a></h3>
+<p>Each CVR accounts for all contests available to the voter for that ballot style (precinct-split/party/sheet combination), including a voter’s marked choice(s), any remaining Undervotes, or for unmarked contests in an Open Primary, a "No vote" tag.</p>
+<p>Marked choices are viewable in plain text. For marked write-ins, an ID is provided to cross-reference with a folder containing images of each write-in.</p>
+<p>The following example combines all election types—General, Closed Primary, and Open Primary—into a "master" structure; not all fields will be present for all election types, and will be indicated appropriately.</p>
+<h3 id="cvr-elements">CVR Elements<a class="headerlink" href="#cvr-elements" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>Cvr</code> (top-level folder)<ul>
+<li><code>Contests</code> (contains all contests for this ballot or sheet)<ul>
+<li><code>Contest</code> (random order of contests—Verity 1.0)<ul>
+<li><code>Name</code> (Title of contest; includes Party designation for Closed and Open Primaries)</li>
+<li><code>Id</code> (Globally Unique ID [GUID] of contest)</li>
+<li><code>Options</code> (contains each marked Choice for this contest)<ul>
+<li><code>Option</code> (empty if contest is completely undervoted)<ul>
+<li><code>Name</code> (Choice name, or blank if Write-in)</li>
+<li><code>Id</code> (GUID of Choice)</li>
+<li><code>Value</code> (<code>1</code> if marked; <code>100000</code> or similar, where the position of the 1 indicates a ranking mark in Ranked Choice contests, or to indicate one or more marks in a Cumulative contests)</li>
+<li><code>WriteInData</code> (only present when Write-in Choice is marked)<ul>
+<li>Text (Central vDrives only; text of Write-in, if resolved)</li>
+<li><code>ImageID</code> (GUID of Write-in Image, and name of file located in "Write In Images" folder)</li>
+<li><code>WriteInDataStatus</code> ("Unresolved" for all Scan write-ins; "Unresolved", "Resolved" or "Rejected" for all Central write-ins)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>Undervotes</code> (quantity of undervotes)</li>
+<li><code>Overvoted</code> (only present if contest is also overvoted)</li>
+<li><code>NoVote</code> (Open Primaries only; indicates the contest was not voted in)</li>
+<li><code>InvalidVote</code> (Open Primaries only; only present if contests of different party affiliations are voted in)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><code>BatchSequence</code> (Central vDrives only; indicates the sheet’s sequence within the batch number, below)</li>
+<li><code>IsElectronic</code> (True/False; indicates whether the vote was cast with a DRE)</li>
+<li><code>SheetNumber</code> (sheet indicator of paper ballot)</li>
+<li><code>PrecinctSplit</code><ul>
+<li><code>Name</code> (name of the voted Precinct-Split)</li>
+<li><code>Id</code> (GUID of Precinct-Split)</li>
+</ul>
+</li>
+<li><code>Party</code> (Closed Primaries only; indicates party affiliation of ballot)<ul>
+<li><code>Name</code> (name of Party)</li>
+<li><code>Id</code> (GUID of Party)</li>
+</ul>
+</li>
+<li><code>BatchNumber</code> (Central vDrives only; indicates the Batch ID)</li>
+<li><code>DeviceSerialNumber</code> (Verity 1.0: Central vDrives only; indicates the vDrive ID)</li>
+<li><code>RetrievalCode</code> (Unique Retrievable Ballot Code for this CVR, if applicable)</li>
+<li><code>ProvisionalCode</code> (Unique Provisional Ballot Code for this CVR, if applicable)</li>
+<li><code>CvrGuid</code> (GUID of CVR)</li>
+</ul>
+</li>
+</ul>
+<h2 id="dominion">Dominion<a class="headerlink" href="#dominion" title="Permanent link">&para;</a></h2>
+<p>Dominion’s CVR format consists of several files which are grouped together in the same directory, similar to Hart’s CVR structure. All exported files have a top level attribute which is set to the version of EMS that produced the file.</p>
+<p><strong>Configuration</strong></p>
+<p>This file shows which parameters were selected by the user when performing the export. It contains the following attributes:</p>
+<ul>
+<li><code>IncludeTabulatorFilter</code>: Boolean value indicating whether the export was performed for a single tabulator.</li>
+<li><code>TabulatorFilterValue</code>: a numeric identifier of the tabulator that was exported.</li>
+<li><code>IncludeResultContainerFilter</code>: Boolean value indicating whether the batch filter was used.</li>
+<li><code>ResultContainerFilterValue</code>: an integer indicating the batch to export CVR data for.</li>
+<li><code>IncludePrecinctPortionFilter</code>: Boolean value indicating whether the export was performed for a  single precinct portion.</li>
+<li><code>PrecinctPortionFilterValue</code>: an integer indicating the precinct portion to export CVR data for.</li>
+<li><code>IncludeBallotTypeFilter</code>: Boolean value indicating whether the export was performed for a single  ballot type.</li>
+<li><code>BallotTypeFilterValue</code>: an integer indicating the ballot type to export CVR data for.</li>
+<li><code>IncludeContestFilter</code>: Boolean value indicating whether the export was performed for a single contest.</li>
+<li><code>ContestFilterValue</code>: an integer indicating the contest to export CVR data for.</li>
+<li><code>SplitFilesPerBatch</code>: a Boolean value indicating whether separate CVR export JSON files should be created per batch.</li>
+<li><code>IncludeOnlyPublishedResultContainers</code>: a Boolean value indicating whether only published result  containers where included.</li>
+</ul>
+<h3 id="contestmanifest"><code>ContestManifest</code><a class="headerlink" href="#contestmanifest" title="Permanent link">&para;</a></h3>
+<p>This file contains a list of all non-disabled contests ordered by global order that can produce votes. The list is ordered by contest global order and each contest has the following attributes:</p>
+<ul>
+<li>Description: name of the contest.</li>
+<li><code>Id</code>: identifier of the contest (internal machine id)</li>
+<li>External Id: external identifier (optional)</li>
+<li><code>VoteFor</code>: the number of votes allowed/number of positions to be elected.</li>
+<li><code>NumOfRanks</code>: the number of rankings allowed to be made.</li>
+</ul>
+<h3 id="candidatemanifest"><code>CandidateManifest</code><a class="headerlink" href="#candidatemanifest" title="Permanent link">&para;</a></h3>
+<p>This file contains a list of all non-disabled candidates ordered by global order (first by contest, then by choice) that can produce votes (for example "No Candidate" are not included).</p>
+<ul>
+<li>Description: name of the candidate.</li>
+<li><code>Id</code>: identifier of the candidate (internal machine id)</li>
+<li>External Id: external identifier (optional)</li>
+<li><code>ContestId</code>: identifier of the contest this choice belongs to.</li>
+<li><code>Type</code>: candidate type. <code>Regular</code>, <code>Writein</code>, <code>NoPreference</code> , <code>QualifiedWriteIn</code>.</li>
+</ul>
+<h3 id="partymanifest"><code>PartyManifest</code><a class="headerlink" href="#partymanifest" title="Permanent link">&para;</a></h3>
+<p>This file contains a list of political parties ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the political party</li>
+<li><code>Id</code>: identifier of the party (internal machine id)</li>
+<li>External Id: external identifier (optional)</li>
+</ul>
+<h3 id="precinctportionmanifest"><code>PrecinctPortionManifest</code><a class="headerlink" href="#precinctportionmanifest" title="Permanent link">&para;</a></h3>
+<p>This file contains a list of all precinct portions ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the precinct portion</li>
+<li><code>Id</code>: identifier of the precinct portion (internal machine id)</li>
+<li>External Id: external identifier (optional)</li>
+</ul>
+<h3 id="ballottypemanifest"><code>BallotTypeManifest</code><a class="headerlink" href="#ballottypemanifest" title="Permanent link">&para;</a></h3>
+<p>This file contains a list of all ballot types ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the ballot type</li>
+<li><code>Id</code>: identifier of the ballot type (internal machine id)</li>
+<li>External Id: external identifier (optional).</li>
+</ul>
+<h3 id="ballottypecontestmanifest"><code>BallotTypeContestManifest</code><a class="headerlink" href="#ballottypecontestmanifest" title="Permanent link">&para;</a></h3>
+<p>This file contains information on which contests are used on which ballot types. Each relationship has  the following attributes:</p>
+<ul>
+<li><code>BallotTypeId</code>: identifier of the ballot type (internal machine id)</li>
+<li><code>ContestId</code>: identifier of the contest (internal machine id).</li>
+</ul>
+<h3 id="countinggroupmanifest"><code>CountingGroupManifest</code><a class="headerlink" href="#countinggroupmanifest" title="Permanent link">&para;</a></h3>
+<p>This file contains a list of all counting groups ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the counting group</li>
+<li><code>Id</code>: identifier of the counting group (internal machine id)</li>
+<li>External Id: external identifier (optional).</li>
+</ul>
+<h3 id="tabulatormanifest"><code>TabulatorManifest</code><a class="headerlink" href="#tabulatormanifest" title="Permanent link">&para;</a></h3>
+<p>This file contains a list of all tabulators ordered by global order, each with the following attributes:</p>
+<ul>
+<li>Description: name of the tabulator</li>
+<li><code>Id</code>: identifier of the tabulator, we will use tabulator number here.</li>
+<li><code>ExternalId</code>: the external string identifier (optional).</li>
+<li><code>ThresholdMin</code>: minimum threshold for voting box scanned on this tabulator</li>
+<li><code>ThresholdMax</code>: maximum threshold for voting box scanned on this tabulator</li>
+<li><code>WriteinThresholdMin</code>: minimum threshold for write-in area scanned on this tabulator</li>
+<li><code>WriteinThresholdMax</code>: maximum threshold for write-in area scanned on this tabulator</li>
+</ul>
+<h3 id="cvrexport"><code>CVRExport</code><a class="headerlink" href="#cvrexport" title="Permanent link">&para;</a></h3>
+<p>This file contains the actual CVR data. In addition to the top level version field it also has an ElectionId field that contains the description of the election.</p>
+<p>The main content of the file is a list of CVR sessions. Each <strong>Session</strong> object contains the following attributes:</p>
+<ul>
+<li><code>TabulatorId</code>: the tabulator id, same as the one used in the manifest</li>
+<li><code>BatchId</code>: the batch id, unique for a given tabulator id.</li>
+<li><code>RecordId</code>: the CVR id within the batch.</li>
+<li><code>CountingGroupId</code>: the counting group id, same as the one used in the manifest.</li>
+<li><code>ImageMask</code>: the file mask for finding the associated images with this session.</li>
+<li>Original element, contains the original state of the CVR data for this session.</li>
+<li>Modified element (optional), contains the modified state of the CVR data for this session.</li>
+</ul>
+<h3 id="originalmodified-element">Original/Modified element:<a class="headerlink" href="#originalmodified-element" title="Permanent link">&para;</a></h3>
+<p>This element contains attributes that can be potentially be modified during adjudication/conditional voting management:</p>
+<ul>
+<li><code>PrecinctPortionId</code>: the precinct portion id, same as the one used in the manifest.</li>
+<li><code>BallotTypeId</code>: the ballot type id, same as the one used in the manifest.</li>
+<li><code>IsCurrent</code>: set to true, if this element represents the current state of the CVR.</li>
+<li>Contest elements. Lists all contests for the current ballot type.</li>
+</ul>
+<h3 id="contest">Contest:<a class="headerlink" href="#contest" title="Permanent link">&para;</a></h3>
+<p>This element represents a marked contest. Contains the following attributes:</p>
+<ul>
+<li><code>Id</code>: contest identifier, as used in the manifest file.</li>
+<li><code>Marks</code>: list of marked (explicitly/implicitly) in this contest. Note: explicit marks mean when the voter filled in the voting box directly. Implicit means when the voting box was implied by a straight party ticket selection.</li>
+</ul>
+<h3 id="mark-element">Mark element<a class="headerlink" href="#mark-element" title="Permanent link">&para;</a></h3>
+<p>Contains the following attributes:</p>
+<ul>
+<li><code>CandidateId</code>: indicates the candidate the mark is for (if a write-in position is resolved to a qualified write-in the candidate id will point to a qualified write-in).</li>
+<li><code>PartyId</code>: indicates party affiliation. If not party affiliation then this will be <code>0</code>.</li>
+<li><code>Rank</code>: indicates rank; will be <code>1</code> by default, will only contain values higher than <code>1</code> if ranked choice voting is used.</li>
+<li><code>WriteinIndex</code>: if mark is for write-in position (or qualified write-in) this attribute indicates which  write-in position in the contest (<code>0</code> means first, <code>1</code> means second position, etc.)</li>
+<li><code>MarkDensity</code>: percentage that voting box was filled.</li>
+<li><code>WriteinDensity</code>: percentage that write-in area was filled in. Attribute exists only if it is a write-in position.</li>
+<li><code>IsAmbiguous</code>: a Boolean value indicating whether mark is ambiguous.</li>
+<li><code>IsVote</code>: a Boolean value indicating whether the mark produced a vote Note: an implicit selection  because of straight party vote would also be set to true. Any mark above the max threshold will  be true in a ranked choice voting contest.</li>
+</ul>
+<h2 id="clear-ballot">Clear Ballot<a class="headerlink" href="#clear-ballot" title="Permanent link">&para;</a></h2>
+<p>Clear Ballot’s CVR is still currently under development and while RCTab was developed to include Clear Ballot as a vendor, it is considered a beta feature at this time. Once Clear Ballot has finalized a format for their CVR export, the details of said CVR will be included in this document as a reference.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="configuration_file_parameters.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Configuration File Parameters">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Configuration File Parameters
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="rctab_config_files.html" class="md-footer__link md-footer__link--next" aria-label="Next: RCTab Config Files">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                RCTab Config Files
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tabs", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

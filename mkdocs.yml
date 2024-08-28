@@ -1,36 +1,34 @@
 site_name: RCTab Test Docs
 
 plugins:
-  - offline
-  - privacy
+  - offline # allows MKDocs to be used without a backend server
+  - privacy # makes it easier to self-host external assets
 
 markdown_extensions:
-
-  # Python Markdown
-  - toc:
+  - toc: # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#table-of-contents
       permalink: true
-  - tables
+  - tables # https://squidfunk.github.io/mkdocs-material/reference/data-tables/#configuration
 
-  # Python Markdown Extensions
-  - pymdownx.highlight
-  - pymdownx.snippets
-  - pymdownx.superfences
+  # Python Markdown Extensions (https://facelessuser.github.io/pymdown-extensions/)
+  - pymdownx.highlight # syntax highlighting for code blocks (https://facelessuser.github.io/pymdown-extensions/extensions/highlight/)
+  - pymdownx.snippets # share content between dev-reviewed and maintained source files (https://facelessuser.github.io/pymdown-extensions/extensions/snippets/)
+  - pymdownx.superfences # https://facelessuser.github.io/pymdown-extensions/extensions/superfences/
 
 theme:
-  name: material
+  name: material # we are using Material for MKDocs (https://squidfunk.github.io/mkdocs-material/)
   features:
-    - navigation.sections
-    - navigation.top
-    - navigation.footer
-    - navigation.tabs
-    - toc.integrate
-    - search.suggest
-    - search.highlight
-    - content.tabs.link
-    - content.code.annotation
-    - content.code.copy
+    - navigation.sections # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-sections
+    - navigation.top # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#back-to-top-button
+    - navigation.footer # https://squidfunk.github.io/mkdocs-material/setup/setting-up-the-footer/#navigation
+    - navigation.tabs # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-tabs
+    - toc.integrate # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#navigation-integration
+    - search.suggest # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-suggestions
+    - search.highlight # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-search/#search-highlighting
+    - content.tabs.link # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/#linked-content-tabs
+    - content.code.annotation # https://squidfunk.github.io/mkdocs-material/reference/code-blocks/#code-annotations
+    - content.code.copy # https://squidfunk.github.io/mkdocs-material/upgrade/#contentcodecopy
   language: en
-  palette:
+  palette: # some default styling
     - scheme: default
       toggle:
         icon: material/toggle-switch-off-outline
@@ -44,6 +42,7 @@ theme:
       primary: teal
       accent: lime
 
+# This is the structure of what gets generated when we run `mkdocs build`
 nav:
   - Home: index.md
   - TDP:

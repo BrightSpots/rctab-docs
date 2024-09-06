@@ -1,0 +1,17 @@
+@media print {
+    .rctab-test-form {
+        width: auto !important;  /* Allow the table width to auto-adjust for print */
+        max-width: 100% !important;  /* Ensure the table doesn't exceed the page width */
+        overflow: hidden !important;  /* Prevent any overflow issues */
+    }
+
+    .rctab-test-form td {
+        word-wrap: break-word !important;  /* Break long words to prevent overflow */
+        white-space: normal !important;  /* Allow text wrapping */
+    }
+
+    .rctab-test-form tr, .rctab-test-form td {
+        border-collapse: collapse !important; /* Maintain clean borders in print */
+        padding: 4px !important; /* Adjust padding to ensure more compact printing */
+    }
+}

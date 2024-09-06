@@ -150,7 +150,7 @@ The specifications shall identify procedures for assessing and demonstrating the
 
 ## RCTab Test Structure Form
 
-<table style="width: 100%; min-width: 60em; border-collapse: collapse; font-size: 14px;">
+<table class="rctab-test-form" style="width: 100%; min-width: 60em; border-collapse: collapse; font-size: 14px;">
     <tr style="background-color: #8090C0">
         <td colspan="4" style="text-align: center; font-size: 16px; font-weight: bold;">RCTab Test Structure Form</td>
     </tr>
@@ -385,7 +385,7 @@ The specifications shall identify procedures for assessing and demonstrating the
 
 ## RCTab Test Structure Form Example:
 
-<table style="width: 100%; min-width: 60em; ; border-collapse: collapse; font-size: 14px;">
+<table class="rctab-test-form" style="width: 100%; min-width: 60em; ; border-collapse: collapse; font-size: 14px;">
     <tr style="background-color: #8090C0">
         <td colspan="4" style="text-align: center; font-size: 16px; font-weight: bold;">RCTab Test Structure Form</td>
     </tr>

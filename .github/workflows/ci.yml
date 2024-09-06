@@ -1,0 +1,60 @@
+name: Deploy Documentation
+
+on:
+  push:
+    branches:
+      - main
+      - github-pages  # Add this to test the PR branch
+
+permissions:
+  contents: write
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Configure Git Credentials
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install pipx
+        run: |
+          python3 -m pip install --user pipx
+          python3 -m pipx ensurepath
+
+      - name: Install Poetry via pipx
+        run: |
+          pipx install poetry==1.8
+          echo "${HOME}/.local/bin" >> $GITHUB_PATH
+
+      - name: Set cache ID
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+
+      - name: Cache Dependencies
+        uses: actions/cache@v4
+        with:
+          path: |
+            .cache
+            $HOME/.cache/pypoetry/cache
+            $HOME/.cache/pypoetry/virtualenvs
+          key: mkdocs-material-${{ runner.os }}-${{ env.cache_id }}-${{ hashFiles('**/poetry.lock') }}
+          restore-keys: |
+            mkdocs-material-${{ runner.os }}-
+
+      - name: Install Dependencies
+        run: |
+          poetry install --no-dev --no-interaction --no-ansi
+
+      - name: Build and Deploy
+        run: |
+          poetry run mkdocs gh-deploy --force

@@ -1,4 +1,17 @@
-# TPD Print Version
+<!-- HTML for Cover Page -->
+<section style="display: block; height: 100vh; text-align: center; margin: 0; padding: 0;">
+    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 2rem; max-width: 800px; margin: 0 auto;">
+        <h1 style="font-size: 3rem; margin-bottom: 0.75rem; font-weight: 700;">
+            RCTab TDP
+        </h1>
+        <h2 style="font-size: 1.75rem; margin-bottom: 1.5rem;">
+            for RCTab version 2.0
+        </h2>
+        <p style="font-size: 1.25rem; font-style: italic;">
+            by the Ranked Choice Voting Resource Center (RCVRC)
+        </p>
+    </div>
+</section>
 
 <div style="page-break-after: always;"></div>
 

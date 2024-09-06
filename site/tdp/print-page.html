@@ -1896,12 +1896,12 @@ or handling:<br />
 <li>
 <p>Exception and error handling</p>
 <ul>
-<li>The programming specifications that describe individual software modules and their component units are described in the <a href="#tabulator-java-classes"><strong><em>Tabulator Java Classes</em></strong></a> and <a href="#3rd-party-modules"><strong><em>3rd Party Modules</em></strong></a> sections of this document.</li>
+<li>The programming specifications that describe individual software modules and their component units are described in the <strong><a href="#tabulator-java-classes">Tabulator Java Classes</a></strong> and <strong><a href="#3rd-party-modules">3rd Party Modules</a></strong> sections of this document.</li>
 <li>For additional information, see the following documents:<ul>
-<li><a href="system_overview.html"><strong><em>Section 01 - System Overview</em></strong></a>  </li>
-<li><a href="user_guide.html"><strong><em>Section 18 - User Guide</em></strong></a>  </li>
-<li><a href="tabulation_options_for_rcv_tabulation.html"><strong><em>Section 19 - Tabulation Options for RCV Tabulation</em></strong></a>  </li>
-<li><a href="configuration_file_parameters.html"><strong><em>Section 25 - Configuration File Parameters</em></strong></a> </li>
+<li><strong><a href="system_overview.html">Section 01 - System Overview</a></strong></li>
+<li><strong><a href="user_guide.html">Section 18 - User Guide</a></strong></li>
+<li><strong><a href="tabulation_options_for_rcv_tabulation.html">Section 19 - Tabulation Options for RCV Tabulation</a></strong></li>
+<li><strong><a href="configuration_file_parameters.html">Section 25 - Configuration File Parameters</a></strong></li>
 </ul>
 </li>
 </ul>
@@ -2805,8 +2805,8 @@ Users should only access the software per jurisdiction approved rules and after 
 <li>
 <p>Vote Recording</p>
 <ul>
-<li>RCTab processes RCV election data according to rules users input in configuration files. See also <a href="user_guide.html"><strong><em>Section 18 - User Guide</em></strong></a>.</li>
-<li>If users have issues with CVR files, refer to CVR procedures from jurisdiction and relevant procedures in <a href="user_guide.html"><strong><em>Section 18 - User Guide</em></strong></a>.</li>
+<li>RCTab processes RCV election data according to rules users input in configuration files. See also <strong>[Section 18 - User Guide]</strong>(user_guide.md).</li>
+<li>If users have issues with CVR files, refer to CVR procedures from jurisdiction and relevant procedures in <strong>[Section 18 - User Guide]</strong>(user_guide.md).</li>
 </ul>
 </li>
 <li>
@@ -5516,7 +5516,7 @@ CertUtil: -hashfile command completed successfully.
 <td style="text-align: left;">RCVRC &amp; Bright Spots name for regression test</td>
 <td style="text-align: left;"><a href="https://github.com/BrightSpots/rcv/tree/master/src/test/resources/network/brightspots/rcv/test_data">Test folder name in:</a> Refer to test_data.zip that includes all test data and was submitted with documentation.</td>
 <td style="text-align: left;">Brief description of test and identification of RCTab functionalities tested by test files.</td>
-<td style="text-align: left;">Unless otherwise noted, each regression test can be used to test control and data input/output, acceptance criteria, processing accuracy, ballot interpretation logic, and production of audit trails and statistical data. Processes for exporting and handling data, under control and data input, should also follow CVR handling procedures in a jurisdiction. Security processes should be tested according to the requirements in <a href="system_hardening_procedures_-_windows_os.html">Section 06 - System Security Specifications</a>. Exception handling tests are directly identified below.</td>
+<td style="text-align: left;">Unless otherwise noted, each regression test can be used to test control and data input/output, acceptance criteria, processing accuracy, ballot interpretation logic, and production of audit trails and statistical data. Processes for exporting and handling data, under control and data input, should also follow CVR handling procedures in a jurisdiction. Security processes should be tested according to the requirements in <strong><a href="system_hardening_procedures_-_windows_os.html">Section 06 - System Security Specifications</a></strong>. Exception handling tests are directly identified below.</td>
 </tr>
 <tr>
 <td style="text-align: left;">2013 Minneapolis Mayor</td>
@@ -8809,7 +8809,7 @@ All CVR data read for this individual CVR:
 <li>Using the audit <code>.log</code>, check that the total CVRs read into RCTab is equal to the total ballots cast according to the EMS used to export CVR files.</li>
 <li>Check the <code>rcv_0.log</code> and any audit <code>.log</code>s for <strong>SEVERE</strong> errors and to see how users resolved those errors.</li>
 <li>Compare summary result information in the audit file(s) and the summary results files for a contest run through RCTab.</li>
-<li>Review the election data form used for a contest (see <a href="l_and_a_testing.html">Section 11 - L&amp;A</a>). Compare the information in this form to the configuration file used in a contest as reflected in the audit <code>.log</code> for that contest to confirm that the proper counting rules were used for the contest.</li>
+<li>Review the election data form used for a contest (see <strong><a href="l_and_a_testing.html">Section 11 - L&amp;A</a></strong>). Compare the information in this form to the configuration file used in a contest as reflected in the audit <code>.log</code> for that contest to confirm that the proper counting rules were used for the contest.</li>
 <li>Using audit <code>.log</code> files, compare how data in the CVR files was read into RCTab with the information included in CVR files exported from the relevant election management software. This data can also be cross-referenced with paper ballot data from precincts, using precinct information in the audit <code>.log</code> files and in CVR files from the election management software.</li>
 <li>If using the Tabulate by Precinct feature of RCTab, users can compare a hand count of ballots from a precinct to RCTab’s tabulation of those same ballots. The Tabulate by Precinct feature produces round-by-round results at the precinct level. These results display how ballots at the precinct level transferred in the contest as a whole, not a simulated round-by-round count in the precinct. A hand count could be conducted at the precinct level, following the elimination order in RCTab results, to check that RCTab counted each ballot properly in a given precinct.<ol>
 <li>Note that the Tabulate by Precinct feature identifies a winner. That identified winner is the winner of the contest overall, not necessarily the person who received the most votes in that specific precinct. This will be updated in a future release to identify the winner of the precinct.</li>
@@ -8839,7 +8839,7 @@ complete tabulation and so do not have resolution steps suggested.</p>
 SEVERE, &quot;Failed to load contest config: %s&quot;
 </code></pre></div>
 <blockquote>
-<p>Suggested resolution: Load a configuration file using the "File" menu or create a new configuration file using the user interface and following <a href="user_guide.html"><strong><em>Section 18 - User Guide</em></strong></a> document.</p>
+<p>Suggested resolution: Load a configuration file using the "File" menu or create a new configuration file using the user interface and following <strong>[Section 18 - User Guide]</strong>(user_guide.md) document.</p>
 </blockquote>
 <div class="highlight"><pre><span></span><code>SEVERE, &quot;Failed to load config.&quot;
 </code></pre></div>

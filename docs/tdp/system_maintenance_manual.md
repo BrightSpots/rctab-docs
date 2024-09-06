@@ -21,8 +21,8 @@ The manufacturer shall describe the structure and function of the equipment (and
     * RCTab is not used for programming elections
 
 - Vote Recording
-    * RCTab processes RCV election data according to rules users input in configuration files. See also [***Section 18 - User Guide***](user_guide.md).
-    * If users have issues with CVR files, refer to CVR procedures from jurisdiction and relevant procedures in [***Section 18 - User Guide***](user_guide.md).
+    * RCTab processes RCV election data according to rules users input in configuration files. See also **[Section 18 - User Guide]**(user_guide.md).
+    * If users have issues with CVR files, refer to CVR procedures from jurisdiction and relevant procedures in **[Section 18 - User Guide]**(user_guide.md).
 
 - Tabulation
     * Tabulator is used solely with properly adjudicated CVR export files from the user jurisdiction and user jurisdiction’s primary voting system vendor.

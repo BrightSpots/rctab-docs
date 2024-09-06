@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - github-pages  # Add this to test the PR branch
 
 permissions:
   contents: write
@@ -33,11 +34,11 @@ jobs:
 
       - name: Install Poetry via pipx
         run: |
-          pipx install poetry==1.2.0  # Replace with your desired Poetry version
+          pipx install poetry==1.8
+          echo "${HOME}/.local/bin" >> $GITHUB_PATH
 
-      - name: Install Dependencies
-        run: |
-          poetry install --no-dev --no-interaction --no-ansi
+      - name: Set cache ID
+        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
 
       - name: Cache Dependencies
         uses: actions/cache@v4
@@ -50,12 +51,9 @@ jobs:
           restore-keys: |
             mkdocs-material-${{ runner.os }}-
 
-      - name: Clear Cache Monthly
-        if: ${{ github.event.head_commit.timestamp && startsWith(format(github.event.head_commit.timestamp, 'MM'), '01') }}
+      - name: Install Dependencies
         run: |
-          rm -rf .cache
-          rm -rf $HOME/.cache/pypoetry/cache
-          rm -rf $HOME/.cache/pypoetry/virtualenvs
+          poetry install --no-dev --no-interaction --no-ansi
 
       - name: Build and Deploy
         run: |

@@ -1,0 +1,1757 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="quality_assurance_plan.html">
+      
+      
+        <link rel="next" href="system_change_notes.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.33">
+    
+    
+      
+        <title>Tabulator Trusted Build Instructions - RCTab Test Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.3cba04c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-14-tabulator-trusted-build-instructions" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="RCTab Test Docs" class="md-header__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCTab Test Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tabulator Trusted Build Instructions
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="00_documentation_abstracts.html" class="md-tabs__link">
+          
+  
+  TDP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/user_guide.html" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="RCTab Test Docs" class="md-nav__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    RCTab Test Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TDP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TDP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_documentation_abstracts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software_design_and_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardware_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_functionality_description.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acceptance_test_procedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_design_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Design Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_security_specification_requirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Security Specification Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design_and_interface_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design and Interface Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_architecture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development_environment_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Environment Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_threat_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_testing_and_vulnerability_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Testing and Vulnerability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_maintenance_manual.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Maintenance Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personnel_deployment_and_training.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnel Deployment and Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="l_and_a_testing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_management_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quality_assurance_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Assurance Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tabulator_trusted_build_instructions.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#environment-variables" class="md-nav__link">
+    <span class="md-ellipsis">
+      Environment variables
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-build" class="md-nav__link">
+    <span class="md-ellipsis">
+      Full build
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Full build">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#source-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      Source Code
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Source Code">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#rctab-release-page" class="md-nav__link">
+    <span class="md-ellipsis">
+      RCTab Release Page
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#git" class="md-nav__link">
+    <span class="md-ellipsis">
+      Git
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#java" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Java">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#java-jdk" class="md-nav__link">
+    <span class="md-ellipsis">
+      Java JDK
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#set-java_home-variable" class="md-nav__link">
+    <span class="md-ellipsis">
+      Set JAVA_HOME variable
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gradle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Gradle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#third-party-dependencies" class="md-nav__link">
+    <span class="md-ellipsis">
+      Third Party Dependencies
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#building-from-source" class="md-nav__link">
+    <span class="md-ellipsis">
+      Building From Source
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#comparing-two-builds" class="md-nav__link">
+    <span class="md-ellipsis">
+      Comparing two builds
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_change_notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardening_procedures_-_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardening Procedures - Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_test_and_verification_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Test and Verification Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulation_options_for_rcv_tabulation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="process_ranked_choice_voting_contest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ballot_limitations_and_maximum_testing_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ballot Limitations & Maximum Testing Range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_instructions_for_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Instructions for Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_command_line_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Command Line Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_file_parameters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_cvr_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_config_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Config Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-election_audit_and_clearing_rctab_from_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-Election Audit & Clearing RCTab from System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_operator_log_messages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Operator Log Messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_system_tab_hints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab System Tab Hints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coding_and_header_comment_standards_for_rctab.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding and Header Comment Standards for RCTab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secure_usb_process.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-multi-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Multi-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-single-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Single-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranked-choice-voting-laws.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ranked Choice Voting Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="22-month-archiving-procedure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22-Month Archiving Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="section-14-tabulator-trusted-build-instructions">Section 14 - Tabulator Trusted Build Instructions<a class="headerlink" href="#section-14-tabulator-trusted-build-instructions" title="Permanent link">&para;</a></h1>
+<h2 id="environment-variables">Environment variables<a class="headerlink" href="#environment-variables" title="Permanent link">&para;</a></h2>
+<p>Other than where specifically indicated below, building the application and generating hashes does not require that the system have any environment variables defined in advance.</p>
+<h2 id="full-build">Full build<a class="headerlink" href="#full-build" title="Permanent link">&para;</a></h2>
+<p>RCTab can be built on any COTS x64 Windows machine with</p>
+<ul>
+<li>Windows 10 or greater</li>
+<li>At least 1GB of free space</li>
+<li>4GB of RAM</li>
+</ul>
+<p>To generate a build from the source code and then generate a hash of that build, use the following steps.</p>
+<p>There are 4 setup steps that must be followed before you can build RCTab. Those steps are</p>
+<ol>
+<li>Get the source code</li>
+<li>Prepare Java</li>
+<li>Prepare Gradle</li>
+<li>Get third party dependencies</li>
+</ol>
+<h4 id="source-code">Source Code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h4>
+<p>First, you need a local copy of the source code. You can either get it from the <a href="https://github.com/BrightSpots/rcv/releases">RCTab Release page</a> or directly from Git.</p>
+<h5 id="rctab-release-page">RCTab Release Page<a class="headerlink" href="#rctab-release-page" title="Permanent link">&para;</a></h5>
+<p>Navigate to the <a href="https://github.com/BrightSpots/rcv/releases">RCTab Release page</a>. Find your version. For v1.3.2 in California it is v1.3.2 (<code>84df706</code>). Download and extract the Source code (zip).</p>
+<h5 id="git">Git<a class="headerlink" href="#git" title="Permanent link">&para;</a></h5>
+<p>Important note for Windows users: to ensure that the files in your copy of the repository exactly match the ones that were originally used to generate the Windows release build, you must have Git’s autocrlf setting enabled before you clone the repository. This setting will cause Git to automatically convert the line endings in each source file from Unix-style (<code>\n</code>) to DOS-style (<code>\r\n</code>) when it clones the repository to your machine.</p>
+<ol>
+<li>If Git is not already present on the machine, install it. The Windows version of Git is available here: <a href="https://github.com/git-for-windows/git/releases/tag/v2.42.0.windows.2">https://github.com/git-for-windows/git/releases/tag/v2.42.0.windows.2</a><ol>
+<li><code>X64</code> git installer is <code>Git-2.42.0.2-64-bit.exe</code> with a <code>SHA256</code> of <code>bd9b41641a258fd16d99beecec66132160331d685dfb4c714cea2bcc78d63bdb</code></li>
+<li>Run through the installer with all default settings</li>
+</ol>
+</li>
+<li>Open Command Prompt</li>
+<li>Enable the autocrlf setting by running this command in the command prompt: <code>git config --global core.autocrlf true</code></li>
+<li>Clone the repository with this command:
+   <code>git clone --branch https://github.com/BrightSpots/rcv.git</code></li>
+</ol>
+<p>For the rest of this example we’ll refer to the folder that your source code is in as <code>.\</code> In the example below, that corresponds to <code>f:\localrepo\rctab_airgap_84df706\rcv\</code></p>
+<p><img alt="Screenshot of RCTab root-directory example in the Window's file manager" src="../images/image58.png" /></p>
+<h4 id="java">Java<a class="headerlink" href="#java" title="Permanent link">&para;</a></h4>
+<h5 id="java-jdk">Java JDK<a class="headerlink" href="#java-jdk" title="Permanent link">&para;</a></h5>
+<p>Building the application will also require the proper version of the Java development kit to be located on the machine.</p>
+<ul>
+<li>Navigate to <a href="https://jdk.java.net/archive/">https://jdk.java.net/archive/</a>.</li>
+<li>Download the .zip for the Windows x64 version of OpenJDK 17.0.2 (build 17.0.2+8).<ul>
+<li>The SHA256 for the build 17.0.2+8 Windows x64 zip is <code>b2208206bda47f2e0c971a39e057a5ec32c40b503d71e486790cb728d926b615</code></li>
+<li>The .zip file when downloaded is named <code>openjdf-17.0.2_windows-x64_bin.zip</code></li>
+</ul>
+</li>
+<li>Extract the <code>openjdk-17.0.2_windows-x64_bin.zip</code>. When unzipped, the folder it creates will be named <code>jdk-17.0.2</code>. Note the location of this folder for the next step</li>
+</ul>
+<p><img alt="Screenshot from the Oracle website of which JDK version to use" src="../images/image2.png" /></p>
+<blockquote>
+<p>Note that you must use this exact version of the JDK. If you obtain the JDK from a different location, even if the version and build numbers are the same, it may have subtle differences that will prevent your build from matching ours via the process we’ve developed. Specifically, we’ve determined that the Oracle-licensed build of OpenJDK is not identical to the London Jamocha Community CIC-licensed build.</p>
+</blockquote>
+<h5 id="set-java_home-variable">Set JAVA_HOME variable<a class="headerlink" href="#set-java_home-variable" title="Permanent link">&para;</a></h5>
+<p>Use the following instructions to set your JAVA_HOME variable, a requirement for building the source code</p>
+<ul>
+<li>Go to Start Menu and search for “Advanced System Settings”</li>
+<li>Click ‘View Advanced System Settings’</li>
+<li>
+<p>Go to the Advanced Tab and click ‘Environment Variables’ button</p>
+<p><img alt="Screenshot of Window's Advanced System Properties" src="../images/image55.png" /></p>
+</li>
+<li>
+<p>In the Environment Variables window that pops up, in the bottom <strong>System variables</strong> section click ‘New’ and add <code>JAVA_HOME</code> as the Variable name and click ‘Browse Directory’ to browse to your <strong>unzipped</strong> java folder <code>jdk-17.0.2</code> and set it’s path as the Variable value</p>
+<p><img alt="Screenshot of editing the Java_Home environmental variable in Windows" src="../images/image5.png" /></p>
+</li>
+<li>
+<p>Go back to the Environment Variables window, find the <code>Path</code> entry in the bottom System Variables section and click edit</p>
+</li>
+<li>Click ‘New’ and add <code>%JAVA_HOME%\bin</code></li>
+<li>Click ‘Ok’</li>
+<li>Click ‘Ok’ in Environment Variables window</li>
+<li>Click ‘Ok’ in System Properties window</li>
+<li>Close any Command Prompt Windows you have open</li>
+<li>Re-open Command Prompt and confirm that Java 17.0.2 is properly installed by running this command in the cmd prompt <code>java –version</code> you should see an entry for <code>openjdk 17.0.2 2022-01-18</code></li>
+</ul>
+<h4 id="gradle">Gradle<a class="headerlink" href="#gradle" title="Permanent link">&para;</a></h4>
+<ul>
+<li>Download Gradle 7.5.1 from <a href="https://gradle.org/releases">the Gradle release page</a></li>
+<li>Download the ‘binary-only’ option. This should download <code>gradle-7.5.1-bin.zip</code> with a hash of <code>f6b8596b10cce501591e92f229816aa4046424f3b24d771751b06779d58c8ec4</code></li>
+<li>
+<p>Extract the zip. Add the <code>bin</code> folder of the extracted zip to your System Path like you did for Java</p>
+<p><img alt="Screenshot of editing the Gradle environmental variable in Windows" src="../images/image9.png" /></p>
+</li>
+<li>
+<p>Open Command Prompt and type <code>gradle -version</code> to confirm</p>
+<p><img alt="Screenshot of Windows Command Prompt with output showing Gradle version" src="../images/image10.png" /></p>
+</li>
+<li>
+<p>Type <code>gradle -stop</code> in Command Prompt.</p>
+</li>
+</ul>
+<h4 id="third-party-dependencies">Third Party Dependencies<a class="headerlink" href="#third-party-dependencies" title="Permanent link">&para;</a></h4>
+<p>The final step before building requires you to have the third party dependencies that RCTab relies on.</p>
+<ul>
+<li>
+<p>Download the .zip of all necessary dependencies. The zip of all necessary dependencies for the  <a href="https://github.com/BrightSpots/rcv/releases/tag/v1.3.2">v1.3.2 California release</a> is called <code>v1.3.2_84df706_Windows_X64.cache.zip</code> and can be downloaded from the release page under ‘Assets’</p>
+<p><img alt="Screenshot from RCTab's GitHub releases' page showing which version Windows RCTab ZIP cache to download" src="../images/image47.png" /></p>
+</li>
+<li>
+<p>Extracting the .zip should create a <code>modules-2</code> folder. Move that folder to <code>~\.gradle\caches\</code> If that folder doesn’t exist you should create it. <code>~\</code> in this step represents the logged-in Windows User folder. For example, if my Windows Username is <code>RCTabUser</code> then at the end of this step I would have <code>C:\users\RCTabUser\.gradle\caches\modules-2</code></p>
+<ul>
+<li>You can check which folder to substitute <code>~\</code> for by typing <code>echo %userprofile%</code> into Command Prompt</li>
+</ul>
+</li>
+<li>
+<p>If required, use jurisdiction rules to verify dependencies with <code>~\.gradle\caches\checksums.csv</code>. This file contains a line for each necessary dependency that has</p>
+<ul>
+<li>Filename</li>
+<li>SHA-1 Checksum</li>
+<li>SHA-256 Checksum</li>
+<li>Maven Dependency URL</li>
+<li>Direct URL to SHA-1</li>
+<li>Direct URL to SHA-256</li>
+</ul>
+</li>
+</ul>
+<h3 id="building-from-source">Building From Source<a class="headerlink" href="#building-from-source" title="Permanent link">&para;</a></h3>
+<p>Next, navigate into the source code directory in Command Prompt. We will run a command that will build the RCTab source code along with all of the third party dependencies (which are listed in <a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a> ). This command will build RCTab from source using Java 17.0.2 and Gradle 7.5.1</p>
+<p>In Command Prompt, type the Gradle build command for Windows:<br />
+<code>gradle jlinkZip</code></p>
+<p>The output of the Gradle build command is a single ZIP file called <code>rcv.zip</code> that will be located in the <code>.\build\</code> subdirectory. To complete the build process, rename the ZIP file to reflect the platform and version of the application.</p>
+<p>On Windows, building version 1.3.2, for example:<br />
+<code>rename build\rcv.zip rctab_v1.3.2_windows.zip</code></p>
+<p>To generate a hash signature for the completed build, run this command on Windows:<br />
+<code>C:\Windows\System32\certutil.exe -hashfile build\rctab_v1.3.2_windows.zip sha512</code></p>
+<p>Example output on Windows:
+<div class="highlight"><pre><span></span><code>SHA512 hash of build\rctab_v1.3.2_windows.zip:
+f1b05aa5cdff8c01ee220579d5b5310911a75d0e58bc5568113b893845a31c47abab8a0875bda78f29a89e8218d22af00ea770c83ff39eb5b68b41ddfb8254ee
+CertUtil: -hashfile command completed successfully.
+</code></pre></div></p>
+<p>Note, however, that two independent runs of the <code>jlinkZip</code> task will result in ZIP files with different hashes! Although the file contents in the two ZIP files will be identical, the timestamps of those files will not be. Those timestamps are included in the hash and thus, the hashes will not match. As a result, generating a hash for the ZIP file itself is only suitable for verifying that <strong>this build has not been modified.</strong></p>
+<p>To confirm that the file <em>contents</em> of one build match those of another, for example that the local build matches the <a href="https://github.com/BrightSpots/rcv/releases">official release on the BrightSpots github</a>, see ‘Comparing Two Builds’ below.</p>
+<h2 id="comparing-two-builds">Comparing two builds<a class="headerlink" href="#comparing-two-builds" title="Permanent link">&para;</a></h2>
+<p>As noted above, two independent builds of the same source code will have different hashes due to the presence of file timestamps within the ZIP file. It is, however, possible to demonstrate that two builds are equivalent by stripping the timestamps.</p>
+<p>The process for generating a single timestamp-independent hash signature for a build ZIP requires a few steps: not only does the ZIP file store timestamps for the files it contains, but one of the files within the ZIP file, <code>lib/modules</code>, is, in turn, a collection of time stamped files. Fully decomposing the build to its individual constituent files thus requires using the <code>jimage</code> utility (part of the Java 17 development kit) to extract the files contained within <code>lib/modules</code>.</p>
+<ul>
+<li>First, unzip the ZIP you built locally (by following the precise instructions in the “Full build” section above). For the rest of this example we’ll assume that you extracted the zip files to <code>c:\rctab_v1.3.2_windows\</code></li>
+<li><strong>Make sure not to execute any other commands that create, modify, or delete files within this directory (like opening the application). Any modifications to these files will change the result of the hashing process.</strong></li>
+<li>Create a <code>hash.bat</code> file in the <code>c:\rctab_v1.3.2_windows\</code> folder with the following command <code>echo.&gt;hash.bat</code></li>
+<li>Open hash.bat in notepad and paste in the text below these bullets (starting with ::hash.bat)</li>
+<li>Run the batch file in the cmd prompt by typing <code>hash.bat</code> then enter. <strong>It can take 30-45 minutes to complete as it is computing a hash for every single file</strong></li>
+</ul>
+<div class="highlight"><pre><span></span><code>:: hash.bat
+@echo off
+
+:: NOTE: This script must be placed one level up from the rcv directory
+
+echo Initiating batch hash procedure
+set startTime=%date% %time%
+echo %startTime%
+
+setlocal EnableExtensions EnableDelayedExpansion
+
+set &quot;HASHFILE=all_hashes.txt&quot;
+set &quot;TEMPHASHFILE=all_hashes_temp.txt&quot;
+set &quot;EXTRACTIONDIR=.\rcv\modules_extracted&quot;
+set &quot;MODULESFILE=.\rcv\lib\modules&quot;
+
+if exist %HASHFILE% (
+    echo Deleting existing hash file, %HASHFILE% ...
+    del %HASHFILE%
+)
+
+if exist %EXTRACTIONDIR% (
+    echo Deleting existing extracted modules directory, %EXTRACTIONDIR% ...
+    rmdir /s /q %EXTRACTIONDIR%
+)
+
+echo Extracting contents of modules file...
+mkdir %EXTRACTIONDIR%
+cd %EXTRACTIONDIR%
+jimage extract ..\..\%MODULESFILE%
+
+echo Temporarily relocating modules file...
+cd ..\..
+copy %MODULESFILE% .
+del %MODULESFILE%
+
+:: Calculate the hash for every file here and in all subdirectories, appending to the file (format &quot;(filename) = (hash)&quot;)
+echo Calculating hashes...
+for /r .\rcv %%f in (*) do (
+    &lt;NUL set /p =&quot;%%f = &quot; &gt;&gt; %HASHFILE%
+    C:\Windows\System32\certutil.exe -hashfile &quot;%%f&quot; SHA512 | findstr /v &quot;:&quot; &gt;&gt; %HASHFILE%
+    echo hashing %%f
+)
+
+echo Restoring modules file...
+move .\modules %MODULESFILE%
+
+:: Replace the absolute paths to each file with relative paths (e.g. C:\temp\rcv =&gt; .\rcv)
+
+echo Replacing absolute paths with relative paths in hash file...
+set &quot;SEARCHTEXT=%cd%&quot;
+set &quot;REPLACETEXT=.&quot;
+for /f &quot;delims=&quot; %%A in (&#39;type &quot;%HASHFILE%&quot;&#39;) do (
+    set &quot;string=%%A&quot;
+    set &quot;modified=!string:%SEARCHTEXT%=%REPLACETEXT%!&quot;
+    echo !modified!&gt;&gt;&quot;%TEMPHASHFILE%&quot;
+)
+del &quot;%HASHFILE%&quot;
+rename &quot;%TEMPHASHFILE%&quot; &quot;%HASHFILE%&quot;
+
+echo Sorting the hash file...
+sort &quot;%HASHFILE%&quot; &gt; &quot;%TEMPHASHFILE%&quot;
+del &quot;%HASHFILE%&quot;
+rename &quot;%TEMPHASHFILE%&quot; &quot;%HASHFILE%&quot;
+
+echo Calculating the hash of the entire sorted hash file...
+C:\Windows\System32\certutil.exe -hashfile %HASHFILE% SHA512
+
+endlocal
+</code></pre></div>
+<p>Example output (Windows):
+<div class="highlight"><pre><span></span><code>SHA512 hash of all_hashes.txt:
+dfc48c8e8606316144ebbcb2e7c5dacfdc709834460b443a5a88a9e09ea7273b59c1a4d3605fea3654e57aa11143461b2c8f035bd380af388ecc0fb513b98c7e
+CertUtil: -hashfile command completed successfully.
+</code></pre></div></p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="quality_assurance_plan.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Quality Assurance Plan">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Quality Assurance Plan
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="system_change_notes.html" class="md-footer__link md-footer__link--next" aria-label="Next: System Change Notes">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                System Change Notes
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tabs", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.af256bd8.min.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@10/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

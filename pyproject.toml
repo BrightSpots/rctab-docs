@@ -16,8 +16,8 @@ beautifulsoup4 = "^4.12.3"
 link-stripper = { path = "./scripts/mkdocs_plugins/link_stripper", develop = true }
 
 [tool.poetry.dev-dependencies]
-pytest = "^7.4.0"
-pytest-cov = "^4.0.0"
+pytest = "^8.3.3"
+pytest-cov = "^5.0.0"
 
 [build-system]
 requires = ["poetry-core"]

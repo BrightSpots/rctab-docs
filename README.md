@@ -56,6 +56,12 @@ To build MkDocs as a static site:
 poetry run mkdocs build
 ```
 
+## Getting a print version of the documentation
+
+1. Either run `poetry run mkdocs build` or `poetry run mkdocs serve` to generate the documentation.
+2. Open Chrome and navigate to either the MKDocs server or static site with the following path at the end: `./tdp/print-page.html`. (Chrome is recommended because each browser's print to PDF feature handles HTML and CSS differently.)
+3. Print the page to a PDF file.
+
 ## Running Tests
 
 ```shell

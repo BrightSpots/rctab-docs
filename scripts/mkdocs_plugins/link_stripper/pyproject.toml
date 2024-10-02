@@ -1,0 +1,21 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "link-stripper"
+version = "0.1.0"
+description = "MkDocs plugin to strip links outside code blocks."
+authors = ["Ranked Choice Voting Resource Center <malachi.gruenhagen@rcvresources.org>"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+mkdocs = "^1.6.0"
+beautifulsoup4 = "^4.12.3"
+
+[tool.poetry.dev-dependencies]
+pytest = "^7.4.0"
+pytest-cov = "^4.0.0"
+
+[tool.poetry.plugins."mkdocs.plugins"]
+link-stripper = "link_stripper:LinkStripperPlugin"

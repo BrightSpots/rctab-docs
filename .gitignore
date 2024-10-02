@@ -1,5 +1,9 @@
 # IDEs
 .idea
 .cache
+
 # OS
 **/.DS_Store
+
+# Generated files
+__pycache__

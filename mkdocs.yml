@@ -3,6 +3,9 @@ site_name: RCTab Test Docs
 plugins:
   - offline # allows MKDocs to be used without a backend server
   - privacy # makes it easier to self-host external assets
+  - link-stripper:
+      target_files:
+        - 'tdp/print-page.html'
 
 markdown_extensions:
   - toc: # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#table-of-contents

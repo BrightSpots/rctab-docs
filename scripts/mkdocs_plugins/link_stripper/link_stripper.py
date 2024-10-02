@@ -15,12 +15,17 @@ logger.addHandler(handler)
 def strip_html_links(html):
     """
     Remove all <a> tags not inside <code> blocks, preserving their inner text.
+    Remove <a> tags containing the '¶' symbol entirely.
     """
     soup = BeautifulSoup(html, 'html.parser')
 
-    # Unwrap <a> tags not inside <code>
+    # Unwrap <a> tags not inside <code> and remove <a> tags with '¶' symbol
     for tag in soup.find_all('a'):
-        if not tag.find_parent('code'):
+        # Check if the <a> tag has '¶' as its content and remove it
+        if tag.get_text(strip=True) == '¶':
+            logger.debug(f"Removing <a> tag with '¶' symbol: {tag}")
+            tag.decompose()  # Remove the entire <a> tag and its contents
+        elif not tag.find_parent('code'):
             logger.debug(f"Unwrapping <a> tag with href: {tag.get('href')}")
             tag.unwrap()
         else:

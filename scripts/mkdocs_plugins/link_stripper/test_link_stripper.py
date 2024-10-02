@@ -110,6 +110,18 @@ def test_deeply_nested_a_outside_code():
     assert normalize_html(strip_html_links(html)) == normalize_html(expected)
 
 
+def test_remove_links_with_paragraph_symbol():
+    html = '<h1 id="documentation-abstracts">Documentation Abstracts<a class="headerlink" href="#documentation-abstracts" title="Permanent link">¶</a></h1>'
+    expected = '<h1 id="documentation-abstracts">Documentation Abstracts</h1>'
+    assert normalize_html(strip_html_links(html)) == normalize_html(expected)
+
+
+def test_preserve_links_with_special_symbols():
+    html = '<a href="#documentation-abstracts">Why I like special symbols like ¶</a>'
+    expected = 'Why I like special symbols like ¶'
+    assert normalize_html(strip_html_links(html)) == normalize_html(expected)
+
+
 def test_complex_html_with_real_code_blocks():
     html = '''
     <html>

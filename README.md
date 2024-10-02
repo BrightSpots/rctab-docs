@@ -56,6 +56,12 @@ To build MkDocs as a static site:
 poetry run mkdocs build
 ```
 
+## Running Tests
+
+```shell
+poetry run pytest
+```
+
 ## Useful scripts:
 
 ### Compare specific ranges of lines between two files using `vimdiff`

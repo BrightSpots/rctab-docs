@@ -20,7 +20,7 @@ SEVERE, "No contest config path specified!"
 SEVERE, "Failed to load contest config: %s"
 ```
 
-> Suggested resolution: Load a configuration file using the "File" menu or create a new configuration file using the user interface and following [***Section 18 - User Guide***](user_guide.md) document.
+> Suggested resolution: Load a configuration file using the "File" menu or create a new configuration file using the user interface and following **[Section 18 - User Guide]**(user_guide.md) document.
 
 ```
 SEVERE, "Failed to load config."

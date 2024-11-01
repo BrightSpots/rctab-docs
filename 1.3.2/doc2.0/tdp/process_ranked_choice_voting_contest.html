@@ -1,0 +1,1618 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="tabulation_options_for_rcv_tabulation.html">
+      
+      
+        <link rel="next" href="ballot_limitations_and_maximum_testing_range.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Process Ranked Choice Voting Contest - RCTab Test Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-20-process-ranked-choice-voting-contest" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="RCTab Test Docs" class="md-header__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCTab Test Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Process Ranked Choice Voting Contest
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="00_documentation_abstracts.html" class="md-tabs__link">
+          
+  
+  TDP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/user_guide.html" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="RCTab Test Docs" class="md-nav__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RCTab Test Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TDP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TDP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_documentation_abstracts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software_design_and_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardware_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_functionality_description.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acceptance_test_procedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_design_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Design Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_security_specification_requirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Security Specification Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design_and_interface_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design and Interface Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_architecture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development_environment_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Environment Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_threat_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_testing_and_vulnerability_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Testing and Vulnerability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_maintenance_manual.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Maintenance Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personnel_deployment_and_training.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnel Deployment and Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="l_and_a_testing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_management_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quality_assurance_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Assurance Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_trusted_build_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_change_notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardening_procedures_-_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardening Procedures - Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_test_and_verification_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Test and Verification Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulation_options_for_rcv_tabulation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="process_ranked_choice_voting_contest.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      Overview
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    <span class="md-ellipsis">
+      Description
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ballot_limitations_and_maximum_testing_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ballot Limitations & Maximum Testing Range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_instructions_for_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Instructions for Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_command_line_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Command Line Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_file_parameters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_cvr_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_config_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Config Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-election_audit_and_clearing_rctab_from_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-Election Audit & Clearing RCTab from System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_operator_log_messages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Operator Log Messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_system_tab_hints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab System Tab Hints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coding_and_header_comment_standards_for_rctab.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding and Header Comment Standards for RCTab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secure_usb_process.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-multi-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Multi-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-single-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Single-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranked-choice-voting-laws.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ranked Choice Voting Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="22-month-archiving-procedure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22-Month Archiving Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="section-20-process-ranked-choice-voting-contest">Section 20 - Process Ranked Choice Voting Contest<a class="headerlink" href="#section-20-process-ranked-choice-voting-contest" title="Permanent link">&para;</a></h1>
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>Ranked Choice Voting (RCV) is a voting method where the voter is able to identify their candidate choices in order of preference. Although voting the ballot is the same, there are many variations used in processing ballot selections to determine the candidates that are elected. This section will address the methods currently in use in the United States which fall into two major categories, single-winner RCV and multi-winner RCV.  Single-winner RCV is also known as Instant Runoff Voting (IRV).  Multi-winner RCV is also known as Single Transferable Vote (STV). Both use multi-round processing methods to determine the winner(s) and require Cast Voter Records (CVRs) containing all voter choices for RCV contests to be processed. These methods are most commonly used in jurisdictions where current law requires a winning candidate to have a majority of votes cast (i.e., 50% +1 in a single seat contest) to avoid the expensive alternative of holding a separate primary or runoff election.</p>
+<p>The processing used in each round, if a winner has not been determined, is as follows. The candidate with the lowest vote total on the round is considered eliminated. Each CVR containing the eliminated candidate as the current 1st choice is processed to substitute the next highest ranked continuing candidate (one that has not been eliminated) to replace the eliminated candidate.  If there are no choices left on a given ballot, that ballot is considered exhausted. New round totals are tabulated and a determination of whether a candidate now has sufficient votes to win is made. If not, the process is repeated round by round until a winner is or winners are determined.</p>
+<p>There are several variations of each of the IRV and STV methods. Most are common but a couple are specific to STV. Common variances include:</p>
+<ul>
+<li>Handling of an overvote choice during the round-by-round processing – Is the ballot considered exhausted or is the choice skipped and checked for a subsequent go forward candidate?</li>
+<li>Handling of an omitted choice/ranking during the round-by-round processing – Is the choice skipped, does this cause the ballot to be exhausted or is the choice skipped once but two skipped rankings in succession exhaust the ballot?</li>
+<li>Handling of a duplicate ranking (selecting the same candidate for more than one ranking) during the round-by-round processing – Is the duplicate skipped in the same way as an omitted ranking or is the ballot considered exhausted?</li>
+<li>
+<p>Handling of candidate elimination – Are all candidates who have no chance of</p>
+<p>winning concurrently eliminated in the first round only or in any round, or is only one candidate eliminated in any round and multiple elimination of candidates not used?</p>
+</li>
+<li>
+<p>Handling of tabulated voted 1st  choices – Is tabulation of voted 1st  choices used to determine if a candidate(s) has sufficient votes to be elected (thus avoiding the use of</p>
+<p>an RCV algorithm) or is the algorithm always used and tabulation of marked first choices  ignored? Even if used, does calculation of the threshold for election include all ballots cast (include over and under vote totals) or is it based on total selection.</p>
+</li>
+</ul>
+<figure>
+    <img src="../images/image45.jpg" alt="Flow chart describing process flow for single and multi-seat contests" />
+    <figcaption>This flow chart indicates the processing flow for either single or a multi-seat contest with each block in the flow described.</figcaption>
+</figure>
+
+<h2 id="description">Description<a class="headerlink" href="#description" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p><strong>Marked first-choice tabulation used?</strong></p>
+<p>Some RCV rules require (St. Paul and Minneapolis) or conditionally allow (Oakland) a shortcut that can elect candidates by looking only at marked first choices. This can help avoid what may be a more logistically involved process of collecting and examining CVRs to determine effective first choices. If a tabulation of marked first choices elects sufficient candidates, the full RCV tabulation process is not needed and examination of CVRs might be avoided. Some other jurisdictions use this shortcut as a matter of practice.</p>
+<p>If a ballot has a validly marked first choice, that is also the ballot's effective first choice. However, a ballot can have an effective first choice but not a marked first choice if the first choice is left blank or is not valid but there is a second or subsequent choice that is validly marked. Detailed rules for what is counted as an effective first choice can vary by jurisdiction. See the description for block 6 for additional details.</p>
+<p>The Yes path is taken if an initial tabulation of marked first choices is used. The No path is taken if the CVRs are used to initially determine the effective first-choice candidate votes.</p>
+</li>
+<li>
+<p><strong>Determine candidate vote counts &amp; # of ballots by marked first-choices</strong></p>
+<p>Votes are tabulated by considering only marked first-choice ballot selections and as if the contest were a vote-for-one contest. If the first choice is not marked or is overvoted on a given ballot, there will not be any contribution to candidate votes. The number of ballots used as the base for the threshold calculation is also determined based on jurisdiction-specific rules or practice.  St. Paul uses the total number of ballots with validly marked first choices that count for candidates. Minneapolis uses the number of cast votes. The Oakland rule uses the number of ballots cast except for those with a marked overvote.</p>
+</li>
+<li>
+<p><strong>Determine threshold (T) to win and elect candidates</strong></p>
+<p>The threshold identifies how many votes a candidate must have in order to be elected based by the tabulation of marked first choices. If a contest is only electing one candidate, the threshold is typically a majority of the threshold base so that a candidate would need more than 50% of the threshold base to be elected. The Minneapolis threshold formula for any number of candidates to be elected is:</p>
+<blockquote>
+<p>T= 1 + B / (N + 1)    rounded down to the nearest whole number</p>
+<p>where <code>T</code> is the threshold, <code>B</code> is the number of relevant ballots and <code>N</code> is the number of candidates to be elected.</p>
+</blockquote>
+<p>Thus, in a contest where only one candidate is to be elected, the Minneapolis threshold is floor (1 + B / 2) and a candidate must have at least that many votes to be elected. In a contest with 4 candidates to be elected, the Minneapolis threshold would be floor(1 + B / 5) and a candidate must have at least that many marked first-choice votes to be elected, i.e., more than 20%, since the number of marked first-choice votes will be a whole number. Once the threshold and threshold criterion are established, any candidates satisfying that criterion are considered elected for the purposes of this tabulation of marked first choices.</p>
+</li>
+<li>
+<p><strong>All seats filled?</strong></p>
+<p>Are sufficient candidates elected because their number of marked first-choice votes is greater than (or equal to, for Minneapolis) the threshold to fill all seats in the contest? The Yes path is taken if there are. The No path is taken if one or more positions have not been filled due to insufficient candidates obtaining the required number of marked first-choice votes. In a single-winner contest, taking the Yes path only requires that one candidate be elected. If the No path is taken, a full RCV tabulation is conducted, without using the results of the tabulation of marked first choices. In particular, candidates elected by marked first choices are considered unelected continuing candidates at the beginning of the full RCV tabulation. If the Yes path is taken, the full RCV tabulation is not required.</p>
+</li>
+<li>
+<p><strong>Stage all CVRs</strong></p>
+<p>A full RCV tabulation requires every CVR to be examined to determine which if any candidate the CVR will count for in the first round. This block stages all CVRs for that determination. All candidates begin the first round as continuing candidates, neither elected nor eliminated, without any votes.</p>
+</li>
+<li>
+<p><strong>Process a staged CVR</strong></p>
+<p>A single CVR taken from a collection of staged CVRs is processed to determine the candidate for whom the ballot will next count, the CVR’s highest ranked continuing candidate, if such a candidate exists. A continuing candidate is defined as a candidate that is neither eliminated (a.k.a defeated) nor elected.</p>
+<p>CVRs are staged for processing in this step from three sources:</p>
+<ol>
+<li>in block 5, all CVRs are staged for round 1,</li>
+<li>in block 20 after a candidate has been defeated, and</li>
+<li>for multi-seat contests in block 18 after a candidate has been elected with surplus votes, the votes for a candidate in excess of the threshold.</li>
+</ol>
+<p>Minneapolis rules, CA SB 1288, and HR 3057 redistribute surplus as a fractional vote for all CVRs that counted for the elected candidate. Cambridge rules distribute surplus as a whole vote per CVR but only for a subset of CVRs.  See the description of block 18 for further details. Typically, the CVR’s counting for a candidate is staged for reassignment after that candidate is eliminated or elected and before the next round’s vote counts are tallied, unless it can be otherwise determined that a next round is not needed.</p>
+<p>Determining the highest-ranked (most preferred) continuing candidate can be fairly straightforward if the voter has simply ranked candidates in order of preference. However, there are several irregular ranking situations that a voter might mark and which are treated according to jurisdiction-specific rules:</p>
+<ol>
+<li>no candidate ranked at a ranking level,</li>
+<li>ranking more than one candidate at a ranking level, and</li>
+<li>ranking a candidate at more than one ranking level.</li>
+</ol>
+<p>The following describes how these situations are treated by various jurisdictions:</p>
+<ul>
+<li>Unvoted choice (no candidate ranked at a ranking level)<ul>
+<li>Ballot considered exhausted</li>
+<li>Ballot considered exhausted if there are two unvoted choices in succession</li>
+<li>Skipped and subsequent choice processed, if any</li>
+</ul>
+</li>
+<li>Overvoted choice (more than one candidate ranked at a ranking level)<ul>
+<li>Ballot considered exhausted (most common)</li>
+<li>Not considered overvoted if doesn’t contain more than one continuing candidate    (i.e., Takoma Park, MD)</li>
+<li>Skipped and subsequent choice processed, if any</li>
+</ul>
+</li>
+<li>Repeated ranking of a previously ranked candidate<ul>
+<li>Ballot considered exhausted</li>
+<li>Skipped and subsequent choice processed, if any</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Valid most preferred continuing candidate?</strong></p>
+<p>The No path is taken for the processed CVR when there is no valid selection for the highest ranked continuing candidate. An invalid choice could include selections for more than one continuing candidate depending on jurisdiction rules. The Yes path is taken if there is a valid selection for the highest ranked continuing candidate.</p>
+</li>
+<li>
+<p><strong>Ballot is exhausted.  Update reason stats for reporting</strong></p>
+<p>This CVR will not be included in any further tabulation processing as there are no more validly ranked continuing candidates available. This may be due to not containing further ranking selections, an overvote in the current ranking choice preventing consideration of subsequent rankings, the repeated selection of an already ranked candidate, or that all subsequent ranking selections are for eliminated or already elected candidates. The reason for the ballot being considered exhausted is recorded for purposes of reporting round results.</p>
+</li>
+<li>
+<p><strong>CVR no longer processed</strong></p>
+<p>Since the CVR/ballot does not contain a valid subsequent choice for the highest ranked continuing candidate, that ballot is not subject to further tabulation.</p>
+</li>
+<li>
+<p><strong>Assign CVR to that candidate</strong></p>
+<p>The CVR is assigned to count for its highest-ranked (most preferred) continuing candidate. The ballot will contribute one full vote or a surplus fraction of a vote to that candidate’s vote total. A surplus fraction of a vote can be used in a multi-seat contest using rules from Minneapolis, SB 1288, or HR 3057.</p>
+</li>
+<li>
+<p><strong>All CVRs processed?</strong></p>
+<p>The No path is taken to process the next staged CVR if some staged ballots still remain to be processed.  The Yes path is taken if all staged ballots have been processed.</p>
+</li>
+<li>
+<p><strong>Tabulate vote totals</strong></p>
+<p>The vote totals for each candidate and for any other reporting categories are tallied.</p>
+<p>If there was a tabulation of marked first choices in block 2 (a.k.a round 0), the candidate vote totals for round 1 can be higher, but never lower, than the candidate totals of marked first choices. A candidate vote total can be higher if there are one or more ballots with no marked first choice, or in some jurisdictions an invalidly marked first choice, but there is a valid candidate selection for a subsequent choice.</p>
+</li>
+<li>
+<p><strong>Threshold exists for current round?</strong></p>
+<p>The No path is typically taken every time for a single-seat contest as the majority threshold will be calculated for each round. The No path is typically taken only for the first round for multi-seat contests, so that the same threshold applies to all elected candidates, regardless of the round in which they are elected. The Yes path is typically only taken for the second and subsequent rounds of a multi-seat contest which reuses the first-round threshold. Typically, a threshold from a tabulation of marked first choices will not be reused here, especially if that tabulation used a different threshold base.</p>
+</li>
+<li>
+<p><strong>Determine threshold from vote totals</strong></p>
+<p>The total votes counting for candidates in the round is typically used as the threshold base, i.e., the number of ballots / votes used to calculate the threshold. For single-seat contests, the threshold is typically expressed in terms of a majority of that threshold base, i.e., more than 50%. For multi-seat contests, the threshold can be expressed as:</p>
+<blockquote>
+<p>T = B / (S + 1) + X</p>
+<p>where <code>T</code> is the threshold, <code>B</code> is the threshold base, <code>S</code> is the number of seats to be filled, and <code>X</code> is some small extra amount that, depending on the specific rules, might be as small as zero but is not bigger than one whole vote.</p>
+</blockquote>
+<p>There are two approaches to determining the extra amount X and the threshold criterion in order to ensure that it is mathematically impossible to elect too many candidates:</p>
+<ul>
+<li>
+<p><code>X</code> must be greater than zero, but reaching the threshold is sufficient to be elected</p>
+</li>
+<li>
+<p><code>X</code> can be zero, but the threshold must be exceeded in order to be elected</p>
+</li>
+</ul>
+<p>Minneapolis and Cambridge rules use the first, more traditional approach while the more recent rules in SB 1288 and HR 3057 use the second approach.  For example, Minneapolis rules describe <code>X</code> as being the result of adding one and ignoring any fractional value, i.e., rounding down to the nearest whole number. SB 1288 rounds up to the fifth decimal place, its precision for calculating fractional votes. In the diagram, the threshold criterion is expressed in terms of the second approach with the understanding that the greater-than-or-equal-to criterion of the first approach can be substituted as appropriate.</p>
+</li>
+<li>
+<p><strong>Any candidate votes &gt; <code>T</code>?</strong></p>
+<p>The Yes path is typically taken if the vote total for any (continuing) candidate satisfies the threshold criterion, i.e., is greater than the threshold. In a multi-seat election, it is possible for more than one continuing candidate to exceed the threshold in a round. The No path is taken if there are no continuing candidates with a vote total that satisfies the threshold criterion.</p>
+<p>Minneapolis has an exceptional rule that requires, subject to defined conditions, that the No path to be taken in order to eliminate one or more candidates, even if one or more continuing candidates has enough votes to satisfy the threshold criterion. CA SB 1288 has a default provision and HR 3057 requires that the No path be taken for single-seat contests as long as there are three or more continuing candidates. This can extend the tabulation to show a one- on-one comparison between the two finalists without changing which candidate is elected. San Francisco has adopted this option in practice.</p>
+</li>
+<li>
+<p><strong>One seat with rules requiring end with 2 candidates?</strong></p>
+<p>For a single seat contest, the sum of existing RCV users require that the recursive process of candidate elimination and promotion of the subsequent highest-ranking continuing candidate continue until only 2 candidates remain even if a candidate reaches the threshold to be elected. The Yes path is taken if these rules apply. The No path is taken if the contest is either a multi-seat contest or the conventional rules are used for a single seat contest.</p>
+</li>
+<li>
+<p><strong>2 candidates left?</strong></p>
+<p>This block is reached if the rules for single seat contests require the RCV process to continue until 2 candidates are left. The Yes path is taken if there are only 2 candidates left and the winner will be declared. The No path is taken if there are more than 2 candidates left and cause the RCV process to continue.</p>
+</li>
+<li>
+<p><strong>Elect candidate(s)</strong></p>
+<p>One or more of the continuing candidates with a vote total that satisfies the threshold criterion are elected.  Depending on jurisdiction-specific rules, if there is more than one such candidate, all them might be elected or only one might be selected for being elected in this round, typically the candidate with the most such votes. Jurisdiction-specific rules for resolving a tie for having the most votes may apply. A candidate that satisfies the threshold criterion but is not elected remains a continuing candidate and is still eligible to receive transferred votes from other candidates.</p>
+</li>
+<li>
+<p><strong>All seats filled?</strong></p>
+<p>The Yes path is taken if this is a single seat contest or if all required candidates in a multi-seat contest have been elected, indicating the process has been completed. The No path is taken if it is a multi-seat contest and all seats have not been filled.</p>
+</li>
+<li>
+<p><strong>Calculate surplus votes transfer formula</strong></p>
+<p>In a multi-seat co**ntest when one or more candidates are elected in a round, but all seats are not filled, CVRs containing excess votes for the elected candidate are staged for further processing along with the other CVRs for continuing candidates. This step determines the formula for how these CVRs are staged.</p>
+<p>There are two methods currently used for handling surplus votes (votes for an elected candidate that are in excess of the threshold). Minneapolis, CA SB 1288, and HR 3057 each select all CVRs for the elected candidate but assign each CVR a transfer vote value that is a fraction of a whole vote that corresponds to the prorated ballot’s share of the elected candidate’s surplus. The fraction is equal to the ratio of the elected candidate’s surplus votes for the round divided by the elected candidate’s total votes for that round. Jurisdiction-specific rules may specify the precision and any rounding (typically rounding down) that are associated with this arithmetic operation.</p>
+<p>In contrast, Cambridge processes ballots from precincts in a randomly chosen order and selects every Nth ballot where N is the total votes for the elected candidate divided by the excess votes (rounded) and transfers the full vote of the selected CVRs to continuing candidates.</p>
+</li>
+<li>
+<p><strong>Stage CVRs with surplus votes for winning candidates</strong></p>
+<p>All CVRs for continuing candidates are staged including CVRs containing surplus votes for any candidate elected in this round according to the formula developed in Step 20. In Minneapolis, all CVRs will be transferred with a vote value fraction times the CVR’s previous transferred vote value. Note that the previous transferred value might be a fraction if it was a surplus from a candidate elected in a previous round. Jurisdiction specific rules may specify the precision and any rounding (typically rounding down) in this multiplication.</p>
+<p>In Cambridge, the CVRs will be selected and staged at full vote value, according to the formula determined in Step 20.</p>
+</li>
+<li>
+<p><strong>#  continuing candidates = # unfilled seats</strong></p>
+<p>The No path is taken if there are more continuing candidates than the number of unfilled seats. The Yes path is taken if the number of continuing candidates is equal to the current number of unfilled seats.</p>
+</li>
+<li>
+<p><strong>Defeat candidates with fewest votes and stage their CVRs</strong></p>
+<p>A common approach is to eliminate (a.k.a. defeat) the candidate with the fewest votes and then transfer that candidate’s votes to other candidates. There can be jurisdiction-specific rules for how to resolve a tie for having the fewest votes. Some jurisdictions run a lottery while others look at previous round results and eliminate the candidate with the lowest votes in the most recent previous round that is not tied, using a lottery only if there is still a tie after looking at all previous rounds.</p>
+<p>It is also common for single-seat contests to allow or require a group of candidates with the fewest votes to be eliminated in a single round (a.k.a batch elimination) if their combined vote totals are less than the candidate with the next higher vote total. Use of this option will not change who is elected, i.e., its use is outcome invariant. San Francisco and Oakland rules require use of this option but Alameda County, which administers Oakland’s RCV elections, does not use it and San Francisco has stopped using it in favor of other tabulation options its voting system supports.</p>
+<p>Some rules have exceptional elimination rules.  For multi-seat contests, Minneapolis and HR 3057 require certain candidate eliminations, including batch eliminations, even though there might be continuing candidates that satisfy the threshold criterion for being elected. Cambridge requires elimination, after any surplus is transferred from candidates elected in the first round of every candidate with fewer than 50 votes. The 50-vote minimum is derived from the requirement to have 50 signatures on a candidate’s nominating petition. For single-seat contests, Minneapolis has a rule requiring elimination of a candidate based on the total number ballots on which a candidate is ranked.  None of these exceptional elimination rules is guaranteed to be outcome invariant compared to single elimination only when there is no surplus to be transferred.</p>
+</li>
+<li>
+<p><strong>Elect all continuing candidates</strong></p>
+<p>All continuing candidates are elected in order to fill the remaining unfilled seats. This allows a candidate to be elected without satisfying the threshold criterion.</p>
+</li>
+<li>
+<p><strong>Done</strong></p>
+<p>Indicates that candidates have been elected to all positions to be filled and the tabulation process is complete.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="tabulation_options_for_rcv_tabulation.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tabulation Options for RCV Tabulation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Tabulation Options for RCV Tabulation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="ballot_limitations_and_maximum_testing_range.html" class="md-footer__link md-footer__link--next" aria-label="Next: Ballot Limitations &amp; Maximum Testing Range">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Ballot Limitations & Maximum Testing Range
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tabs", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

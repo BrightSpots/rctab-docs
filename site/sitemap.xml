@@ -1,3 +1,183 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/index.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/snippets/lorem_ipsum.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/00_documentation_abstracts.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/22-month-archiving-procedure.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/acceptance_test_procedures.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/ballot_limitations_and_maximum_testing_range.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/coding_and_header_comment_standards_for_rctab.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/configuration_file_parameters.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/configuration_management_plan.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/design_and_interface_specification.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/development_environment_specification.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/expected-outcome-rcv-test-sets-multi-winner.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/expected-outcome-rcv-test-sets-single-winner.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/installation_instructions_for_windows_os.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/l_and_a_testing.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/personnel_deployment_and_training.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/post-election_audit_and_clearing_rctab_from_system.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/print-page.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/process_ranked_choice_voting_contest.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/quality_assurance_plan.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/ranked-choice-voting-laws.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/rctab_config_files.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/rctab_cvr_files.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/rctab_operator_log_messages.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/rctab_system_tab_hints.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/secure_usb_process.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/security_architecture.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/security_testing_and_vulnerability_analysis.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/security_threat_analysis.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/software_design_and_specifications.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_change_notes.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_design_specifications.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_functionality_description.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_hardening_procedures_-_windows_os.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_hardware_specification.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_maintenance_manual.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_overview.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_security_specification_requirements.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/system_test_and_verification_specification.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/tabulation_options_for_rcv_tabulation.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/tabulator_command_line_instructions.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/tabulator_trusted_build_instructions.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/trusted_build_and_output_hash_verification.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/tdp/user_guide.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
+    <url>
+         <loc>https://brightspots.github.io/rctab-docs/{{ release_version }}/user_guide/user_guide.html</loc>
+         <lastmod>2024-11-01</lastmod>
+    </url>
 </urlset>

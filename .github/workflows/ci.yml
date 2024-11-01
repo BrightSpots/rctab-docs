@@ -4,57 +4,91 @@ on:
   push:
     branches:
       - main
-      - github-pages  # Add this to test the PR branch
+      - github-pages
+      - 'releases/**'  # Trigger on changes to any release branch
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      - name: Configure Git Credentials
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        with:
+          fetch-depth: 0  # Fetch all history to access all branches
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install pipx
+      - name: Install pipx and Poetry
         run: |
           python3 -m pip install --user pipx
           python3 -m pipx ensurepath
-
-      - name: Install Poetry via pipx
-        run: |
           pipx install poetry==1.8
           echo "${HOME}/.local/bin" >> $GITHUB_PATH
-
-      - name: Set cache ID
-        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-
-      - name: Cache Dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            .cache
-            $HOME/.cache/pypoetry/cache
-            $HOME/.cache/pypoetry/virtualenvs
-          key: mkdocs-material-${{ runner.os }}-${{ env.cache_id }}-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: |
-            mkdocs-material-${{ runner.os }}-
 
       - name: Install Dependencies
         run: |
           poetry install --no-dev --no-interaction --no-ansi
 
-      - name: Build and Deploy
+      - name: Build Documentation for Release Branches
+        env:
+          RELEASE_BRANCHES: ${{ steps.get_branches.outputs.branches }}
         run: |
-          poetry run mkdocs gh-deploy --force
+          # Get list of release branches
+          RELEASE_BRANCHES=$(git branch -r | grep 'origin/releases/' | sed 's|origin/||')
+          echo "Found release branches:"
+          echo "${RELEASE_BRANCHES}"
+
+          # Prepare a directory to collect all built sites
+          mkdir -p combined_site
+
+          # Loop over each release branch
+          for BRANCH in ${RELEASE_BRANCHES}; do
+            echo "Building documentation for ${BRANCH}"
+            # Create a working directory for this branch
+            mkdir -p workdir/${BRANCH}
+            cd workdir/${BRANCH}
+
+            # Checkout the release branch
+            git init
+            git remote add origin https://github.com/${{ github.repository }}.git
+            git fetch origin ${BRANCH}
+            git checkout -b ${BRANCH} origin/${BRANCH}
+
+            # Replace placeholders in mkdocs.yml
+            RELEASE_VERSION=${BRANCH#releases/}
+            sed -i "s/{{ release_version }}/${RELEASE_VERSION}/g" mkdocs.yml
+
+            # Install dependencies
+            poetry install --no-dev --no-interaction --no-ansi
+
+            # Build the site
+            poetry run mkdocs build --clean --site-dir "../../../combined_site/${RELEASE_VERSION}"
+
+            # Return to root directory
+            cd ../../../
+
+          done
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: combined_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v1

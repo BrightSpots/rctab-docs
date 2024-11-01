@@ -1,0 +1,2128 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="user_guide.html">
+      
+      
+        <link rel="next" href="process_ranked_choice_voting_contest.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Tabulation Options for RCV Tabulation - RCTab Test Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-19-tabulation-options-for-rcv-tabulation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="RCTab Test Docs" class="md-header__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCTab Test Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tabulation Options for RCV Tabulation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="00_documentation_abstracts.html" class="md-tabs__link">
+          
+  
+  TDP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/user_guide.html" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="RCTab Test Docs" class="md-nav__button md-logo" aria-label="RCTab Test Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RCTab Test Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TDP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TDP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_documentation_abstracts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software_design_and_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardware_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_functionality_description.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acceptance_test_procedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_design_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Design Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_security_specification_requirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Security Specification Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design_and_interface_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design and Interface Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_architecture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development_environment_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Environment Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_threat_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_testing_and_vulnerability_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Testing and Vulnerability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_maintenance_manual.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Maintenance Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personnel_deployment_and_training.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnel Deployment and Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="l_and_a_testing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_management_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quality_assurance_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Assurance Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_trusted_build_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_change_notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardening_procedures_-_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardening Procedures - Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_test_and_verification_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Test and Verification Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="tabulation_options_for_rcv_tabulation.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#precinct-tabulation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Precinct Tabulation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#decimal-places" class="md-nav__link">
+    <span class="md-ellipsis">
+      Decimal Places
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rankings-on-the-ballot" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rankings on the Ballot
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#glossary-of-terms" class="md-nav__link">
+    <span class="md-ellipsis">
+      Glossary of Terms
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="process_ranked_choice_voting_contest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ballot_limitations_and_maximum_testing_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ballot Limitations & Maximum Testing Range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_instructions_for_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Instructions for Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_command_line_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Command Line Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_file_parameters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_cvr_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_config_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Config Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-election_audit_and_clearing_rctab_from_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-Election Audit & Clearing RCTab from System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_operator_log_messages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Operator Log Messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_system_tab_hints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab System Tab Hints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coding_and_header_comment_standards_for_rctab.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding and Header Comment Standards for RCTab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secure_usb_process.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-multi-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Multi-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-single-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Single-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranked-choice-voting-laws.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ranked Choice Voting Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="22-month-archiving-procedure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22-Month Archiving Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="section-19-tabulation-options-for-rcv-tabulation">Section 19 - Tabulation Options for RCV Tabulation<a class="headerlink" href="#section-19-tabulation-options-for-rcv-tabulation" title="Permanent link">&para;</a></h1>
+<p>Ranked choice voting is an umbrella term for a collection of voting methods where voters rank candidates in order of preference and votes are counted in rounds. Ranked choice voting elections occur in a series of rounds. Those rounds can consist of counting votes, eliminating candidates, transferring votes from eliminated candidates, electing candidates, and transferring surplus votes from elected candidates. Ranked choice voting is counted at both the granular ballot-by-ballot level and at a contest-wide level. In other words, counting RCV requires knowing details of how every individual ballot is marked as well as the total number of votes for each candidate at each stage of the RCV count.</p>
+<p>The following is an enumeration and discussion of the various tabulation options that exist for Ranked Choice Voting (RCV) elections. Also included is a glossary of ranked choice voting terms. This same glossary is included in <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a>.</p>
+<p>Counting RCV elections proceeds as follows: all first-choice rankings are counted first. If no candidate receives a specified number of votes necessary for election (typically known as the threshold of election), then the candidate with the fewest votes is eliminated. Ballots counting for that candidate then transfer to the next-ranked candidate on each ballot. These rounds of counting, elimination, and redistribution recur until all seats up for election are filled. In some multi-winner variations of RCV, candidates who receive more votes than necessary to be elected – those candidates whose vote totals exceed the threshold of election – are deemed to have surplus votes. If a candidate has a surplus, the next step in counting is to transfer that surplus.  Surplus votes are transferred in various ways, but they follow the same logic as elimination transfers: each ballot counting for a candidate with surplus votes transfers vote value to the next-ranked candidate on that ballot.</p>
+<p>There are many variations used in processing contest selections to determine the candidates that are elected. Voting the ballot is the same amongst the variants although the presentation of ballot design may vary. This document addresses all variations currently in use in the United States, which fall into two major categories: single-winner RCV and variants of RCV electing multiple candidates. <strong>single-winner RCV</strong> is also known as instant runoff voting (IRV). Variants of RCV that elect multiple candidates include <strong>multi-winner ranked choice voting</strong> (also known as the single transferable vote (STV) and proportional ranked choice voting), <strong>multi-pass IRV</strong> (also known as block-preferential voting), <strong>bottoms-up RCV</strong>, and <strong>bottoms-up RCV with percentage threshold</strong>. All use multi-round processing methods to determine the outcome(s) and require the full set of ballots or cast vote records (CVRs), for RCV contests to be processed. Purposes of this method include avoiding holding a separate runoff election, eliminating the effect of vote splitting or implementing proportional representation in multi-member representative bodies.</p>
+<p>The processing used in each single-winner RCV round, if there is no apparent winner, is as follows. The candidate with the lowest vote total in the round is considered eliminated.  Each CVR containing the eliminated candidate as the current 1st choice is processed to count for the next highest-ranked continuing candidate (one that has not been eliminated). If there are no choices left on a given ballot, that ballot is considered exhausted and inactive for any subsequent rounds. The new round tabulates totals and determines whether a candidate now has sufficient votes to be elected. If not, the process is repeated round-by-round until a candidate has sufficient votes to win.</p>
+<p>In single-winner RCV, once a candidate has sufficient votes to be elected (This typically means once a candidate has a majority of votes in a round, but see item 1 for more detail.) tabulation will stop.</p>
+<p>In bottoms-up RCV, bottoms-up RCV with percentage threshold, and multi-pass IRV, tabulation proceeds in much the same way. Votes are counted, candidates with the fewest votes are eliminated, and votes transfer to the next candidate on each of those ballots. In bottoms-up RCV, these rounds of counting recur until there are as many candidates left as there are seats to fill. In bottoms-up RCV with percentage threshold, these rounds of counting recur until all candidates remaining have a share of votes equal to or greater than the percentage threshold. In multi-pass IRV, counting proceeds slightly differently. Multi-pass IRV uses single-winner IRV for multi-winner contests by electing candidates one at a time. The same process for counting rounds as described above is followed. The count is then reset and run again, but any rankings for an elected candidate are ignored. These passes of IRV are run multiple times until all seats are filled. This method is not designed to guarantee proportional representation, in contrast to STV which was designed with the intent to provide proportional representation.</p>
+<p>In multi-winner ranked choice voting (aka single-transferable vote or proportional RCV), rounds operate somewhat differently. Elimination operates in the same way as all of the above: If no candidate receives a previously specified number of votes necessary for election (typically known as the threshold of election), then the candidate with the fewest votes is eliminated. Ballots counting for that candidate then transfer to the next-ranked candidate on each ballot. Where counting differs, however, is when a candidate receives enough votes to win. If a candidate receives more votes than necessary to be elected – if their vote total exceeds the threshold of election – they are deemed to have surplus votes. If a candidate has a surplus, the next step in counting is to transfer that surplus.  Surplus votes are transferred in various ways, but they follow the same logic as elimination transfers: each ballot counting for a candidate with surplus votes transfers vote value to the next-ranked candidate on that ballot. In multi-winner RCV, rounds of elimination and election recur until all seats up for election are filled.</p>
+<p>Note that in both multi-pass IRV and multi-winner RCV, once a candidate is declared elected they cannot receive any more votes from vote transfers.</p>
+<p>There is variation in how each of the above tabulation methods actually operate on the round-by-round and ballot-by-ballot level. Variations related to how overvotes, repeated ranking, skipped rankings, candidate elimination, surplus transfers, thresholds, ties and other factors are handled. Each of these possible variations is described above. When a variation applies to a specific type of RCV, that will be noted. Example variations are briefly described in the bulleted list below:</p>
+<ul>
+<li>Handling an overvoted choice during round-by-round processing – Is the ballot considered exhausted or is the choice skipped and the ballot checked for a subsequent continuing candidate?</li>
+<li>Handling an omitted choice/ranking during round-by-round processing  – Is the choice skipped?  Does this cause the ballot to exhaust, are skipped rankings ignored or is one skipped ranking ignored but two skipped rankings in succession exhaust the ballot?</li>
+<li>Handling of a repeat ranking (selecting the same candidate for more than one ranking) during the round-by-round processing – Is the repeated rank skipped in the same way as an omitted ranking or is the ballot considered exhausted?</li>
+<li>Handling of candidate elimination – Are all candidates who have no mathematical chance of advancing concurrently eliminated in the first round only, in any round or is only one candidate eliminated in any round and multiple eliminations of candidates not used?</li>
+<li>When to terminate tabulation – Is tabulation of voted 1st choices used to determine if a candidate(s) has sufficient votes to be elected (thus avoiding the use of an RCV algorithm) or is the algorithm always used?  If used, does calculation of the threshold for election include all ballots cast (include over- and undervote totals) or is it based on total valid selections?</li>
+</ul>
+<p>Most tabulation options are laid out explicitly in RCV laws, while some laws cover only some of these options, and some of these options are routinely excluded from RCV laws.</p>
+<ol>
+<li>
+<p>Termination of tabulation (single-winner)</p>
+<ol>
+<li>Declare winner if a candidate receives a majority of 1st choice votes in the initial count. See (d) as well. (used in State of Maine, New York City)<ol>
+<li>If winner emerges from initial count, RCTab will not be used.</li>
+</ol>
+</li>
+<li>Declare winner when a candidate receives a majority of valid votes in any round (used in Basalt, Benton County, Berkeley, Las Cruces, Oakland, Payson, Portland, ME., San Leandro, Santa Fe, Takoma Park, MD., Vineyard)<ol>
+<li>Setting in RCTab: Winner Election Mode: Single-winner majority determines winner</li>
+</ol>
+</li>
+<li>Declare winner when a candidate receives a majority of all votes cast in contest, or most votes when two candidates remain (used in Minneapolis, St. Louis Park St. Paul, Minnesota jurisdictions)<ol>
+<li>Not included in RCTab</li>
+</ol>
+</li>
+<li>Declare a winner when only two candidates remain.  (used in Eastpointe, State of Maine, New York City, San Francisco, CA.)<ol>
+<li>Setting in RCTab:<ol>
+<li>Winner Election Mode: Single-winner majority determines winner, AND</li>
+<li>Select "Continue until Two Candidates Remain"</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<p>While any candidate achieving a majority of votes under (a), (b), or (c) will also be the winner under (d), the latter provides a more complete picture of the strength of support for the winner across all voters.  While there is some incentive to choose option (a) if it saves on the cost of accumulating all cast vote records (CVRs) for RCV tabulation, if the CVRs are readily available, fully automated tabulation systems can go from (a) to (d) in seconds.  San Francisco law requires (b) but the city opts to continue tabulation in line with (d). As with other options, (c) does not alter who will win an election but it does alter how contest results are presented. It may help to envision these different rules as different formulas. These numbers depend on the number of valid ballots in a round – how many ballots can be counted towards a candidate in the ranked choice voting contest in question.</p>
+<p>A majority is calculated in (b) jurisdictions using the following formula:</p>
+<blockquote>
+<p><code>T + B / (S+1) +1</code>, disregarding fractions.</p>
+<p>T = Threshold</p>
+<p>B = Number of Continuing Ballots in the given round of counting</p>
+<p>S = Number of Seats to be Filled</p>
+</blockquote>
+<p>A majority is calculated in (c) jurisdictions using the following formula:</p>
+<blockquote>
+<p>T+B/(S+1)+1, disregarding fractions.</p>
+<p>T = Threshold</p>
+<p>B = Number of Valid Ballots Cast in the first round of counting</p>
+<p>S = Number of Seats to be Filled</p>
+</blockquote>
+</li>
+<li>
+<p>Determining which candidate(s) to eliminate (varies only in single-winner)</p>
+<ol>
+<li>Lowest vote-getter (default in all methods)<ol>
+<li>Setting in RCTab: Don’t select "Use Batch Elimination"</li>
+</ol>
+</li>
+<li>Batch elimination (available only for single-winner contests)<ol>
+<li>Setting in RCTab: Select "Use Batch Elimination"</li>
+</ol>
+</li>
+</ol>
+<p>There are two ways to eliminate candidates in single-winner RCV elections - one at a time or in batches. Eliminating candidates one at a time is straightforward - determine which candidate has the fewest votes and eliminate that candidate.</p>
+<p>Eliminating candidates in batches, using batch elimination, is somewhat more complicated. Eliminating candidates using batch elimination makes it faster to count a ranked choice voting election with many candidates - it is possible to have fewer rounds of counting if multiple candidates can be eliminated at once.</p>
+<p>Batch elimination eliminates all candidates who cannot receive enough votes to surpass the candidate with the next highest number of votes.</p>
+<blockquote>
+<p>Example: in a six candidate contest with 200 votes, Candidate A has 80 votes, Candidate B has 70, and the other four combined have 50. Because those four candidates can never combine their votes to surpass Candidate B, they can be batch eliminated.</p>
+</blockquote>
+<p>Rule: eliminate the set of one or more candidates C1, C2, C3….Cn if sum of all votes for C1….Cn &lt; votes for candidate B and votes for B &lt; votes for candidate</p>
+<p>If a specified candidate satisfies both of the following conditions, then all candidates with fewer votes may be designated as defeated:</p>
+<ol>
+<li>
+<p>At least one other candidate has at least as many votes as the specified candidate.</p>
+</li>
+<li>
+<p>The specified candidate has more votes than the total votes for all candidates with fewer votes.</p>
+</li>
+</ol>
+<p>In practice, when tabulating using RCTab or other computerized methods of counting, batch elimination has no effect on how long it takes to count the election. Batch elimination can reduce the number of rounds of counting required for an election, however. And if hand counting, batch elimination does provide a way to count an election more quickly if candidates can be batch eliminated.</p>
+</li>
+<li>
+<p>Overvotes (two or more candidates marked with the same ranking)</p>
+<ol>
+<li>Skip to next highest-ranked candidate (used in Minneapolis, St. Louis Park, St. Paul)<ol>
+<li>Setting in RCTab: "Overvote Rule: Always Skip to Next Rank"</li>
+</ol>
+</li>
+<li>Exhaust ballot (used in Benton County, Berkeley, Eastpointe, Las Cruces, State of Maine, New York City, Oakland, Payson, Portland, San Francisco, Santa Fe, San Leandro, Telluride, Vineyard)<ol>
+<li>Setting in RCTab: "Overvote Rule: Exhaust Immediately"</li>
+</ol>
+</li>
+<li>Exhaust ballot unless only one overvoted candidate is a continuing candidate (used in Takoma Park, MD)<ol>
+<li>Setting in RCTab: "Overvote Rule: Exhaust if multiple continuing"</li>
+</ol>
+</li>
+<li>Suspend ballot until only one overvoted candidate is a continuing candidate then cast vote for that candidate or any subsequent highest-ranked continuing candidate. (Not currently used)<ol>
+<li>Not included in RCTab</li>
+</ol>
+</li>
+</ol>
+<p>Options (a), (b), and (c) are in use in current RCV jurisdictions. The argument in favor of exhausting the ballot, option (b), is that this makes no judgements about voter intent. An error is an error and that terminates the ballot.  While this is consistent with the treatment of overvotes in conventional plurality elections, RCV offers other valid options that keep a voter’s ballot alive.</p>
+<p>Skipping to the next highest-ranked candidate, option (a), is also used in a number of jurisdictions.  This acknowledges the error but does not make it a terminal error.  It simply treats the next highest-ranked choice as the first valid choice, which also avoids imposing any outside judgment about voter intent.</p>
+<p>Exhausting the ballot unless only one overvoted candidate is a continuing candidate, option (c), simply acknowledges that no overvote exists if only one of the marked candidates is a continuing candidate.  This is because each round of tabulation only looks at votes for continuing candidates and ignores candidates that have been eliminated.  There is, however, an inequity in this method in that it has unintended effects depending on the ranking at which the overvote occurs.  No candidates are eliminated prior to the first round of tabulation, thus, any overvote at the first choice level would exhaust the ballot where an overvote at a later round might not exhaust the ballot.</p>
+<p>Option (d) is suggested as a means of eliminating the inequity of the different treatment of overvotes in different tabulation rounds. This option appears to maximize the opportunity for a voter’s ballot to be counted and counted as that voter intended. It should be noted, however, this option has not been and is currently not used in any RCV jurisdiction.</p>
+</li>
+<li>
+<p>Skipped rankings</p>
+<ol>
+<li>Skip to next highest-ranked candidate (used in Berkeley, Las Cruces, Minneapolis, New York City, Oakland, St. Louis Park, St. Paul, San Francisco, Santa Fe, Telluride)<ol>
+<li>Setting in RCTab: Select "Unlimited" for "How Many Consecutive Skipped Ranks are Allowed"</li>
+</ol>
+</li>
+<li>Exhaust ballot (used in Colorado)<ol>
+<li>Setting in RCTab: Set "How Many Consecutive Skipped Ranks are Allowed" to <code>0</code></li>
+</ol>
+</li>
+<li>Exhaust ballot if two consecutive skipped rankings are encountered (used in Eastpointe, State of Maine, Takoma Park, MD., CA. Senate Bill 212, 2019)<ol>
+<li>Setting in RCTab: Set "How Many Consecutive Skipped Ranks are Allowed" to <code>1</code></li>
+</ol>
+</li>
+</ol>
+<p>Skipping to the next highest-ranked continuing candidate without a limitation in consecutive skips, option (a), runs the risk of casting a ballot for a voter’s last choice candidate if they rank only their first and last choices and the first choice is eliminated.</p>
+<p>While exhausting a ballot after consecutive skipped rankings, option (c), minimizes this prospect of option (a), it does not entirely eliminate it (e.g., three candidates competing for one seat).</p>
+<p>Exhausting a ballot when a skipped ranking is encountered, option (b), again penalizes the voter in a draconian manner for what may be a simple oversight.</p>
+<p>Option (c) appears to minimize the potential adverse effects while maximizing the opportunity for the voter’s ballot to be counted as intended.</p>
+</li>
+<li>
+<p>Repeat rankings of the same candidate (sometimes referred to as duplicate ranking)</p>
+<ol>
+<li>Ignore repeat rankings (used in Minneapolis, St. Paul, State of Maine, New York City, Oakland, San Leandro, Berkeley, Portland, ME., Takoma Park, MD., Santa Fe)<ol>
+<li>Setting in RCTab: Don’t select "Exhaust on Multiple Ranks for the Same Candidate"</li>
+</ol>
+</li>
+<li>Exhaust ballot at repeat ranking (used in Eastpointe)<ol>
+<li>Setting in RCTab: Select "Exhaust on Multiple Ranks for the Same Candidate"</li>
+</ol>
+</li>
+</ol>
+<p>Most jurisdictions are silent on this question in their RCV legislation. Information in this section is derived from practices followed in most jurisdictions. A standard tabulation algorithm will not detect a repeat ranking unless or until the candidate is eliminated. Once eliminated, the algorithm will simply look for the next highest-ranked continuing candidate and will pass over the repeat ranking as it would any other eliminated candidate.</p>
+<p>The practice of exhausting a ballot when a repeat ranking is encountered, option b, appears to emerge from a position that all voter "errors" should invalidate a ballot.</p>
+</li>
+<li>
+<p>Ties among last-place candidates</p>
+<ol>
+<li>Decide by lot (used in Benton County, Berkeley, Eastpointe, State of Maine, Minneapolis, New York City, Oakland, Payson, Portland, ME., St. Louis Park, St. Paul, San Francisco, San Leandro, Santa Fe, Telluride, Vineyard, CA Senate Bill 212, 2019)<ol>
+<li>Setting in RCTab: Tiebreak Mode: Stop counting and ask</li>
+</ol>
+</li>
+<li>Most votes in previous round (used in Cambridge, Takoma Park, MD)<ol>
+<li>Setting in RCTab: Tiebreak Mode: Previous Round Counts then Stop counting and ask</li>
+</ol>
+</li>
+<li>Predetermine tiebreaking order and include in configuration or algorithm. (Allowed in State of Maine)<ol>
+<li>Setting in RCTab: Tiebreak Mode: Use candidate order in the config file or Generate config</li>
+</ol>
+</li>
+</ol>
+<p>Last place ties pose a different kind of challenge in RCV elections than encountered in plurality elections. Here, time is of the essence since the continuation of the tabulation is dependent upon the resolution of a tie to determine which candidate is eliminated. Many states require that tied candidates be present for a tie resolution, something that is not desirable in RCV last-place ties where a tie must be broken before the tabulation can proceed.</p>
+<p>While "most votes in the previous round" generally is an easy, built-in tie-breaking mechanism, it suffers from one major drawback: it may violate the one-person-one-vote principle.  This is due to the fact that it gives heavier weight to votes in the previous round than to votes in the current round in deciding who advances and who is eliminated. While this has not yet been litigated, it opens the door to that prospect.</p>
+</li>
+<li>
+<p>Last round ties/ties between candidates to elect</p>
+<ol>
+<li>Defer to State law (used in Benton County, Berkeley, Maine, New York City, Oakland, San Francisco, San Leandro, Santa Fe, Telluride)<ol>
+<li>Setting in RCTab: Tiebreak Mode: Stop counting and ask</li>
+</ol>
+</li>
+<li>Decide by lot (used in Cambridge, Eastpointe, Minneapolis, St. Louis Park, St. Paul, Payson, Portland, ME., Santa Fe, Vineyard)<ol>
+<li>Setting in RCTab: Tiebreak Mode: Stop counting and ask</li>
+</ol>
+</li>
+<li>Most votes in previous round (used Takoma Park, MD)  <ol>
+<li>Setting in RCTab: Tiebreak Mode: Previous Round Counts then Stop counting and ask</li>
+</ol>
+</li>
+<li>Predetermine tiebreaking order and include in configuration or algorithm. (Allowed in State of Maine)<ol>
+<li>Setting in RCTab: Tiebreak Mode: Use candidate order in the config file or Generate config</li>
+</ol>
+</li>
+</ol>
+<p>Last round ties in RCV elections are very similar to ties in plurality elections.  Traditional tie breaking protocols may be employed if desired.  In all jurisdictions that defer to State law, except New York City, state law requires the use of lots to decide ties. New York City law defers to party committees in primary elections and appears to be silent on how to decide ties in other circumstances. New York City has decided to decide these ties by lot.</p>
+<p>The option of using "most votes in the previous round" here is likely more problematic than in last-place tie situations in that a tie break for the win is more likely to be subject to litigation.</p>
+</li>
+<li>
+<p>RCV threshold calculation (multi-winner, bottoms-up RCV w/ percentage threshold)</p>
+<ol>
+<li>Multi-winner thresholds<ol>
+<li>Whole number threshold aka Droop Quota or most common threshold (used in Eastpointe, Minneapolis, Cambridge, MA.)<ol>
+<li>Setting in RCTab: Threshold Calculation Method: Compute using most common threshold formula</li>
+</ol>
+</li>
+<li>Fractional threshold aka HB (Hagenbach Bischoff) Quota (not used in US elections, but detailed in CA. Senate Bill 1288, 2017, CA. Senate Bill 212, 2019)<ol>
+<li>Setting in RCTab: Threshold Calculation Method: Compute using HB Quota</li>
+</ol>
+</li>
+<li>Hare Quota (not used in official United States elections)<ol>
+<li>Setting in RCTab: Threshold Calculation Method: Compute using Hare Quota.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>Bottoms-up RCV with percentage threshold (used in Alaska, Hawaii, Kansas, and Wyoming) 2020 Democratic Presidential Primaries<ol>
+<li>Percentage of votes cast in a round<ol>
+<li>(for discussion of this scroll to the bottom of this section)</li>
+</ol>
+</li>
+<li>Setting in RCTab: Percentage Threshold</li>
+</ol>
+</li>
+</ol>
+<p>Multi-winner RCV uses a calculation based on the number of seats to be elected to determine what share of the votes cast in an election a candidate needs in order to win an election. That threshold is set by the formula floor(T=B/(S+1)+1) (for whole number thresholds),  T&gt;B/(S-1)+n (for fractional thresholds), or floor(T=B/S) (for Hare Quota)</p>
+<blockquote>
+<p>T = Threshold</p>
+<p>B = Number of Valid Ballots Cast in election</p>
+<p>S = Number of Seats to be Filled</p>
+<blockquote>
+<p>S is set by Number of Winners in RCTab.</p>
+</blockquote>
+<p>n = a fraction greater than 0 and less than 1</p>
+</blockquote>
+<p>In percentages, this means the Droop or HB threshold in a three-seat election is 25%+ , a four-seat election is 20%+, a five-seat election is ~16.67%+, and so on. The Hare threshold/quota in a three-seat election is ~33.3% , a four-seat election is 25%, a five-seat election is 20%, and so on.</p>
+<p>While single-winner contests under options 1(a), 1(b), and 1(c) involve whole number thresholds, i.e., one vote more than a majority, multi-winner contests may use either whole number or fractional thresholds.  This is due to the use of surplus transfers in multi-winner contests to credit a proportional share of extra votes a candidate receives (those above the threshold) to the next highest-ranked choice on ballots cast for a winner.</p>
+<p>Fractional thresholds provide for a higher degree of precision in deciding winners or eliminations.  For instance, in a three-seat contest where 300 votes are cast, would the threshold be 101, 100.1, 100.01, 100.001, etc. votes?  In most elections, such precision would make no difference, however, there are certainly cases where fractions of a vote could make the difference between winning, losing, or tying. This is particularly true in small elections or where there are numerous candidates, many of whom have weak support and the order of elimination is important.</p>
+<p>Some jurisdictions define the threshold as T&gt;B/(S+1) in which case the winner must receive a vote total greater than the threshold rather than greater than or equal to.</p>
+<p><br></p>
+<p>Calculating the threshold in bottoms-up RCV with percentage threshold is accomplished by multiplying the number of continuing ballots in a round of counting by the percentage threshold set for that election.</p>
+<blockquote>
+<p>T = B * P</p>
+<div class="highlight"><pre><span></span><code>T = Threshold
+</code></pre></div>
+<p>B = Number of continuing ballots in a round</p>
+<p>P = Percentage threshold for this election.</p>
+<blockquote>
+<p>P is set by Percentage Threshold in RCTab</p>
+</blockquote>
+<p><br>
+For example, if the percentage threshold is 15% and 2000 ballots count in a round of counting, the threshold will be 300 votes.</p>
+</blockquote>
+</li>
+<li>
+<p>Multi-winner RCV surplus transfers</p>
+<ol>
+<li>Fractional transfers (used in Eastpointe, MI, Minneapolis, CA.SB 1288, 2017, CA. SB 212, 2019)<ol>
+<li>All multi-winner RCTab Winner Election Modes use fractional transfer.</li>
+</ol>
+</li>
+<li>Whole ballot transfer (used in Cambridge, MA.)<ol>
+<li>Not included in RCTab</li>
+</ol>
+</li>
+</ol>
+<p>Candidates elected in multi-winner RCV elections frequently receive more votes than they need to win an election. These votes in excess of the threshold are called "surplus votes."</p>
+<p>To ensure proportionality in multi-winner RCV elections, those surplus votes are transferred to later-ranked candidates on ballots counting for the candidate with a surplus. Only continuing candidates (those candidates not yet elected or eliminated) can receive surplus votes.</p>
+<p>There are two main methods of surplus transfer:</p>
+<ol>
+<li>
+<p>Whole ballot transfers, where whole votes (each counting for one vote) transfer to a different candidate, instead of counting for the candidate with a surplus, until the candidate with a surplus has only as many votes as required by the threshold; or,</p>
+</li>
+<li>
+<p>Fractional transfers, where a fraction of every vote counting for a candidate with a surplus is transferred to later-ranked candidates on those ballots, until the candidate with a surplus has only as many votes as required by the threshold.</p>
+</li>
+</ol>
+<p>Whole ballot transfers are currently used in Cambridge, MA elections. Whole ballot transfers are disfavored because they are not guaranteed to proportionally distribute a candidate’s surplus to the other candidates ranked on each voter’s ballot.</p>
+<p>Fractional transfers are currently used in Minneapolis, MN elections using a transfer method known as the "Weighted Inclusive Gregory Method" (WIGM). Here is a brief example showing how that transfer method works:</p>
+<p>Take a three-seat election with 100 votes cast. The threshold is 25+, from the formula T≥100/(3+1)+n.</p>
+<p>The Threshold is the number of valid ballots (B) divided by the number of seats to be filled (S), plus 1. n, as noted above, is some small amount between zero and one. In this case the threshold could be a fraction of a vote more than the 25 votes in our example.</p>
+<p><strong>How do we obtain a fraction of a vote?</strong></p>
+<blockquote>
+<p>First, Calculate a "Surplus Fraction." This is the candidate's extra votes (above the threshold) / the candidate's total votes.</p>
+<p>Surplus Fraction (SF) = Candidate's extra votes/Candidate's total votes</p>
+<p>e.g.: T = 25+, Candidate's total votes = 31</p>
+<p>SF = (31-25)/31 = 6/31 = .1935[*]</p>
+<p><br></p>
+<p>With a threshold of 25 votes and a candidate who received 31 votes, the surplus fraction would be 6/31 or .1935.</p>
+<p><strong>This becomes the "Transfer Value" to apply to each ballot's share of the surplus.</strong></p>
+<p>Next, each of the 31 voters' next highest-ranked choice receives .1935 of a vote as the "transfer value" of the surplus.</p>
+<p>This "transfers" 5.9985 (31 x .1935) votes to other candidates, leaving the winning candidate with 25.0015 votes, which is &gt;25 or the Threshold.</p>
+<p>No preferences are wasted, the order of counting is not a factor and each voter's ballot shares equally in the surplus.</p>
+</blockquote>
+<p>If the last seat(s) in a multi-winner contest is filled and a vote surplus exists, this surplus can be redistributed, leaving all candidates with vote totals equal to the threshold.  In general, neither the size of a vote surplus nor the order in which candidates are declared elected has any substantive meaning in multi-winner elections.  What is important is which candidates achieve the threshold number of votes.</p>
+<blockquote>
+<p>In our example, 25.0001 would be the smallest number ≥ to 25, thus, all winners would receive 25.0001 votes and any remainder would be a "residual surplus" (not counting for any candidate) due to rounding.</p>
+</blockquote>
+<p>There are other methods of fractional surplus transfer, but none are used in the United States, so we do not cover them here. All international uses of multi-winner RCV (used in Australia, Ireland, Malta, New Zealand, Northern Ireland, and Scotland) use fractional transfers.</p>
+</li>
+<li>
+<p>How many surpluses to transfer at once (multi-winner RCV)</p>
+<ol>
+<li>Transfer one surplus at a time (used in Cambridge, Eastpointe, Minneapolis)<ol>
+<li>Setting in RCTab: Winner Election Mode: Multi-winner allow only one winner per round</li>
+</ol>
+</li>
+<li>Transfer all possible surpluses at once (referenced in California legislation CA SB 1288 2017, CA SB 212 2019)<ol>
+<li>Setting in RCTab: Winner Election Mode: Multi-winner allow multiple winners per round</li>
+</ol>
+</li>
+</ol>
+<p>It is possible for multiple candidates to cross the threshold of election in a single round in multi-winner ranked choice voting. If that occurs, there are two questions to answer: how many surpluses can transfer at once? And, if only one surplus can transfer, which one transfers?</p>
+<p>There are two options for transferring surpluses: transfer just one surplus or transfer all available surpluses. If just one surplus will transfer, then the largest surplus (the candidate with the most votes) transfers. If multiple surpluses will transfer, then all surplus votes transfer at once based on each individual winning candidate’s transfer value (as described in (9) above). Votes transferring from winning candidates can transfer only to candidates still in the contest – if a winning candidate (a candidate transferring surplus or a candidate elected in a previous round) is ranked on a ballot, that ranking will be skipped in any surplus transfer. Eliminated candidates also cannot receive surplus votes.</p>
+<p>If, when transferring one surplus at a time, two or more candidates cross the threshold with a surplus and have surpluses of the same size, a tiebreaker will be needed to determine whose surplus transfers first. The tie-breaking protocols laid out above in (6) and (7) are sufficient here.</p>
+</li>
+<li>
+<p>Miscellaneous rules/notes</p>
+<ol>
+<li>Precinct Tabulation<ol>
+<li>Setting in RCTab: Tabulate by Precinct</li>
+</ol>
+</li>
+<li>Decimal places for vote counting<ol>
+<li>Setting in RCTab: Decimal places for vote counting</li>
+</ol>
+</li>
+<li>Number of rankings on a ballot<ol>
+<li>Setting in RCTab: Maximum number of candidates that can be ranked</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="precinct-tabulation">Precinct Tabulation<a class="headerlink" href="#precinct-tabulation" title="Permanent link">&para;</a></h2>
+<p>Precinct-level results in ranked choice voting elections are similar to precinct results in plurality elections: they show how many votes each candidate got in a given precinct. RCV precinct-level results differ from plurality results in two important ways, however:</p>
+<ol>
+<li>They are calculated round by round;</li>
+<li>They depend on jurisdiction-wide results.</li>
+</ol>
+<p>First: as with full results from a ranked choice voting election, precinct-level  ranked choice voting results must show the results of each round of counting. Reporting precinct-level results can be done using reporting methods similar to those used for the full RCV count, with a spreadsheet breaking down each round of counting. Examples of this are included later in this discussion. <a href="https://www.urbanresearchmaps.org/nycrcv2021/">More detailed visualizations</a> have been produced as well.</p>
+<p>Second: ranked choice voting is calculated on a jurisdiction-wide level. In practice, that means precinct-level results in RCV provide somewhat different information from precinct-level results in a plurality election.</p>
+<p>For example, in a plurality election with three candidates (Candidates A, B, and C), 1000 votes are cast. Candidate A receives 400 votes, Candidate B receives 350 votes, and Candidate C receives 250 votes. To illustrate:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Election Results</th>
+<th style="text-align: left;">Vote Totals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Candidate A</strong></td>
+<td style="text-align: left;">400</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Candidate B</strong></td>
+<td style="text-align: left;">350</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Candidate C</strong></td>
+<td style="text-align: left;">250</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total Votes</strong></td>
+<td style="text-align: left;">1000</td>
+</tr>
+</tbody>
+</table>
+<p>Candidate A wins the election. Candidates A, B, and C may win different precincts, however.</p>
+<p>For example, there may be a precinct where Candidate C is very popular:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Precinct 3 Results</th>
+<th style="text-align: left;">Vote Totals</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Candidate A</strong></td>
+<td style="text-align: left;">20</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Candidate B</strong></td>
+<td style="text-align: left;">30</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Candidate C</strong></td>
+<td style="text-align: left;">50</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total Votes in Precinct</strong></td>
+<td style="text-align: left;">100</td>
+</tr>
+</tbody>
+</table>
+<p>We generally say that candidate C lost the contest but won this precinct.</p>
+<p>Compare this with an RCV election with this same set of candidates (A, B, and C). Again, 1000 votes are cast. Candidate A receives 400 first choices, B receives 350 first choices, and C receives 250 first choices. Because Candidate C has the fewest first choices, C is eliminated. Their votes then transfer to the next candidate ranked on each ballot. Candidate A receives 150 votes and Candidate B receives 100 votes. Candidate A wins with 550 votes and Candidate B winds up with 450 votes. To illustrate:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Round-By-Round Results</th>
+<th style="text-align: left;">Round 1</th>
+<th style="text-align: left;">Transfer</th>
+<th style="text-align: left;">Round 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Candidate A</td>
+<td style="text-align: left;">400</td>
+<td style="text-align: left;">+150</td>
+<td style="text-align: left;">550</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate B</td>
+<td style="text-align: left;">350</td>
+<td style="text-align: left;">+100</td>
+<td style="text-align: left;">450</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate C</td>
+<td style="text-align: left;">250</td>
+<td style="text-align: left;">-250</td>
+<td style="text-align: left;">0</td>
+</tr>
+</tbody>
+</table>
+<p>There may be a precinct where Candidate C leads in first choices. In this precinct, Candidate C may have 50 first choices, Candidate B may have 30, and Candidate A may have 20. Candidate C may lead in the precinct but, because C has the fewest votes in the contest as a whole, they are eliminated, and their votes transfer.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Precinct 3 Round-By-Round Results</th>
+<th style="text-align: left;">Round 1</th>
+<th style="text-align: left;">Transfer</th>
+<th style="text-align: left;">Round 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Candidate A</td>
+<td style="text-align: left;">20</td>
+<td style="text-align: left;">+35</td>
+<td style="text-align: left;">55</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate B</td>
+<td style="text-align: left;">30</td>
+<td style="text-align: left;">+15</td>
+<td style="text-align: left;">45</td>
+</tr>
+<tr>
+<td style="text-align: left;">Candidate C</td>
+<td style="text-align: left;">50</td>
+<td style="text-align: left;">-50</td>
+<td style="text-align: left;">0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Total votes in Precinct</td>
+<td style="text-align: left;">100</td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">100</td>
+</tr>
+</tbody>
+</table>
+<p>In ranked choice voting, Candidate C led this precinct in the first round but, because they lost the contest, was eliminated and had their votes transfer. Because they were eliminated and their votes transferred, Candidate A wound up winning this precinct.</p>
+<h2 id="decimal-places">Decimal Places<a class="headerlink" href="#decimal-places" title="Permanent link">&para;</a></h2>
+<p>The number of decimal places to use for voting counting is a detailed, granular decision relevant only to proportional RCV elections. Setting this makes it possible to hand count proportional RCV elections, because the fractions involved in multi-winner RCV can become unwieldy for a human to manage. All RCV jurisdictions in the US that have made this decision have set the number of decimal places at 4. It may be possible to remove the decimal place limitation on proportional RCV elections, but that would make those elections more challenging to replicate in a hand count.</p>
+<p>The rounding required to stick to the number of decimal places set for a given multi-winner RCV election can mean that the/a vote value is rounded away. That vote value is recorded as "residual votes" in multi-winner RCV elections in RCTab.</p>
+<h2 id="rankings-on-the-ballot">Rankings on the Ballot<a class="headerlink" href="#rankings-on-the-ballot" title="Permanent link">&para;</a></h2>
+<p>The number of rankings on an RCV ballot varies across the United States. The most rankings permitted in an RCV election in the United States is 27 (the 2017 Cambridge City Council contest). Most RCV jurisdictions in the US allow voters to rank between 3 and 10 candidates. These ranking limitations may have an impact on how many votes to exhaust - if there are many candidates in a contest and voters have a limited number of rankings, it is likely that more ballots will run out of candidates as more candidates are eliminated in the round-by-round count. More rankings likely means fewer exhausted ballots.</p>
+<h2 id="glossary-of-terms">Glossary of Terms<a class="headerlink" href="#glossary-of-terms" title="Permanent link">&para;</a></h2>
+<table>
+    <thead>
+        <tr>
+            <th colspan="2" style="text-align: center;">Glossary of Terms</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr id="batch-elimination-definition">
+            <td><strong>batch elimination</strong></td>
+            <td>
+                <p>A simultaneous defeat of multiple continuing contest options for which it is mathematically impossible to be elected or to prevail.</p>
+                <div>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>Rule (eliminate the set of one or more candidates C1, C2, C3….Cn if sum of all votes for C1….Cn &lt; votes for candidate B and votes for B &lt; votes for candidate)</p>
+                        <p>If a specified candidate satisfies both of the following conditions, then all candidates with fewer votes may be designated as defeated:</p>
+                        <ol>
+                            <li>At least one other candidate has at least as many votes as the specified candidate.</li>
+                            <li>The specified candidate has more votes than the total votes for all candidates with fewer votes.</li>
+                        </ol>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>continuing ballot</strong></td>
+            <td>A ballot that will be processed in the current contest RCV round.</td>
+        </tr>
+        <tr>
+            <td><strong>continuing contest option</strong></td>
+            <td>A qualified candidate, measure, issue, or other contest option that has not yet been elected, approved, or eliminated in the current round or instance of RCV contest processing.</td>
+        </tr>
+        <tr id="exhausted-ballot-definition">
+            <td><strong>exhausted ballot</strong></td>
+            <td>
+                <p>A ballot encountered in a round of RCV processing of a contest that has no further valid rankings of continuing contest options or that contains a condition in a subsequent choice that invalidates further consideration of the ballot.</p>
+                <p>Equivalent term: <a href="tabulation_options_for_rcv_tabulation.html#inactive-ballot-definition">Inactive Ballot</a></p>
+                <div id="exhausted-ballot-discussion">
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>The term ‘exhausted ballot’ is the term in use and in practice, in legislation and other authoritative elections official and election administrator documents including RFPs, RFIs, manuals, and documentation as well as in use in the discourse in the field. Therefore, this term is preserved to achieve the purpose, goals, and benefits of this standard. </p>
+                        <p>In Multi-Pass IRV all ballots, including exhausted ballots, are revived when beginning the count to fill a second or later seat.</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>highest-ranked continuing contest option</strong></td>
+            <td>The next preferred continuing contest option on a given ranked ballot.</td>
+        </tr>
+        <tr>
+            <td><strong>highest continuing ranking</strong></td>
+            <td>The ranking on a voter's ballot with the lowest numerical value or the next highest position in sequence for a continuing RCV contest option.</td>
+        </tr>
+        <tr>
+            <td id="inactive-ballot-definition"><strong>inactive ballot</strong></td>
+            <td>
+                <p>Equivalent to <a href="tabulation_options_for_rcv_tabulation.html#exhausted-ballot-definition">Exhausted Ballot.</a></p>
+                <div>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>See also: <a href="tabulation_options_for_rcv_tabulation.html#exhausted-ballot-discussion">Discussion for Exhausted Ballot.</a></p>
+                        <p>The term “Exhausted Ballot” is used extensively as a term of art in the RCV legislation, local jurisdiction artifacts, contracts, RFPs, and therefore in the field. Therefore, for the purpose of NIST SP 1500-107 we preserve this as a key existing label for the same concept as the newly and uniquely coined Inactive Ballot term.</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>majority of votes</strong></td>
+            <td>
+                <p>Greater than 50-percent of the votes counted for a contest for all continuing contest options in an RCV round.</p>
+                <div>
+                    <strong>Technical Definition</strong>
+                    <blockquote>
+                        <p>majorityOfVotes = (sum(aggregate(votesContinuing)) / 2) + 1</p>
+                    </blockquote>
+                    <br>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>“Majority of votes” shall mean fifty percent (50%) plus one of the votes cast on continuing ballots. (San Leandro)</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>mathematically impossible to be elected or prevail</strong></td>
+            <td>
+                <p>A contest option in an RCV contest where the current vote total plus all votes that could possibly be transferred to it in future rounds would not be sufficient to surpass the contest option with the next higher current vote total.</p>
+                <div>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>See <a href=tabulation_options_for_rcv_tabulation.html#batch-elimination-definition>Batch Elimination</a> for operation.</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>overvote</strong></td>
+            <td>
+                <p>Occurs when the number of selections made by a voter in a contest is more than the maximum number allowed.</p>
+                <div>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>As applied to RCV, overvotes may result in a skipped selection rather than a lost vote. The consequences of the overvote depend on the RCV rule being applied.</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>overvote RCV ranking</strong></td>
+            <td>A ranking assigned to more than one contest option.</td>
+        </tr>
+        <tr>
+            <td><strong>ranking, RCV</strong></td>
+            <td>The number or position selected for a contest option to indicate a voter's ranked preference for that option.</td>
+        </tr>
+        <tr>
+            <td><strong>repeated ranking</strong></td>
+            <td>
+                <p>Selection of more than one ranking for the same contest option for the contest being counted.</p>
+                <div>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>Sometimes referred to as Duplicate Ranking. Not to be confused with "duplicate ranking" when that term is used to refer to an overvote.</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>residential surplus</strong></td>
+            <td>Any vote value lost due to rounding/truncation during the surplus transfer process.</td>
+        </tr>
+        <tr>
+            <td><strong>round of counting or round</strong></td>
+            <td>
+                <p>A round is a subprocess in the tabulation process during which current votes for all continuing contest options are counted in accordance with the applicable tabulation method counting rules.</p>
+                <div>
+                    <strong>Technical Definition</strong>
+                    <blockquote>
+                        <p>A round is a subprocess in the  tabulation counting process during which current votes for all continuing contest options are counted in accordance with the applicable tabulation method counting rules.</p>
+                        <p>A round is for the purpose of determining the following:</p>
+                        <ul>
+                            <li>whether a contest option has achieved a majority or a threshold,</li>
+                            <li>whether and which contest option or contest options are to be eliminated.</li>
+                            <li>redistribution of surplus in a multi-winner contest.</li>
+                        </ul>
+                    </blockquote>
+                    <br>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>A round is for the purpose of determining the following:</p>
+                        <ul>
+                            <li>whether a contest option has achieved a majority or a threshold;</li>
+                            <li>whether and which contest option or contest options are to be eliminated; or</li>
+                            <li>redistribution of surplus in a multi-winner contest.</li>
+                        </ul>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>skipped ranking, RCV</strong></td>
+            <td>When a voter omits a ranking and ranks a contest option at a subsequent ranking.</td>
+        </tr>
+        <tr>
+            <td><strong>surplus</strong></td>
+            <td>
+                <p>The number of votes cast for a contest option in excess of the number required to meet or exceed the applicable threshold rule. </p>
+                <div>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>Applies to multi-winner RCV, aka STV</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>surplus fraction</strong></td>
+            <td>
+                <p>The proportion of each vote to be transferred when a surplus is transferred.</p>
+                <div>
+                    <strong>Technical Definition</strong>
+                    <blockquote>
+                        <p>The quotient, rounded down to n decimal places, of a contest option’s surplus divided by the total number of votes for the contest option in the round in which the surplus occurs.</p>
+                    </blockquote>
+                    <br>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>Applies to multi-winner RCV, aka STV</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td><strong>threshold/quota, RCV</strong></td>
+            <td>The number of votes that are sufficient for a contest option to prevail. In STV, it is also the point at or above which additional votes for a contest option are considered to be surplus.</td>
+        </tr>
+        <tr>
+            <td><strong>transfer value</strong></td>
+            <td>
+                <p>The transfer value of a ballot is the one vote or portion of a vote that the ballot will contribute to the vote total for the ballot’s highest-ranked continuing contest option after a surplus transfer or elimination of one or more contest options.</p>
+                <div>
+                    <strong>Discussion</strong>
+                    <blockquote>
+                        <p>When used in surplus transfer, the product, rounded down to n decimal places, of a ballot’s value multiplied by a contest option’s surplus fraction.</p>
+                    </blockquote>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="user_guide.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Guide">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                User Guide
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="process_ranked_choice_voting_contest.html" class="md-footer__link md-footer__link--next" aria-label="Next: Process Ranked Choice Voting Contest">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Process Ranked Choice Voting Contest
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tabs", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../assets/external/unpkg.com/mermaid@11/dist/mermaid.min.js"></script>
+      
+    
+  </body>
+</html>

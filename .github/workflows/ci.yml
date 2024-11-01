@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-      - github-pages  # Add this to test the PR branch
+      - test-releases/**  # Triggers on branches under 'test-releases/'
 
 permissions:
   contents: write
@@ -19,42 +19,67 @@ jobs:
 
       - name: Configure Git Credentials
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
       - name: Set up Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: Install pipx
-        run: |
-          python3 -m pip install --user pipx
-          python3 -m pipx ensurepath
-
-      - name: Install Poetry via pipx
-        run: |
-          pipx install poetry==1.8
-          echo "${HOME}/.local/bin" >> $GITHUB_PATH
-
-      - name: Set cache ID
-        run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-
-      - name: Cache Dependencies
-        uses: actions/cache@v4
-        with:
-          path: |
-            .cache
-            $HOME/.cache/pypoetry/cache
-            $HOME/.cache/pypoetry/virtualenvs
-          key: mkdocs-material-${{ runner.os }}-${{ env.cache_id }}-${{ hashFiles('**/poetry.lock') }}
-          restore-keys: |
-            mkdocs-material-${{ runner.os }}-
-
       - name: Install Dependencies
         run: |
+          python3 -m pip install --upgrade pip
+          pip install pipx
+          pipx install poetry==1.8
+          echo "${HOME}/.local/bin" >> $GITHUB_PATH
           poetry install --no-dev --no-interaction --no-ansi
 
-      - name: Build and Deploy
+      # Manually define the versions here
+      - name: Define Version Variables
         run: |
-          poetry run mkdocs gh-deploy --force
+          # Manually define the versions
+          # Update these values as needed
+          echo "RCTAB_VERSION=1.3.2" >> $GITHUB_ENV
+          echo "DOC_VERSION=doc2.0" >> $GITHUB_ENV
+
+      - name: Build Documentation
+        env:
+          RCTAB_VERSION: ${{ env.RCTAB_VERSION }}
+          DOC_VERSION: ${{ env.DOC_VERSION }}
+        run: |
+          # Build the documentation
+          poetry run mkdocs build --clean --site-dir "site"
+
+      - name: Deploy Documentation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RCTAB_VERSION: ${{ env.RCTAB_VERSION }}
+          DOC_VERSION: ${{ env.DOC_VERSION }}
+        run: |
+          # Clone the gh-pages branch
+          git clone --depth 1 --branch gh-pages "https://${{ github.actor }}:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git" gh-pages
+          cd gh-pages
+
+          # Create the target directory
+          TARGET_DIR="${RCTAB_VERSION}/${DOC_VERSION}"
+          mkdir -p "$TARGET_DIR"
+
+          # Copy the new documentation
+          rsync -av --delete ../site/ "$TARGET_DIR/"
+
+          # Handle 'latest' aliases
+          if [[ "${DOC_VERSION}" == "latest" ]]; then
+            # Update the overall 'latest' directory
+            rm -rf latest
+            cp -r "$TARGET_DIR" latest
+
+            # Update the 'latest' directory under RCTAB_VERSION
+            rm -rf "${RCTAB_VERSION}/latest"
+            cp -r "$TARGET_DIR" "${RCTAB_VERSION}/latest"
+          fi
+
+          # Commit and push changes
+          git add .
+          git commit -m "Deploy docs for RCTab ${RCTAB_VERSION} ${DOC_VERSION}" || echo "No changes to commit"
+          git push origin gh-pages

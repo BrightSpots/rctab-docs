@@ -1,4 +1,4 @@
-name: Deploy Documentation
+name: Build Documentation
 
 on:
   push:
@@ -7,19 +7,12 @@ on:
       - github-pages  # Adjust as needed
 
 permissions:
-  contents: write
+  contents: read  # Only needs read permission since we're not pushing
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./deployed-sites
-          publish_branch: github-pages

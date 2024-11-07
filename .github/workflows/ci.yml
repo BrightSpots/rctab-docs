@@ -65,7 +65,7 @@ jobs:
 
             # Replace placeholders in mkdocs.yml
             RELEASE_VERSION=${BRANCH#releases/}
-            sed -i "s/{{ release_version }}/${RELEASE_VERSION}/g" mkdocs.yml
+            sed -i "s|{{ release_version }}|${RELEASE_VERSION}|g" mkdocs.yml
 
             # Install dependencies
             poetry install --no-dev --no-interaction --no-ansi

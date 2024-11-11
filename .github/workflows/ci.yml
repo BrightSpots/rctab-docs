@@ -1,94 +1,82 @@
-name: Deploy Documentation
+name: Deploy Prebuilt MkDocs Sites
 
 on:
   push:
     branches:
-      - main
-      - github-pages
-      - 'releases/**'  # Trigger on changes to any release branch
+      - releases/**
+
+  workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+  contents: write  # Allows pushing to gh-pages branch
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout Code
+      # Step 1: Set Variables
+      - name: Set Variables
+        id: vars
+        run: |
+          echo "GITHUB_REF=${GITHUB_REF}"
+          BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+          echo "Branch name: $BRANCH_NAME"
+
+          # Manual mapping
+          if [ "$BRANCH_NAME" == "releases/1.3.2/doc2.0" ]; then
+            DEPLOY_DIR="1.3.2/doc2.0"
+          elif [ "$BRANCH_NAME" == "releases/1.999/doc0.1" ]; then
+            DEPLOY_DIR="1.999/doc0.1"
+          else
+            echo "Branch $BRANCH_NAME is not configured for deployment."
+            exit 0  # Exit gracefully if the branch is not in the mapping
+          fi
+
+          echo "Deployment directory: $DEPLOY_DIR"
+
+          # Set outputs
+          echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
+          echo "deploy_dir=$DEPLOY_DIR" >> $GITHUB_OUTPUT
+
+      # Step 2: Checkout the source branch
+      - name: Checkout Source Branch
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0  # Fetch all history to access all branches
+          ref: ${{ steps.vars.outputs.branch_name }}
+          path: source_branch  # Use a separate directory
 
-      - name: Set up Python 3.11
-        uses: actions/setup-python@v5
+      # Step 3: Checkout gh-pages Branch
+      - name: Checkout gh-pages Branch
+        uses: actions/checkout@v4
         with:
-          python-version: '3.11'
+          ref: gh-pages
+          path: gh-pages
+          fetch-depth: 0  # Ensure full history is fetched
 
-      - name: Install pipx and Poetry
+      # Step 4: Deploy Site
+      - name: Deploy Site
         run: |
-          python3 -m pip install --user pipx
-          python3 -m pipx ensurepath
-          pipx install poetry==1.8
-          echo "${HOME}/.local/bin" >> $GITHUB_PATH
+          DEPLOY_DIR="${{ steps.vars.outputs.deploy_dir }}"
+          echo "Deploying to gh-pages/$DEPLOY_DIR"
 
-      - name: Install Dependencies
+          mkdir -p gh-pages/"$DEPLOY_DIR"
+          rm -rf gh-pages/"$DEPLOY_DIR"/*
+
+          cp -a source_branch/site/* gh-pages/"$DEPLOY_DIR"/
+
+      # Step 5: Commit and Push Changes
+      - name: Commit and Push Changes
+        working-directory: gh-pages
         run: |
-          poetry install --no-dev --no-interaction --no-ansi
+          git config user.name "${{ github.actor }}"
+          git config user.email "${{ github.actor }}@users.noreply.github.com"
 
-      - name: Build Documentation for Release Branches
-        env:
-          RELEASE_BRANCHES: ${{ steps.get_branches.outputs.branches }}
-        run: |
-          # Get list of release branches
-          RELEASE_BRANCHES=$(git branch -r | grep 'origin/releases/' | sed 's|origin/||')
-          echo "Found release branches:"
-          echo "${RELEASE_BRANCHES}"
+          git add "$DEPLOY_DIR"
 
-          # Prepare a directory to collect all built sites
-          mkdir -p combined_site
-
-          # Loop over each release branch
-          for BRANCH in ${RELEASE_BRANCHES}; do
-            echo "Building documentation for ${BRANCH}"
-            # Create a working directory for this branch
-            mkdir -p workdir/${BRANCH}
-            cd workdir/${BRANCH}
-
-            # Checkout the release branch
-            git init
-            git remote add origin https://github.com/${{ github.repository }}.git
-            git fetch origin ${BRANCH}
-            git checkout -b ${BRANCH} origin/${BRANCH}
-
-            # Replace placeholders in mkdocs.yml
-            RELEASE_VERSION=${BRANCH#releases/}
-            sed -i "s|{{ release_version }}|${RELEASE_VERSION}|g" mkdocs.yml
-
-            # Install dependencies
-            poetry install --no-dev --no-interaction --no-ansi
-
-            # Build the site
-            poetry run mkdocs build --clean --site-dir "../../../combined_site/${RELEASE_VERSION}"
-
-            # Return to root directory
-            cd ../../../
-
-          done
-
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          path: combined_site
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v1
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "Deploy $DEPLOY_DIR from ${{ steps.vars.outputs.branch_name }}"
+            git push origin gh-pages
+          fi

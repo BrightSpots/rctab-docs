@@ -119,8 +119,8 @@ We use a documentation versioning scheme that aligns with, but remains independe
    - **Update `mkdocs.yml`** with the correct site name and version:
 
      ```yaml
-     site_name: "RCTab Documentation"
-     site_version: "2.0.1-doc1.0"
+     site_name: 'RCTab Documentation - 2.0.1/doc1.0'
+     site_url: 'https://brightspots.github.io/rctab-docs/2.0.1/doc1.0/'
      ```
    
    - **Update the `index.md` file** with the new documentation version:

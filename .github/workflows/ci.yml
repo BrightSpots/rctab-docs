@@ -1,18 +1,25 @@
-name: Build Documentation
+name: Deploy Documentation from Subdirectory
 
 on:
   push:
     branches:
-      - main
-      - github-pages  # Adjust as needed
+      - github-pages  # Trigger on pushes to the github-pages branch
 
 permissions:
-  contents: read  # Only needs read permission since we're not pushing
+  contents: read
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4
+
+      - name: Deploy from deployed-sites
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./deployed-sites
+          publish_branch: github-pages  # Use the same branch for deployment
+          keep_files: true  # Ensures that it doesn’t delete existing files outside deployed-sites

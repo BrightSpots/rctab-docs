@@ -2,6 +2,13 @@
 
 This project documents RCTab, an open source application for tabulating ranked choice voting elections.
 
+Users of RCTab will be interested in the RCTAab documentation located at the following links:
+
+- [RCTab 1.3.2 Documentation version 1.3.2-doc2.0](https://brightspots.github.io/rctab-docs/1.3.2/doc2.0/index.html) (latest RCTab documentation for latest public release of RCTab).
+- [RCTab 1.999 Documentation version 1.999-doc0.1](https://brightspots.github.io/rctab-docs/1.999/doc0.1/) (latest RCTab documentation for pre-release development of RCTab 2.0).
+
+The rest of this README is fairly technical and intended for developers and maintainers of the RCTab documentation. It provides instructions on how to set up the project, run tests, and release new documentation versions.
+
 ## Prerequisites
 
 This project uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) to manage and build RCTab's
@@ -108,10 +115,10 @@ We use a documentation versioning scheme that aligns with, but remains independe
 
    **Example Commands**:
 
-   /```
+   ```
    git checkout -b releases/2.0.1/doc1.0
    git push -u origin releases/2.0.1/doc1.0
-   /```
+   ```
 
 3. **Update the Documentation Content**
 
@@ -146,11 +153,11 @@ We use a documentation versioning scheme that aligns with, but remains independe
 
 4. **Commit and Push Changes**
 
-   /```
+   ```
    git add .
    git commit -m "Add documentation version 2.0.1-doc1.0"
    git push origin releases/2.0.1/doc1.0
-   /```
+   ```
 
 5. **Update the GitHub Actions Workflow**
 

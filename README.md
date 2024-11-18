@@ -2,7 +2,7 @@
 
 This project documents RCTab, an open source application for tabulating ranked choice voting elections.
 
-Users of RCTab will be interested in the RCTAab documentation located at the following links:
+Users of RCTab will be interested in the RCTab documentation located at the following links:
 
 - [RCTab 1.3.2 Documentation version 1.3.2-doc2.0](https://brightspots.github.io/rctab-docs/1.3.2/doc2.0/index.html) (latest RCTab documentation for latest public release of RCTab).
 - [RCTab 1.999 Documentation version 1.999-doc0.1](https://brightspots.github.io/rctab-docs/1.999/doc0.1/) (latest RCTab documentation for pre-release development of RCTab 2.0).

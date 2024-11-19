@@ -1,36 +1,20 @@
 # RCTab Documentations
 
-This project documents RCTab, an open source application for tabulating ranked choice voting elections.
+This GitHub project documents [RCTab](rcvresources.org/rctab), an open source application for tabulating ranked choice voting elections. This README is intended for developers and maintainers of the RCTab documentation. It provides instructions on how to set up the project, run tests, and release new documentation versions.
 
-Users of RCTab will be interested in the RCTab documentation located at the following links:
+If you are an actual user of RCTab and are looking for the documentation itself, those versions are released at the [RCTab documentation homepage](https://brightspots.github.io/rctab-docs/index.html).
 
-- [RCTab 1.3.2 Documentation version 1.3.2-doc2.0](https://brightspots.github.io/rctab-docs/1.3.2/doc2.0/index.html) (latest RCTab documentation for latest public release of RCTab).
-- [RCTab 1.999 Documentation version 1.999-doc0.1](https://brightspots.github.io/rctab-docs/1.999/doc0.1/) (latest RCTab documentation for pre-release development of RCTab 2.0).
+## Setting Up the Project
 
-The rest of this README is fairly technical and intended for developers and maintainers of the RCTab documentation. It provides instructions on how to set up the project, run tests, and release new documentation versions.
-
-## Prerequisites
-
+### Software Prerequisites
 This project uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) to manage and build RCTab's
 documentation.
 
 Before you can run and use MkDoc's features in this project, you need to have the following software installed:
 
-- Python (version 3.11 or higher)
-- Poetry (version 1.8 or higher)
+- [Python](https://www.python.org/downloads/) (version 3.11 or higher)
+- [Poetry](https://python-poetry.org/docs/#installation) (version 1.8 or higher)
 - `vim` and `vimdiff` (required to run an optional script)
-
-### Installing Python
-
-You can download and install Python from the [official Python website](https://www.python.org/downloads/).
-
-### Installing Poetry
-
-To install Poetry, you can follow the instructions from the
-[official Poetry documentation](https://python-poetry.org/docs/#installation).
-
-
-## Setting Up the Project
 
 ### Cloning the Repo
 
@@ -39,7 +23,7 @@ To clone the repo:
 git clone https://github.com/BrightSpots/rctab-docs.git
 ```
 
-### Installing Dependencies and Git Hooks
+### Installing Python Dependencies and Git Hooks
 
 First, navigate to the directory where the repository has been cloned (e.g. `cd ./rctab-docs`).
 
@@ -82,7 +66,7 @@ poetry run pytest
 
 We use a documentation versioning scheme that aligns with, but remains independent from, the RCTab software versioning. This allows for multiple documentation versions per RCTab release.
 
-**Documentation Versioning Scheme**: `[RCTab MAJOR.UPDATE_PATH.PATCH]-docX.Y`
+**Documentation Versioning Scheme**: `RCTab MAJOR.UPDATE_PATH.PATCH-docX.Y`
 
 - **Major Documentation Changes**: Increment `X` (e.g., from `doc1.0` to `doc2.0`).
   - **Triggers**: Certification and laboratory testing approvals, major content overhauls, new sections, significant updates.

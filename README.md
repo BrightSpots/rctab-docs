@@ -64,16 +64,14 @@ poetry run pytest
 
 ### Overview
 
-We use a documentation versioning scheme that aligns with, but remains independent from, the RCTab software versioning. This allows for multiple documentation versions per RCTab release.
+We use a documentation versioning scheme that aligns with, but remains independent from, the [RCTab software versioning](https://github.com/BrightSpots/rcv/wiki/RCTab-Versioning). This allows for multiple documentation versions per RCTab release.
 
-**Documentation Versioning Scheme**: `RCTab MAJOR.UPDATE_PATH.PATCH-docX.Y`
+**Documentation Versioning Scheme**: `RCTab v[RCTAB_VERSION_NUMBER]-docX.Y`
 
-- **Major Documentation Changes**: Increment `X` (e.g., from `doc1.0` to `doc2.0`).
+- **X**: Incremented for major documentation changes (e.g., from `doc1.0` to `doc2.0`).
   - **Triggers**: Certification and laboratory testing approvals, major content overhauls, new sections, significant updates.
-- **Minor Documentation Changes**: Increment `Y` (e.g., from `doc2.0` to `doc2.1`).
+- **Y**: Incremented for minor documentation changes (e.g., from `doc2.0` to `doc2.1`).
   - **Triggers**: Minor edits, typo corrections, small updates.
-- **Pre-release Documentation Versions**: Use `[RCTab MAJOR.UPDATE_PATH.PATCH]-doc0.b` until `[RCTab MAJOR.UPDATE_PATH.PATCH]-doc1.0`.
-  - **Example**: `1.999-doc0.1` for pre-release documentation of RCTab version `1.999`.
 
 ### Steps to Create a New Documentation Version
 

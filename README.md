@@ -14,7 +14,6 @@ Before you can run and use MkDoc's features in this project, you need to have th
 
 - [Python](https://www.python.org/downloads/) (version 3.11 or higher)
 - [Poetry](https://python-poetry.org/docs/#installation) (version 1.8 or higher)
-- `vim` and `vimdiff` (required to run an optional script)
 
 ### Cloning the Repo
 
@@ -256,6 +255,7 @@ You can obtain a permalink by navigating to the desired section or page in the d
 ## Useful scripts:
 
 ### Compare specific ranges of lines between two files using `vimdiff`
+requires `vim` and `vimdiff`
 
 Run:
 ```shell

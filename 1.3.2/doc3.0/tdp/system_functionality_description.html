@@ -1,0 +1,1474 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://brightspots.github.io/rctab-docs/1.3.2/doc3.0/tdp/system_functionality_description.html">
+      
+      
+        <link rel="prev" href="system_hardware_specification.html">
+      
+      
+        <link rel="next" href="acceptance_test_procedures.html">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.43">
+    
+    
+      
+        <title>System Functionality Description - RCTab Documentation (version 1.3.2-doc3.0)</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.0253249f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+        <script src="../assets/external/unpkg.com/iframe-worker/shim.js"></script>
+      
+    
+    
+      
+        
+        
+        
+        <link rel="stylesheet" href="../assets/external/fonts.googleapis.com/css.49ea35f2.css">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#section-04-system-functionality-description" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../index.html" title="RCTab Documentation (version 1.3.2-doc3.0)" class="md-header__button md-logo" aria-label="RCTab Documentation (version 1.3.2-doc3.0)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            RCTab Documentation (version 1.3.2-doc3.0)
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              System Functionality Description
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="purple"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="teal" data-md-color-accent="lime"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../index.html" class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="00_documentation_abstracts.html" class="md-tabs__link">
+          
+  
+  TDP
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../user_guide/user_guide.html" class="md-tabs__link">
+          
+  
+  User Guide
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../index.html" title="RCTab Documentation (version 1.3.2-doc3.0)" class="md-nav__button md-logo" aria-label="RCTab Documentation (version 1.3.2-doc3.0)" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    RCTab Documentation (version 1.3.2-doc3.0)
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../index.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    TDP
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            TDP
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="00_documentation_abstracts.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Documentation Abstract
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_overview.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Overview
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="software_design_and_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software Design and Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardware_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardware Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="system_functionality_description.html" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    System Functionality Description
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#hardware-functionality-and-recovery-requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Hardware Functionality and Recovery Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#vote-tabulating-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vote Tabulating Information
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="acceptance_test_procedures.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Acceptance Test Procedures
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_design_specifications.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Design Specifications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_security_specification_requirements.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Security Specification Requirements
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="design_and_interface_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Design and Interface Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_architecture.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Architecture
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="development_environment_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Development Environment Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_threat_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Threat Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="security_testing_and_vulnerability_analysis.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Security Testing and Vulnerability Analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_maintenance_manual.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Maintenance Manual
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="personnel_deployment_and_training.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Personnel Deployment and Training
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="l_and_a_testing.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    L&A Testing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_management_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration Management Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="quality_assurance_plan.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quality Assurance Plan
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_trusted_build_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Trusted Build Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_change_notes.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Change Notes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_hardening_procedures_-_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Hardening Procedures - Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="system_test_and_verification_specification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    System Test and Verification Specification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulation_options_for_rcv_tabulation.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulation Options for RCV Tabulation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="process_ranked_choice_voting_contest.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process Ranked Choice Voting Contest
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ballot_limitations_and_maximum_testing_range.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ballot Limitations & Maximum Testing Range
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="installation_instructions_for_windows_os.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Installation Instructions for Windows OS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="trusted_build_and_output_hash_verification.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Trusted Build & Output Hash Verification
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="tabulator_command_line_instructions.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tabulator Command Line Instructions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="configuration_file_parameters.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Configuration File Parameters
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_cvr_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab CVR Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_config_files.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Config Files
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="post-election_audit_and_clearing_rctab_from_system.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Post-Election Audit & Clearing RCTab from System
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_operator_log_messages.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab Operator Log Messages
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="rctab_system_tab_hints.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    RCTab System Tab Hints
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="coding_and_header_comment_standards_for_rctab.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Coding and Header Comment Standards for RCTab
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="secure_usb_process.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Secure USB Process
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-multi-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Multi-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="expected-outcome-rcv-test-sets-single-winner.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Expected Outcome RCV Test Sets Single-Winner
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="ranked-choice-voting-laws.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ranked Choice Voting Laws
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="22-month-archiving-procedure.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    22-Month Archiving Procedure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            User Guide
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../user_guide/user_guide.html" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    User Guide
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="section-04-system-functionality-description">Section 04 - System Functionality Description<a class="headerlink" href="#section-04-system-functionality-description" title="Permanent link">&para;</a></h1>
+<p>RCTab is developed to run using the Java Development Kit (JDK) version 17.0.2. The Java platform includes an execution engine, a compiler, and a set of libraries used by RCTab. For more information, see <a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a>.</p>
+<p>RCTab is designed to run as a stand-alone software compatible with Windows Operating System. Java 17 compatibility and system requirements are listed in the <a href="https://www.oracle.com/java/technologies/javase/products-doc-jdk17certconfig.html">Java 17 Compatibility Document</a>.</p>
+<p>RCTab is normally received by the user election jurisdictions as a fully-compiled program in a Trusted Build by contacting the relevant authority directly for directions and procedures to receive the Trusted Build.</p>
+<p>Git is the distributed version-control system used to track changes in the source code during software development. It is designed for coordinating work among programmers and is used to track changes in any set of the files. Its goals include speed, data integrity, and support for distributed, non-linear workflows. Here is a link to additional Git information: <a href="https://git-scm.com/doc/ext">Git External Documentation</a>.</p>
+<h2 id="hardware-functionality-and-recovery-requirements">Hardware Functionality and Recovery Requirements<a class="headerlink" href="#hardware-functionality-and-recovery-requirements" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>Restoration of the device to the operating condition existing immediately prior to an error or failure, without loss or corruption of voting data previously stored in the device</p>
+<p>RCTab relies upon exportable data from a jurisdiction’s voting system. Data operated upon by RCTab may be stored on external devices such as flash drives or copied directly into the memory of the hardware RCTab software is installed on. If RCTab fails while tabulating results, the original files used should not be altered because the Tabulator does not directly operate upon CVR data. However, any loss of data caused by a failure of RCTab or the hardware upon which RCTab is installed should be rectified by exporting a new copy of the same data from the jurisdiction’s voting system.</p>
+<p>If the hardware RCTab software is installed upon fails while tabulating results, a user should first restart the machine and RCTab and run the tabulation again. There is no persistent state of RCTab that would persist after a crash or after a machine restart.</p>
+<p>Original versions of voting data used in RCTab should be maintained on the jurisdiction’s voting systems for as long as required by jurisdiction rules. See <a href="system_design_specifications.html"><strong>Section 06 - System Design Specifications</strong></a> and <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> for more.</p>
+</li>
+<li>
+<p>Resumption of normal operation following the correction of a failure in a memory component, or in a data processing component, including the central processing unit.</p>
+<p>If the hardware RCTab software is installed upon fails while tabulating results, a user should first restart the machine and RCTab and run the tabulation again. If the hardware continues to fail, users should consult the documentation included with the hardware to determine any error resolution steps. See <a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a> for more.</p>
+</li>
+<li>
+<p>Recovery from any other external condition that causes equipment to become inoperable, provided that catastrophic electrical or mechanical damage due to external phenomena has not occurred</p>
+<p>If the hardware that RCTab is installed upon fails while tabulating results, a user should first restart the machine and RCTab and run the tabulation again. There is no persistent state of RCTab that would persist after a crash or after a machine restart. If failure persists, users should consult the documentation included with the hardware to determine any error resolution steps. See <a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a> for more.</p>
+</li>
+</ol>
+<h2 id="vote-tabulating-information">Vote Tabulating Information<a class="headerlink" href="#vote-tabulating-information" title="Permanent link">&para;</a></h2>
+<p>RCTab processes vote tabulation data exported from a jurisdiction’s voting systems according to the rules as set up in the configuration file used by the user when operating RCTab. See <a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a> for more.</p>
+<ol>
+<li>
+<p>Monitor system status and generate machine-level audit reports</p>
+<p>RCTab provides users system status information through the log box in the user interface and through log documents (both tabulation audit logs produced after successful tabulation and the operator log file, which is available in the /bin folder on Windows computers). Audit logs capture details of successful tabulations, including all configuration file details, CVR parsing information, details on how every ballot was processed in every round of counting, and summary round-by-round results. The operator log captures all messages produced by RCTab: those produced during a failed tabulation, messages sent during a successful tabulation, messages sent while validating configuration files, and any other messages sent via the log box in the user interface. See <a href="software_design_and_specifications.html"><strong>Section 02 - Software Design and Specifications</strong></a> for more about audit reports and system status reports.</p>
+</li>
+<li>
+<p>Accommodate device control functions performed by polling place officials and maintenance personnel</p>
+<p>Polling place officials will not interact with the RCTab software. Maintenance personnel should refer to <a href="system_maintenance_manual.html"><strong>Section 09 - System Maintenance Manual</strong></a> and <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> when interacting with RCTab. All device control functions are laid out in those materials.</p>
+</li>
+<li>
+<p>Register and accumulate votes</p>
+<p>RCTab processes digital cast vote records of ballots as cast by voters. Part of this requires the accumulation of cast vote record data; this is done in accordance with configuration requirements as set by users. See <a href="system_design_specifications.html"><strong>Section 06 - System Design Specifications</strong></a> and <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> for more information about how RCTab handles cast vote records.</p>
+</li>
+<li>
+<p>Accommodate variations in ballot counting logic</p>
+<p>RCTab relies upon cast-vote record data from a jurisdiction’s voting system. CVR data must be adjudicated before being processed by RCTab. That cast-vote record data will have varying types of ballot data depending on how voters marked their ballots and how ballots were adjudicated, including candidate names, overvoted markings, skipped rankings, undervoted ballots, and write-in markings. RCTab has settings for users to determine how each of these different types of markings is processed by the software. RCTab performs no interpretation of voter marks on ballots, however, as CVR data used in RCTab software will include only non-ambiguous marks and data representing how voters marked their ballots. See <a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a> and <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> for more information on the settings available to users for processing these varying voter marks.</p>
+<p>The only voting variation RCTab supports is ranked order voting. RCTab supports many permutations of ranked order voting (referred to as ranked choice voting in the documentation). See <a href="user_guide.html"><strong>Section 18 - User Guide</strong></a> for more information on the permutations and settings available to users.</p>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="system_hardware_specification.html" class="md-footer__link md-footer__link--prev" aria-label="Previous: System Hardware Specification">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                System Hardware Specification
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="acceptance_test_procedures.html" class="md-footer__link md-footer__link--next" aria-label="Next: Acceptance Test Procedures">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Acceptance Test Procedures
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["navigation.sections", "navigation.top", "navigation.footer", "navigation.tabs", "toc.integrate", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy"], "search": "../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.83f73b43.min.js"></script>
+      
+    
+  </body>
+</html>

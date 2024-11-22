@@ -10,6 +10,8 @@ Users should ensure instructions below have been followed and completed prior to
 
 Any interaction with RCTab, including producing configuration files, running tabulations, hashing results files, and transmission of files from RCTab on USB drives should follow transmission procedures required in the jurisdiction, including the use of a team with no less than two trained personnel. This document describes all interfaces and options in the RCTab software.
 
+> Note: this guide assumes that the user is using Windows.
+
 ## Launching RCTab
 
 The manufacturer recommends RCTab be installed as part of the pre-election preparation process.  In order to determine the appropriate launch procedure for a jurisdiction, users should consider the maximum possible number of votes that could occur in the event all eligible voters presented themselves to vote. Jurisdictions should, as part of their pre-election procedure, launch RCTab according to the relevant launch instructions described below to ensure they launch it in accordance with the below requirements. The manufacturer is available for support with this process. For acceptance testing and L&A procedures to set up and use of RCTab, see:

@@ -1,4 +1,5 @@
-site_name: RCTab Test Docs
+site_name: 'RCTab Documentation - {{ release_version }}'
+site_url: 'https://brightspots.github.io/rctab-docs/{{ release_version }}/'
 
 plugins:
   - offline # allows MKDocs to be used without a backend server

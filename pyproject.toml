@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "rctab-docs"
-version = "0.1.0"
+version = "0.0.0" # Versioning managed elsewhere
 description = ""
 authors = ["Ranked Choice Voting Resource Center"]
 readme = "README.md"
@@ -17,7 +17,7 @@ link-stripper = { path = "./scripts/mkdocs_plugins/link_stripper", develop = tru
 
 [tool.poetry.dev-dependencies]
 pytest = "^8.3.3"
-pytest-cov = "^5.0.0"
+pytest-cov = "^6.0.0"
 
 [build-system]
 requires = ["poetry-core"]

@@ -1,36 +1,19 @@
 # RCTab Documentations
 
-This project documents RCTab, an open source application for tabulating ranked choice voting elections.
+This GitHub project documents [RCTab](rcvresources.org/rctab), an open source application for tabulating ranked choice voting elections. This README is intended for developers and maintainers of the RCTab documentation. It provides instructions on how to set up the project, run tests, and release new documentation versions.
 
-Users of RCTab will be interested in the RCTAab documentation located at the following links:
+If you are an actual user of RCTab and are looking for the documentation itself, those versions are released at the [RCTab documentation homepage](https://brightspots.github.io/rctab-docs/index.html).
 
-- [RCTab 1.3.2 Documentation version 1.3.2-doc2.0](https://brightspots.github.io/rctab-docs/1.3.2/doc2.0/index.html) (latest RCTab documentation for latest public release of RCTab).
-- [RCTab 1.999 Documentation version 1.999-doc0.1](https://brightspots.github.io/rctab-docs/1.999/doc0.1/) (latest RCTab documentation for pre-release development of RCTab 2.0).
+## Setting Up the Project
 
-The rest of this README is fairly technical and intended for developers and maintainers of the RCTab documentation. It provides instructions on how to set up the project, run tests, and release new documentation versions.
-
-## Prerequisites
-
+### Software Prerequisites
 This project uses [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) to manage and build RCTab's
 documentation.
 
 Before you can run and use MkDoc's features in this project, you need to have the following software installed:
 
-- Python (version 3.11 or higher)
-- Poetry (version 1.8 or higher)
-- `vim` and `vimdiff` (required to run an optional script)
-
-### Installing Python
-
-You can download and install Python from the [official Python website](https://www.python.org/downloads/).
-
-### Installing Poetry
-
-To install Poetry, you can follow the instructions from the
-[official Poetry documentation](https://python-poetry.org/docs/#installation).
-
-
-## Setting Up the Project
+- [Python](https://www.python.org/downloads/) (version 3.11 or higher)
+- [Poetry](https://python-poetry.org/docs/#installation) (version 1.8 or higher)
 
 ### Cloning the Repo
 
@@ -39,7 +22,7 @@ To clone the repo:
 git clone https://github.com/BrightSpots/rctab-docs.git
 ```
 
-### Installing Dependencies and Git Hooks
+### Installing Python Dependencies and Git Hooks
 
 First, navigate to the directory where the repository has been cloned (e.g. `cd ./rctab-docs`).
 
@@ -80,38 +63,26 @@ poetry run pytest
 
 ### Overview
 
-We use a documentation versioning scheme that aligns with, but remains independent from, the RCTab software versioning. This allows for multiple documentation versions per RCTab release.
+We use a documentation versioning scheme that aligns with, but remains independent from, the [RCTab software versioning](https://github.com/BrightSpots/rcv/wiki/RCTab-Versioning). This allows for multiple documentation versions per RCTab release.
 
-**Documentation Versioning Scheme**: `[RCTab MAJOR.UPDATE_PATH.PATCH]-docX.Y`
+**Documentation Versioning Scheme**: `RCTab v[RCTAB_VERSION_NUMBER]-docX.Y`
 
-- **Major Documentation Changes**: Increment `X` (e.g., from `doc1.0` to `doc2.0`).
+- **X**: Incremented for major documentation changes (e.g., from `doc1.0` to `doc2.0`).
   - **Triggers**: Certification and laboratory testing approvals, major content overhauls, new sections, significant updates.
-- **Minor Documentation Changes**: Increment `Y` (e.g., from `doc2.0` to `doc2.1`).
+- **Y**: Incremented for minor documentation changes (e.g., from `doc2.0` to `doc2.1`).
   - **Triggers**: Minor edits, typo corrections, small updates.
-- **Pre-release Documentation Versions**: Use `[RCTab MAJOR.UPDATE_PATH.PATCH]-doc0.b` until `[RCTab MAJOR.UPDATE_PATH.PATCH]-doc1.0`.
-  - **Example**: `1.999-doc0.1` for pre-release documentation of RCTab version `1.999`.
 
 ### Steps to Create a New Documentation Version
 
 1. **Determine the New Documentation Version**
 
-   Decide on the new documentation version number based on the changes:
+   For the example commands in this `readme` we'll use version 2.0.1-doc1.0
 
-   - **Major Changes**: Increment `X`.
-   - **Minor Changes**: Increment `Y`.
-   - **Pre-release Versions**: Use `[RCTab MAJOR.UPDATE_PATH.PATCH]-doc0.b` until `[RCTab MAJOR.UPDATE_PATH.PATCH]-doc1.0`.
+3. **Create a New Release Branch**
 
-   **Examples**:
+   Create a new branch in the repository for the new documentation version. `rctab-docs` branches for the most part live indepently of others. Branch from a prior release that makes the most sense. 
 
-   - For a **pre-release** of RCTab version `1.999`, the documentation version would be `1.999-doc0.1`.
-   - For **pre-release documentation updates** to version `2.0.0`, the new version would be `2.0.0-doc0.1`.
-   - For a **minor update** to documentation version `1.3.2-doc2.0`, the new version would be `1.3.2-doc2.1`.
-
-2. **Create a New Release Branch**
-
-   Create a new branch in the repository for the new documentation version.
-
-   **Branch Naming Convention**: `releases/[RCTab_Version]/docX.Y`
+   **Branch Naming Convention**: `releases/[RCTAB_VERSION_NUMBER]/docX.Y`
 
    **Example Commands**:
 
@@ -120,7 +91,43 @@ We use a documentation versioning scheme that aligns with, but remains independe
    git push -u origin releases/2.0.1/doc1.0
    ```
 
-3. **Update the Documentation Content**
+4. **Update the GitHub Actions Workflow**
+
+   Update the `.github/workflows/ci.yml` file to include the new documentation version under the `#Manual mapping` `else-if`.
+
+   **Example**:
+
+   In the **Set Variables** step, add the new mapping:
+
+   ```yaml
+   - name: Set Variables
+     id: vars
+     run: |
+       echo "GITHUB_REF=${GITHUB_REF}"
+       BRANCH_NAME="${GITHUB_REF#refs/heads/}"
+       echo "Branch name: $BRANCH_NAME"
+
+       # Manual mapping
+       if [ "$BRANCH_NAME" == "releases/1.3.2/doc2.0" ]; then
+         DEPLOY_DIR="1.3.2/doc2.0"
+       elif [ "$BRANCH_NAME" == "releases/1.999/doc0.1" ]; then
+         DEPLOY_DIR="1.999/doc0.1"
+       elif [ "$BRANCH_NAME" == "releases/2.0.1/doc1.0" ]; then
+         DEPLOY_DIR="2.0.1/doc1.0"
+       else
+         echo "Branch $BRANCH_NAME is not configured for deployment."
+         exit 0  # Exit gracefully if the branch is not in the mapping
+       fi
+   ```
+
+   **Commit and Push the Workflow Update**:
+
+   ```
+   git add .github/workflows/deploy-prebuilt-sites.yml
+   git commit -m "Update workflow to include documentation version 2.0.1-doc1.0"
+   git push origin releases/2.0.1/doc1.0
+   ```
+5. **Update the Documentation Content**
 
    - **Modify the documentation source files** as needed.
    - **Update `mkdocs.yml`** with the correct site name and version:
@@ -151,60 +158,17 @@ We use a documentation versioning scheme that aligns with, but remains independe
 
      This will generate the `site` directory containing the static files.
 
-4. **Commit and Push Changes**
+6. **Commit and Push Changes**
+   This includes all ./site/* files.
 
    ```
    git add .
    git commit -m "Add documentation version 2.0.1-doc1.0"
    git push origin releases/2.0.1/doc1.0
    ```
+   This will trigger the `ci.yml` action on any `releases/**` branch. This action itself creates a separate commit of `./site/*` from the `releases/**` branch into the `gh-pages` branch.
 
-5. **Update the GitHub Actions Workflow**
-
-   Update the `.github/workflows/deploy-prebuilt-sites.yml` file to include the new documentation version.
-
-   **Note**: The GitHub action should be updated prior to the final commit on a release of the documentation.
-
-   **Example**:
-
-   In the **Set Variables** step, add the new mapping:
-
-   ```yaml
-   - name: Set Variables
-     id: vars
-     run: |
-       echo "GITHUB_REF=${GITHUB_REF}"
-       BRANCH_NAME="${GITHUB_REF#refs/heads/}"
-       echo "Branch name: $BRANCH_NAME"
-
-       # Manual mapping
-       if [ "$BRANCH_NAME" == "releases/1.3.2/doc2.0" ]; then
-         DEPLOY_DIR="1.3.2/doc2.0"
-       elif [ "$BRANCH_NAME" == "releases/1.999/doc0.1" ]; then
-         DEPLOY_DIR="1.999/doc0.1"
-       elif [ "$BRANCH_NAME" == "releases/2.0.1/doc1.0" ]; then
-         DEPLOY_DIR="2.0.1/doc1.0"
-       else
-         echo "Branch $BRANCH_NAME is not configured for deployment."
-         exit 0  # Exit gracefully if the branch is not in the mapping
-       fi
-
-       echo "Deployment directory: $DEPLOY_DIR"
-
-       # Set outputs
-       echo "branch_name=$BRANCH_NAME" >> $GITHUB_OUTPUT
-       echo "deploy_dir=$DEPLOY_DIR" >> $GITHUB_OUTPUT
-   ```
-
-   **Commit and Push the Workflow Update**:
-
-   ```
-   git add .github/workflows/deploy-prebuilt-sites.yml
-   git commit -m "Update workflow to include documentation version 2.0.1-doc1.0"
-   git push origin main
-   ```
-
-6. **Update the `index.html` File on the `gh-pages` Branch**
+7. **Update the `index.html` File on the `gh-pages` Branch**
 
    The `index.html` file in the root of the `gh-pages` branch needs to be updated to include the new documentation version.
 
@@ -235,28 +199,10 @@ We use a documentation versioning scheme that aligns with, but remains independe
    git commit -m "Update index.html with documentation version 2.0.1-doc1.0"
    git push origin gh-pages
    ```
-   
-7. **Commit Final Documentation Changes**
-
-   Once the GitHub action is updated, commit any final changes to the documentation:
-
-   ```
-   git add .
-   git commit -m "Finalize documentation for version 2.0.1-doc1.0"
-   git push origin releases/2.0.1/doc1.0
-   ```
-   
-   > **Note**: To trigger the redeployment it is necessary to push the changes to the `releases/[RCTab_Version]/docX.Y` branch as the last step.
 
 8. **Verify the Deployment**
 
-   - **Access the documentation URL**:
-
-     > https://brightspots.github.io/rctab-docs/2.0.1/doc1.0/index.html
-
-   - **Check the landing page** to ensure the new version is listed:
-
-     > https://brightspots.github.io/rctab-docs/
+   Check the landing page https://brightspots.github.io/rctab-docs/ to ensure the new version is listed and contains your updates:
 
 
 ## How to Obtain a Permalink
@@ -274,6 +220,7 @@ You can obtain a permalink by navigating to the desired section or page in the d
 ## Useful scripts:
 
 ### Compare specific ranges of lines between two files using `vimdiff`
+requires `vim` and `vimdiff`
 
 Run:
 ```shell

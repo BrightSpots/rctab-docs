@@ -80,7 +80,11 @@ We use a documentation versioning scheme that aligns with, but remains independe
 
 3. **Create a New Release Branch**
 
-   Create a new branch in the repository for the new documentation version. `rctab-docs` branches for the most part live indepently of others. Branch from a prior release that makes the most sense. 
+   Create a new branch in the repository for the new documentation version. `rctab-docs` branches, for the most part, live independently of others. Branch from a prior release that makes the most sense.
+   
+     - **Most Common Case:** If you're creating documentation for a new version of RCTab or updating the current version's documentation, branch from the most recent documentation for the latest version of RCTab.  
+     - **Older Versions:** If you're updating documentation for an older version of RCTab, branch from the most recent documentation for that version.
+     - **Patches:** If you're creating documentation for a patch, branch from the documentation corresponding to the version of RCTab the patch is based on.
 
    **Branch Naming Convention**: `releases/[RCTAB_VERSION_NUMBER]/docX.Y`
 

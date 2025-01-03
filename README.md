@@ -32,6 +32,8 @@ poetry install # installs the dependencies
 cp .githooks/* .git/hooks/ # installs the git hooks
 ```
 
+This command will have to be repeated by all contributors to the repo every time the git hooks are updated.
+
 ## Using MkDocs in the Virtual Environment
 
 Poetry automatically creates a virtual environment for your project.

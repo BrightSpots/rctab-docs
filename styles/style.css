@@ -1,0 +1,161 @@
+/*
+  Colors & Typography
+*/
+:root {
+  --primary-color: #26456e; /* Navy-ish blue */
+  --secondary-color: #c83f2f; /* Reddish accent */
+  --text-color: #333333;
+  --bg-color: #f6f8fa; /* Light gray (slightly off-white) */
+  --white: #ffffff;
+  --font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Reset Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  Force body to fill full height and use flex layout:
+  - Header at top
+  - Main content in the middle
+  - Footer pinned to bottom
+*/
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* HEADER with Two Logos */
+header {
+  background-color: var(--white);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem 2rem;
+}
+
+/*
+  Logo container:
+  center horizontally via flex,
+  with a little gap
+*/
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+}
+
+/*
+  Logo images:
+  control their size & ensure they display inline-block
+*/
+.logo-img {
+  display: inline-block;
+  height: 60px; /* Adjust to your desired height */
+  width: auto; /* keep aspect ratio */
+}
+
+/* Intro Section (renamed from 'hero') */
+.intro {
+  background-color: var(--white);
+  text-align: center;
+  padding: 2rem 1rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.intro h1 {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary-color);
+}
+
+.intro-tagline {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* MAIN CONTENT */
+main {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/*
+  DOCS SECTION
+*/
+.docs-section {
+  margin-bottom: 2rem;
+}
+
+.docs-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.docs-section ul {
+  list-style: disc inside;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.docs-section a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-weight: bold;
+}
+
+.docs-section a:hover {
+  text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+  background-color: var(--primary-color);
+  text-align: center;
+  padding: 1rem;
+  color: var(--white);
+}
+
+footer p {
+  margin: 0;
+}
+
+/*
+  Responsive Design
+  Adjust layout on smaller screens.
+*/
+@media (max-width: 768px) {
+  .logo-img {
+    height: 40px;
+  }
+
+  /* Scale down intro text for smaller screens */
+  .intro h1 {
+    font-size: 1.8rem;
+  }
+  .intro-tagline {
+    font-size: 1rem;
+    width: 90%;
+  }
+
+  .docs-section h2 {
+    font-size: 1.5rem;
+  }
+}

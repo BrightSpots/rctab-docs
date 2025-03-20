@@ -268,7 +268,7 @@ Winning Rules options tell RCTab what kind of ranked choice voting election to r
 
 This is a screenshot of what winning rules look like when a user first navigates to them.
 
-![Screenshot of unpopulated RCTab "Winning Rules" tab](../images/image16.png)
+![Winning Rules Tab](../images/winning_rules_tab.png)
 
 There are two main sets of options on the Winning Rules tab: Winner Election Mode options and Tiebreak Mode options.
 
@@ -288,6 +288,8 @@ Winner election mode options have many options that interact in many different w
 **Minimum Vote Threshold** (optional)**:** The number of first-choice votes a candidate must receive in order to remain in the race. Any candidates falling below the minimum vote threshold are eliminated and have their votes transferred. Most jurisdictions do not set a minimum vote threshold. Note that if no candidate exceeds the minimum vote threshold, vote tabulation will silently fail. Be sure not to set a minimum vote threshold beyond the number of votes candidates have. This option can impact how any winner election mode tabulation runs. Its validity is not impacted by any other option. Available in all winner election modes.
 
 **Use Batch Elimination** (optional)**:** Batch elimination, or simultaneous elimination of all candidates for whom it is mathematically impossible to be elected, eliminates all candidates who cannot receive enough votes to surpass the candidate with the next highest number of votes. Example: in a six candidate contest with 200 votes, Candidate A has 80 votes, Candidate B has 70, and the other four combined have 50. Because those four candidates can never combine their votes to surpass Candidate B, they can be batch eliminated. This option impacts how single-winner majority determines winner tabulation runs. Its validity is impacted by the winner election mode. It will not impact who wins the election. Available only when Winner Election Mode is "Single-winner majority determines winner".
+
+**Stop Tabulation Early after Round** (optional)**:** If a winner is not found by the given round, tabulation stops early after tabulating this round.
 
 **Continue until Two Candidates Remain** (optional)**:** Single-winner ranked choice voting elections can stop as soon as a candidate receives a majority of votes, even though 3 or more candidates may still be in the race. Selecting this option will run the round-by-round count until only two candidates remain, regardless of when a candidate wins a majority of votes. It will not impact who wins the election.  Available only when Winner Election Mode is "Single-winner majority determines winner".
 

@@ -103,19 +103,23 @@ Example Completed Contest Info tab
 
 This is what the CVR Files tab looks like when a user first navigates to it:
 
-![Screenshot of RCTab "CVR Files" option tab upon initial navigation](../images/image24.png)
+![CVR Files Tab](../images/cvr_files_tab.png)
 
-The tabulator needs a configuration file laying out where each of its user’s CVR files for the contest to be tabulated are and how to interpret each of them. Only add files to the configuration that contain data for the contest you are tabulating. CVRs that do not include data for the contest to be tabulated will cause tabulation to fail. Fields used to describe CVRs are on the top half of the tab, while the table on the bottom half of the tab will display each CVR file you have added to your configuration file so far. All information in this tab directs RCTab on where to find files and how to read those files, it does not actually pull in any vote information. Vote information is only used after a user clicks the "Tabulate" button under "Tabulation" as described later in this guide.
+The tabulator needs configuration information for each of the contest's CVR files. 
+Only add files to the configuration that contain data for the contest you are tabulating.
+
+This tab is a multi step process. For each CVR location, the user provides it's path and additional pertinent information that RCTab needs to interpret them. For each CVR location, after additional required information is provided the user must explicitly add them to the list of configured CVRs. Pressing the 'Add' button will populate the currently configured CVR in the table below.  
+
+All information in this tab only configures RCTab on where to find files and how to read those files. This step does not actually pull in any vote information. Vote information is only used after a user clicks the "Tabulate" button under "Tabulation" as described later in this guide.
 
 For each of your CVR files, provide the necessary information and then use the Add button to add it to the list.
+
+![CVR Tab with one CVR added](../images/cvr_tab_with_one_added.png)
 
 **Provider (required):** The vendor/machine that generated (produced) the file. After you select the field, the tabulator will fill in as many of the other fields as it can, based on what it knows about that provider. You can adjust those values as necessary. Different options are active for different providers.
 See below for a break-down of each field and what is required:
 
-**Path** (required)**:** Location of the CVR file.
-
-- Example: `/Users/test data/2015-portland-mayor-cvr.xlsx`
-- Select allows a user to navigate using Windows Explorer to select a location.
+**Path** (required)**:** Location of the CVR file or the folder that they reside in. What you need to select is dependent on the provider. RCTab will change the picker to select only what you can.
 
 **Contest ID:** Some CVRs assign an ID label to each contest in the CVR. The tabulator needs to know which contest is being tabulated when multiple contests are included in one CVR. Enter the ID of the contest being tabulated in this field.
 
@@ -145,20 +149,13 @@ See below for a break-down of each field and what is required:
 
 This guide will now briefly show which provider settings permit users to edit which additional settings.
 
-- Provider options:
-    * CDF
-    * Clear Ballot
-    * Dominion
-    * ES&S
-    * Hart
-
 #### CDF
 
-![Screenshot of RCTab "CVR Files" tab with "CDF" chosen as "Provider"](../images/image25.png)
+![CVR Files Tab - CDF Empty](../images/cvr_files_tab_CDF_empty.png)
 
 | **Permits user to edit these options:**  | **Does not permit user to edit these options:** |
 |------------------------------------------|-------------------------------------------------|
-| Path                                     | First Vote Column                               |
+| Path (.JSON or .XML)                     | First Vote Column                               |
 | Contest ID                               | First Vote Row                                  |
 | Overvote Label (Default value: overvote) | ID Column                                       |
 | Undeclared write-in label                | Precinct Column                                 |
@@ -169,7 +166,7 @@ This guide will now briefly show which provider settings permit users to edit wh
 
 #### Clear Ballot
 
-![Screenshot of RCTab "CVR Files" tab with "Clear Ballot" chosen as "Provider"](../images/image26.png)
+![CVR Files Tab - Clearballot Empty](../images/cvr_files_tab_clearballot_empty.png)
 
 | **Permits user to edit these options:**  | **Does not permit user to edit these options:**  |
 |------------------------------------------|--------------------------------------------------|
@@ -181,40 +178,56 @@ This guide will now briefly show which provider settings permit users to edit wh
 |                                          | Overvote Label                                   |
 |                                          | Undervote Label                                  |
 |                                          | Treat Blank as Undeclared Write-In               |
+
+#### CSV CVR
+
+![CVR Files Tab - CSV CVR Empty](../images/cvr_files_tab_CSV_CVR_empty.png)
+
+| **Permits user to edit these options:** | **Does not permit user to edit these options:** |
+|-----------------------------------------|-------------------------------------------------|
+| Path (.csv)                             | ID Column                                       |
+| First Vote Row                          | Precinct Column                                 |
+| First Vote Column                       | Overvote Delimiter                              |
+| Undeclared Write-In Label               | Overvote Label                                  |
+|                                         | Undervote Label                                 |
+|                                         | Treat Blank as Undeclared Write-In              |
+
+
 
 #### Dominion
 
-![Screenshot of RCTab "CVR Files" tab with "Dominion" chosen as "Provider"](../images/image27.png)
+![CVR Files Tab - Dominion Empty](../images/cvr_files_tab_dominion_empty.png)
 
-| **Permits user to edit these options:**  | **Does not permit user to edit these options:**  |
-|------------------------------------------|--------------------------------------------------|
-| Path                                     | First Vote Column                                |
-| Contest ID                               | First Vote Row                                   |
-| Undeclared Write-In Label                | ID Column                                        |
-|                                          | Precinct Column                                  |
-|                                          | Overvote Delimiter                               |
-|                                          | Overvote Label                                   |
-|                                          | Undervote Label                                  |
-|                                          | Treat Blank as Undeclared Write-In               |
+| **Permits user to edit these options:** | **Does not permit user to edit these options:**  |
+|-----------------------------------------|--------------------------------------------------|
+| Path (folder)                           | First Vote Column                                |
+| Contest ID                              | First Vote Row                                   |
+| Undeclared Write-In Label               | ID Column                                        |
+|                                         | Precinct Column                                  |
+|                                         | Overvote Delimiter                               |
+|                                         | Overvote Label                                   |
+|                                         | Undervote Label                                  |
+|                                         | Treat Blank as Undeclared Write-In               |
 
 #### ES&S
 
-![Screenshot of RCTab "CVR Files" tab with "ES&S" chosen as "Provider"](../images/image11.png)
+![img.png](../images/cvr_files_tab_es&s_empty.png)
 
-| **Permits user to edit these options:**     | **Does not permit user to edit these options:**  |
-|---------------------------------------------|--------------------------------------------------|
-| Path                                        | Contest ID                                       |
-| First Vote Column (Default Value: 4)        |                                                  |
-| First Vote Row (Default Value: 2)           |                                                  |
-| ID Column (Default Value: 1)                |                                                  |
-| Precinct Column (Default Value: 2)          |                                                  |
-| Overvote Delimiter                          |                                                  |
-| Overvote Label (Default Value: overvote)    |                                                  |
-| Undervote Label (Default Value: undervote)  |                                                  |
-| Undeclared Write-In Label                   |                                                  |
-| Treat Blank as Undeclared Write-In          |                                                  |
+| **Permits user to edit these options:**    | **Does not permit user to edit these options:**  |
+|--------------------------------------------|--------------------------------------------------|
+| Path (.xlsx)                               | Contest ID                                       |
+| First Vote Column (Default Value: 4)       |                                                  |
+| First Vote Row (Default Value: 2)          |                                                  |
+| ID Column (Default Value: 1)               |                                                  |
+| Precinct Column (Default Value: 2)         |                                                  |
+| Overvote Delimiter                         |                                                  |
+| Overvote Label (Default Value: overvote)   |                                                  |
+| Undervote Label (Default Value: undervote) |                                                  |
+| Undeclared Write-In Label                  |                                                  |
+| Treat Blank as Undeclared Write-In         |                                                  |
 
-It is assumed that the ES&S export uses the default settings so below are the ES&S default settings. The user will only need to enter the path, but all other default settings are included. If the default settings are not used in the ES&S export file, the user must determine the values to be used. If defaults are not being used, users should confirm the proper values for First Vote Column, First Vote Row, ID Column, Precinct Column, Overvote Label, Undervote Label, and Undeclared Write-In Label by referencing the CVRs files to be used in the Tabulation.
+ES&S CVR export can be configured in the voting system. The defaults match the voting system defaults.
+If the default settings are not used in the ES&S export file, the user must determine the values to be used by referencing the CVRs files to be used in the Tabulation.
 
 The First Vote Column location depends on the information users choose to export in their CVR exports from ES&S’s system. ES&S systems can include individual CVR ID information, Precinct information, and ballot style label information in the first three columns of a CVR, as shown in the below screenshot. Column A (aka Column 1) has CVR ID numbers; Column B (Column 2) has Precinct information, Column C (3) has ballot style information, and Column D (4) includes the first ranking in the RCV contest in this CVR. This is the standard CVR layout for ES&S. More information is available from ES&S.
 
@@ -224,20 +237,18 @@ CVR exports from ES&S contain columns for each ranking in an RCV contest. See th
 
 #### Hart
 
-![Screenshot of RCTab "CVR Files" tab with "Hart" chosen as "Provider"](../images/image13.png)
+![CVR Files Tab - Hart Empty](../images/cvr_files_tab_hart_empty.png)
 
-| **Permits user to edit these options:**  | **Does not permit user to edit these options:**  |
-|------------------------------------------|--------------------------------------------------|
-| Path                                     | First Vote Column                                |
-| Contest ID                               | First Vote Row                                   |
-| Undeclared Write-In Label                | ID Column                                        |
-|                                          | Precinct Column                                  |
-|                                          | Overvote Delimiter                               |
-|                                          | Overvote Label                                   |
-|                                          | Undervote Label                                  |
-|                                          | Treat Blank as Undeclared Write-In               |
-
-**Path:** Select the path of the folder that contains signed Hart CVRs.
+| **Permits user to edit these options:** | **Does not permit user to edit these options:**  |
+|-----------------------------------------|--------------------------------------------------|
+| Path (folder)                           | First Vote Column                                |
+| Contest ID                              | First Vote Row                                   |
+| Undeclared Write-In Label               | ID Column                                        |
+|                                         | Precinct Column                                  |
+|                                         | Overvote Delimiter                               |
+|                                         | Overvote Label                                   |
+|                                         | Undervote Label                                  |
+|                                         | Treat Blank as Undeclared Write-In               |
 
 ### Candidates Tab
 

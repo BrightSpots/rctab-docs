@@ -243,12 +243,23 @@ CVR exports from ES&S contain columns for each ranking in an RCV contest. See th
 
 The candidates tab allows users to put in information about how candidates are referred to in cast-vote record files. These settings impact how CVR files are read. Candidate names entered on this tab will also be used to display candidate names in results files. Below is a screenshot of the Candidates Tab when a user first navigates to it.
 
-![Screenshot of unpopulated RCTab "Candidates" tab](../images/image14.png)
-Fill in the fields and click the Add button:
+![Candidates Tab](../images/candidates_tab.png)
+RCTab must be configured with information about every candidate in your contest. There are two ways to load candidate data.
+
+#### Auto-Load
+RCTab will look through all of the currently configured CVR files for distinct candidates and load their name and Aliases
+automatically for you. The candidate Auto-Load feature relies on candidates appearing in vote data to populate the list of candidates. 
+Users should confirm the list of candidates populated against the list of candidates in their election to confirm that
+all cnadidates were properly loaded. 
+
+#### Manually Adding Candidate Information
+For each candidate, enter their name and any aliases/codes that identify them across CVRs.
+![Manually Adding Candidates](../images/candidates_tab-adding_manually_w_edit.gif)
 
 **Name** (required)**:** E.g.: Dave Harris. This information is used to display candidate names in results files.
 
-**Code** (optional)**:** Some CVR files use codes in lieu of the full candidate name. e.g.: "JCD" or "14".
+**Code** (optional)**:** Some CVR files use codes in lieu of the full candidate name. e.g.: "JCD" or "14". Multiple
+codes can be used for a single candidate if required e.g. multi-vendor tabulation.
 
 **Excluded** (optional)**:** When checked, the candidate will be ignored during tabulation. An example of when this might be used: a candidate dropped out after the ballots were printed.
 
@@ -256,11 +267,7 @@ Fill in the fields and click the Add button:
 
 **Clear:** Clears any information in Name, Code, and Excluded.
 
-*Delete Selected:* Deletes selected candidate data from the Candidate Table.
-
-Below is a screenshot of an example of a Candidates Tab while being filled out:
-
-![Screenshot of RCTab "Candidates" tab with some candidate names added](../images/image15.png)
+**Delete Selected:** Deletes selected candidate data from the Candidate Table.
 
 ### Winning Rules Options
 

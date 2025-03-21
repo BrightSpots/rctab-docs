@@ -1404,6 +1404,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Candidates Tab">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-load" class="md-nav__link">
+    <span class="md-ellipsis">
+      Auto-Load
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#manually-adding-candidate-information" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manually Adding Candidate Information
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1978,16 +2002,23 @@ See below for a break-down of each field and what is required:</p>
 <p><strong>Path:</strong> Select the path of the folder that contains signed Hart CVRs.</p>
 <h3 id="candidates-tab">Candidates Tab<a class="headerlink" href="#candidates-tab" title="Permanent link">&para;</a></h3>
 <p>The candidates tab allows users to put in information about how candidates are referred to in cast-vote record files. These settings impact how CVR files are read. Candidate names entered on this tab will also be used to display candidate names in results files. Below is a screenshot of the Candidates Tab when a user first navigates to it.</p>
-<p><img alt="Screenshot of unpopulated RCTab &quot;Candidates&quot; tab" src="../images/image14.png" />
-Fill in the fields and click the Add button:</p>
+<p><img alt="Candidates Tab" src="../images/candidates_tab.png" />
+RCTab must be configured with information about every candidate in your contest. There are two ways to load candidate data.</p>
+<h4 id="auto-load">Auto-Load<a class="headerlink" href="#auto-load" title="Permanent link">&para;</a></h4>
+<p>RCTab will look through all of the currently configured CVR files for distinct candidates and load their name and Aliases
+automatically for you. The candidate Auto-Load feature relies on candidates appearing in vote data to populate the list of candidates. 
+Users should confirm the list of candidates populated against the list of candidates in their election to confirm that
+all cnadidates were properly loaded. </p>
+<h4 id="manually-adding-candidate-information">Manually Adding Candidate Information<a class="headerlink" href="#manually-adding-candidate-information" title="Permanent link">&para;</a></h4>
+<p>For each candidate, enter their name and any aliases/codes that identify them across CVRs.
+<img alt="Manually Adding Candidates" src="../images/candidates_tab-adding_manually_w_edit.gif" /></p>
 <p><strong>Name</strong> (required)<strong>:</strong> E.g.: Dave Harris. This information is used to display candidate names in results files.</p>
-<p><strong>Code</strong> (optional)<strong>:</strong> Some CVR files use codes in lieu of the full candidate name. e.g.: "JCD" or "14".</p>
+<p><strong>Code</strong> (optional)<strong>:</strong> Some CVR files use codes in lieu of the full candidate name. e.g.: "JCD" or "14". Multiple
+codes can be used for a single candidate if required e.g. multi-vendor tabulation.</p>
 <p><strong>Excluded</strong> (optional)<strong>:</strong> When checked, the candidate will be ignored during tabulation. An example of when this might be used: a candidate dropped out after the ballots were printed.</p>
 <p><strong>Add:</strong> Adds Name, code, and/or excluded information to the Candidates Table.</p>
 <p><strong>Clear:</strong> Clears any information in Name, Code, and Excluded.</p>
-<p><em>Delete Selected:</em> Deletes selected candidate data from the Candidate Table.</p>
-<p>Below is a screenshot of an example of a Candidates Tab while being filled out:</p>
-<p><img alt="Screenshot of RCTab &quot;Candidates&quot; tab with some candidate names added" src="../images/image15.png" /></p>
+<p><strong>Delete Selected:</strong> Deletes selected candidate data from the Candidate Table.</p>
 <h3 id="winning-rules-options">Winning Rules Options<a class="headerlink" href="#winning-rules-options" title="Permanent link">&para;</a></h3>
 <p>Winning Rules options tell RCTab what kind of ranked choice voting election to run and how to handle details required for each kind of ranked choice voting RCTab can run.</p>
 <p>This is a screenshot of what winning rules look like when a user first navigates to them.</p>

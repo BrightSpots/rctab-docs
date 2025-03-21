@@ -1366,6 +1366,15 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#csv-cvr" class="md-nav__link">
+    <span class="md-ellipsis">
+      CSV CVR
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#dominion" class="md-nav__link">
     <span class="md-ellipsis">
       Dominion
@@ -1737,16 +1746,16 @@ These settings appear on the "Contest Info" tab in RCTab.</p>
 Example Completed Contest Info tab</p>
 <h3 id="cvr-files-options">CVR Files Options<a class="headerlink" href="#cvr-files-options" title="Permanent link">&para;</a></h3>
 <p>This is what the CVR Files tab looks like when a user first navigates to it:</p>
-<p><img alt="Screenshot of RCTab &quot;CVR Files&quot; option tab upon initial navigation" src="../images/image24.png" /></p>
-<p>The tabulator needs a configuration file laying out where each of its user’s CVR files for the contest to be tabulated are and how to interpret each of them. Only add files to the configuration that contain data for the contest you are tabulating. CVRs that do not include data for the contest to be tabulated will cause tabulation to fail. Fields used to describe CVRs are on the top half of the tab, while the table on the bottom half of the tab will display each CVR file you have added to your configuration file so far. All information in this tab directs RCTab on where to find files and how to read those files, it does not actually pull in any vote information. Vote information is only used after a user clicks the "Tabulate" button under "Tabulation" as described later in this guide.</p>
+<p><img alt="CVR Files Tab" src="../images/cvr_files_tab.png" /></p>
+<p>The tabulator needs configuration information for each of the contest's CVR files. 
+Only add files to the configuration that contain data for the contest you are tabulating.</p>
+<p>This tab is a multi step process. For each CVR location, the user provides it's path and additional pertinent information that RCTab needs to interpret them. For each CVR location, after additional required information is provided the user must explicitly add them to the list of configured CVRs. Pressing the 'Add' button will populate the currently configured CVR in the table below.  </p>
+<p>All information in this tab only configures RCTab on where to find files and how to read those files. This step does not actually pull in any vote information. Vote information is only used after a user clicks the "Tabulate" button under "Tabulation" as described later in this guide.</p>
 <p>For each of your CVR files, provide the necessary information and then use the Add button to add it to the list.</p>
+<p><img alt="CVR Tab with one CVR added" src="../images/cvr_tab_with_one_added.png" /></p>
 <p><strong>Provider (required):</strong> The vendor/machine that generated (produced) the file. After you select the field, the tabulator will fill in as many of the other fields as it can, based on what it knows about that provider. You can adjust those values as necessary. Different options are active for different providers.
 See below for a break-down of each field and what is required:</p>
-<p><strong>Path</strong> (required)<strong>:</strong> Location of the CVR file.</p>
-<ul>
-<li>Example: <code>/Users/test data/2015-portland-mayor-cvr.xlsx</code></li>
-<li>Select allows a user to navigate using Windows Explorer to select a location.</li>
-</ul>
+<p><strong>Path</strong> (required)<strong>:</strong> Location of the CVR file or the folder that they reside in. What you need to select is dependent on the provider. RCTab will change the picker to select only what you can.</p>
 <p><strong>Contest ID:</strong> Some CVRs assign an ID label to each contest in the CVR. The tabulator needs to know which contest is being tabulated when multiple contests are included in one CVR. Enter the ID of the contest being tabulated in this field.</p>
 <p><strong>First Vote Column:</strong> the column where the first vote record is.</p>
 <p><strong>First Vote Row:</strong> the row where the first vote record is.</p>
@@ -1761,18 +1770,8 @@ See below for a break-down of each field and what is required:</p>
 <p><strong>Clear:</strong> Clears all fillable values in CVR Files tab above the CVR Files table.</p>
 <p><strong>Delete Selected:</strong> Deletes CVR file information listed in the CVR table. Impacted by and impacts no options.</p>
 <p>This guide will now briefly show which provider settings permit users to edit which additional settings.</p>
-<ul>
-<li>Provider options:<ul>
-<li>CDF</li>
-<li>Clear Ballot</li>
-<li>Dominion</li>
-<li>ES&amp;S</li>
-<li>Hart</li>
-</ul>
-</li>
-</ul>
 <h4 id="cdf">CDF<a class="headerlink" href="#cdf" title="Permanent link">&para;</a></h4>
-<p><img alt="Screenshot of RCTab &quot;CVR Files&quot; tab with &quot;CDF&quot; chosen as &quot;Provider&quot;" src="../images/image25.png" /></p>
+<p><img alt="CVR Files Tab - CDF Empty" src="../images/cvr_files_tab_CDF_empty.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1782,7 +1781,7 @@ See below for a break-down of each field and what is required:</p>
 </thead>
 <tbody>
 <tr>
-<td>Path</td>
+<td>Path (.JSON or .XML)</td>
 <td>First Vote Column</td>
 </tr>
 <tr>
@@ -1812,7 +1811,7 @@ See below for a break-down of each field and what is required:</p>
 </tbody>
 </table>
 <h4 id="clear-ballot">Clear Ballot<a class="headerlink" href="#clear-ballot" title="Permanent link">&para;</a></h4>
-<p><img alt="Screenshot of RCTab &quot;CVR Files&quot; tab with &quot;Clear Ballot&quot; chosen as &quot;Provider&quot;" src="../images/image26.png" /></p>
+<p><img alt="CVR Files Tab - Clearballot Empty" src="../images/cvr_files_tab_clearballot_empty.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1855,8 +1854,8 @@ See below for a break-down of each field and what is required:</p>
 </tr>
 </tbody>
 </table>
-<h4 id="dominion">Dominion<a class="headerlink" href="#dominion" title="Permanent link">&para;</a></h4>
-<p><img alt="Screenshot of RCTab &quot;CVR Files&quot; tab with &quot;Dominion&quot; chosen as &quot;Provider&quot;" src="../images/image27.png" /></p>
+<h4 id="csv-cvr">CSV CVR<a class="headerlink" href="#csv-cvr" title="Permanent link">&para;</a></h4>
+<p><img alt="CVR Files Tab - CSV CVR Empty" src="../images/cvr_files_tab_CSV_CVR_empty.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1866,7 +1865,43 @@ See below for a break-down of each field and what is required:</p>
 </thead>
 <tbody>
 <tr>
-<td>Path</td>
+<td>Path (.csv)</td>
+<td>ID Column</td>
+</tr>
+<tr>
+<td>First Vote Row</td>
+<td>Precinct Column</td>
+</tr>
+<tr>
+<td>First Vote Column</td>
+<td>Overvote Delimiter</td>
+</tr>
+<tr>
+<td>Undeclared Write-In Label</td>
+<td>Overvote Label</td>
+</tr>
+<tr>
+<td></td>
+<td>Undervote Label</td>
+</tr>
+<tr>
+<td></td>
+<td>Treat Blank as Undeclared Write-In</td>
+</tr>
+</tbody>
+</table>
+<h4 id="dominion">Dominion<a class="headerlink" href="#dominion" title="Permanent link">&para;</a></h4>
+<p><img alt="CVR Files Tab - Dominion Empty" src="../images/cvr_files_tab_dominion_empty.png" /></p>
+<table>
+<thead>
+<tr>
+<th><strong>Permits user to edit these options:</strong></th>
+<th><strong>Does not permit user to edit these options:</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Path (folder)</td>
 <td>First Vote Column</td>
 </tr>
 <tr>
@@ -1900,7 +1935,7 @@ See below for a break-down of each field and what is required:</p>
 </tbody>
 </table>
 <h4 id="ess">ES&amp;S<a class="headerlink" href="#ess" title="Permanent link">&para;</a></h4>
-<p><img alt="Screenshot of RCTab &quot;CVR Files&quot; tab with &quot;ES&amp;S&quot; chosen as &quot;Provider&quot;" src="../images/image11.png" /></p>
+<p><img alt="img.png" src="../images/cvr_files_tab_es%26s_empty.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1910,7 +1945,7 @@ See below for a break-down of each field and what is required:</p>
 </thead>
 <tbody>
 <tr>
-<td>Path</td>
+<td>Path (.xlsx)</td>
 <td>Contest ID</td>
 </tr>
 <tr>
@@ -1951,12 +1986,13 @@ See below for a break-down of each field and what is required:</p>
 </tr>
 </tbody>
 </table>
-<p>It is assumed that the ES&amp;S export uses the default settings so below are the ES&amp;S default settings. The user will only need to enter the path, but all other default settings are included. If the default settings are not used in the ES&amp;S export file, the user must determine the values to be used. If defaults are not being used, users should confirm the proper values for First Vote Column, First Vote Row, ID Column, Precinct Column, Overvote Label, Undervote Label, and Undeclared Write-In Label by referencing the CVRs files to be used in the Tabulation.</p>
+<p>ES&amp;S CVR export can be configured in the voting system. The defaults match the voting system defaults.
+If the default settings are not used in the ES&amp;S export file, the user must determine the values to be used by referencing the CVRs files to be used in the Tabulation.</p>
 <p>The First Vote Column location depends on the information users choose to export in their CVR exports from ES&amp;S’s system. ES&amp;S systems can include individual CVR ID information, Precinct information, and ballot style label information in the first three columns of a CVR, as shown in the below screenshot. Column A (aka Column 1) has CVR ID numbers; Column B (Column 2) has Precinct information, Column C (3) has ballot style information, and Column D (4) includes the first ranking in the RCV contest in this CVR. This is the standard CVR layout for ES&amp;S. More information is available from ES&amp;S.</p>
 <p><img alt="Screenshot of a partial ES&amp;S cast vote record displayed in a spreadsheet application" src="../images/image12.png" /></p>
 <p>CVR exports from ES&amp;S contain columns for each ranking in an RCV contest. See the above screenshot for an example. This screenshot includes the five rankings voters had in the contest, arranged in sequential order. This CVR export included only data for the one RCV contest to be run. The setting “Maximum Number of Candidates That Can Be Ranked” (covered below in Winning Rules) instructs RCTab how many columns to process when running the round-by-round count. If that setting is set to five and the First Vote Column setting is set to four (Column D), RCTab will process this CVR starting at Column D/4 (column number 4) and continue through columns E/5, F/6, G/7, and H/8 - five columns for the five rankings voters have.</p>
 <h4 id="hart">Hart<a class="headerlink" href="#hart" title="Permanent link">&para;</a></h4>
-<p><img alt="Screenshot of RCTab &quot;CVR Files&quot; tab with &quot;Hart&quot; chosen as &quot;Provider&quot;" src="../images/image13.png" /></p>
+<p><img alt="CVR Files Tab - Hart Empty" src="../images/cvr_files_tab_hart_empty.png" /></p>
 <table>
 <thead>
 <tr>
@@ -1966,7 +2002,7 @@ See below for a break-down of each field and what is required:</p>
 </thead>
 <tbody>
 <tr>
-<td>Path</td>
+<td>Path (folder)</td>
 <td>First Vote Column</td>
 </tr>
 <tr>
@@ -1999,7 +2035,6 @@ See below for a break-down of each field and what is required:</p>
 </tr>
 </tbody>
 </table>
-<p><strong>Path:</strong> Select the path of the folder that contains signed Hart CVRs.</p>
 <h3 id="candidates-tab">Candidates Tab<a class="headerlink" href="#candidates-tab" title="Permanent link">&para;</a></h3>
 <p>The candidates tab allows users to put in information about how candidates are referred to in cast-vote record files. These settings impact how CVR files are read. Candidate names entered on this tab will also be used to display candidate names in results files. Below is a screenshot of the Candidates Tab when a user first navigates to it.</p>
 <p><img alt="Candidates Tab" src="../images/candidates_tab.png" />

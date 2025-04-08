@@ -1598,37 +1598,52 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#generating-results-files" class="md-nav__link">
+  <a href="#running-the-round-by-round-count" class="md-nav__link">
     <span class="md-ellipsis">
-      Generating Results Files
+      Running the round-by-round count
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Generating Results Files">
+    <nav class="md-nav" aria-label="Running the round-by-round count">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#validating-configuration-files" class="md-nav__link">
+  <a href="#pre-tabulation-checks" class="md-nav__link">
     <span class="md-ellipsis">
-      Validating Configuration files
+      Pre-Tabulation Checks
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Pre-Tabulation Checks">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#check-ballot-counts" class="md-nav__link">
+    <span class="md-ellipsis">
+      Check Ballot Counts
     </span>
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#saving-configuration-files" class="md-nav__link">
+  <a href="#errors-during-tabulation" class="md-nav__link">
     <span class="md-ellipsis">
-      Saving Configuration Files
+      Errors During Tabulation
     </span>
   </a>
   
 </li>
         
+      </ul>
+    </nav>
+  
+</li>
+        
           <li class="md-nav__item">
-  <a href="#running-a-tabulation" class="md-nav__link">
+  <a href="#results-files" class="md-nav__link">
     <span class="md-ellipsis">
-      Running a Tabulation
+      Results Files
     </span>
   </a>
   
@@ -2348,34 +2363,31 @@ Example: A voter ranks the same candidate 1st and 3rd, a different candidate 2nd
 <p><strong>Tabulate by Precinct:</strong> Produce round-by-round results at the precinct level. Round-by-round results file for each precinct is written to a <code>Tabulate By Precinct</code> folder within the configured output directory.  Elect/Eliminate decisions are from the full contest.</p>
 <p><strong>Tabulate by Batch:</strong> Produce round-by-round results at the batch level. Round-by-round results file for each batch are written to a <code>Tabulate by Batch</code> folder within the configured output directory. Elect/Eliminate decisions are from the full contest.</p>
 <p><strong>Generate a CDF JSON:</strong> Produce a VVSG common data format JSON file of the CVR.</p>
-<h2 id="generating-results-files">Generating Results Files<a class="headerlink" href="#generating-results-files" title="Permanent link">&para;</a></h2>
-<h3 id="validating-configuration-files">Validating Configuration files<a class="headerlink" href="#validating-configuration-files" title="Permanent link">&para;</a></h3>
-<p>Once a configuration file is successfully created, the user must validate the configuration file.</p>
+<h2 id="running-the-round-by-round-count">Running the round-by-round count<a class="headerlink" href="#running-the-round-by-round-count" title="Permanent link">&para;</a></h2>
+<p>Once configuration is complete, the user can validate the configuration settings before round-by-round tabulation.</p>
 <ol>
 <li>Click on "Tabulation" at the top of the software window</li>
 <li>Click on "Validate"</li>
 <li>Refer to the log box at the bottom of the application. If the message "Contest config validation successful." appears, your contest configuration has been successfully completed.</li>
 <li>If any error messages appear in the log box, refer to <a href="../tdp/rctab_operator_log_messages.html"><strong>Section 29 - RCTab Operator Log Messages</strong></a> and messages in the log box for how to resolve errors. If the error persists, restart the RCTab software</li>
 </ol>
-<h3 id="saving-configuration-files">Saving Configuration Files<a class="headerlink" href="#saving-configuration-files" title="Permanent link">&para;</a></h3>
-<p>Once ready to run a tabulation, the user must first save the configuration file.</p>
-<ol>
-<li>Click on "File" at the top of the software window</li>
-<li>Click on "Save…"</li>
-<li>Select a location to save the configuration file. The manufacturer suggests users save the configuration file to the same location set in the Output Directory setting.</li>
-<li>Refer to the log box at the bottom of the application. If the message "Successfully saved file: Filepath" your configuration <code>.json</code> file has been successfully saved.</li>
-<li>If any error messages appear in the log box, refer to 430 RCTab Operator Log Messages documentation and messages in the log box for how to resolve errors. If the error persists, restart RCTab software.</li>
-</ol>
-<h3 id="running-a-tabulation">Running a Tabulation<a class="headerlink" href="#running-a-tabulation" title="Permanent link">&para;</a></h3>
-<p>Once a configuration is saved, the user is ready to run a tabulation.</p>
-<ol>
-<li>Click on "Tabulation" at the top of the software window</li>
-<li>Click on "Tabulate"</li>
-<li>Tabulation will begin.</li>
-<li>If all the above steps were successfully completed, Tabulation will run until complete.</li>
-<li>Tabulator log box will update with messages as Tabulation proceeds.</li>
-<li>Once complete, the Tabulator log box will display a message stating <code>Results written to: [filepath from Output Directory]</code></li>
-</ol>
+<h3 id="pre-tabulation-checks">Pre-Tabulation Checks<a class="headerlink" href="#pre-tabulation-checks" title="Permanent link">&para;</a></h3>
+<p>Start the round-by-round tabulation by clicking <code>Tabulation</code> in the menu, then <code>Tabulate</code>. You will see the Pre-Tabulation Checks popup.</p>
+<p><img alt="Pre-Tabulation Checks" src="../images/pre-tabulation_checks_popup.png" /></p>
+<p><strong>Configuration</strong> lists the path of your current config file, if loaded. Clicking save allows you to overwrite that file or save a new one. Users are required to save a config file for each tabulation if any settings have changed. This ensures each tabulation run has an auditable config file on disk.</p>
+<p><strong>Configuration Summary</strong> Shows the number of configured candidates and CVR locations. </p>
+<p><strong>Auditing Information</strong> Each tabulation is required to have a identifier for audit purposes. </p>
+<p>Once your config is saved and a user identifier is entered you can click <code>Check Ballot Counts</code>.</p>
+<h4 id="check-ballot-counts">Check Ballot Counts<a class="headerlink" href="#check-ballot-counts" title="Permanent link">&para;</a></h4>
+<p><img alt="Pre-Tabulation Checks - Check Ballot Counts Clicked" src="../images/pre-tabulation_checks_check_ballot_counts_clicked.png" /></p>
+<p>Clicking the <code>Check Ballot Counts</code> button reads CVR data from each configured CVR location. For each CVR location you'll see the filepath and total number of ballots at that location. The sum number of total ballots from all CVR locations will then populate in the middle button. Users should confirm this number with their expected ballot counts. </p>
+<p>When you've reviewed this data you can run the tabulation by clicking the <code>Tabulate XXX,XXX ballots</code> button!</p>
+<p><img alt="Pre-Tabulation Checks - Tabulate Ballots Clicked" src="../images/pre-tabulation_checks_after_tabulate_ballots_clicked.png" /></p>
+<p>After clicking the <code>Tabulate XXX,XXX ballots</code> button you can follow the progress through the log messages in the bottom of the app. When complete the final button <code>Open Results Folder</code> is available. It will open the File Explorer to the folder where RCTab results were written to. </p>
+<h4 id="errors-during-tabulation">Errors During Tabulation<a class="headerlink" href="#errors-during-tabulation" title="Permanent link">&para;</a></h4>
+<p>In the event that there is an error, the final button will say <code>Close and View Errors</code>. Review the log window for details.
+<img alt="Pre-Tabulation Checks - Error" src="../images/pre-tabulation_checks_error.png" /></p>
+<h3 id="results-files">Results Files<a class="headerlink" href="#results-files" title="Permanent link">&para;</a></h3>
 <p>Output files will be:</p>
 <ul>
 <li><code>.csv</code> contest summary files<ul>

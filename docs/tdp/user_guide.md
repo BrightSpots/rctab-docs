@@ -14,12 +14,19 @@ Any interaction with RCTab, including producing configuration files, running tab
 
 ## Launching RCTab
 
-The manufacturer recommends RCTab be installed as part of the pre-election preparation process.  In order to determine the appropriate launch procedure for a jurisdiction, users should consider the maximum possible number of votes that could occur in the event all eligible voters presented themselves to vote. Jurisdictions should, as part of their pre-election procedure, launch RCTab according to the relevant launch instructions described below to ensure they launch it in accordance with the below requirements. The manufacturer is available for support with this process. For acceptance testing and L&A procedures to set up and use of RCTab, see:
+The manufacturer recommends RCTab be installed as part of the pre-election preparation process. Jurisdictions using RCTab for official elections should follow local guidelines for procuring RCTab.
+For others, RCTab installers and command line bundles are available for download from the [RCTab Github Releases page](https://github.com/BrightSpots/rcv/releases).
 
-- [**Section 05 - Acceptance Test Procedures**](../tdp/acceptance_test_procedures.md)
-- [**Section 11 - L&A Testing**](../tdp/l_and_a_testing.md)
 
-### Contests with fewer than 1,000,000 votes
+### RCTab Installers
+Official RCTab releases have installers for Windows, Mac and Linux. Use like any other application.
+On the [RCTab Github Releases page](https://github.com/BrightSpots/rcv/releases) find the appropriate installer based on your operating system.
+
+### Running from the command line
+RCTab can also be run from the command line. Procure the operating system appropriate `.zip` of RCTab. 
+In order to determine the launch procedure for a jurisdiction, users should consider the maximum possible number of votes that could occur in the event all eligible voters presented themselves to vote.
+
+#### Contests with fewer than 1,000,000 votes
 
 To Launch:
 
@@ -27,7 +34,7 @@ To Launch:
 2. Open the bin folder
 3. Right-click on the `rcv.bat` file. Click "Run as Administrator". If a "Windows protected your PC" window pops up click "More Info" then click the "Run anyway" button. Enter the administrator password
 
-### Contests with more than 1,000,000 votes
+#### Contests with more than 1,000,000 votes
 
 1. Open a Command Prompt by navigating to the start menu and typing in Command Prompt.
 2. Press enter to launch Command Prompt.

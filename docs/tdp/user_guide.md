@@ -597,38 +597,47 @@ Tell the tabulator where results files go and what additional output files you w
 
 **Generate a CDF JSON:** Produce a VVSG common data format JSON file of the CVR.
 
-## Generating Results Files
+## Running the round-by-round count
 
-### Validating Configuration files
+Once configuration is complete, the user can validate the configuration settings before round-by-round tabulation.
 
-Once a configuration file is successfully created, the user must validate the configuration file.
 
 1. Click on "Tabulation" at the top of the software window
 2. Click on "Validate"
 3. Refer to the log box at the bottom of the application. If the message "Contest config validation successful." appears, your contest configuration has been successfully completed.
 4. If any error messages appear in the log box, refer to [**Section 29 - RCTab Operator Log Messages**](../tdp/rctab_operator_log_messages.md) and messages in the log box for how to resolve errors. If the error persists, restart the RCTab software
 
-### Saving Configuration Files
+### Pre-Tabulation Checks
 
-Once ready to run a tabulation, the user must first save the configuration file.
+Start the round-by-round tabulation by clicking `Tabulation` in the menu, then `Tabulate`. You will see the Pre-Tabulation Checks popup.
 
-1. Click on "File" at the top of the software window
-2. Click on "Save…"
-3. Select a location to save the configuration file. The manufacturer suggests users save the configuration file to the same location set in the Output Directory setting.
-4. Refer to the log box at the bottom of the application. If the message "Successfully saved file: Filepath" your configuration `.json` file has been successfully saved.
-5. If any error messages appear in the log box, refer to 430 RCTab Operator Log Messages documentation and messages in the log box for how to resolve errors. If the error persists, restart RCTab software.
+![Pre-Tabulation Checks](../images/pre-tabulation_checks_popup.png)
 
-### Running a Tabulation
+**Configuration** lists the path of your current config file, if loaded. Clicking save allows you to overwrite that file or save a new one. Users are required to save a config file for each tabulation if any settings have changed. This ensures each tabulation run has an auditable config file on disk.
 
-Once a configuration is saved, the user is ready to run a tabulation.
+**Configuration Summary** Shows the number of configured candidates and CVR locations. 
 
-1. Click on "Tabulation" at the top of the software window
-2. Click on "Tabulate"
-3. Tabulation will begin.
-4. If all the above steps were successfully completed, Tabulation will run until complete.
-5. Tabulator log box will update with messages as Tabulation proceeds.
-6. Once complete, the Tabulator log box will display a message stating `Results written to: [filepath from Output Directory]`
+**Auditing Information** Each tabulation is required to have a identifier for audit purposes. 
 
+Once your config is saved and a user identifier is entered you can click `Check Ballot Counts`.
+
+#### Check Ballot Counts
+
+![Pre-Tabulation Checks - Check Ballot Counts Clicked](../images/pre-tabulation_checks_check_ballot_counts_clicked.png)
+
+Clicking the `Check Ballot Counts` button reads CVR data from each configured CVR location. For each CVR location you'll see the filepath and total number of ballots at that location. The sum number of total ballots from all CVR locations will then populate in the middle button. Users should confirm this number with their expected ballot counts. 
+
+When you've reviewed this data you can run the tabulation by clicking the `Tabulate XXX,XXX ballots` button!
+
+![Pre-Tabulation Checks - Tabulate Ballots Clicked](../images/pre-tabulation_checks_after_tabulate_ballots_clicked.png)
+
+After clicking the `Tabulate XXX,XXX ballots` button you can follow the progress through the log messages in the bottom of the app. When complete the final button `Open Results Folder` is available. It will open the File Explorer to the folder where RCTab results were written to. 
+
+#### Errors During Tabulation
+In the event that there is an error, the final button will say `Close and View Errors`. Review the log window for details.
+![Pre-Tabulation Checks - Error](../images/pre-tabulation_checks_error.png)
+
+### Results Files
 Output files will be:
 
 - `.csv` contest summary files

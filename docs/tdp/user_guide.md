@@ -10,7 +10,7 @@ Users should ensure instructions below have been followed and completed prior to
 
 Any interaction with RCTab, including producing configuration files, running tabulations, hashing results files, and transmission of files from RCTab on USB drives should follow transmission procedures required in the jurisdiction, including the use of a team with no less than two trained personnel. This document describes all interfaces and options in the RCTab software.
 
-> Note: this guide assumes that the user is using Windows.
+> Note: examples in this guide assumes that the user is using Windows.
 
 ## Launching RCTab
 
@@ -282,9 +282,7 @@ codes can be used for a single candidate if required e.g. multi-vendor tabulatio
 
 ### Winning Rules Options
 
-Winning Rules options tell RCTab what kind of ranked choice voting election to run and how to handle details required for each kind of ranked choice voting RCTab can run.
-
-This is a screenshot of what winning rules look like when a user first navigates to them.
+Winning Rules options tell RCTab what kind of ranked choice voting election to run and how to handle details required for each.
 
 ![Winning Rules Tab](../images/winning_rules_tab.png)
 
@@ -310,6 +308,8 @@ Winner election mode options have many options that interact in many different w
 **Stop Tabulation Early after Round** (optional)**:** If a winner is not found by the given round, tabulation stops early after tabulating this round.
 
 **Continue until Two Candidates Remain** (optional)**:** Single-winner ranked choice voting elections can stop as soon as a candidate receives a majority of votes, even though 3 or more candidates may still be in the race. Selecting this option will run the round-by-round count until only two candidates remain, regardless of when a candidate wins a majority of votes. It will not impact who wins the election.  Available only when Winner Election Mode is "Single-winner majority determines winner".
+
+**First Round Determines Threshold** For single-winner contests, keeps the threshold to elect static based on the first round active ballots, rather than dynamically changing round by round as ballots go inactive. 
 
 **Number of Winners** (required)**:** The number of seats to be filled in the contest. This option impacts the calculation of the election threshold. Its validity and editability is impacted by the winner election mode. It sets the value for “S” in the calculations described in the UI/configuration file parameters. Available and required for Multi-winner allow only one winner per round, Multi-winner allow multiple winners per round, Bottoms-up, and Multi-pass IRV. Set to 1 by RCTab for Single-winner majority determines winner.
 
@@ -578,17 +578,17 @@ Below is an example screenshot of a sample filled-out voter error rules tab. The
 
 ### Output Tab
 
-Tell the tabulator where results files go and what additional results files you want. This is a screenshot of what output looks like when a user first navigates to it.
+Tell the tabulator where results files go and what additional output files you want.
 
-![Screenshot of unpopulated RCTab "Output" setting tab](../images/image44.png)
+![Output Tab](../images/output_tab.png)
 
-Output directory: One folder per contest tabulated should be created. Output directory instructs RCTab where to save any output files from successful RCTab tabulations. The location where results files will go. If no value (or a relative path, like `output`) is supplied, the location where the config file is saved will be used as the base directory. Absolute paths, like `C:\output` work too. Select allows users to navigate through Explorer to select a location.
+**Output Directory:** Where any output files from successful tabulations go. If no value (or a relative path, like `output`) is supplied, the location where the config file is saved will be used as the base directory. Absolute paths, like `C:\output` work too.
 
-RCTab will not allow the output path to be configured to a Windows user account folder (by default anything under the path `c:\users\`). This requirement ensures read-only output. You **must** follow the instructions in [**Section 22 - Installation Instructions for Windows OS**](../tdp/installation_instructions_for_windows_os.md) to set permissions on the output folder. Following these instructions ensures that the ‘RCTab’ user account cannot edit or delete RCTab summary output files or audit logs.
+**Tabulate by Precinct:** Produce round-by-round results at the precinct level. Round-by-round results file for each precinct is written to a `Tabulate By Precinct` folder within the configured output directory.  Elect/Eliminate decisions are from the full contest.
 
-Tabulate by Precinct: Produce round-by-round results at the precinct level. Results are how ballots at the precinct level transferred in the contest as a whole, not a simulated round-by-round count in the precinct. Requires precinct information in CVR Files tab for ES&S CVRs. Impacts which files are written to the output directory.
+**Tabulate by Batch:** Produce round-by-round results at the batch level. Round-by-round results file for each batch are written to a `Tabulate by Batch` folder within the configured output directory. Elect/Eliminate decisions are from the full contest.
 
-Generate a CDF JSON: Produce a VVSG common data format JSON file of the CVR. Impacts which files are written to the output directory.
+**Generate a CDF JSON:** Produce a VVSG common data format JSON file of the CVR.
 
 ## Generating Results Files
 

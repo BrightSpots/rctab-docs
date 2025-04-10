@@ -6607,282 +6607,30 @@ Example: A voter ranks the same candidate 1st and 3rd, a different candidate 2nd
 <h4 id="errors-during-tabulation">Errors During Tabulation</h4>
 <p>In the event that there is an error, the final button will say <code>Close and View Errors</code>. Review the log window for details.
 <img alt="Pre-Tabulation Checks - Error" src="../images/pre-tabulation_checks_error.png"/></p>
-<h3 id="results-files">Results Files</h3>
-<p>Output files will be:</p>
+<h3 id="output-files">Output Files</h3>
+<p>All output files are written to the location specified in the Output tab. Let's assume this is configured to <code>c:\output</code> for the following examples. Within that folder, each time a tabulation is run RCTab will create</p>
 <ul>
-<li><code>.csv</code> contest summary files<ul>
-<li><code>summary.csv</code> Whole-contest summary file</li>
-<li><code>summary.csv.hash</code> Corresponding hash file. This contains the hash to verify the results in <code>summary.csv</code></li>
-<li>Precinct-by-precinct summary files (if tabulating by precinct)</li>
+<li>A <code>YYYY-MM-DD-HH-mm Results</code> folder. In the name of the folder it will replace the actual date and time that the tabulation was run. So the results files for a tabulation run on April 8, 2025 at 4:33PM would be located in <code>c:\output\2025-04-08-16-33 Results</code>. The results files for a tabulation that was run 5 minutes later at 4:38PM would be located at <code>c:\output\2025-04-08-16-38 Results</code>. In these folders are</li>
+<li><code>YYYY-MM-DD-HH-mm_detailed_report</code></li>
+<li><code>YYYY-MM-DD-HH-mm_summary_report</code></li>
+<li><code>YYYY-MM-DD-HH-mm_rctab_cvr</code></li>
+<li>A <code>Log</code> folder</li>
 </ul>
-</li>
-<li><code>.json</code> contest summary files<ul>
-<li><code>summary.json</code> Whole-contest summary file</li>
-<li><code>summary.json.hash</code> Corresponding hash file. This contains the hash to verify the results in <code>summary.json</code></li>
-<li>Precinct-by-precinct summary files (if tabulating by precinct)</li>
-</ul>
-</li>
-<li><code>.log</code> audit files<ul>
-<li><code>.log</code> audit files are exported in 50MB sections. If a <code>.log</code> file exceeds 50MB an additional <code>.log</code> file is started by RCTab</li>
-<li>Corresponding <code>audit_N.log.hash</code> file. This contains the hash to verify the information in each <code>audit_N.log file</code></li>
-</ul>
-</li>
-<li><code>.json</code> CDF (common data format) files if Generate a CDF JSON is checked</li>
-</ul>
-<p>If necessary<strong>,</strong> instructions for verifying result file hashes can be found in <strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong>.</p>
-<p>Users can then navigate to "File" and click "Exit" if all contests are tabulated.</p>
-<p>If more contests remain to be tabulated, and contests will contain fewer than 1,000,000 total votes, user can navigate to “File” and click “New.” This will clear all fields in RCTab and permit the user to create a new configuration file.</p>
-<p>If contests to be tabulated will contain more than 1,000,000 total votes, return to start of guide and re-launch tabulator according to large configuration launch requirements. Then follow the guide to set up a configuration file.</p>
+<p>Optionally, depending on configuration, the following might also be included.
+- A <code>Tabulate by Precinct</code> folder with detailed and summary reports for each precinct.
+- A <code>Tabulate by Batch</code> folder with detailed and summary reports for each batch.
+- A <code>YYYY-MM-DD-HH-mm_cdf_cvr</code> file</p>
+<p>Each folder has a <code>Checksums</code> folder within it. Inside of that folder are digital fingerprints for each file RCTab generates. </p>
+<p>Here is more detail about each of the output files</p>
+<p><strong>Detailed and Summary Report</strong> Round-by-round results: candidate totals, inactive ballot counts, thresholds and vote percentages.
+Detailed report has everything, Summary report excludes separated inactive ballot buckets.</p>
+<p><strong>RCTab CVR</strong> For every ballot configured, identifying information like precinct and file path. For each rank, displays the candidate name for how RCTab read the ballot. </p>
+<p><strong>Audit Logs</strong> Detailed logs of everything that happens in RCTab. Exact copy of the text that shows up in the UI at the bottom.</p>
+<p><strong>CDF CVR</strong> CVR data in a "Common Data Format" <code>.json</code> file.</p>
+<p>If necessary, instructions for verifying result file hashes can be found in <strong>Section 23 - Trusted Build &amp; Output Hash Verification - Windows OS</strong>.</p>
+<p>RCTab tabulates a single contest at a time. Additional contests must be re-configured.  </p>
 <p>If any errors arise in the use of RCTab, refer to <strong>Section 29 - RCTab Operator Log Messages</strong>. Errors arising out of any hardware or software other than RCTab should refer to <strong>Section 09 - System Maintenance Manual</strong> and any relevant user and maintenance manuals.</p>
-<p>Before publishing results, jurisdictions should use their established reconciliation procedures to ensure total votes counted in each round equals total ballots cast in the contest. If numbers in the reconciliation process do not match, the user should double-check that all CVRs for that contest were exported successfully from the voting system and run RCTab process for that contest again.  Rely on user jurisdiction CVR handling procedures for transmitting CVRs.</p>
 <p>Any interaction with RCTab, including producing configuration files, running tabulations, hashing results files, and transmission of files from RCTab on USB drives should follow transmission procedures required in the jurisdiction, including the use of a team of no less than two trained personnel.</p>
-<p>Required capabilities that may be bypassed or deactivated during installation or operation by the user shall be clearly indicated. Additional capabilities that function only when activated during installation or operation by the user shall be clearly indicated. Additional capabilities that normally are active but may be bypassed or deactivated during installation or operation by the user shall be clearly indicated.</p>
-<p>The installation process for RCTab software does not give users the opportunity to bypass or deactivate options or settings.</p>
-<p>Capabilities that are active or inactive in software operation depend on various factors. Many of these factors are laid out above. Configuration files determine which system capabilities apply to a given set of voting data. More information about operations that users can set through the user interface is provided in <strong>Section 25 - Configuration File Parameters</strong>. Information about the operation of those settings is also provided in <strong>Section 02 - Software Design and Specifications.</strong></p>
-<h2 id="configuration-file-parameters-and-ui-label-match-sheet">Configuration File Parameters and UI Label Match Sheet</h2>
-<p>Below is a list of all configuration file parameter labels and their corresponding labels in RCTab UI. Labels are organized by the order of their appearance in the RCTab UI.</p>
-<table>
-<thead>
-<tr>
-<th><strong>Configuration File Parameters Name/Label</strong></th>
-<th><strong>UI Name/Label</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><code>contestName</code></td>
-<td>Contest Name</td>
-</tr>
-<tr>
-<td><code>contestDate</code></td>
-<td>Contest Date</td>
-</tr>
-<tr>
-<td><code>contestJurisdiction</code></td>
-<td>Contest Jurisdiction</td>
-</tr>
-<tr>
-<td><code>contestOffice</code></td>
-<td>Contest Office</td>
-</tr>
-<tr>
-<td><code>rulesDescription</code></td>
-<td>Rules Description</td>
-</tr>
-<tr>
-<td><code>provider</code></td>
-<td>Provider</td>
-</tr>
-<tr>
-<td><code>cdf</code></td>
-<td>CDF</td>
-</tr>
-<tr>
-<td><code>clearBallot</code></td>
-<td>Clear Ballot</td>
-</tr>
-<tr>
-<td><code>Dominion</code></td>
-<td>Dominion</td>
-</tr>
-<tr>
-<td><code>ess</code></td>
-<td>ES&amp;S</td>
-</tr>
-<tr>
-<td><code>hart</code></td>
-<td>Hart</td>
-</tr>
-<tr>
-<td><code>filePath</code></td>
-<td>Path</td>
-</tr>
-<tr>
-<td><code>contestId</code></td>
-<td>Contest ID</td>
-</tr>
-<tr>
-<td><code>firstVoteColumnIndex</code></td>
-<td>First Vote Column</td>
-</tr>
-<tr>
-<td><code>firstVoteRowIndex</code></td>
-<td>First Vote Row</td>
-</tr>
-<tr>
-<td><code>idColumnIndex</code></td>
-<td>ID Column</td>
-</tr>
-<tr>
-<td><code>precinctColumnIndex</code></td>
-<td>Precinct Column</td>
-</tr>
-<tr>
-<td><code>overvoteDelimiter</code></td>
-<td>Overvote Delimiter</td>
-</tr>
-<tr>
-<td><code>overvoteLabel</code></td>
-<td>Overvote Label</td>
-</tr>
-<tr>
-<td><code>undervoteLabel</code></td>
-<td>Undervote Label</td>
-</tr>
-<tr>
-<td><code>undeclaredWriteInLabel</code></td>
-<td>Undeclared Write-in Label</td>
-</tr>
-<tr>
-<td><code>treatBlankAsUndeclaredWriteIn</code></td>
-<td>Treat Blank as Undeclared Write-In</td>
-</tr>
-<tr>
-<td><code>name</code></td>
-<td>Name</td>
-</tr>
-<tr>
-<td><code>code</code></td>
-<td>Code</td>
-</tr>
-<tr>
-<td><code>excluded</code></td>
-<td>Excluded</td>
-</tr>
-<tr>
-<td><code>winnerElectionMode</code></td>
-<td>Winner Election Mode</td>
-</tr>
-<tr>
-<td><code>singleWinnerMajority</code></td>
-<td>Single-Winner Majority Determines Winner</td>
-</tr>
-<tr>
-<td><code>multiWinnerAllowOnlyOneWinnerPerRound</code></td>
-<td>Multi-Winner Allow Only One Winner Per Round</td>
-</tr>
-<tr>
-<td><code>multiWinnerAllowMultipleWinnersPerRound</code></td>
-<td>Multi-Winner Allow Multiple Winners Per Round</td>
-</tr>
-<tr>
-<td><code>bottomsUp</code></td>
-<td>Bottoms-up</td>
-</tr>
-<tr>
-<td><code>bottomsUpUsingPercentageThreshold</code></td>
-<td>Bottoms-up using Percentage Threshold</td>
-</tr>
-<tr>
-<td><code>multiPassIrv</code></td>
-<td>Multi-Pass IRV</td>
-</tr>
-<tr>
-<td><code>maxRankingsAllowed</code></td>
-<td>Maximum Number of Candidates That Can Be Ranked</td>
-</tr>
-<tr>
-<td><code>minimumVoteThreshold</code></td>
-<td>Minimum Vote Threshold</td>
-</tr>
-<tr>
-<td><code>batchElimination</code></td>
-<td>Use Batch Elimination</td>
-</tr>
-<tr>
-<td><code>continueUntilTwoCandidatesRemain</code></td>
-<td>Continue Until Two Candidates Remain</td>
-</tr>
-<tr>
-<td><code>tiebreakMode</code></td>
-<td>Tiebreak Mode</td>
-</tr>
-<tr>
-<td><code>random</code></td>
-<td>Random</td>
-</tr>
-<tr>
-<td><code>stopCountingAndAsk</code></td>
-<td>Stop counting and ask</td>
-</tr>
-<tr>
-<td><code>previousRoundCountsThenRandom</code></td>
-<td>Previous Round Counts (then random)</td>
-</tr>
-<tr>
-<td><code>prevousRoundCountsThenAsk</code></td>
-<td>Previous Round Counts (then stop counting and ask)</td>
-</tr>
-<tr>
-<td><code>useCandidateOrder</code></td>
-<td>Use candidate order in config file</td>
-</tr>
-<tr>
-<td><code>generatePermutation</code></td>
-<td>Generate permutation</td>
-</tr>
-<tr>
-<td><code>randomSeed</code></td>
-<td>Random Seed</td>
-</tr>
-<tr>
-<td><code>numberOfWinners</code></td>
-<td>Number of Winners</td>
-</tr>
-<tr>
-<td><code>multiSeatBottomsUpPercentageThreshold</code></td>
-<td>Percentage Threshold</td>
-</tr>
-<tr>
-<td><code>nonIntegerWinningThreshold</code></td>
-<td>Compute using HB Quota &gt; (Votes / (Seats + 1))</td>
-</tr>
-<tr>
-<td><code>hareQuota</code></td>
-<td>Compute using Hare Quota = (Votes/Seats)</td>
-</tr>
-<tr>
-<td><code>decimalPlacesForVoteArithmetic</code></td>
-<td>Decimal Places for Vote Arithmetic (Multi-Winner Only)</td>
-</tr>
-<tr>
-<td><code>overvoteRule</code></td>
-<td>Overvote Rule</td>
-</tr>
-<tr>
-<td><code>alwaysSkipToNextRank</code></td>
-<td>Always skip to next rank</td>
-</tr>
-<tr>
-<td><code>ExhaustImmediately</code></td>
-<td>Exhaust Immediately</td>
-</tr>
-<tr>
-<td><code>exhaustIfMultipleContinuing</code></td>
-<td>Exhaust if multiple continuing</td>
-</tr>
-<tr>
-<td><code>maxSkippedRanksAllowed</code></td>
-<td>How Many Consecutive Skipped Ranks Are Allowed</td>
-</tr>
-<tr>
-<td><code>exhaustOnDuplicateCandidate</code></td>
-<td>Exhaust on Multiple Ranks for the Same Candidate</td>
-</tr>
-<tr>
-<td><code>outputDirectory</code></td>
-<td>Output Directory</td>
-</tr>
-<tr>
-<td><code>tabulateByPrecinct</code></td>
-<td>Tabulate by Precinct</td>
-</tr>
-<tr>
-<td><code>generateCdfJson</code></td>
-<td>Generate CDF JSON</td>
-</tr>
-</tbody>
-</table>
 <div style="page-break-after: always;"></div>
 <h1 id="section-19-tabulation-options-for-rcv-tabulation">Section 19 - Tabulation Options for RCV Tabulation</h1>
 <p>Ranked choice voting is an umbrella term for a collection of voting methods where voters rank candidates in order of preference and votes are counted in rounds. Ranked choice voting elections occur in a series of rounds. Those rounds can consist of counting votes, eliminating candidates, transferring votes from eliminated candidates, electing candidates, and transferring surplus votes from elected candidates. Ranked choice voting is counted at both the granular ballot-by-ballot level and at a contest-wide level. In other words, counting RCV requires knowing details of how every individual ballot is marked as well as the total number of votes for each candidate at each stage of the RCV count.</p>

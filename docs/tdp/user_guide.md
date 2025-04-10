@@ -147,7 +147,7 @@ See below for a break-down of each field and what is required:
 **Undeclared Write-in Label** (optional)**:** Defines rankings in the CVR that will count towards `Undeclared Write-In` in the round-by-round count.
 `Undeclared Write-In` will always be eliminated in the first round, regardless of vote count.
 
-**Treat Blank as Undeclared Write-in** (optional for ES&S)**:** When checked, the tabulator will interpret blank cells in this ES&S CVR as votes for `Undeclared write-In`.
+**Treat Blank as Undeclared Write-in** (optional for ES&S)**:** When checked, the tabulator will interpret blank cells in this ES&S CVR as votes for `Undeclared Write-In`.
 
 **Add:** Adds CVR to the configuration file. Impacts no other option. Operation impacted by whether required fields (depending on Provider selected) are filled in.
 

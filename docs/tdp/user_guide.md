@@ -341,8 +341,8 @@ There are six tiebreak modes (described in technical detail in [**Section 25 - C
 
 - **Random:** Randomly select a tied candidate to eliminate or, in multi-winner allow only one winner per round contests only, elect. Requires a random seed.
 - **Stop counting and ask:** Pause count when a tie is reached.  The user is prompted to select any tied candidate to eliminate or, in multi-winner allow only one winner per round contests only, elect.
-- **Previous round counts (then random):** The tied candidate with the least votes in the previous round loses the tie. If there is a tie in the previous round, the tie is broken randomly. Requires a random seed.
-- **Previous round counts (then stop counting and ask):** The tied candidate with the least votes in the previous round loses the tie. If there is a tie in the previous round, the user is prompted to select any tied candidate to eliminate or, in multi-winner allow only one winner per round contests only, elect.
+- **Previous round counts (then random):** Looks back through each previous round's candidate tallies to break the tie. If all previous rounds are ties, the tie is broken randomly. Requires a random seed.
+- **Previous round counts (then stop counting and ask):** Looks back through each previous round's candidate tallies to break the tie. If all previous rounds are ties, user is prompted to select any tied candidate to eliminate or, in multi-winner contests only, elect.
 - **Use candidate order in the config file:** Use the order of candidates in the config file to determine tiebreak results. Candidates lower in the list lose the tiebreaker.
 - **Generate permutation:** Generate a randomly ordered list of candidates in the contest. Candidates lower in the permutation lose the tiebreaker. Requires a random seed.
 

@@ -1,5 +1,10 @@
 More detailed information about the use of RCTab is available here to complement the [**User Guide**](user_guide.md).
 
+# Output Files
+
+## Detailed Report
+
+
 ## Configuration File Parameters and UI Label Match Sheet
 
 Below is a list of all configuration file parameter labels and their corresponding labels in RCTab UI. Labels are organized by the order of their appearance in the RCTab UI.

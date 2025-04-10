@@ -41,27 +41,57 @@ To Launch:
 3. Change the current directory to the `rcv` folder created when you unzipped RCTab.
 4. First, type in cd (note there should be a space after cd).
 5. Using File Explorer navigate to the folder where RCTab is installed.
-6. Double-click on the `rctab_v1.3.0_windows` folder
+6. Double-click on the folder
 7. Click and drag the `rcv` folder over to the command prompt window
-8. Your command prompt will now read something like:
-    1. `cd C:\RCTab\rctab_v1.3.0_windows\rcv`
+8. Your command prompt will now read something like `cd C:\RCTab\rctab_v2.0_windows\rcv`
 9. Press enter
-10. Launch the tabulator by entering the following command:
-     1. `.\bin\java -mx30G -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main`.
+10. Launch the tabulator by entering the following command: `.\bin\java -mx30G -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main`
 
-## Prepping CVRs for use with RCTab Software
+## RCTab Layout
+Let's get familiar with the RCTab layout. There are four important sections for RCTab users.
+![img.png](../images/rctab_layout_sections.png)
+**1 - Config Tabs** Different options for configuring a ranked choice voting contest in RCTab. Clicking through the tabs on the top will take you to different configuration options.
 
-All exports of CVR records for use with RCTab and migration of CVR records for use with RCTab should follow CVR procedures required by the jurisdiction. Users must keep track of the path to each file that is needed to tabulate the RCV contests. This will be needed when configuring the RCTab software.
+**2 - Hint Text** For each of the different configuration tabs, this section has help text for users.
+
+**3 - Log Output** While using RCTab, everything that it is doing is logged to this section. Users should be looking here for any information that RCTab needs to communicate. Users can copy text from this section with `[Right Click] -> Copy` 
+
+**4 - RCTab Menu** 
+
+The  menu bar contains some important actions. 
+- `File -> Save` saves your current configuration to a file on disk.
+- `File -> Load` allows you to choose a configuration file to load into RCTab, allowing you to continue from a previously configured contest.
+- `File -> New` lets you start fresh with an empty configuration in the UI.
+
+
+- `Tabulation -> Validate` runs some basic validation on your configuration _before_ running the round by round tabulation. Configuration issues are logged for the user to address.
+- `Tabulation -> Tabulate` begins the round by round tabulation!
+
+The `Currently Loaded` text under the menu shows the path of the configuration file that is currently being used. 
 
 ## Setting up a configuration file for RCTab
 
-All settings in the RCTab software are described in technical detail in [**Section 25 - Configuration File Parameters**](../tdp/configuration_file_parameters.md), including brief descriptions of how options impact the operational validity of other options. This document will describe how to set up a configuration for a contest using your jurisdiction's  ranked choice voting rules. This guide also includes screenshots of the interfaces described. The values a user inputs into any of these fields depend upon the relevant laws and regulations in place in their jurisdiction, as well as the voting system vendor used to produce cast-vote records for their elections. Users must understand the requirements of their laws, regulations, and vendor CVR data in order to fill out these fields accurately for their needs.
+This section will describe how to set up a configuration for a contest using your jurisdiction's  ranked choice voting rules. This guide also includes screenshots of the interfaces described. The values a user inputs into any of these fields depend upon the relevant laws and regulations in place in their jurisdiction, as well as the voting system vendor used to produce cast-vote records for their elections. Users must understand the requirements of their laws, regulations, and vendor CVR data in order to fill out these fields accurately for their needs.
 
-RCTab is organized into tabs: the Contest Info Tab, the CVR Files Tab, the Candidates Tab, the Winning Rules Tab, the Voter Error Rules Tab, and the Output Tab. These tabs each include a set of fields that users fill out - some fields are always required, some fields are required based on previous input, and some fields are always optional. This guide will take the user through basic descriptions of each of these tabs and each of these fields. Additional technical information about these fields can be found in [**Section 25 - Configuration File Parameters**](../tdp/configuration_file_parameters.md). As users navigate through each tab they are building a configuration `.json` file which must be saved when complete. If RCTab is closed and the configuration is not saved, no information will be stored. The next time RCTab is opened all fields will be blank. Once a configuration is saved, it can be used by RCTab to process RCV election results according to the rules laid out in that configuration, provided all rules necessary are filled out.
+RCTab is organized into tabs
+- The Contest Info Tab
+- The CVR Files Tab
+- The Candidates Tab
+- The Winning Rules Tab
+- The Voter Error Rules Tab
+- The Output Tab
 
-Each individual contest run through RCTab requires its own configuration with contest-specific information such as the contest name and candidate names. This guide will run through setting up the winning rules and voter error rules requirements that will apply in your election and will discuss procedures for how to properly fill out other fields in the software. Operation of RCTab must be conducted by a team of no less than two trained personnel. Note: Including a % symbol anywhere in a configuration file results in a crash of the software. Do not use % symbols in any portion of a configuration file, including settings such as file paths and candidate names.
+These tabs each include a set of fields that users fill out - some fields are always required, some fields are required based on previous input, and some fields are always optional. This guide will take the user through basic descriptions of each of these tabs and each of these fields. Additional technical information about these fields can be found in [**Section 25 - Configuration File Parameters**](../tdp/configuration_file_parameters.md).
 
-The following guide describes how to operate RCTab. See also [**Section 11 - L&A Testing**](../tdp/l_and_a_testing.md) document for additional detail on system operations.
+As users navigate through each tab they are building a configuration file which must be saved before tabulation.
+If RCTab is closed and the configuration is not saved, no information will be stored. The next time RCTab is opened all fields will be blank. 
+Once configured, RCTab can save all the current configuration settings to a file. That file can be used later to load RCTab into the same configuration. Use `File -> Save` and `File -> Load` to save and load RCTab configs.
+
+![Configuration Save Dropdown](../images/config_save_dropdown.png)
+
+Each individual contest run through RCTab requires its own configuration with contest-specific information such as the contest name and candidate names.
+This guide will run through setting up the winning rules and voter error rules requirements that will apply in your election and will discuss procedures for how to properly fill out other fields in the software.
+Operation of RCTab must be conducted by a team of no less than two trained personnel.
 
 ### Contest Info Tab
 
@@ -137,6 +167,8 @@ See below for a break-down of each field and what is required:
 **ID Column:** The column the IDs are in. Not all CVR files contain an ID column.
 
 **Precinct Column:** The column that contains the precinct.
+
+**Batch Column:** The column that contains the batch identifier.
 
 **Overvote Delimiter** (optional, but must be blank if "Overvote Label" is provided)**:** If using a CVR in ES&S style, overvotes can be reflected in a CVR by displaying all candidates marked at a ranking. Those candidate names will be differentiated from each other by a delimiter, something like a vertical bar `|` or a slash `/`. If your overvotes are delimited like this, enter the delimiter used in this field. Note: that ES&S files may include only the label "overvote" and no additional information, in which case the "Overvote Label" field should be used instead.
 

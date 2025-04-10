@@ -890,9 +890,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#prepping-cvrs-for-use-with-rctab-software" class="md-nav__link">
+  <a href="#rctab-layout" class="md-nav__link">
     <span class="md-ellipsis">
-      Prepping CVRs for use with RCTab Software
+      RCTab Layout
     </span>
   </a>
   
@@ -1723,25 +1723,45 @@ In order to determine the launch procedure for a jurisdiction, users should cons
 <li>Change the current directory to the <code>rcv</code> folder created when you unzipped RCTab.</li>
 <li>First, type in cd (note there should be a space after cd).</li>
 <li>Using File Explorer navigate to the folder where RCTab is installed.</li>
-<li>Double-click on the <code>rctab_v1.3.0_windows</code> folder</li>
+<li>Double-click on the folder</li>
 <li>Click and drag the <code>rcv</code> folder over to the command prompt window</li>
-<li>Your command prompt will now read something like:<ol>
-<li><code>cd C:\RCTab\rctab_v1.3.0_windows\rcv</code></li>
-</ol>
-</li>
+<li>Your command prompt will now read something like <code>cd C:\RCTab\rctab_v2.0_windows\rcv</code></li>
 <li>Press enter</li>
-<li>Launch the tabulator by entering the following command:<ol>
-<li><code>.\bin\java -mx30G -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main</code>.</li>
+<li>Launch the tabulator by entering the following command: <code>.\bin\java -mx30G -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main</code></li>
 </ol>
-</li>
-</ol>
-<h2 id="prepping-cvrs-for-use-with-rctab-software">Prepping CVRs for use with RCTab Software<a class="headerlink" href="#prepping-cvrs-for-use-with-rctab-software" title="Permanent link">&para;</a></h2>
-<p>All exports of CVR records for use with RCTab and migration of CVR records for use with RCTab should follow CVR procedures required by the jurisdiction. Users must keep track of the path to each file that is needed to tabulate the RCV contests. This will be needed when configuring the RCTab software.</p>
+<h2 id="rctab-layout">RCTab Layout<a class="headerlink" href="#rctab-layout" title="Permanent link">&para;</a></h2>
+<p>Let's get familiar with the RCTab layout. There are four important sections for RCTab users.
+<img alt="img.png" src="../images/rctab_layout_sections.png" />
+<strong>1 - Config Tabs</strong> Different options for configuring a ranked choice voting contest in RCTab. Clicking through the tabs on the top will take you to different configuration options.</p>
+<p><strong>2 - Hint Text</strong> For each of the different configuration tabs, this section has help text for users.</p>
+<p><strong>3 - Log Output</strong> While using RCTab, everything that it is doing is logged to this section. Users should be looking here for any information that RCTab needs to communicate. Users can copy text from this section with <code>[Right Click] -&gt; Copy</code> </p>
+<p><strong>4 - RCTab Menu</strong> </p>
+<p>The  menu bar contains some important actions. 
+- <code>File -&gt; Save</code> saves your current configuration to a file on disk.
+- <code>File -&gt; Load</code> allows you to choose a configuration file to load into RCTab, allowing you to continue from a previously configured contest.
+- <code>File -&gt; New</code> lets you start fresh with an empty configuration in the UI.</p>
+<ul>
+<li><code>Tabulation -&gt; Validate</code> runs some basic validation on your configuration <em>before</em> running the round by round tabulation. Configuration issues are logged for the user to address.</li>
+<li><code>Tabulation -&gt; Tabulate</code> begins the round by round tabulation!</li>
+</ul>
+<p>The <code>Currently Loaded</code> text under the menu shows the path of the configuration file that is currently being used. </p>
 <h2 id="setting-up-a-configuration-file-for-rctab">Setting up a configuration file for RCTab<a class="headerlink" href="#setting-up-a-configuration-file-for-rctab" title="Permanent link">&para;</a></h2>
-<p>All settings in the RCTab software are described in technical detail in <a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a>, including brief descriptions of how options impact the operational validity of other options. This document will describe how to set up a configuration for a contest using your jurisdiction's  ranked choice voting rules. This guide also includes screenshots of the interfaces described. The values a user inputs into any of these fields depend upon the relevant laws and regulations in place in their jurisdiction, as well as the voting system vendor used to produce cast-vote records for their elections. Users must understand the requirements of their laws, regulations, and vendor CVR data in order to fill out these fields accurately for their needs.</p>
-<p>RCTab is organized into tabs: the Contest Info Tab, the CVR Files Tab, the Candidates Tab, the Winning Rules Tab, the Voter Error Rules Tab, and the Output Tab. These tabs each include a set of fields that users fill out - some fields are always required, some fields are required based on previous input, and some fields are always optional. This guide will take the user through basic descriptions of each of these tabs and each of these fields. Additional technical information about these fields can be found in <a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a>. As users navigate through each tab they are building a configuration <code>.json</code> file which must be saved when complete. If RCTab is closed and the configuration is not saved, no information will be stored. The next time RCTab is opened all fields will be blank. Once a configuration is saved, it can be used by RCTab to process RCV election results according to the rules laid out in that configuration, provided all rules necessary are filled out.</p>
-<p>Each individual contest run through RCTab requires its own configuration with contest-specific information such as the contest name and candidate names. This guide will run through setting up the winning rules and voter error rules requirements that will apply in your election and will discuss procedures for how to properly fill out other fields in the software. Operation of RCTab must be conducted by a team of no less than two trained personnel. Note: Including a % symbol anywhere in a configuration file results in a crash of the software. Do not use % symbols in any portion of a configuration file, including settings such as file paths and candidate names.</p>
-<p>The following guide describes how to operate RCTab. See also <a href="l_and_a_testing.html"><strong>Section 11 - L&amp;A Testing</strong></a> document for additional detail on system operations.</p>
+<p>This section will describe how to set up a configuration for a contest using your jurisdiction's  ranked choice voting rules. This guide also includes screenshots of the interfaces described. The values a user inputs into any of these fields depend upon the relevant laws and regulations in place in their jurisdiction, as well as the voting system vendor used to produce cast-vote records for their elections. Users must understand the requirements of their laws, regulations, and vendor CVR data in order to fill out these fields accurately for their needs.</p>
+<p>RCTab is organized into tabs
+- The Contest Info Tab
+- The CVR Files Tab
+- The Candidates Tab
+- The Winning Rules Tab
+- The Voter Error Rules Tab
+- The Output Tab</p>
+<p>These tabs each include a set of fields that users fill out - some fields are always required, some fields are required based on previous input, and some fields are always optional. This guide will take the user through basic descriptions of each of these tabs and each of these fields. Additional technical information about these fields can be found in <a href="configuration_file_parameters.html"><strong>Section 25 - Configuration File Parameters</strong></a>.</p>
+<p>As users navigate through each tab they are building a configuration file which must be saved before tabulation.
+If RCTab is closed and the configuration is not saved, no information will be stored. The next time RCTab is opened all fields will be blank. 
+Once configured, RCTab can save all the current configuration settings to a file. That file can be used later to load RCTab into the same configuration. Use <code>File -&gt; Save</code> and <code>File -&gt; Load</code> to save and load RCTab configs.</p>
+<p><img alt="Configuration Save Dropdown" src="../images/config_save_dropdown.png" /></p>
+<p>Each individual contest run through RCTab requires its own configuration with contest-specific information such as the contest name and candidate names.
+This guide will run through setting up the winning rules and voter error rules requirements that will apply in your election and will discuss procedures for how to properly fill out other fields in the software.
+Operation of RCTab must be conducted by a team of no less than two trained personnel.</p>
 <h3 id="contest-info-tab">Contest Info Tab<a class="headerlink" href="#contest-info-tab" title="Permanent link">&para;</a></h3>
 <p>Below is what the contest info tab looks like when a user first navigates to it. This is also the first screen a user will see upon successfully launching RCTab. Contest info fields are in the middle of the screen. The black box at the bottom of the screen is called the operation log box. It sends the user messages about the tabulation process, any errors encountered in using a configuration file, any errors in tabulation, and other software errors. Information in this panel is saved to the <code>rcv_0.log file</code>. Users cannot turn this feature off while using the RCTab software. The panel on the right side of the document is the “Hints'' tab which includes any interaction with RCTab, including producing configuration files, running tabulations, hashing results files, and transmission of files from RCTab on USB drives should follow transmission procedures required in the jurisdiction, including the use of a team with no less than two trained personnel.</p>
 <p><img alt="Screenshot of unpopulated RCTab &quot;Content Info&quot; tab" src="../images/image22.png" />
@@ -1796,6 +1816,7 @@ See below for a break-down of each field and what is required:</p>
 <p><strong>First Vote Row:</strong> the row where the first vote record is.</p>
 <p><strong>ID Column:</strong> The column the IDs are in. Not all CVR files contain an ID column.</p>
 <p><strong>Precinct Column:</strong> The column that contains the precinct.</p>
+<p><strong>Batch Column:</strong> The column that contains the batch identifier.</p>
 <p><strong>Overvote Delimiter</strong> (optional, but must be blank if "Overvote Label" is provided)<strong>:</strong> If using a CVR in ES&amp;S style, overvotes can be reflected in a CVR by displaying all candidates marked at a ranking. Those candidate names will be differentiated from each other by a delimiter, something like a vertical bar <code>|</code> or a slash <code>/</code>. If your overvotes are delimited like this, enter the delimiter used in this field. Note: that ES&amp;S files may include only the label "overvote" and no additional information, in which case the "Overvote Label" field should be used instead.</p>
 <p><strong>Overvote Label</strong> (optional, but must be blank if Overvote Rule is)<strong>:</strong> Some CDF and ES&amp;S CVRs use a particular word/phrase to indicate an overvote.</p>
 <p><strong>Undervote Label</strong> (optional)<strong>:</strong> Some ES&amp;S CVRs use a particular word/phrase to indicate an undervote.</p>

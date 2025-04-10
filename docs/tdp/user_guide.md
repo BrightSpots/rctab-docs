@@ -637,103 +637,37 @@ After clicking the `Tabulate XXX,XXX ballots` button you can follow the progress
 In the event that there is an error, the final button will say `Close and View Errors`. Review the log window for details.
 ![Pre-Tabulation Checks - Error](../images/pre-tabulation_checks_error.png)
 
-### Results Files
-Output files will be:
+### Output Files
+All output files are written to the location specified in the Output tab. Let's assume this is configured to `c:\output` for the following examples. Within that folder, each time a tabulation is run RCTab will create
 
-- `.csv` contest summary files
-    * `summary.csv` Whole-contest summary file
-    * `summary.csv.hash` Corresponding hash file. This contains the hash to verify the results in `summary.csv`
-    * Precinct-by-precinct summary files (if tabulating by precinct)
-- `.json` contest summary files
-    * `summary.json` Whole-contest summary file
-    * `summary.json.hash` Corresponding hash file. This contains the hash to verify the results in `summary.json`
-    * Precinct-by-precinct summary files (if tabulating by precinct)
-- `.log` audit files
-    * `.log` audit files are exported in 50MB sections. If a `.log` file exceeds 50MB an additional `.log` file is started by RCTab
-    * Corresponding `audit_N.log.hash` file. This contains the hash to verify the information in each `audit_N.log file`
-- `.json` CDF (common data format) files if Generate a CDF JSON is checked
+- A `YYYY-MM-DD-HH-mm Results` folder. In the name of the folder it will replace the actual date and time that the tabulation was run. So the results files for a tabulation run on April 8, 2025 at 4:33PM would be located in `c:\output\2025-04-08-16-33 Results`. The results files for a tabulation that was run 5 minutes later at 4:38PM would be located at `c:\output\2025-04-08-16-38 Results`. In these folders are
+  - `YYYY-MM-DD-HH-mm_detailed_report`
+  - `YYYY-MM-DD-HH-mm_summary_report`
+  - `YYYY-MM-DD-HH-mm_rctab_cvr`
+  - A `Log` folder
 
-If necessary**,** instructions for verifying result file hashes can be found in [**Section 23 - Trusted Build & Output Hash Verification - Windows OS**](../tdp/trusted_build_and_output_hash_verification.md).
+Optionally, depending on configuration, the following might also be included.
+- A `Tabulate by Precinct` folder with detailed and summary reports for each precinct.
+- A `Tabulate by Batch` folder with detailed and summary reports for each batch.
+- A `YYYY-MM-DD-HH-mm_cdf_cvr` file
 
-Users can then navigate to "File" and click "Exit" if all contests are tabulated.
+Each folder has a `Checksums` folder within it. Inside of that folder are digital fingerprints for each file RCTab generates. 
 
-If more contests remain to be tabulated, and contests will contain fewer than 1,000,000 total votes, user can navigate to “File” and click “New.” This will clear all fields in RCTab and permit the user to create a new configuration file.
+Here is more detail about each of the output files
 
-If contests to be tabulated will contain more than 1,000,000 total votes, return to start of guide and re-launch tabulator according to large configuration launch requirements. Then follow the guide to set up a configuration file.
+**Detailed and Summary Report** Round-by-round results: candidate totals, inactive ballot counts, thresholds and vote percentages.
+Detailed report has everything, Summary report excludes separated inactive ballot buckets.
+
+**RCTab CVR** For every ballot configured, identifying information like precinct and file path. For each rank, displays the candidate name for how RCTab read the ballot. 
+
+**Audit Logs** Detailed logs of everything that happens in RCTab. Exact copy of the text that shows up in the UI at the bottom.
+
+**CDF CVR** CVR data in a "Common Data Format" `.json` file.
+
+If necessary, instructions for verifying result file hashes can be found in [**Section 23 - Trusted Build & Output Hash Verification - Windows OS**](../tdp/trusted_build_and_output_hash_verification.md).
+
+RCTab tabulates a single contest at a time. Additional contests must be re-configured.  
 
 If any errors arise in the use of RCTab, refer to [**Section 29 - RCTab Operator Log Messages**](../tdp/rctab_operator_log_messages.md). Errors arising out of any hardware or software other than RCTab should refer to [**Section 09 - System Maintenance Manual**](../tdp/system_maintenance_manual.md) and any relevant user and maintenance manuals.
 
-Before publishing results, jurisdictions should use their established reconciliation procedures to ensure total votes counted in each round equals total ballots cast in the contest. If numbers in the reconciliation process do not match, the user should double-check that all CVRs for that contest were exported successfully from the voting system and run RCTab process for that contest again.  Rely on user jurisdiction CVR handling procedures for transmitting CVRs.
-
 Any interaction with RCTab, including producing configuration files, running tabulations, hashing results files, and transmission of files from RCTab on USB drives should follow transmission procedures required in the jurisdiction, including the use of a team of no less than two trained personnel.
-
-Required capabilities that may be bypassed or deactivated during installation or operation by the user shall be clearly indicated. Additional capabilities that function only when activated during installation or operation by the user shall be clearly indicated. Additional capabilities that normally are active but may be bypassed or deactivated during installation or operation by the user shall be clearly indicated.
-
-The installation process for RCTab software does not give users the opportunity to bypass or deactivate options or settings.
-
-Capabilities that are active or inactive in software operation depend on various factors. Many of these factors are laid out above. Configuration files determine which system capabilities apply to a given set of voting data. More information about operations that users can set through the user interface is provided in [**Section 25 - Configuration File Parameters**](../tdp/configuration_file_parameters.md). Information about the operation of those settings is also provided in [**Section 02 - Software Design and Specifications.**](../tdp/software_design_and_specifications.md)
-
-## Configuration File Parameters and UI Label Match Sheet
-
-Below is a list of all configuration file parameter labels and their corresponding labels in RCTab UI. Labels are organized by the order of their appearance in the RCTab UI.
-
-| **Configuration File Parameters Name/Label**   | **UI Name/Label**                                      |
-|------------------------------------------------|--------------------------------------------------------|
-| `contestName`                                  | Contest Name                                           |
-| `contestDate`                                  | Contest Date                                           |
-| `contestJurisdiction`                          | Contest Jurisdiction                                   |
-| `contestOffice`                                | Contest Office                                         |
-| `rulesDescription`                             | Rules Description                                      |
-| `provider`                                     | Provider                                               |
-| `cdf`                                          | CDF                                                    |
-| `clearBallot`                                  | Clear Ballot                                           |
-| `Dominion`                                     | Dominion                                               |
-| `ess`                                          | ES&S                                                   |
-| `hart`                                         | Hart                                                   |
-| `filePath`                                     | Path                                                   |
-| `contestId`                                    | Contest ID                                             |
-| `firstVoteColumnIndex`                         | First Vote Column                                      |
-| `firstVoteRowIndex`                            | First Vote Row                                         |
-| `idColumnIndex`                                | ID Column                                              |
-| `precinctColumnIndex`                          | Precinct Column                                        |
-| `overvoteDelimiter`                            | Overvote Delimiter                                     |
-| `overvoteLabel`                                | Overvote Label                                         |
-| `undervoteLabel`                               | Undervote Label                                        |
-| `undeclaredWriteInLabel`                       | Undeclared Write-in Label                              |
-| `treatBlankAsUndeclaredWriteIn`                | Treat Blank as Undeclared Write-In                     |
-| `name`                                         | Name                                                   |
-| `code`                                         | Code                                                   |
-| `excluded`                                     | Excluded                                               |
-| `winnerElectionMode`                           | Winner Election Mode                                   |
-| `singleWinnerMajority`                         | Single-Winner Majority Determines Winner               |
-| `multiWinnerAllowOnlyOneWinnerPerRound`        | Multi-Winner Allow Only One Winner Per Round           |
-| `multiWinnerAllowMultipleWinnersPerRound`      | Multi-Winner Allow Multiple Winners Per Round          |
-| `bottomsUp`                                    | Bottoms-up                                             |
-| `bottomsUpUsingPercentageThreshold`            | Bottoms-up using Percentage Threshold                  |
-| `multiPassIrv`                                 | Multi-Pass IRV                                         |
-| `maxRankingsAllowed`                           | Maximum Number of Candidates That Can Be Ranked        |
-| `minimumVoteThreshold`                         | Minimum Vote Threshold                                 |
-| `batchElimination`                             | Use Batch Elimination                                  |
-| `continueUntilTwoCandidatesRemain`             | Continue Until Two Candidates Remain                   |
-| `tiebreakMode`                                 | Tiebreak Mode                                          |
-| `random`                                       | Random                                                 |
-| `stopCountingAndAsk`                           | Stop counting and ask                                  |
-| `previousRoundCountsThenRandom`                | Previous Round Counts (then random)                    |
-| `prevousRoundCountsThenAsk`                    | Previous Round Counts (then stop counting and ask)     |
-| `useCandidateOrder`                            | Use candidate order in config file                     |
-| `generatePermutation`                          | Generate permutation                                   |
-| `randomSeed`                                   | Random Seed                                            |
-| `numberOfWinners`                              | Number of Winners                                      |
-| `multiSeatBottomsUpPercentageThreshold`        | Percentage Threshold                                   |
-| `nonIntegerWinningThreshold`                   | Compute using HB Quota > (Votes / (Seats + 1))         |
-| `hareQuota`                                    | Compute using Hare Quota = (Votes/Seats)               |
-| `decimalPlacesForVoteArithmetic`               | Decimal Places for Vote Arithmetic (Multi-Winner Only) |
-| `overvoteRule`                                 | Overvote Rule                                          |
-| `alwaysSkipToNextRank`                         | Always skip to next rank                               |
-| `ExhaustImmediately`                           | Exhaust Immediately                                    |
-| `exhaustIfMultipleContinuing`                  | Exhaust if multiple continuing                         |
-| `maxSkippedRanksAllowed`                       | How Many Consecutive Skipped Ranks Are Allowed         |
-| `exhaustOnDuplicateCandidate`                  | Exhaust on Multiple Ranks for the Same Candidate       |
-| `outputDirectory`                              | Output Directory                                       |
-| `tabulateByPrecinct`                           | Tabulate by Precinct                                   |
-| `generateCdfJson`                              | Generate CDF JSON                                      |

@@ -6032,8 +6032,9 @@ See below for a break-down of each field and what is required:</p>
 <p><strong>Overvote Delimiter</strong> (optional, but must be blank if "Overvote Label" is provided)<strong>:</strong> If using a CVR in ES&amp;S style, overvotes can be reflected in a CVR by displaying all candidates marked at a ranking. Those candidate names will be differentiated from each other by a delimiter, something like a vertical bar <code>|</code> or a slash <code>/</code>. If your overvotes are delimited like this, enter the delimiter used in this field. Note: that ES&amp;S files may include only the label "overvote" and no additional information, in which case the "Overvote Label" field should be used instead.</p>
 <p><strong>Overvote Label</strong> (optional, but must be blank if Overvote Rule is)<strong>:</strong> Some CDF and ES&amp;S CVRs use a particular word/phrase to indicate an overvote.</p>
 <p><strong>Undervote Label</strong> (optional)<strong>:</strong> Some ES&amp;S CVRs use a particular word/phrase to indicate an undervote.</p>
-<p><strong>Undeclared Write-in Label</strong> (optional)<strong>:</strong> Some CVRs use a particular word/phrase to indicate a write-in.</p>
-<p><strong>Treat Blank as Undeclared Write-in</strong> (optional for ES&amp;S)<strong>:</strong> When checked, the tabulator will interpret blank cells in this ES&amp;S CVR as votes for undeclared write-ins.</p>
+<p><strong>Undeclared Write-in Label</strong> (optional)<strong>:</strong> Defines rankings in the CVR that will count towards <code>Undeclared Write-In</code> in the round-by-round count.
+<code>Undeclared Write-In</code> will always be eliminated in the first round, regardless of vote count.</p>
+<p><strong>Treat Blank as Undeclared Write-in</strong> (optional for ES&amp;S)<strong>:</strong> When checked, the tabulator will interpret blank cells in this ES&amp;S CVR as votes for <code>Undeclared write-In</code>.</p>
 <p><strong>Add:</strong> Adds CVR to the configuration file. Impacts no other option. Operation impacted by whether required fields (depending on Provider selected) are filled in.</p>
 <p><strong>Clear:</strong> Clears all fillable values in CVR Files tab above the CVR Files table.</p>
 <p><strong>Delete Selected:</strong> Deletes CVR file information listed in the CVR table. Impacted by and impacts no options.</p>

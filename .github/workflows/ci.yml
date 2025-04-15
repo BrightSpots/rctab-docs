@@ -1,0 +1,21 @@
+name: Deploy Prebuilt MkDocs Sites
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Source Branch
+        uses: actions/checkout@v4
+
+      - name: Install
+        run: |
+          pip install -r requirements.txt
+          pip install -e scripts/mkdocs_plugins/link_stripper
+          pip install pytest
+
+      - name: Run tests
+        run: python -m pytest

@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from link_stripper import strip_html_links
+from .link_stripper.link_stripper import strip_html_links
 
 
 def normalize_html(html):

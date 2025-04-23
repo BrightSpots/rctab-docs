@@ -1,9 +1,14 @@
-site_name: 'RCTab Documentation - {{ release_version }}'
-site_url: 'https://brightspots.github.io/rctab-docs/{{ release_version }}/'
+site_name: 'RCTab Documentation'
+site_url: 'https://rctab-docs.readthedocs.io/'
 
 plugins:
   - offline # allows MKDocs to be used without a backend server
   - privacy # makes it easier to self-host external assets
+  - with-pdf:
+      author: The Ranked Choice Voting Resource Center
+      cover_title: RCTab Documentation
+      cover_subtitle: !ENV [READTHEDOCS_VERSION, 'Unreleased Alpha']
+      copyright: (c) Copyright 2025
   - link-stripper:
       target_files:
         - 'tdp/print-page.html'
@@ -50,6 +55,7 @@ theme:
 # This is the structure of what gets generated when we run `mkdocs build`
 nav:
   - Home: index.md
+  - PDF Version: rctab.pdf
   - TDP:
     - Documentation Abstract: tdp/00_documentation_abstracts.md
     - System Overview: tdp/system_overview.md

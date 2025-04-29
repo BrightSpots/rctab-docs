@@ -1,8 +1,6 @@
-# RCTab Docs (version 1.3.2-doc2.0)
+# RCTab v2.0 Docs
 
 RCTab is an open source tabulator for running ranked choice voting elections.
 
-Here are some of our technical documents:
-
-- [TDP](tdp/00_documentation_abstracts.md)
-- [User Guide](user_guide/user_guide.md)
+[//]: # (- [TDP]&#40;tdp/00_documentation_abstracts.md&#41;)
+Start with the **[User Guide](user_guide/user_guide.md)** if you are a new user. It will help you get RCTab configured and running tabulations.  

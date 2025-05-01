@@ -1,8 +1,8 @@
-# RCTab Documentations
+# RCTab Documentation
 
-This GitHub project documents [RCTab](rcvresources.org/rctab), an open source application for tabulating ranked choice voting elections. This README is intended for developers and maintainers of the RCTab documentation. It provides instructions on how to set up the project, run tests, and release new documentation versions.
+This GitHub project documents [RCTab](https://rcvresources.org/rctab), an open source application for tabulating ranked choice voting elections. This README is intended for developers and maintainers of the RCTab documentation. It provides instructions on how to set up the project, run tests, and release new documentation versions.
 
-If you are an actual user of RCTab and are looking for the documentation itself, those versions are released at the [RCTab documentation homepage](https://brightspots.github.io/rctab-docs/index.html).
+If you are an actual user of RCTab and are looking for the documentation itself, those versions are released at the [RCTab documentation homepage](https://rctab-docs.readthedocs.io/).
 
 ## Setting Up the Project
 
@@ -21,7 +21,7 @@ To clone the repo:
 git clone https://github.com/BrightSpots/rctab-docs.git
 ```
 
-### Installing Python Dependenciess
+### Installing Python Dependencies
 
 First, navigate to the directory where the repository has been cloned (e.g. `cd ./rctab-docs`).
 
@@ -60,7 +60,7 @@ python -m pytest
 
 ### Overview
 
-We use a documentation versioning scheme that aligns with, but remains independent from, the [RCTab software versioning](https://github.com/BrightSpots/rcv/wiki/RCTab-Versioning). This allows for multiple documentation versions per RCTab release.
+We use a documentation versioning scheme that aligns with, but remains independent of, the [RCTab software versioning](https://github.com/BrightSpots/rcv/wiki/RCTab-Versioning). This allows for multiple documentation versions per RCTab release.
 
 **Documentation Versioning Scheme**: `RCTab v[RCTAB_VERSION_NUMBER]-docX.Y`
 
@@ -75,14 +75,11 @@ We use a documentation versioning scheme that aligns with, but remains independe
 
    For the example commands in this `readme` we'll use version 2.0.1-doc1.0
 
-3. **Create a New Release Branch or Tag**
+2. **Create a New Release Branch or Tag**
 
-   Create a new branch or tag in the repository for the new documentation version. `rctab-docs` branches, for the most part, live independently of others. Branch from a prior release that makes the most sense.
-   
-     - **Most Common Case:** If you're creating documentation for a new version of RCTab or updating the current version's documentation, branch from the most recent documentation for the latest version of RCTab.  
-     - **Older Versions:** If you're updating documentation for an older version of RCTab, branch from the most recent documentation for that version.
-     - **Patches:** If you're creating documentation for a patch, branch from the documentation corresponding to the version of RCTab the patch is based on.
-
+   Create a new branch or tag in the repository for the new documentation version.
+   Branch from the most recent documentation version for the version of RCTab you're creating documentation for. 
+     
    **Branch Naming Convention**: `releases/[RCTAB_VERSION_NUMBER]/docX.Y`
 
    **Example Commands**:
@@ -92,11 +89,11 @@ We use a documentation versioning scheme that aligns with, but remains independe
    git push -u origin releases/2.0.1/doc1.0
    ```
 
-4. **Update the Documentation Content**
+3. **Update the Documentation Content**
 
    - **Modify the documentation source files** as needed.
 
-5. **Commit and Push Changes**
+4. **Commit and Push Changes**
    ```
    git add .
    git commit -m "Add documentation version 2.0.1-doc1.0"
@@ -104,33 +101,6 @@ We use a documentation versioning scheme that aligns with, but remains independe
    ```
    This will trigger a build on readthedocs.
 
-6. **Create a new documentation version on readthedocs**
+5. **Create a new documentation version on readthedocs**
 
-   See readthedocs for more info: https://docs.readthedocs.com/platform/stable/versions.html
-
-
-## Useful scripts:
-
-### Compare specific ranges of lines between two files using `vimdiff`
-requires `vim` and `vimdiff`
-
-Run:
-```shell
-./scripts/compare_parts.sh
-```
-#### Some useful `vimdiff` commands to use in `./scripts/compare_parts.sh`:
-
-| Action                                                        | `vimdiff` command                                       |
-|---------------------------------------------------------------|---------------------------------------------------------|
-| Switch between files being compared                           | `ctrl`+`w`+`w` while in vim's `INSERT` mode             |
-| Wrap lines in a window pane                                   | `setlocal wrap linebreak` while in vim's `COMMAND` mode |
-| Copy a the selected window pane's file to the MacOS clipboard | `w !pbcopy` while in vim's `COMMNAND` mode              |
-
-### Copy specific ranges of lines from one file into another file
-
-Run:
-```shell
-./scripts/insert_lines.sh
-```
-
-Recommend testing this out on some small test files to understand how it works before running it on larger files. Alternatively, you can use a version management  tool like `git`.
+   Check out the [Read The Docs documentation](https://docs.readthedocs.com/platform/stable/versions.html) to manage RCTab docs mapping to Read The Docs versions. 

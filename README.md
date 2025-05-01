@@ -103,4 +103,4 @@ We use a documentation versioning scheme that aligns with, but remains independe
 
 5. **Create a new documentation version on readthedocs**
 
-   See [readthedocs own documentation](https://docs.readthedocs.com/platform/stable/versions.html) to manage readthedocs in-app versions. 
+   Check out the [Read The Docs documentation](https://docs.readthedocs.com/platform/stable/versions.html) to manage RCTab docs mapping to Read The Docs versions. 

@@ -99,4 +99,5 @@ nav:
     - Ranked Choice Voting Laws: tdp/ranked-choice-voting-laws.md
     - 22-Month Archiving Procedure: tdp/22-month-archiving-procedure.md
   - User Guide:
-    - User Guide: user_guide/user_guide.md
+    - Quick Start: user_guide/user_guide.md
+    - Extended: user_guide/user_guide_extended.md

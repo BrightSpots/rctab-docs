@@ -1,3 +1,5 @@
+[//]: # (manually defined html header page followed by manually listed TDP section snippets)
+
 <!-- HTML for Cover Page -->
 <section style="display: block; height: 100vh; text-align: center; margin: 0; padding: 0;">
     <div style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 2rem; max-width: 800px; margin: 0 auto;">

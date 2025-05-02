@@ -1,4 +1,4 @@
-More detailed information about the use of RCTab is available here to complement the [**Quick Start User Guide**](user_guide/user_guide.md).
+More detailed information about the use of RCTab is available here to complement the [**Quick Start User Guide**](user_guide.md).
 
 # Output Files
 

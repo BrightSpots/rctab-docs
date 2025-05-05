@@ -9,6 +9,10 @@ plugins:
       cover_title: RCTab Documentation
       cover_subtitle: !ENV [READTHEDOCS_VERSION, 'Unreleased Alpha']
       copyright: (c) Copyright 2025
+      excludes_children:
+        - 'index.html'
+      exclude_pages:
+        - 'index.html'
   - link-stripper:
       target_files:
         - 'tdp/print-page.html'

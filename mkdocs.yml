@@ -16,6 +16,7 @@ plugins:
 markdown_extensions:
   - toc: # https://squidfunk.github.io/mkdocs-material/setup/extensions/python-markdown/#table-of-contents
       permalink: true
+      toc_depth: 3
   - tables # https://squidfunk.github.io/mkdocs-material/reference/data-tables/#configuration
 
   # Python Markdown Extensions (https://facelessuser.github.io/pymdown-extensions/)

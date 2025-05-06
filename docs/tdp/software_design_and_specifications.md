@@ -320,7 +320,7 @@ The manufacturer shall list all documents controlling the development of the sof
 
 * This is described in the [**Coding Standards and Style**](#coding-standards-and-style) paragraph of [**Section 02 - Software Design and Specifications**](#).
 
-## 9.5.3 Software Overview {#9.5.3-software-overview}
+## 9.5.3 Software Overview
 
 The manufacturer shall provide an overview of the software that includes the following items:  
 

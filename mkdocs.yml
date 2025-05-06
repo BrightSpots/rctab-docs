@@ -56,49 +56,49 @@ theme:
 # This is the structure of what gets generated when we run `mkdocs build`
 nav:
   - Home: index.md
-  - PDF Version: rctab.pdf
-  - TDP:
-    - Documentation Abstract: tdp/00_documentation_abstracts.md
-    - System Overview: tdp/system_overview.md
-    - Software Design and Specifications: tdp/software_design_and_specifications.md
-    - System Hardware Specification: tdp/system_hardware_specification.md
-    - System Functionality Description: tdp/system_functionality_description.md
-    - Acceptance Test Procedures: tdp/acceptance_test_procedures.md
-    - System Design Specifications: tdp/system_design_specifications.md
-    - System Security Specification Requirements: tdp/system_security_specification_requirements.md
-    - Design and Interface Specification: tdp/design_and_interface_specification.md
-    - Security Architecture: tdp/security_architecture.md
-    - Development Environment Specification: tdp/development_environment_specification.md
-    - Security Threat Analysis: tdp/security_threat_analysis.md
-    - Security Testing and Vulnerability Analysis: tdp/security_testing_and_vulnerability_analysis.md
-    - System Maintenance Manual: tdp/system_maintenance_manual.md
-    - Personnel Deployment and Training: tdp/personnel_deployment_and_training.md
-    - L&A Testing: tdp/l_and_a_testing.md
-    - Configuration Management Plan: tdp/configuration_management_plan.md
-    - Quality Assurance Plan: tdp/quality_assurance_plan.md
-    - Tabulator Trusted Build Instructions: tdp/tabulator_trusted_build_instructions.md
-    - System Change Notes: tdp/system_change_notes.md
-    - System Hardening Procedures - Windows OS: tdp/system_hardening_procedures_-_windows_os.md
-    - System Test and Verification Specification: tdp/system_test_and_verification_specification.md
-    - User Guide: tdp/user_guide.md
-    - Tabulation Options for RCV Tabulation: tdp/tabulation_options_for_rcv_tabulation.md
-    - Process Ranked Choice Voting Contest: tdp/process_ranked_choice_voting_contest.md
-    - Ballot Limitations & Maximum Testing Range: tdp/ballot_limitations_and_maximum_testing_range.md
-    - Installation Instructions for Windows OS: tdp/installation_instructions_for_windows_os.md
-    - Trusted Build & Output Hash Verification: tdp/trusted_build_and_output_hash_verification.md
-    - Tabulator Command Line Instructions: tdp/tabulator_command_line_instructions.md
-    - Configuration File Parameters: tdp/configuration_file_parameters.md
-    - RCTab CVR Files: tdp/rctab_cvr_files.md
-    - RCTab Config Files: tdp/rctab_config_files.md
-    - Post-Election Audit & Clearing RCTab from System: tdp/post-election_audit_and_clearing_rctab_from_system.md
-    - RCTab Operator Log Messages: tdp/rctab_operator_log_messages.md
-    - RCTab System Tab Hints: tdp/rctab_system_tab_hints.md
-    - Coding and Header Comment Standards for RCTab: tdp/coding_and_header_comment_standards_for_rctab.md
-    - Secure USB Process: tdp/secure_usb_process.md
-    - Expected Outcome RCV Test Sets Multi-Winner: tdp/expected-outcome-rcv-test-sets-multi-winner.md
-    - Expected Outcome RCV Test Sets Single-Winner: tdp/expected-outcome-rcv-test-sets-single-winner.md
-    - Ranked Choice Voting Laws: tdp/ranked-choice-voting-laws.md
-    - 22-Month Archiving Procedure: tdp/22-month-archiving-procedure.md
+#  - PDF Version: rctab.pdf
+#  - TDP:
+#    - Documentation Abstract: tdp/00_documentation_abstracts.md
+#    - System Overview: tdp/system_overview.md
+#    - Software Design and Specifications: tdp/software_design_and_specifications.md
+#    - System Hardware Specification: tdp/system_hardware_specification.md
+#    - System Functionality Description: tdp/system_functionality_description.md
+#    - Acceptance Test Procedures: tdp/acceptance_test_procedures.md
+#    - System Design Specifications: tdp/system_design_specifications.md
+#    - System Security Specification Requirements: tdp/system_security_specification_requirements.md
+#    - Design and Interface Specification: tdp/design_and_interface_specification.md
+#    - Security Architecture: tdp/security_architecture.md
+#    - Development Environment Specification: tdp/development_environment_specification.md
+#    - Security Threat Analysis: tdp/security_threat_analysis.md
+#    - Security Testing and Vulnerability Analysis: tdp/security_testing_and_vulnerability_analysis.md
+#    - System Maintenance Manual: tdp/system_maintenance_manual.md
+#    - Personnel Deployment and Training: tdp/personnel_deployment_and_training.md
+#    - L&A Testing: tdp/l_and_a_testing.md
+#    - Configuration Management Plan: tdp/configuration_management_plan.md
+#    - Quality Assurance Plan: tdp/quality_assurance_plan.md
+#    - Tabulator Trusted Build Instructions: tdp/tabulator_trusted_build_instructions.md
+#    - System Change Notes: tdp/system_change_notes.md
+#    - System Hardening Procedures - Windows OS: tdp/system_hardening_procedures_-_windows_os.md
+#    - System Test and Verification Specification: tdp/system_test_and_verification_specification.md
+#    - User Guide: tdp/user_guide.md
+#    - Tabulation Options for RCV Tabulation: tdp/tabulation_options_for_rcv_tabulation.md
+#    - Process Ranked Choice Voting Contest: tdp/process_ranked_choice_voting_contest.md
+#    - Ballot Limitations & Maximum Testing Range: tdp/ballot_limitations_and_maximum_testing_range.md
+#    - Installation Instructions for Windows OS: tdp/installation_instructions_for_windows_os.md
+#    - Trusted Build & Output Hash Verification: tdp/trusted_build_and_output_hash_verification.md
+#    - Tabulator Command Line Instructions: tdp/tabulator_command_line_instructions.md
+#    - Configuration File Parameters: tdp/configuration_file_parameters.md
+#    - RCTab CVR Files: tdp/rctab_cvr_files.md
+#    - RCTab Config Files: tdp/rctab_config_files.md
+#    - Post-Election Audit & Clearing RCTab from System: tdp/post-election_audit_and_clearing_rctab_from_system.md
+#    - RCTab Operator Log Messages: tdp/rctab_operator_log_messages.md
+#    - RCTab System Tab Hints: tdp/rctab_system_tab_hints.md
+#    - Coding and Header Comment Standards for RCTab: tdp/coding_and_header_comment_standards_for_rctab.md
+#    - Secure USB Process: tdp/secure_usb_process.md
+#    - Expected Outcome RCV Test Sets Multi-Winner: tdp/expected-outcome-rcv-test-sets-multi-winner.md
+#    - Expected Outcome RCV Test Sets Single-Winner: tdp/expected-outcome-rcv-test-sets-single-winner.md
+#    - Ranked Choice Voting Laws: tdp/ranked-choice-voting-laws.md
+#    - 22-Month Archiving Procedure: tdp/22-month-archiving-procedure.md
   - User Guide:
     - Quick Start: user_guide/user_guide.md
     - Extended: user_guide/user_guide_extended.md

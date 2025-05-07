@@ -178,7 +178,7 @@ Expects `.csv` file to have Candidate Names along the top row and ranks in the c
 ES&S's CVR export schema can be configured in the voting system. RCTab defaults to match the voting system defaults.
 Here are two examples of the default ES&S CVR file layout, both of which would be configured similarly. 
 
-By default ES&S CVRs have three columns of ballot information, followed by a column for each available ranking. There is a single header row with Column names followed by one row for each ballot.
+By default, ES&S CVRs have three columns of ballot information, followed by a column for each available ranking. There is a single header row with Column names followed by one row for each ballot.
 
 ![Screenshot of a partial ES&S cast vote record displayed in a spreadsheet application](../images/ess_cvr_xlsx_partial.png)
 
@@ -207,13 +207,15 @@ Your ES&S CVR might look a little different from these examples of the default E
 
 ### Candidates Tab
 
-The Candidates tab allows users to put in information about how candidates are referred to in cast-vote record files. These settings impact how CVR files are read. Candidate names entered on this tab will also be used to display candidate names in results files. Below is a screenshot of the Candidates Tab when a user first navigates to it.
+The Candidates tab allows users to put in information about how candidates are referred to in cast-vote record files. 
+These settings impact how CVR files are read. 
+Candidate names entered on this tab will also be used to display candidate names in results files.
 
 ![Candidates Tab](../images/candidates_tab.png)
 RCTab must be configured with information about every candidate in your contest. There are two ways to load candidate data.
 
 #### Auto-Load
-RCTab will look through all of the currently configured CVR files for distinct candidates and load their name and Aliases
+RCTab will look through each of the currently configured CVR files for distinct candidates and load their name and Aliases
 automatically for you. The candidate Auto-Load feature relies on candidates appearing in vote data to populate the list of candidates. 
 Users should confirm the list of candidates populated against the list of candidates in their election to confirm that
 all cnadidates were properly loaded. 
@@ -222,22 +224,25 @@ all cnadidates were properly loaded.
 For each candidate, enter their name and any aliases/codes that identify them across CVRs.
 ![Manually Adding Candidates](../images/candidates_tab-adding_manually_w_edit.gif)
 
-**Name** (required)**:** E.g.: Dave Harris. This information is used to display candidate names in results files.
+**Name (required):** E.g.: Dave Harris. This information is used to display candidate names in results files.
 
-**Code** (optional)**:** Some CVR files use codes in lieu of the full candidate name. e.g.: "JCD" or "14". Multiple
+**Code:** Some CVR files use codes in lieu of the full candidate name. e.g.: "JCD" or "14". Multiple
 codes can be used for a single candidate if required e.g. multi-vendor tabulation.
 
-**Excluded** (optional)**:** When checked, the candidate will be ignored during tabulation. An example of when this might be used: a candidate dropped out after the ballots were printed.
+**Excluded:** In round by round tabulation, excluded candidates are treated from the beginning as an eliminated candidate.
+They can never be a ballot's continuing candidate in any round. Excluded candidates are not included in the list of candidates in results.   
 
-**Add:** Adds Name, code, and/or excluded information to the Candidates Table.
+Additionally, there are some action buttons for configuring candidates. 
+
+**Add:** Adds the currently configured single candidate information to the configured list of candidates. This full list is displayed in the Candidates Table.
 
 **Clear:** Clears any information in Name, Code, and Excluded.
 
 **Delete Selected:** Deletes selected candidate data from the Candidate Table.
 
-### Winning Rules Options
+### Winning Rules Tab
 
-Winning Rules options tell RCTab what kind of ranked choice voting election to run and how to handle details required for each.
+Winning Rules configuration options tell RCTab what kind of ranked choice voting election to run and how to handle details required for each.
 
 ![Winning Rules Tab](../images/winning_rules_tab.png)
 

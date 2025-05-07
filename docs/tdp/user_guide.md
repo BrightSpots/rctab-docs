@@ -139,112 +139,75 @@ Additionally, there are some action buttons used for configuring CVRs.
 **Delete Selected:** Deletes a row of CVR file information from the CVR table.
 
 
-This guide will now briefly show which provider settings permit users to edit which additional settings.
+This guide will now briefly discuss details for each provider. It will highlight idiosyncrasies for each provider that users should be thinking about.  
 
-#### CDF
+<p style="text-align:center;font-weight:bold">CDF</p>
 
 ![CVR Files Tab - CDF Empty](../images/cvr_files_tab_CDF_empty.png)
 
-| **Permits user to edit these options:**  | **Does not permit user to edit these options:** |
-|------------------------------------------|-------------------------------------------------|
-| Path (.JSON or .XML)                     | First Vote Column                               |
-| Contest ID                               | First Vote Row                                  |
-| Overvote Label (Default value: overvote) | ID Column                                       |
-| Undeclared write-in label                | Precinct Column                                 |
-|                                          | Overvote Delimiter                              |
-|                                          | Undervote Label                                 |
-|                                          | Treat Blank as Undeclared Write-In              |
+CDF, or Common Data Format, is a common standard required by VVSG 2.0. 
 
+**Path** Either a `.json` or `.xml` file. Add multiple if necessary.
 
-#### Clear Ballot
+<p style="text-align:center;font-weight:bold">Clear Ballot</p>
 
 ![CVR Files Tab - Clearballot Empty](../images/cvr_files_tab_clearballot_empty.png)
 
-| **Permits user to edit these options:**  | **Does not permit user to edit these options:**  |
-|------------------------------------------|--------------------------------------------------|
-| Path                                     | First Vote Column                                |
-| Contest ID                               | First Vote Row                                   |
-| Undeclared Write-In Label                | ID Column                                        |
-|                                          | Precinct Column                                  |
-|                                          | Overvote Delimiter                               |
-|                                          | Overvote Label                                   |
-|                                          | Undervote Label                                  |
-|                                          | Treat Blank as Undeclared Write-In               |
+**Contest ID** Look in the first column of the ClearBallot CVR. The Contest ID is between the first and second colons `:`
+In this example the Contest ID would be `City of Portland, Councilor, District 1`
+![ClearBallot CVR Contest Id](../images/clearballot_cvr_contest_id.png)
 
-#### CSV CVR
+<p style="text-align:center;font-weight:bold">CSV CVR</p>
 
 ![CVR Files Tab - CSV CVR Empty](../images/cvr_files_tab_CSV_CVR_empty.png)
 
-| **Permits user to edit these options:** | **Does not permit user to edit these options:** |
-|-----------------------------------------|-------------------------------------------------|
-| Path (.csv)                             | ID Column                                       |
-| First Vote Row                          | Precinct Column                                 |
-| First Vote Column                       | Overvote Delimiter                              |
-| Undeclared Write-In Label               | Overvote Label                                  |
-|                                         | Undervote Label                                 |
-|                                         | Treat Blank as Undeclared Write-In              |
+Expects `.csv` file to have Candidate Names along the top row and ranks in the cells.
+![CSV CVR](../images/csv_cvr.png)
 
-
-
-#### Dominion
+<p style="text-align:center;font-weight:bold">Dominion</p>
 
 ![CVR Files Tab - Dominion Empty](../images/cvr_files_tab_dominion_empty.png)
+**Path** Is the folder with Dominion `CvrExport.json` output CVRs. 
 
-| **Permits user to edit these options:** | **Does not permit user to edit these options:**  |
-|-----------------------------------------|--------------------------------------------------|
-| Path (folder)                           | First Vote Column                                |
-| Contest ID                              | First Vote Row                                   |
-| Undeclared Write-In Label               | ID Column                                        |
-|                                         | Precinct Column                                  |
-|                                         | Overvote Delimiter                               |
-|                                         | Overvote Label                                   |
-|                                         | Undervote Label                                  |
-|                                         | Treat Blank as Undeclared Write-In               |
+**Contest ID** Look in `ContestManifest.json` or `Contests.Id` in `CvrExport.json` files.
 
-#### ES&S
+<p style="text-align:center;font-weight:bold">ES&S</p>
 
-![img.png](../images/cvr_files_tab_es&s_empty.png)
+![CVR Files Tab - ES&S Empty](../images/cvr_files_tab_es&s_empty.png)
 
-| **Permits user to edit these options:**    | **Does not permit user to edit these options:**  |
-|--------------------------------------------|--------------------------------------------------|
-| Path (.xlsx)                               | Contest ID                                       |
-| First Vote Column (Default Value: 4)       |                                                  |
-| First Vote Row (Default Value: 2)          |                                                  |
-| ID Column (Default Value: 1)               |                                                  |
-| Precinct Column (Default Value: 2)         |                                                  |
-| Overvote Delimiter                         |                                                  |
-| Overvote Label (Default Value: overvote)   |                                                  |
-| Undervote Label (Default Value: undervote) |                                                  |
-| Undeclared Write-In Label                  |                                                  |
-| Treat Blank as Undeclared Write-In         |                                                  |
+ES&S's CVR export schema can be configured in the voting system. RCTab defaults to match the voting system defaults.
+Here are two examples of the default ES&S CVR file layout, both of which would be configured similarly. 
 
-ES&S CVR export can be configured in the voting system. The defaults match the voting system defaults.
-If the default settings are not used in the ES&S export file, the user must determine the values to be used by referencing the CVRs files to be used in the Tabulation.
+By default ES&S CVRs have three columns of ballot information, followed by a column for each available ranking. There is a single header row with Column names followed by one row for each ballot.
 
-The First Vote Column location depends on the information users choose to export in their CVR exports from ES&S’s system. ES&S systems can include individual CVR ID information, Precinct information, and ballot style label information in the first three columns of a CVR, as shown in the below screenshot. Column A (aka Column 1) has CVR ID numbers; Column B (Column 2) has Precinct information, Column C (3) has ballot style information, and Column D (4) includes the first ranking in the RCV contest in this CVR. This is the standard CVR layout for ES&S. More information is available from ES&S.
+![Screenshot of a partial ES&S cast vote record displayed in a spreadsheet application](../images/ess_cvr_xlsx_partial.png)
 
-![Screenshot of a partial ES&S cast vote record displayed in a spreadsheet application](../images/image12.png)
+The CVR below has row/column index numbers added in pink for configuring in RCTab.
+![ES&S CVR With Index Numbers](../images/ess_cvr_w_index_numbers.png)
 
-CVR exports from ES&S contain columns for each ranking in an RCV contest. See the above screenshot for an example. This screenshot includes the five rankings voters had in the contest, arranged in sequential order. This CVR export included only data for the one RCV contest to be run. The setting “Maximum Number of Candidates That Can Be Ranked” (covered below in Winning Rules) instructs RCTab how many columns to process when running the round-by-round count. If that setting is set to five and the First Vote Column setting is set to four (Column D), RCTab will process this CVR starting at Column D/4 (column number 4) and continue through columns E/5, F/6, G/7, and H/8 - five columns for the five rankings voters have.
+**Path** ES&S `.xlsx` CVR file. Add multiple if necessary.  
 
-#### Hart
+**ID Column** Column index of the ballot ID.
+
+**Precinct Column** Column index of the precinct identifier.
+
+**First Vote Column**  Column index where RCV rankings begin. Defaults to `4` to account for first three columns of ballot information like ID, Precinct description and Ballot Style.
+
+**First Vote Row** Row index where RCV rankings begin. Defaults to `2` to account for the header row that has Column names in it.
+
+Your ES&S CVR might look a little different from these examples of the default ES&S CVR layout. Use the descriptions above to configure accordingly!
+
+<p style="text-align:center;font-weight:bold">Hart</p>
 
 ![CVR Files Tab - Hart Empty](../images/cvr_files_tab_hart_empty.png)
+**Path** A folder containing `.xml` CVRs. They name files with GUIDs like `1_f4b6ca3a-1341-4f93-804e-a0a723cfc6f5.xml` and `943e7f54-5cac-40c3-843b-2aef881ea308.xml`
 
-| **Permits user to edit these options:** | **Does not permit user to edit these options:**  |
-|-----------------------------------------|--------------------------------------------------|
-| Path (folder)                           | First Vote Column                                |
-| Contest ID                              | First Vote Row                                   |
-| Undeclared Write-In Label               | ID Column                                        |
-|                                         | Precinct Column                                  |
-|                                         | Overvote Delimiter                               |
-|                                         | Overvote Label                                   |
-|                                         | Undervote Label                                  |
-|                                         | Treat Blank as Undeclared Write-In               |
+**Contest ID** Inside of the `.xml` is an ID, another GUID. So for the Austin Library Office contest you would use `dee8b4df-a3fa-4148-9fb6-b5202d555bec`.
+![Hart CVR Contest ID](../images/hart_cvr_contest_id.png)
 
 ### Candidates Tab
 
-The candidates tab allows users to put in information about how candidates are referred to in cast-vote record files. These settings impact how CVR files are read. Candidate names entered on this tab will also be used to display candidate names in results files. Below is a screenshot of the Candidates Tab when a user first navigates to it.
+The Candidates tab allows users to put in information about how candidates are referred to in cast-vote record files. These settings impact how CVR files are read. Candidate names entered on this tab will also be used to display candidate names in results files. Below is a screenshot of the Candidates Tab when a user first navigates to it.
 
 ![Candidates Tab](../images/candidates_tab.png)
 RCTab must be configured with information about every candidate in your contest. There are two ways to load candidate data.

@@ -463,7 +463,7 @@ or handling:
 
 5. Production of statistical ballot data.
 
-   - Tabulator results are described in [**Section 18 - User Guide**](user_guide.md) under [**Running A Tabulation**](user_guide.md#running-a-tabulation).
+   - Tabulator results are described in [**Section 18 - User Guide**](../user_guide/user_guide_extended.md) under [**Running A Tabulation**](user_guide_extended.md#output-files).
 
 6. Data quality assessment; and
 

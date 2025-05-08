@@ -9,4 +9,4 @@ It can be followed in sequential order: from installing RCTab on your computer, 
 The **[User Guide Extended](user_guide/user_guide_extended.md)** contains more detailed information about RCTab for users who are looking to dig in to exactly how certain parts work. Sections here are roughly in order, but users can jump around to find exactly what they need.  
 
 ## Technical Documentation Package
-The Technical Documentation Package or **TDP** contains detailed documentation to satisfy state and federal certification requirements. The RCTab v2.0 TDP is still being written.
+The Technical Documentation Package or TDP contains detailed documentation to satisfy state and federal certification requirements. The RCTab v2.0 TDP is still being written.

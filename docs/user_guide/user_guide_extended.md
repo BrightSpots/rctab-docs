@@ -6,7 +6,7 @@ More detailed information about the use of RCTab is available here to complement
 
 For each candidate, each round
 
-- **2**  Percentage of total votes for each round. Truncated, not rounded. e.g. 6 votes of 29 total will be shown as 20.68% when it is actually 20.689655%
+- **2**  Percentage of total votes for each round. Truncated, not rounded. e.g. 6 votes of 29 total will be shown as 20.68% when mathematically it is 20.689655%
 - **3** Number of ballots transferred from eliminated candidate(s) in the previous round
 
 

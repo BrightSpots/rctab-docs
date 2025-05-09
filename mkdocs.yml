@@ -19,6 +19,14 @@ markdown_extensions:
       toc_depth: 3
   - tables # https://squidfunk.github.io/mkdocs-material/reference/data-tables/#configuration
 
+  # admonitions
+  - admonition #https://squidfunk.github.io/mkdocs-material/reference/admonitions/#admonitions
+  - pymdownx.details
+
+  # annotations
+  - attr_list
+  - md_in_html
+
   # Python Markdown Extensions (https://facelessuser.github.io/pymdown-extensions/)
   - pymdownx.highlight # syntax highlighting for code blocks (https://facelessuser.github.io/pymdown-extensions/extensions/highlight/)
   - pymdownx.snippets: # share content between dev-reviewed and maintained source files (https://facelessuser.github.io/pymdown-extensions/extensions/snippets/)

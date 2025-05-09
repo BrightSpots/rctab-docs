@@ -17,8 +17,6 @@ Any interaction with RCTab, including producing configuration files, running tab
 The manufacturer recommends RCTab be installed as part of the pre-election preparation process. Jurisdictions using RCTab for official elections should follow local guidelines for procuring RCTab.
 For others, RCTab installers and command line bundles are available for download from the [RCTab Github Releases page](https://github.com/BrightSpots/rcv/releases).
 
-
-##### RCTab Installers
 Official RCTab releases have installers for Windows, Mac and Linux. Use like any other application.
 On the [RCTab Github Releases page](https://github.com/BrightSpots/rcv/releases) find the appropriate installer based on your operating system.
 
@@ -118,7 +116,7 @@ See below for a break-down of each field and what is required:
 
 **First Vote Row:** the row where the first vote record is.
 
-**ID Column:** The column the IDs are in. Not all CVR files contain an ID column.
+**ID Column:** The column where ballot IDs are located. Not all CVR files contain an ID.
 
 **Precinct Column:** The column that contains the precinct.
 
@@ -207,7 +205,8 @@ Your ES&S CVR might look a little different from these examples of the default E
 ![CVR Files Tab - Hart Empty](../images/cvr_files_tab_hart_empty.png)
 **Path** A folder containing `.xml` CVRs. They name files with GUIDs like `1_f4b6ca3a-1341-4f93-804e-a0a723cfc6f5.xml` and `943e7f54-5cac-40c3-843b-2aef881ea308.xml`
 
-**Contest ID** Inside the `.xml` is an ID, another GUID. So for the Austin Library Office contest you would use `dee8b4df-a3fa-4148-9fb6-b5202d555bec`.
+**Contest ID** Inside the `.xml` is an ID, another GUID. In the example below, for the Austin Library Office contest you would use `dee8b4df-a3fa-4148-9fb6-b5202d555bec`.
+
 ![Hart CVR Contest ID](../images/hart_cvr_contest_id.png)
 
 ### Candidates Tab
@@ -223,7 +222,7 @@ RCTab must be configured with information about every candidate in your contest.
 RCTab will look through each of the currently configured CVR files for distinct candidates and load their name and Aliases
 automatically for you. The candidate Auto-Load feature relies on candidates appearing in vote data to populate the list of candidates. 
 Users should confirm the list of candidates populated against the list of candidates in their election to confirm that
-all cnadidates were properly loaded. 
+all candidates were properly loaded. 
 
 #### Manually Adding Candidate Information
 For each candidate, enter their name and any aliases/codes that identify them across CVRs.
@@ -251,6 +250,7 @@ Winning Rules configuration options tell RCTab what kind of ranked choice voting
 
 ![Winning Rules Tab](../images/winning_rules_tab.png)
 
+#### Winner Election Mode
 Similar to the **Provider** dropdown in the CVR Files Tab, the **Winner Election Mode** dropdown in the Winning Rules tab drives many of the other settings on this tab.
 Depending on which **Winner Election Mode** is selected, certain configuration fields are unneccesary and greyed out, certain fields are defaulted, and certain fields are required.  
 
@@ -265,14 +265,18 @@ First, let's describe each mode.
 - **Multi-winner allows multiple winners per round:** Elects multiple winners. Elect and transfer the surplus vote of all candidates crossing the winning threshold if multiple candidates exceed the winning threshold in a round of counting.
 - **Bottoms-up:** Eliminate candidates until the desired number of winners is reached, then stop. Bottoms up does not transfer surplus votes.
 - **Bottoms-up using percentage threshold:** Elects multiple winners. Eliminate candidates until the remaining candidates have a vote share equal to or greater than a specified percentage of the vote.
-- **Multi-pass IRV:** Elects multiple winners. Eliminate candidates one-by-one or using batch elimination until only two candidates remain. Candidate with the most votes at the end wins. Run a new set of rounds with any winning candidates ignored.
+- **Multi-pass IRV:** Elects multiple winners by running consecutive Single-Winner contests where subsequent contests have winning candidates excluded.
 
 Selecting a Winner Election Mode will affect the Winning Rules settings in the following way
+
 - Any Winning Rules setting that is applicable and has a default set by RCTab will be filled in with that default.
 - Any Winning Rules setting that is either not applicable or has a required default for the currently selected Winner Election mode will be disabled and not editable.
 - Any Winning Rules setting that is editable for the currently selected Winner Election Mode will be able to be changed by the user.
 
-**You can always use the `Tabulate -> Verify` button to confirm that your current settings are valid!**
+You can always use the `Tabulate -> Verify` button to confirm that your current settings are valid!
+
+
+#### Winning Rules Settings
 
 This guide will now briefly describe each different Winning Rules Settings.
 
@@ -284,8 +288,9 @@ Explicit number allows RCTab to programmatically validate that all CVRs match ex
 **Minimum Vote Threshold:** Any candidates falling below the minimum vote threshold are eliminated in the initial round and have their votes transferred just like an eliminated candidate. Default is blank, in which case no minimum vote threshold is applied.
 
 **Stop Tabulation Early after Round:** If a winner is not found by the given round, round by round tabulation stops following this round and output contains only those rounds.
+Default is blank, which means that Tabulation continues until the configured number of elected candidates are found.
 
-**Use Batch Elimination:** When multiple candidates in a round do not have enough votes together to overcome the next highest candidate, will eliminate those candidates in a single round instead of one round for each.
+**Use Batch Elimination:** When multiple candidates in a round do not have enough votes together to overcome the next highest candidate, those candidates will be eliminated in a single round instead of one round for each.
 
 **Continue until Two Candidates Remain:** Single-winner ranked choice voting elections can identify a winner and stop tabulating as soon as a candidate reaches the winning threshold, before other candidates are explicitly eliminated. For example, a 10 candidate contest can identify a winner before eliminating anyone if a candidate gets 60% of all first ranks. Selecting this option will play out the round-by-round count until only two candidates remain, regardless of when a candidate reaches the threshold.
 
@@ -321,32 +326,32 @@ Tiebreak mode breaks the tie and determines which candidate loses the tie.
 
 Following are screenshots of the different Winner Election Modes in RCTab.
 
-#### Single-winner majority determines winner
+<p style="text-align:center;font-weight:bold">Single-winner majority determines winner</p> 
 
 ![Winning Rules Tab - Single Winner Majority Determines Winner](../images/winning_rules_tab_single_winner.png)
 Can run with all defaults. 
 
-#### Multi-winner allow only one winner per round
+<p style="text-align:center;font-weight:bold">Multi-winner allow only one winner per round</p>
 
 ![Winning Rules Tab - Multi-Winner One Winer Per Round](../images/winning_rules_tab_multi_winner_one_per_round.png)
 **Required Input:** Number of Winners
 
-#### Multi-winner allow multiple winners per round
+<p style="text-align:center;font-weight:bold">Multi-winner allow multiple winners per round</p>
 
 ![Winning Rules Tab - Multi-Winner Allow Multiple Winners Per Round](../images/winning_rules_tab_multi_winner_multiple_per_round.png)
 **Required Input:** Number of Winners
 
-#### Bottoms-Up
+<p style="text-align:center;font-weight:bold">Bottoms-Up</p>
 
 ![Winning Rules Tab - Bottoms Up](../images/winning_rules_tab_bottoms_up.png)
 **Required Input:** Number of Winners
 
-#### Bottoms-up using percentage threshold
+<p style="text-align:center;font-weight:bold">Bottoms-up using percentage threshold</p>
 
 ![Winning Rules Tab - Bottom Up Using Percentage Threshold](../images/winning_rules_tab_bottoms_up_percentage_threshold.png)
 **Required Input:** Percentage Threshold
 
-#### Multi-pass IRV
+<p style="text-align:center;font-weight:bold">Multi-pass IRV</p>
 
 ![Winning Rules Tab - Multi-Pass IRV](../images/winning_rules_tab_multi_pass.png)
 **Required Input:** Number of Winners
@@ -364,8 +369,10 @@ RCTab can be configured to be strict or permissive with voter errors.
 - **Exhaust if multiple continuing:** If a voter has an overvote but only one candidate at that overvote is still in the race when that overvote is encountered, the ballot counts for that candidate. If multiple candidates at the overvote are still in the race, the ballot exhausts.
 
 **How Many Consecutive Skipped Ranks Are Allowed (required):** How many consecutive rankings a voter can skip and still have later rankings count. 0 allows no skipped rankings. `1` allows a single consecutive skipped rank, and so on.
+Checking `Unlimited` allows any number of consecutive skipped rankings while still count later valid rankings.
 
-**Exhaust on Multiple Ranks for the Same Candidate:** When checked, the tabulator will exhaust a ballot that includes more than one ranking for the same candidate in the round that the repeat ranking is reached. When unchecked, any repeat rankings for the same ballot will be treated as an excluded candidate, and the ballot will count towards the next ranked continuing candidate.
+**Exhaust on Multiple Ranks for the Same Candidate:** When checked, the tabulator will exhaust a ballot that includes more than one ranking for the same candidate.
+It will exhaust when the first repeated ranking is encountered. When unchecked, any repeat rankings for the same ballot will be treated as an excluded candidate, and the ballot will count towards the next ranked continuing candidate.
 
 
 ### Output Tab
@@ -382,6 +389,7 @@ Tell the tabulator where results files go and what additional output files you w
 
 **Generate a CDF JSON:** Produce a VVSG common data format JSON file of the CVR.
 
+## Round By Round Tabulation
 ### Pre-Tabulation Checks
 
 Start the round-by-round tabulation by clicking `Tabulation` in the menu, then `Tabulate`. You will see the Pre-Tabulation Checks popup.
@@ -408,14 +416,14 @@ When you've reviewed this data you can run the tabulation by clicking the `Tabul
 
 After clicking the `Tabulate XXX,XXX ballots` button you can follow the progress through the log messages in the bottom of the app. When complete the final button `Open Results Folder` is available. It will open the File Explorer to the folder where RCTab results were written to. 
 
-#### After Tabulation
+### After Tabulation
 In the event that there is an error, the final button will say `Close and View Errors`. Review the log window for details. Refer to [**Section 29 — RCTab Operator Log Messages**](../tdp/rctab_operator_log_messages.md) to troubleshoot.
 ![Pre-Tabulation Checks - Error](../images/pre-tabulation_checks_error.png)
 
 If tabulation is successful, the final button will say `Open Results Folder`. Click to view the results!
 ![After Tabulation - Open Results Folder](../images/post_tabulate_open_results_folder.png)
 
-### Output Files
+#### Output Files
 All output files are written to the location specified in the Output tab. Let's assume this is configured to `c:\output` for the following examples. Within that folder, each time a tabulation is run RCTab will create
 
 - A `YYYY-MM-DD-HH-mm Results` folder. In the name of the folder it will replace the actual date and time that the tabulation was run. So the results files for a tabulation run on April 8, 2025 at 4:33PM would be located in `c:\output\2025-04-08-16-33 Results`. The results files for a tabulation that was run 5 minutes later at 4:38PM would be located at `c:\output\2025-04-08-16-38 Results`. In these folders are

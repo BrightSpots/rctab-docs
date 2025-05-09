@@ -427,10 +427,12 @@ If tabulation is successful, the final button will say `Open Results Folder`. Cl
 All output files are written to the location specified in the Output tab. Let's assume this is configured to `c:\output` for the following examples. Within that folder, each time a tabulation is run RCTab will create
 
 - A `YYYY-MM-DD-HH-mm Results` folder. In the name of the folder it will replace the actual date and time that the tabulation was run. So the results files for a tabulation run on April 8, 2025 at 4:33PM would be located in `c:\output\2025-04-08-16-33 Results`. The results files for a tabulation that was run 5 minutes later at 4:38PM would be located at `c:\output\2025-04-08-16-38 Results`. In these folders are
-  - `YYYY-MM-DD-HH-mm_detailed_report`
+  - `YYYY-MM-DD-HH-mm_detailed_report`[^detailed_report]
   - `YYYY-MM-DD-HH-mm_summary_report`
   - `YYYY-MM-DD-HH-mm_rctab_cvr`
   - A `Log` folder
+
+[^detailed_report]: More details about the data in the Detailed Report are available in the [User Guide Extended](../user_guide/user_guide_extended.md#detailed-report).
 
 Optionally, depending on configuration, the following might also be included.
 - A `Tabulate by Precinct` folder with detailed and summary reports for each precinct.

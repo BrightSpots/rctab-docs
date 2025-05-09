@@ -18,7 +18,9 @@ For each candidate, each round
 - Exhausted Choices
 
 **5** Per-Round winning threshold
+
 **6** RCTab version number
+
 **7** Contest Summary
 
 - Number to be Elected

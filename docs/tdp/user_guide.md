@@ -435,8 +435,9 @@ All output files are written to the location specified in the Output tab. Let's 
 [^detailed_report]: More details about the data in the Detailed Report are available in the [User Guide Extended](../user_guide/user_guide_extended.md#detailed-report).
 
 Optionally, depending on configuration, the following might also be included.
-- A `Tabulate by Precinct` folder with detailed and summary reports for each precinct.
-- A `Tabulate by Batch` folder with detailed and summary reports for each batch.
+
+- A `Tabulate by Precinct` folder with detailed and summary reports for each distinct precinct. Effectively, these results show the contest results with just a single precinct's ballots *except* Elect/Eliminate decisions are still made at the contest level. 
+- A `Tabulate by Batch` folder with detailed and summary reports for each batch. Similar to precinct results, but grouped by physical batch instead of precinct. 
 - A `YYYY-MM-DD-HH-mm_cdf_cvr` file
 
 Each folder has a `Checksums` folder within it. Inside of that folder are digital fingerprints for each file RCTab generates. 

@@ -1,18 +1,27 @@
 More detailed information about the use of RCTab is available here to complement the [**Quick Start User Guide**](user_guide.md).
 
 ## Detailed Report
-![Detailed Report](../images/detailed_report_comparison.jpg)
-**1** Number of undervotes in round 0. Previously lumped into the ‘Inactive Ballots’ bucket of Round 1. 
+![detailed_report_output_v2.png](../images/detailed_report_output_v2.png)
+**1** RCTab Version Number
+
+**2** Contest Summary
+
+- Number to be Elected
+- Number of Candidates
+- Total Number of Ballots
+
+**3** Number of undervoted ballots. Previously lumped into the ‘Inactive Ballots’ bucket of Round 1.
 
 For each candidate, each round
 
-- **2**  Percentage of total votes for each round. Truncated, not rounded.[^vote_percentages]
-- **3** Number of ballots transferred from eliminated candidate(s) in the previous round
+- **4**  Percentage of total votes for each round. Truncated, not rounded.[^vote_percentages]
+- **5** Number of ballots transferred from eliminated candidate(s) in the previous round
 
 [^vote_percentages]: For example, 6 votes of 29 total will be shown as 20.68% when mathematically it is 20.689655%. That means summing the percentages might not always equal exactly 100 but could be a little less than 100.
     
+**6** Per-Round winning threshold
 
-**4** Inactive ballots in each round broken down by category. Previously these were all lumped into one Inactive Ballots bucket
+**7** Inactive ballots in each round broken down by category. Previously these were all lumped into one Inactive Ballots bucket
 
 - Overvote
 - Skipped Ranking
@@ -20,18 +29,6 @@ For each candidate, each round
 - Exhausted Choices[^exhausted_choices]
 
 [^exhausted_choices]: When all candidates of a ballot's rankings have been eliminated, but other candidates are still active.
-
-**5** Per-Round winning threshold
-
-**6** RCTab version number
-
-**7** Contest Summary
-
-- Number to be Elected
-- Number of Candidates
-- Total Number of Ballots
-
-
 
 ## Round By Round Logic
 For any configuration, RCTab follows distinct, logical steps to run the round by round tabulation. 

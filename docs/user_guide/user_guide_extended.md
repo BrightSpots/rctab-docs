@@ -48,3 +48,12 @@ This can speed up tabulation for large contests. Here is how to do that.
 2. Determine how much to allocate explicitly for RCTab. Use ~80% of your total RAM. Step in chunks of 512MB. So for 16GB use 12,800MB. `.8 * (16*1024)` rounded to the nearest 512 = `12,800`  
 3. Open a Command Prompt and navigate to the `rcv` folder where RCTab was installed or unzipped.
 4. Launch the tabulator by entering the following command: `.\bin\java -mx12800m -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main`
+
+## Using This Documentation
+Some helpful tips for using the RCTab documentation.
+
+**Permalinks**
+Each section header has a permanent link you can share with others. Using permalinks allows you to link someone directly to a specific part of the documentation.
+Use these permalinks when you want to send someone to a specific part of the documentation with a single click! To get a permalink for any section, click the paragraph symbol to the right of the section header. 
+Then, copy and share the URL!
+

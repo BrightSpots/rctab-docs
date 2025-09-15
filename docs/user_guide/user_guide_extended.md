@@ -38,6 +38,10 @@ Detailed round by round logic can be found [here](../tdp/process_ranked_choice_v
 Some extended information about running RCTab within the context of its computer hardware and operating system.
 
 ### Increasing memory allocated for RCTab
+!!! warning 
+
+    This is for technical users only who are confident using the command prompt or terminal. 
+
 For large contests, RCTab can be told explicitly to use more resources on the computer.
 This can speed up tabulation for large contests. Here is how to do that.  
 

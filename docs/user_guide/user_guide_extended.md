@@ -47,9 +47,9 @@ This can speed up tabulation for large contests. Here is how to do that.
 
 1. Determine how much memory your computer has. On Windows Press Ctrl + Shift + Esc to open Task Manager. Click on the Performance tab. Click Memory on the left. You'll see "Total Installed RAM." 
 2. Determine how much to allocate explicitly for RCTab. Use ~80% of your total RAM. Step in chunks of 512MB. So for 16GB use 12,800MB. `.8 * (16*1024) = 13107.2` rounded down to the nearest 512 = `12,800`  
-     1. 8GB RAM = 6144
-     2. 16GB RAM = 12800
-     3. 32GB RAM = 26112
+     1. 8GB RAM = `6144`
+     2. 16GB RAM = `12800`
+     3. 32GB RAM = `26112`
 3. Open a Command Prompt and navigate to the `rcv` folder where RCTab was installed or unzipped.
 4. Launch the tabulator by entering the following command: `.\bin\java -mx12800m -p .\app -m network.brightspots.rcv/network.brightspots.rcv.Main`
 

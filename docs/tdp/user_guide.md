@@ -292,6 +292,8 @@ Default is blank, which means that Tabulation continues until the configured num
 
 **Use Batch Elimination:** When multiple candidates in a round do not have enough votes together to overcome the next highest candidate, those candidates will be eliminated in a single round instead of one round for each.
 
+**Eliminate All Candidates Falling Below Threshold in First Round:** In Bottoms-Up With Percentage Threshold elections, eliminates all candidates who are below the percentage threshold in a single round of counting.
+
 **Continue until Two Candidates Remain:** Single-winner ranked choice voting elections can identify a winner and stop tabulating as soon as a candidate reaches the winning threshold, before other candidates are explicitly eliminated. For example, a 10 candidate contest can identify a winner before eliminating anyone if a candidate gets 60% of all first ranks. Selecting this option will play out the round-by-round count until only two candidates remain, regardless of when a candidate reaches the threshold.
 
 **First Round Determines Threshold** For single-winner contests, keeps the threshold to elect static based on the first round active ballots, rather than dynamically changing round by round as ballots go inactive.

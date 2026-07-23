@@ -1,4 +1,4 @@
-# RCTab v2.0 Docs
+# RCTab v2.1.0 Docs
 
 RCTab is an open source tabulator for running ranked choice voting elections.
 
